@@ -1,0 +1,243 @@
+
+.homepage-body .introduction-banner{
+    background-image: url('https://img.perceptpixel.com/pykhlszs/riya_caterer/homepage-banner-images__1_.webp');
+    background-size: cover;
+    background-position: bottom;
+}
+.homepage-body .introduction-banner .dark-opacity{
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.6); /* Black w/opacity/see-through */
+    padding: 10px;
+    height: 100%;
+    position: relative;
+    font-weight: 500;
+    color: white !important;
+}
+
+.homepage-body .introduction-banner .intro-section{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+
+.homepage-body .intro-heading h2{
+    font-size: 36px !important;
+}
+
+.homepage-body .intro-txt{
+    font-size: 18px;
+    color: white !important;
+}
+.homepage-body .intro-txt b{
+    font-weight: 700;
+    color: rgb(238, 255, 46);
+}
+.homepage-body .intro-qote{
+    margin-bottom: 8px;
+    font-style: italic;
+    color: #efffb1;
+    font-weight: 500;
+}
+.homepage-body .intro-qote-two{
+    font-weight: 600;
+}
+.homepage-service-section{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.homepage-service-section h3{
+    background-image: linear-gradient(235deg, #591b0d, #000000, #5a1b0e);
+    margin-bottom: 10px;
+    margin-top: 10px;
+    color: #fff0ba;
+    border-radius: 6px;
+    padding: 5px;
+}
+
+.our-service-section{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-image: linear-gradient(235deg, #4a0023, black, #000000);
+}
+.our-service-section h3{
+    color: wheat;
+    font-weight: 700;
+    text-align: center;
+    font-family: sans-serif;
+}
+.our-service-card .card-group{
+    justify-content: center;
+    gap: 10px;
+    font-weight: 500;
+}
+.our-service-card .card-group .card{
+    border-radius: 8px 8px 24px 24px;
+    padding: 6px;
+    background-image: linear-gradient(227deg, #b8341a, #f4be00);
+    animation: our-service-card-progress 5s;
+}
+@keyframes our-service-card-progress {
+    from{
+        transform: rotateY(-95deg);
+    }
+    to{
+        transform: rotateY(0deg);
+    }
+}
+.check-all-service-btn-section, .go-to-gallery-btn-section{
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+.check-all-service-btn-section a, .go-to-gallery-btn-section a{
+    background-image: linear-gradient(90deg, #0b4b39, #76ae0e);
+    border-radius: 8px;
+    box-shadow: inset 0 -3px 10px #252525;
+    color: #fff;
+    display: flex;
+    flex-wrap: nowrap;
+    font-weight: 600;
+    gap: 4px;
+    margin-top: 8px;
+    border: none;
+    padding: 8px 20px 10px;
+    text-decoration: none;
+    width: 185px;
+    justify-content: center;
+}
+.our-service-card .card-group .card img{
+    border-radius: 8px 8px 0px 0px !important;
+    background-color: white;
+}
+.our-service-card .card-group .card .card-body{
+    background-color: #fffde7;
+    border-radius: 0px 0px 24px 24px;
+    box-shadow: inset 0 -3px 10px grey;
+}
+.our-service-card .card-group .card .card-body .card-title{
+    font-weight: 600;
+}
+
+.why-choose-us-section h3{
+    background-image: linear-gradient(235deg, #591b0d, #000000, #5a1b0e);
+    margin-bottom: 10px;
+    margin-top: 10px;
+    color: #fff0ba;
+    border-radius: 6px;
+    padding: 5px;
+}
+.choose-us-txt-banner{
+    align-items: center;
+    justify-content: center;
+}
+.why-txt-section{
+    display: flex;
+    flex-direction: column;
+}
+.why-txt-section p{
+    display: flex;
+    gap: 10px;
+    background-image: linear-gradient(227deg, #80b9d4, #fb5e00);
+    padding: 10px 15px;
+    border-radius: 8px;
+    color: #ffffff;
+    font-weight: 600;
+}
+.why-txt-section .badge{
+    background-color: #fff4cd;
+    color: black;
+    line-height: 1.2;
+}
+.waiter-img-section img{
+    width: 100%;
+}
+.work-gallery-section{
+    position: relative;
+    margin-top: 50px;
+}
+.work-gallery-section h3{
+    background-image: linear-gradient(235deg, #591b0d, #000000, #5a1b0e);
+    margin-bottom: 10px;
+    margin-top: 10px;
+    color: #fff0ba;
+    border-radius: 6px;
+    padding: 5px;
+}
+.gallery-txt-heading{
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+
+.image-album-cover{
+    background-color: black;
+    padding: 36px 15px 15px;
+    border-radius: 6px 6px 0px 0px;
+}
+
+.image-album-cover img{
+    border: 2px solid #f4be00;
+}
+
+@media(min-width:1400px){
+    .homepage-body .introduction-banner{
+        height: 600px;
+    }
+}
+
+@media(max-width:1399.98px){
+    .homepage-body .introduction-banner{
+        height: 525px;
+    }
+}
+
+@media(max-width:991.98px){
+    .homepage-body .introduction-banner{
+        height: 480px;
+    }
+    .waiter-img-section div{
+        background-color: #d0e6fa;
+    }
+    .waiter-img-section img{
+        width: 70%;
+    }
+    .choose-us-txt-banner{
+        gap: 15px;
+    }
+}
+
+@media(max-width:767.98px){
+    .homepage-body .introduction-banner{
+        height: 450px;
+    }
+    .card-group{
+        flex-direction: column !important;
+    }
+}
+
+@media(max-width:575.98px){
+    .gallery-txt-heading{
+        padding-left: 24px !important;
+        padding-right: 24px !important;
+    }
+    .check-all-service-btn-section a{
+        margin-top: 0px;
+    }
+}
+
+@media(max-width:483.98px){
+    .homepage-body .introduction-banner{
+        height: 500px;
+    }
+    .homepage-body .intro-txt{
+        font-size: 18px;
+    }
+    .waiter-img-section img{
+        width: 92%;
+    }
+}
