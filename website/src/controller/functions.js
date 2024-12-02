@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Header from "../component/header";
-// import Footer from "../component/footer";
+import Footer from "../component/footer";
 import Homepage from "../pages/homepage";
 import Reviews from "../pages/review";
 import Contact from "../pages/contact-us"
@@ -23,7 +23,7 @@ export default function MainFunction(){
                 <Route exact path="/gallery" element={<Gallery/>}/>
                 {/* <Route exact path="*" element={<Errorpage />} /> */}
             </Routes>
-            {/* <Footer/> */}
+            <Footer/>
         </Router>
     )
 }
