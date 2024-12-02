@@ -1,0 +1,11 @@
+.App {
+  text-align: center;
+}
+
+body{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.app-body{
+  margin-top: 66px;
+}

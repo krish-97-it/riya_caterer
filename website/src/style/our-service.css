@@ -1,0 +1,16 @@
+.service-banner-section{
+    background-color: #ca7e3b;
+    border-top: 5px solid #43251d;
+    border-bottom: 5px solid #43251d;
+}
+
+@media(min-width: 992px){
+    .service-banner-section .banner-img{
+        width: 85% !important;
+    }
+}
+@media(max-width:991.98px){
+    .service-banner-section .banner-img{
+        width: 100% !important;
+    }
+}
