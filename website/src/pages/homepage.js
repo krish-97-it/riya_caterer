@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import {ReactTyped} from 'react-typed';
+import GoogleReviews from "../component/google-review-widget";
 
 export default function Homepage(){
     return(
@@ -79,12 +80,17 @@ export default function Homepage(){
                             </div>
                             <div className="col-lg-6 waiter-img-section">
                                 <div>
-                                    <img src="https://img.perceptpixel.com/pykhlszs/riya_caterer/cattering-waiter.webp" alt="caterer"/>
+                                    <img src="https://img.perceptpixel.com/pykhlszs/riya_caterer/caterer-waiter.webp" alt="caterer"/>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
+                </div>
+                <div className="homepage-reviews-section">
+                    <div className="container">
+                        <h3>Customer Reviews</h3>
+                        <GoogleReviews/>
+                    </div>
                 </div>
                 <div className="work-gallery-section">
                     <div className="container gallery-txt-heading">
