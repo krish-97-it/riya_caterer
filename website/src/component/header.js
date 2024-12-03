@@ -10,7 +10,7 @@ const navbar = () => {
                 <div className="container-fluid">
                     <div className="brand-logo-section">
                         <img className="brand-logo-img" src={Logo} alt="logo"/>
-                        <NavLink className="navbar-brand" to="#">Riya Caterer</NavLink>
+                        <NavLink className="navbar-brand" to="/">Riya Caterer</NavLink>
                     </div>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
