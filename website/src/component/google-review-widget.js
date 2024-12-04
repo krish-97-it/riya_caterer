@@ -4,40 +4,8 @@ import GoogleLogo from '../assets/images/google.svg';
 import Carousel from 'react-multi-carousel';
 import "react-multi-carousel/lib/styles.css";
 
-export default function GoogleReviews(){
+export default function GoogleReviews({getReviewList}){
     const slider = useRef(null);
-    const cardItemList = [
-        {
-            name : "ram",
-            rating: 4,
-            description: "hghg uyuyuy trtrrt",
-        },
-        {
-            name : "Shyam",
-            rating: 4,
-            description: "hghg uyuyuy trtrrt",
-        },
-        {
-            name : "Radha",
-            rating: 4,
-            description: "hghg uyuyuy trtrrt",
-        },
-        {
-            name : "Karna",
-            rating: 4,
-            description: "hghg uyuyuy trtrrt",
-        },
-        {
-            name : "Vijay",
-            rating: 4,
-            description: "hghg uyuyuy trtrrt",
-        },
-        {
-            name : "Vikram",
-            rating: 4,
-            description: "hghg uyuyuy trtrrt",
-        }
-    ]
     const carouselSettings = {
         largeDesktop: {
             breakpoint: { max: 5000, min: 1024 },
@@ -63,14 +31,14 @@ export default function GoogleReviews(){
     const leftArrowStyle = {
         background: "transparent",
         border: 0,
-        color: "black",
+        color: "#d58400",
         fontSize: "20px",
         padding: "0px 0px 0px 10px"
     };
     const rightArrowStyle = {
         background: "transparent",
         border: 0,
-        color: "black",
+        color: "#d58400",
         fontSize: "20px",
         padding: "0px 10px 0px 0px"
     };
@@ -84,6 +52,7 @@ export default function GoogleReviews(){
             <i className="fa fa-lg fa-chevron-left"></i>
         </button>
     );
+
     return(
         <div className="review-widget">
             <div className="review-widget-body">
@@ -114,19 +83,41 @@ export default function GoogleReviews(){
                     ref={slider}
                 >
                     {
-                        cardItemList.map((item,index) => {
+                        getReviewList.map((item,index) => {
                             return (
-                                <div className="card item-card active h-100" key={"card-"+index}> 
-                                    {/* <img className="card-card-img card-img-top img-w-100" src={item.image.img_one} alt="Food Card"/> */}
+                                <div className="card review-card-item active h-100" key={"card-"+index}> 
                                     <div className="card-body card-body-style">
-                                        <h5 className="card-title" style={{margin:"0px"}}>{item.name}
-                                            <p style={{margin:"0px 0px 5px 0px"}}>{item.rating}</p>
-                                        </h5>
-                                        <div className="price-order" style={{margin:"0px 0px 45px 0px"}}>
-                                            <p>{item.description}</p>
+                                        <div className="card-title" style={{margin:"0px"}}>
+                                            <div className="user-logo">
+                                                <img className="user-logo-img" style={{height:"75px", width:"75px", borderRadius:"50%"}} src={item.profilepic} alt="Food Card"/>
+                                            </div>
+                                            <div className="name-address-txt">
+                                                <h5 style={{marginBottom:"2px"}}>{item.firstname} {item.lastname}</h5>
+                                                <p style={{margin:"0px 0px 5px 0px"}}>{item.address}</p>
+                                            </div>
                                         </div>
-                                        <div className="pos-bottom" style={{textAlign:"center"}}>
-                                            {/* <Link to="/cuisine" className="btn btn-primary" style={{width:"100%"}} onClick={()=>getHomeCuisineName(item.name)}>Check Now</Link> */}
+                                        <div className="card-description" style={{margin:"0px 0px 5px 0px"}}>
+                                            <p style={{margin:"0px 0px 5px 0px"}} className="review-rating">
+                                                {
+                                                    [1, 2, 3, 4, 5].map((star,z) => {
+                                                        return(
+                                                            <span className='rating-star-style' key={z} style={{ color: (item.rating) >= star ? '#ffda00' : 'white'}}>
+                                                                {/* ★ */}
+                                                                <i className="fa fa-star"></i>
+                                                            </span>
+                                                        )
+                                                    })
+                                                }
+                                            </p>
+                                            <p className="review-summary" style={{margin:"0px"}} id={"item-"+index}>{(item.comment).substring(0, 100)}
+                                                <br/>
+                                                {
+                                                    ((item.comment).length > 100)?
+                                                        <NavLink to={item.comment_link} target="_blank" rel="noopener noreferrer">Read More</NavLink>
+                                                    :
+                                                    <></>
+                                                }
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
