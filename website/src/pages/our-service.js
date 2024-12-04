@@ -1,4 +1,5 @@
 import React from "react";
+import GoToTop from "../component/go-to-top";
 
 export default function Service(){
     return(
@@ -16,6 +17,7 @@ export default function Service(){
                     </div>
                 </div>
             </div>
+            <GoToTop/>
         </div>
     )
 }

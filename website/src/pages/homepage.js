@@ -2,8 +2,9 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import {ReactTyped} from 'react-typed';
 import GoogleReviews from "../component/google-review-widget";
+import GoToTop from "../component/go-to-top";
 
-export default function Homepage(){
+export default function Homepage({getReviewList}){
     return(
         <div className="app-body">
             <div className="main-content homepage-body">
@@ -26,40 +27,56 @@ export default function Homepage(){
                                     <p>Welcome to <b>RIYA CATERER.</b></p>
                                     <p className="intro-qote">&nbsp;Looking for a perfect food catering service with a affordable cost range?&nbsp;</p>
                                     <p className="intro-qote-two">Look no further! You are in correct place. Be it a large, mid or small sized event, Riya Caterer serves Good Food for different kind of occassions with both vegiterian and non-vegiterian options.</p>
+                                    <div className="enquiry-btn-section"><button className="enquiry-btn">Enquiry Now</button></div>
                                 </div>
                             </div>
                         </div>
                 </div>
                 <div className="homepage-service-section">
                     <div className="container">
-                        <h3>Spice Up Your Occassions</h3>
+                        <h3>Spice up your Occassions</h3>
                         <div className="our-service-card">
                             <div className="card-group">
-                                <div className="card">
-                                    <img src="https://img.perceptpixel.com/pykhlszs/riya_caterer/wedding.webp" className="card-img-top" alt="Wedding"/>
+                                <div className="card first-card">
+                                    <div className="card-img-body">
+                                        <img src="https://img.perceptpixel.com/pykhlszs/riya_caterer/wedding.webp" className="card-img-top" alt="Wedding"/>
+                                    </div>
                                     <div className="card-body">
-                                        <h5 className="card-title">Wedding Event</h5>
+                                        <h5 className="card-title">Wedding & Anniversary</h5>
                                         <p className="card-text">Skilled Front-end Developer with more than 3 years of experience in designing, developing and maintaining responsive web applications.</p>
                                     </div>
                                 </div>
-                                <div className="card">
-                                    <img src="https://img.perceptpixel.com/pykhlszs/riya_caterer/corporate-party.webp" className="card-img-top" alt="Corporate"/>
+                                <div className="card second-card">
+                                    <div className="card-img-body">
+                                        <img src="https://img.perceptpixel.com/pykhlszs/riya_caterer/corporate-party.webp" className="card-img-top" alt="Corporate"/>
+                                    </div>
                                     <div className="card-body">
                                         <h5 className="card-title">Corporate Event</h5>
                                         <p className="card-text">Experinced in creating and managing web applications with WordPress CMS using PHP, MySQL, HTML, CSS, JS</p>
                                     </div>
                                 </div>
                                 <div className="card">
-                                    <img src="https://img.perceptpixel.com/pykhlszs/riya_caterer/family-functions.webp" className="card-img-top" alt="Family"/>
+                                    <div className="card-img-body">
+                                        <img src="https://img.perceptpixel.com/pykhlszs/riya_caterer/family-functions.webp" className="card-img-top" alt="Family"/>
+                                    </div>
                                     <div className="card-body">
                                         <h5 className="card-title">Family Functions</h5>
+                                        <p className="card-text">Builts responsive, browser based, single page web applications using React Js, Node Js, Express Js and MongoDb.</p>
+                                    </div>
+                                </div>
+                                <div className="card">
+                                    <div className="card-img-body">
+                                        <img src="https://img.perceptpixel.com/pykhlszs/riya_caterer/get-together.webp" className="card-img-top" alt="Family"/>
+                                    </div>
+                                    <div className="card-body">
+                                        <h5 className="card-title">Festivals & Get Together</h5>
                                         <p className="card-text">Builts responsive, browser based, single page web applications using React Js, Node Js, Express Js and MongoDb.</p>
                                     </div>
                                 </div>
                             </div>
 
                             <div className="check-all-service-btn-section">
-                                <NavLink to="/our-service">Check all services</NavLink> 
+                                <NavLink to="/our-service">Check all Services</NavLink> 
                             </div>
                         </div>
                     </div>
@@ -84,12 +101,18 @@ export default function Homepage(){
                                 </div>
                             </div>
                         </div>
+                        <div className="about-us-btn-section">
+                            <NavLink to="/about-us">Know more About us</NavLink> 
+                        </div>
                     </div>
                 </div>
                 <div className="homepage-reviews-section">
                     <div className="container">
                         <h3>Customer Reviews</h3>
-                        <GoogleReviews/>
+                        <GoogleReviews getReviewList={getReviewList}/>
+                        <div className="go-to-reviews-btn-section">
+                            <NavLink to="/reviews">Check All Reviews</NavLink> 
+                        </div>
                     </div>
                 </div>
                 <div className="work-gallery-section">
@@ -110,6 +133,7 @@ export default function Homepage(){
                     </div>
                 </div>
             </div>
+            <GoToTop/>
         </div>
     )
 }
