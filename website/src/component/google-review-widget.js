@@ -18,12 +18,12 @@ export default function GoogleReviews({getReviewList}){
           slidesToSlide: 3 // optional, default to 1.
         },
         tablet: {
-          breakpoint: { max: 767.98, min: 424 },
+          breakpoint: { max: 767.98, min: 500 },
           items: 2,
           slidesToSlide: 2 // optional, default to 1.
         },
         mobile: {
-          breakpoint: { max: 423.98, min: 320 },
+          breakpoint: { max: 499.98, min: 320 },
           items: 1,
           slidesToSlide: 1 // optional, default to 1.
         }
@@ -31,14 +31,14 @@ export default function GoogleReviews({getReviewList}){
     const leftArrowStyle = {
         background: "transparent",
         border: 0,
-        color: "#d58400",
+        color: "rgb(124 124 124)",
         fontSize: "20px",
         padding: "0px 0px 0px 10px"
     };
     const rightArrowStyle = {
         background: "transparent",
         border: 0,
-        color: "#d58400",
+        color: "rgb(124 124 124)",
         fontSize: "20px",
         padding: "0px 10px 0px 0px"
     };
@@ -96,12 +96,12 @@ export default function GoogleReviews({getReviewList}){
                                                 <p style={{margin:"0px 0px 5px 0px"}}>{item.address}</p>
                                             </div>
                                         </div>
-                                        <div className="card-description" style={{margin:"0px 0px 5px 0px"}}>
+                                        <div className="card-description" style={{margin:"0px"}}>
                                             <p style={{margin:"0px 0px 5px 0px"}} className="review-rating">
                                                 {
                                                     [1, 2, 3, 4, 5].map((star,z) => {
                                                         return(
-                                                            <span className='rating-star-style' key={z} style={{ color: (item.rating) >= star ? '#ffda00' : 'white'}}>
+                                                            <span className='rating-star-style' key={z} style={{ color: (item.rating) >= star ? 'rgb(244 190 0)' : 'white'}}>
                                                                 {/* ★ */}
                                                                 <i className="fa fa-star"></i>
                                                             </span>

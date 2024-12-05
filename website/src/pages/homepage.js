@@ -33,50 +33,52 @@ export default function Homepage({getReviewList}){
                         </div>
                 </div>
                 <div className="homepage-service-section">
-                    <div className="container">
-                        <h3>Spice up your Occassions</h3>
-                        <div className="our-service-card">
-                            <div className="card-group">
-                                <div className="card first-card">
-                                    <div className="card-img-body">
-                                        <img src="https://img.perceptpixel.com/pykhlszs/riya_caterer/wedding.webp" className="card-img-top" alt="Wedding"/>
+                    <div className="gradient-bg">
+                        <div className="container">
+                            <h3>Spice up your Occassions</h3>
+                            <div className="our-service-card">
+                                <div className="card-group">
+                                    <div className="card first-card">
+                                        <div className="card-img-body">
+                                            <img src="https://img.perceptpixel.com/pykhlszs/riya_caterer/wedding.webp" className="card-img-top" alt="Wedding"/>
+                                        </div>
+                                        <div className="card-body">
+                                            <h5 className="card-title">Wedding & Anniversary</h5>
+                                            <p className="card-text">Rich the taste of food on your Wedding and Mairage Anniversary with us to make the day more special.</p>
+                                        </div>
                                     </div>
-                                    <div className="card-body">
-                                        <h5 className="card-title">Wedding & Anniversary</h5>
-                                        <p className="card-text">Skilled Front-end Developer with more than 3 years of experience in designing, developing and maintaining responsive web applications.</p>
+                                    <div className="card second-card">
+                                        <div className="card-img-body">
+                                            <img src="https://img.perceptpixel.com/pykhlszs/riya_caterer/corporate-party.webp" className="card-img-top" alt="Corporate"/>
+                                        </div>
+                                        <div className="card-body">
+                                            <h5 className="card-title">Corporate Event</h5>
+                                            <p className="card-text">No more worries regarding food on important Meetings or seminar. We cook, deliver and serve on any kind of corporate event.</p>
+                                        </div>
+                                    </div>
+                                    <div className="card">
+                                        <div className="card-img-body">
+                                            <img src="https://img.perceptpixel.com/pykhlszs/riya_caterer/family-functions.webp" className="card-img-top" alt="Family"/>
+                                        </div>
+                                        <div className="card-body">
+                                            <h5 className="card-title">Family Functions</h5>
+                                            <p className="card-text">Make your family functions more special with your near and dear ones without any worries.</p>
+                                        </div>
+                                    </div>
+                                    <div className="card">
+                                        <div className="card-img-body">
+                                            <img src="https://img.perceptpixel.com/pykhlszs/riya_caterer/get-together.webp" className="card-img-top" alt="Family"/>
+                                        </div>
+                                        <div className="card-body">
+                                            <h5 className="card-title">Festivals & Get Together</h5>
+                                            <p className="card-text">Celebration will be more special, joyful and big when you feel thge taste of food with us on small, medium and big any kind of event.</p>
+                                        </div>
                                     </div>
                                 </div>
-                                <div className="card second-card">
-                                    <div className="card-img-body">
-                                        <img src="https://img.perceptpixel.com/pykhlszs/riya_caterer/corporate-party.webp" className="card-img-top" alt="Corporate"/>
-                                    </div>
-                                    <div className="card-body">
-                                        <h5 className="card-title">Corporate Event</h5>
-                                        <p className="card-text">Experinced in creating and managing web applications with WordPress CMS using PHP, MySQL, HTML, CSS, JS</p>
-                                    </div>
-                                </div>
-                                <div className="card">
-                                    <div className="card-img-body">
-                                        <img src="https://img.perceptpixel.com/pykhlszs/riya_caterer/family-functions.webp" className="card-img-top" alt="Family"/>
-                                    </div>
-                                    <div className="card-body">
-                                        <h5 className="card-title">Family Functions</h5>
-                                        <p className="card-text">Builts responsive, browser based, single page web applications using React Js, Node Js, Express Js and MongoDb.</p>
-                                    </div>
-                                </div>
-                                <div className="card">
-                                    <div className="card-img-body">
-                                        <img src="https://img.perceptpixel.com/pykhlszs/riya_caterer/get-together.webp" className="card-img-top" alt="Family"/>
-                                    </div>
-                                    <div className="card-body">
-                                        <h5 className="card-title">Festivals & Get Together</h5>
-                                        <p className="card-text">Builts responsive, browser based, single page web applications using React Js, Node Js, Express Js and MongoDb.</p>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div className="check-all-service-btn-section">
-                                <NavLink to="/our-service">Check all Services</NavLink> 
+                                <div className="check-all-service-btn-section">
+                                    <NavLink to="/our-service">Check all Services</NavLink> 
+                                </div>
                             </div>
                         </div>
                     </div>
