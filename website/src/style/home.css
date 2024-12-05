@@ -13,7 +13,6 @@
     font-weight: 500;
     color: white !important;
 }
-
 .homepage-body .introduction-banner .intro-section{
     position: absolute;
     top: 50%;
@@ -61,20 +60,26 @@
     font-weight: 600;
 }
 .homepage-service-section{
-    margin-top: 20px;
-    margin-bottom: 30px;
+    padding: 12px;
+}
+.homepage-service-section .gradient-bg{
+    background-image: url('https://img.perceptpixel.com/pykhlszs/riya_caterer/bg-img-four.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
+    border-radius: 12px;
+    border: 1px solid #e5e5e5;
+    padding-bottom: 30px;
+    box-shadow: 0 27px 20px -15px rgba(122,62,134,.31);
 }
 .homepage-service-section h3{
-    /* background-image: linear-gradient(235deg, #591b0d, #000000, #5a1b0e); */
     margin-bottom: 10px;
-    margin-top: 10px;
-    color: #fffbeb;
-    border-radius: 24px;
+    color: #ffcf85;
+    border-radius: 0px 0px 24px 24px;
     padding: 2px 5px 5px;
-    background-color: #678900;
-    /* background-color: #d58400; */
+    background-color: rgb(0 0 0 / 80%);
+    /* background-color: rgb(98 138 4); */
     text-align: center;
-    /* font-family: cursive; */
 }
 .our-service-card .card-group{
     justify-content: center;
@@ -84,10 +89,9 @@
 .our-service-card .card-group .card{
     border-radius: 8px 8px 24px 24px;
     padding: 0px;
-    border: 1px solid #dfdfdf;
-    /* background-image: linear-gradient(227deg, #b8341a, #f4be00); */
+    border: 0px solid #000000;
     animation: our-service-card-progress 5s;
-    box-shadow: 0 27px 20px -15px rgba(122,62,134,.31);
+    background-color: rgba(0, 0, 0, .4);
 }
 @keyframes our-service-card-progress {
     from{
@@ -124,36 +128,33 @@
     background-color: white;
 }
 .our-service-card .card-group .card .card-body{
-    background-color: #ffffff;
     border-radius: 0px 0px 24px 24px;
-    padding: 5px 10px 18px;
+    padding: 5px 12px 20px;
+    color: white;
+    background-color: rgba(0, 0, 0, .5);
 }
 .our-service-card .card-group .card .card-img-body{
-    padding: 5px;
+    padding: 6px;
     border-radius: 6px 6px 0px 0px;
-    background-color: #efefef;
+    background-color: rgba(0, 0, 0, .5);
 }
 .our-service-card .card-group .card .card-body .card-title{
     font-weight: 700;
-    color: #e98e00;
-    /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
+    color: #ffb84a;
 }
 .why-choose-us-section{
     margin-bottom: 45px;
     background-image: url(https://s3-cdnwhjr.whjr.online/website/desktop/bfs/bg-hero-bfs.png);
     background-size: cover;
-    padding: 10px 0px;
+    /* padding: 10px 0px; */
 }
 .why-choose-us-section h3{
-    /* background-image: linear-gradient(235deg, #591b0d, #000000, #5a1b0e); */
     margin-bottom: 10px;
-    margin-top: 10px;
     color: #fffbea;
-    border-radius: 24px;
+    border-radius: 0px 0px 12px 12px;
     padding: 3px 5px 5px;
     /* background-color: #a44314; */
     background-color: #d58400;
-    /* font-family: cursive; */
 }
 .choose-us-txt-banner{
     align-items: center;
@@ -195,18 +196,19 @@
 }
 .homepage-reviews-section{
     margin-bottom:45px;
+    background: url(https://img.perceptpixel.com/pykhlszs/riya_caterer/bg-img-three.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-bottom: 30px;
 }
 .homepage-reviews-section h3{
-    /* background-image: linear-gradient(235deg, #591b0d, #000000, #5a1b0e); */
     margin-bottom: 10px;
     margin-top: 10px;
-    border-radius: 24px;
+    border-radius: 0px 0px 16px 16px;
     padding: 3px 5px 5px;
     line-height: 1.2;
-    color: #fffbea;
-    /* background-color: #d58400; */
-    background-color: #a44314;
-    /* font-family: cursive; */
+    color: #ffdca8;
+    background-color: rgba(0, 0, 0, 0.7);
 }
 .homepage-reviews-section .review-widget{
     box-shadow: 0 27px 20px -15px rgba(122,62,134,.31);
@@ -217,6 +219,7 @@
     background-image: url(https://s3-cdnwhjr.whjr.online/website/desktop/musicbanner1x.png);
     background-repeat: no-repeat;
     background-position: 50%;
+    display: none;
 }
 .work-gallery-section h3{
     /* background-image: linear-gradient(235deg, #591b0d, #000000, #5a1b0e); */
@@ -300,9 +303,9 @@
     .our-service-card .card-group .card{
         flex: 40% 1;
     }
-    .first-card, .second-card{
+    /* .first-card, .second-card{
         margin-bottom: 14px !important;
-    }
+    } */
     .waiter-img-section div {
         border-radius: 24px;
     }
@@ -320,6 +323,13 @@
     }
     .check-all-service-btn-section, .go-to-gallery-btn-section, .about-us-btn-section, .go-to-reviews-btn-section{
         margin-top: 12px;
+    }
+    .homepage-service-section .gradient-bg{
+        background-image: url('https://img.perceptpixel.com/pykhlszs/riya_caterer/bg-img-mob-one.webp');
+        background-position: center;
+    }
+    .homepage-service-section h3{
+        background-color: black
     }
 }
 
