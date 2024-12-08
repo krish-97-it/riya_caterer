@@ -1,5 +1,6 @@
 import './style/header.css';
 import './style/footer.css';
+import './style/page-loading.css';
 import './style/home.css';
 import './style/google-review-widget.css';
 import './style/review.css';

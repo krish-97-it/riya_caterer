@@ -20,7 +20,6 @@
     transform: translate(-50%, -50%);
     width: 100%;
 }
-
 .homepage-body .intro-heading h2{
     font-size: 36px !important;
 }
@@ -42,7 +41,7 @@
 .homepage-body .intro-qote-two{
     font-weight: 600;
 }
-.enquiry-btn{
+/* .enquiry-btn{
     width: 171px;
     border-radius: 24px;
     background-color: rgba(0, 0, 0, .7);
@@ -55,12 +54,46 @@
 }
 .enquiry-btn:focus{
     background-color: rgba(0, 0, 0, .1);
+} */
+.neon-glow-button {
+    align-items: center;
+    padding: 8px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+    border-radius: 24px;
+    box-shadow: 0 0 20px #f4be00, 0 0 30px #f4be00, 0 0 40px #8d4b00 !important;
+    text-shadow: 0 0 10px #c05a45;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: all 0.3s ease;
+    width: 171px;
+    background-color: rgba(0, 0, 0, .5);
+    border: 1px solid #000000;
+    transition: 0.1s all;
+}
+.neon-glow-button:hover {
+    box-shadow: 0 0 30px #00daa5, 0 0 40px #00bb49, 0 0 50px #00936e !important;
+}
+.neon-glow-button:active {
+    box-shadow: 0 0 20px #f4be00, 0 0 30px #f4be00, 0 0 40px #8d4b00 !important;
+    animation: btn-click .4s !important;
+}
+@keyframes btn-click {
+    50%{
+        transform: translateY(3px);
+      }
+    100%{
+        transform: rotate(-3px);
+    }
 }
 .homepage-body h3{
     font-weight: 600;
 }
 .homepage-service-section{
     padding: 12px;
+    margin-bottom: 30px;
 }
 .homepage-service-section .gradient-bg{
     background-image: url('https://img.perceptpixel.com/pykhlszs/riya_caterer/bg-img-four.webp');
@@ -120,7 +153,7 @@
     border: none;
     padding: 8px 20px 10px;
     text-decoration: none;
-    width: 200px;
+    width: 220px;
     justify-content: center;
 }
 .our-service-card .card-group .card img{
@@ -157,18 +190,20 @@
     background-color: #d58400;
 }
 .choose-us-txt-banner{
-    align-items: center;
-    justify-content: center;
-    padding: 20px 10px;
+    gap: 15px;
+    margin-top: 15px;
+}
+.choose-us-txt-banner .card{
+    border: none;
+}
+.choose-us-txt-banner .why-choose-us-card{
     box-shadow: 0 27px 20px -15px rgba(122,62,134,.31);
-    background: #f2f2f2;
-    border-radius: 12px;
-    margin: 0px;
+    border-radius: 12px !important;
+    border: 1px solid #f2f2f2;
 }
 .why-txt-section{
     display: flex;
     flex-direction: column;
-    border-right: 1px solid #d0e6fa;
 }
 .why-txt-section p{
     display: flex;
@@ -185,12 +220,50 @@
     color: black;
     line-height: 1.2;
 }
-.waiter-img-section div {
-    border-radius: 0px 12px 12px 0px;
+.choose-us-txt-banner .card-two-body{
+    background-color: #f4faff;
+    border-radius: 12px;
+    border: 1px solid #f0f2f3;
 }
-.waiter-img-section img{
-    width: 100%;
+.waiter-img-section .bg-img-section{
+    background-image: url('https://img.perceptpixel.com/pykhlszs/riya_caterer/caterer-waiter.webp');
+    background-size: cover;
+    border-radius: 12px;
+    background-position: center;
 }
+.waiter-img-section .link-on-img{
+   flex-direction: column;
+   gap: 20px;
+   background-color: rgba(0, 0, 0, .4);
+   border-radius: 12px;
+}
+.waiter-img-section .link-on-img .card{
+    background-color: rgba(0, 0, 0, .4);
+    color: #fff4cd;
+    font-weight: 600;
+    border-radius: 12px 12px 0px 0px !important;
+    margin-bottom: 0px;
+}
+.waiter-img-section .link-on-img .text-center{
+    border-radius: 0px !important;
+}
+.waiter-img-section .link-on-img .text-right{
+    border-radius:0px 0px 12px 12px !important;
+}
+.link-on-img .card-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.link-on-img .custom-btn-style{
+    background-color:rgba(0, 0, 0, .5);
+    color: #ffffff;
+    border: 2px solid #a4a4a4;
+    border-radius: 24px;
+    width: 150px;
+}
+
 .homepage-reviews-section .review-submit-section{
     display: none;
 }
@@ -233,10 +306,6 @@
     /* font-family: cursive; */
 }
 .gallery-txt-heading{
-    /* position: absolute;
-    top: 0%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
     width: 100%;
 }
 
@@ -249,20 +318,14 @@
 .image-album-cover img{
     border: 2px solid #f4be00;
 }
-@media(min-width:1200px){
-    .waiter-img-section img{
-        max-width: 76%;
-    }
-    .waiter-img-section div{
-        background-color: #d0e6fa;
+@media(min-width: 992px){
+    .waiter-img-section .link-on-img{
+        height: 512px;
     }
 }
 @media(min-width:1400px){
     .homepage-body .introduction-banner{
         height: 550px;
-    }
-    .waiter-img-section img{
-        max-width: 65%;
     }
 }
 
@@ -272,27 +335,9 @@
     }
 }
 
-@media(max-width:1199.98px){
-    .waiter-img-section img{
-        max-width: 92%;
-    }
-    .waiter-img-section div{
-        background-color: #d0e6fa;
-    }
-}
-
 @media(max-width:991.98px){
     .homepage-body .introduction-banner{
         height: 450px;
-    }
-    .waiter-img-section div{
-        background-color: #d0e6fa;
-    }
-    .waiter-img-section img{
-        width: 72%;
-    }
-    .choose-us-txt-banner{
-        gap: 15px;
     }
     .why-txt-section{
         border-right: none !important;
@@ -303,11 +348,16 @@
     .our-service-card .card-group .card{
         flex: 40% 1;
     }
-    /* .first-card, .second-card{
-        margin-bottom: 14px !important;
-    } */
-    .waiter-img-section div {
-        border-radius: 24px;
+    .choose-us-txt-banner{
+        flex-direction: column;
+        gap: 26px;
+    }
+    .waiter-img-section .link-on-img{
+        gap: 20px;
+        display: flex;
+     }
+    .waiter-img-section .link-on-img .card{
+        margin-bottom: 0px;
     }
 }
 
@@ -347,6 +397,12 @@
     .check-all-service-btn-section, .go-to-gallery-btn-section, .about-us-btn-section, .go-to-reviews-btn-section{
         margin-top: 28px;
     }
+    .choose-us-txt-banner{
+        display: flex;
+    }
+    .why-choose-us-card{
+        margin: 0px !important;
+    }
 }
 
 @media(max-width:483.98px){
@@ -356,13 +412,16 @@
     .homepage-body .intro-txt{
         font-size: 18px;
     }
-    .waiter-img-section img{
-        width: 92%;
-    }
-    .choose-us-txt-banner{
-        padding: 16px 6px;
-    }
     .homepage-body h3{
         font-size: 18px;
+    }
+}
+
+@media(max-width:349.98px){
+    .why-txt-section{
+        font-size: 15px;
+    }
+    .card-one-body{
+        padding: 12px;
     }
 }
