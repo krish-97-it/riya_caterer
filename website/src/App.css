@@ -4,10 +4,12 @@
 
 body{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  -ms-overflow-style:none;
 }
 
 .app-body{
   margin-top: 60px;
+  min-height: calc( 100vh - 80px );
 }
 
 ::-webkit-scrollbar {
@@ -18,6 +20,22 @@ body{
   display: none;
 }
 
-body {
-  -ms-overflow-style:none;
+.error-page-msg-section{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 50px;
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.error-page-msg-section .btn-primary{
+  max-width: 350px;
+}
+.sad-face-icon img{
+  height: 130px;
+  width: 130px;
+  margin-bottom: 15px;
 }

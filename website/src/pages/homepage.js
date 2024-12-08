@@ -1,5 +1,5 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React,{useState} from "react";
+import { Link, NavLink } from "react-router-dom";
 import {ReactTyped} from 'react-typed';
 import GoogleReviews from "../component/google-review-widget";
 import GoToTop from "../component/go-to-top";
@@ -27,7 +27,11 @@ export default function Homepage({getReviewList}){
                                     <p>Welcome to <b>RIYA CATERER.</b></p>
                                     <p className="intro-qote">&nbsp;Looking for a perfect food catering service with a affordable cost range?&nbsp;</p>
                                     <p className="intro-qote-two">Look no further! You are in correct place. Be it a large, mid or small sized event, Riya Caterer serves Good Food for different kind of occassions with both vegiterian and non-vegiterian options.</p>
-                                    <div className="enquiry-btn-section"><button className="enquiry-btn">Enquiry Now</button></div>
+                                    <div className="enquiry-btn-section">
+                                        <Link to="/contact-us" className="btn enquiry-btn neon-glow-button">
+                                            Enquiry Now
+                                        </Link>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -86,20 +90,50 @@ export default function Homepage({getReviewList}){
                 <div className="why-choose-us-section">
                     <div className="container">
                         <h3>Why do you choose us?</h3>
-                        <div className="row choose-us-txt-banner">
-                            <div className="col-lg-6 why-txt-section">
-                                <p><span className="badge">1</span><span className="txt">Good Quality Food</span></p>
-                                <p><span className="badge">2</span><span className="txt">Proper Management</span></p>
-                                <p><span className="badge">3</span><span className="txt">Affordable Cost</span></p>
-                                <p><span className="badge">4</span><span className="txt">Professional chefs & Staffs</span></p>
-                                <p><span className="badge">5</span><span className="txt">200+ Food Menu</span></p>
-                                <p><span className="badge">6</span><span className="txt">Buffet Style Option</span></p>
-                                <p><span className="badge">7</span><span className="txt">Live Counters & Stalls</span></p>
-                                <p style={{marginBottom:"0px"}}><span className="badge">8</span><span className="txt">Veg / Non-veg Option</span></p>
+                        <div className="card-group choose-us-txt-banner">
+                            <div className="card why-choose-us-card">
+                                <div className="card-body card-one-body">
+                                    <div className="why-txt-section">
+                                        <p><span className="badge">1</span><span className="txt">Good Quality Food</span></p>
+                                        <p><span className="badge">2</span><span className="txt">Proper Management</span></p>
+                                        <p><span className="badge">3</span><span className="txt">Affordable Cost</span></p>
+                                        <p><span className="badge">4</span><span className="txt">Professional chefs & Staffs</span></p>
+                                        <p><span className="badge">5</span><span className="txt">300+ Food Menu</span></p>
+                                        <p><span className="badge">6</span><span className="txt">Live Counters & Stalls</span></p>
+                                        <p><span className="badge">7</span><span className="txt">Buffet Style Option</span></p>
+                                        <p><span className="badge">8</span><span className="txt">Post Covid Awarness</span></p>
+                                        <p><span className="badge">9</span><span className="txt">100+ Successfull Events</span></p>
+                                        <p style={{marginBottom:"0px"}}><span className="badge">10</span><span className="txt">4.8+ Ratings on Google</span></p>
+                                    </div>
+                                </div>
                             </div>
-                            <div className="col-lg-6 waiter-img-section">
-                                <div>
-                                    <img src="https://img.perceptpixel.com/pykhlszs/riya_caterer/caterer-waiter.webp" alt="caterer"/>
+                            <div className="card why-choose-us-card">
+                                <div className="card-body card-two-body">
+                                    <div className="waiter-img-section">
+                                        <div className="bg-img-section">
+                                            <div className="card-group link-on-img">
+                                                <div className="card">
+                                                    <div className="card-body">
+                                                        <p className="card-text">Send us your Query & get back a call from us</p>
+                                                        <Link to="#" className="btn custom-btn-style">Enquiry Now!!</Link>
+                                                    </div>
+                                                </div>
+                                                <div className="card text-center">
+                                                    <div className="card-body">
+                                                        <p className="card-text">Be updated with quick chat support in Whatsapp</p>
+                                                        <Link to="#" className="btn custom-btn-style">Chat with us</Link>
+                                                    </div>
+                                                </div>
+
+                                                <div className="card text-right">
+                                                    <div className="card-body">
+                                                        <p className="card-text">Plan Your Menu and get a Cost Estimation.</p>
+                                                        <Link to="#" className="btn custom-btn-style">Menu Planner</Link>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
