@@ -13,7 +13,7 @@ export default function Review({getReviewList}){
         // Simulate loading for 2 seconds
         setTimeout(() => {
             setLoading(false);
-        }, 1000);
+        }, 1500);
     }, []);
 
     return(

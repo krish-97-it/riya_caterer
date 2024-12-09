@@ -11,7 +11,7 @@ export default function Gallery(){
         // Simulate loading for 2 seconds
         setTimeout(() => {
             setLoading(false);
-        }, 1000);
+        }, 1500);
     }, []);
 
     return(

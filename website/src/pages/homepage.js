@@ -3,6 +3,9 @@ import { Link, NavLink } from "react-router-dom";
 import {ReactTyped} from 'react-typed';
 import GoogleReviews from "../component/google-review-widget";
 import GoToTop from "../component/go-to-top";
+import RedUnderline from "../assets/images/RedUnderline.avif";
+import GreenUnderline from "../assets/images/GreenUnderline.avif";
+import PurpleUnderline from "../assets/images/PurpleUnderline.avif";
 
 export default function Homepage({getReviewList}){
     return(
@@ -29,7 +32,7 @@ export default function Homepage({getReviewList}){
                                     <p className="intro-qote-two">Look no further! You are in correct place. Be it a large, mid or small sized event, Riya Caterer serves Good Food for different kind of occassions with both vegiterian and non-vegiterian options.</p>
                                     <div className="enquiry-btn-section">
                                         <Link to="/contact-us" className="btn enquiry-btn neon-glow-button">
-                                            Enquiry Now
+                                            Free Enquiry Now
                                         </Link>
                                     </div>
                                 </div>
@@ -39,7 +42,10 @@ export default function Homepage({getReviewList}){
                 <div className="homepage-service-section">
                     <div className="gradient-bg">
                         <div className="container">
-                            <h3>Spice up your Occassions</h3>
+                            <div className="img-underline-heading">
+                                <h3>Spice up your Occassions</h3>
+                                <img src={RedUnderline} alt="underline" className="img-underline"/>
+                            </div>
                             <div className="our-service-card">
                                 <div className="card-group">
                                     <div className="card first-card">
@@ -89,7 +95,10 @@ export default function Homepage({getReviewList}){
                 </div>
                 <div className="why-choose-us-section">
                     <div className="container">
-                        <h3>Why do you choose us?</h3>
+                        <div className="img-underline-heading">
+                            <h3>Why do you choose us?</h3>
+                            <img src={PurpleUnderline} alt="underline" className="img-underline"/>
+                        </div>
                         <div className="card-group choose-us-txt-banner">
                             <div className="card why-choose-us-card">
                                 <div className="card-body card-one-body">
@@ -152,16 +161,13 @@ export default function Homepage({getReviewList}){
                     </div>
                 </div>
                 <div className="work-gallery-section">
-                    <div className="container gallery-txt-heading">
-                        <h3>Glimpse from Services</h3>
-                    </div>
                     <div className="container">
+                        <div className="img-underline-heading">
+                            <h3>Glimpse Of Success</h3>
+                            <img src={GreenUnderline} alt="underline" className="img-underline"/>
+                        </div>
                         <div className="image-album-cover">
-                            <picture>
-                                <source media="(min-width:768px)" srcSet="https://img.perceptpixel.com/pykhlszs/desktop_image.webp"/>
-                                <source media="(max-width:767.98px)" srcSet="https://img.perceptpixel.com/pykhlszs/mobile_image.webp"/>
-                                <img src="https://img.perceptpixel.com/pykhlszs/mobile_image.webp" className="banner-img" style={{width:"100%", height:"auto"}} alt="order history"/>
-                            </picture>
+                            <img className="bg-img" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/gallery-bg-img-homepage.webp" alt="gallery-bg"/>
                         </div>
                         <div className="go-to-gallery-btn-section">
                             <NavLink to="/gallery">Go to Gallery</NavLink> 
