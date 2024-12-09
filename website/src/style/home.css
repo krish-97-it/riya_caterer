@@ -19,6 +19,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
+    padding: 0px 12px;
 }
 .homepage-body .intro-heading h2{
     font-size: 36px !important;
@@ -41,20 +42,9 @@
 .homepage-body .intro-qote-two{
     font-weight: 600;
 }
-/* .enquiry-btn{
-    width: 171px;
-    border-radius: 24px;
-    background-color: rgba(0, 0, 0, .7);
-    border: 1px solid #ffc700;
-    padding: 4px 10px;
-    color: white;
+.enquiry-btn-section{
+    margin-top: 30px;
 }
-.enquiry-btn:hover{
-    background-color: rgba(0, 0, 0, 1);
-}
-.enquiry-btn:focus{
-    background-color: rgba(0, 0, 0, .1);
-} */
 .neon-glow-button {
     align-items: center;
     padding: 8px 20px;
@@ -68,7 +58,7 @@
     cursor: pointer;
     margin-top: 8px;
     transition: all 0.3s ease;
-    width: 171px;
+    width: 220px;
     background-color: rgba(0, 0, 0, .5);
     border: 1px solid #000000;
     transition: 0.1s all;
@@ -92,39 +82,58 @@
     font-weight: 600;
 }
 .homepage-service-section{
-    padding: 12px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
+    padding-top: 30px;
 }
 .homepage-service-section .gradient-bg{
-    background-image: url('https://img.perceptpixel.com/pykhlszs/riya_caterer/bg-img-four.webp');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: right;
     border-radius: 12px;
-    border: 1px solid #e5e5e5;
     padding-bottom: 30px;
-    box-shadow: 0 27px 20px -15px rgba(122,62,134,.31);
 }
 .homepage-service-section h3{
-    margin-bottom: 10px;
-    color: #ffcf85;
     border-radius: 0px 0px 24px 24px;
     padding: 2px 5px 5px;
-    background-color: rgb(0 0 0 / 80%);
-    /* background-color: rgb(98 138 4); */
     text-align: center;
+    font-family: Caveat, cursive;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 52px;
+    letter-spacing: -.01em;
+    color: #804127;
+    position: relative;
+}
+.img-underline-heading{
+    position: relative;
+}
+.img-underline-heading .img-underline{
+    position: absolute;
+    top: 45px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    box-sizing: border-box;
+    padding: 0;
+    border: none;
+    margin: auto;
+    display: block;
+    width: 530px;
+    height: 30px;
+}
+.our-service-card{
+    margin-top: 30px;
 }
 .our-service-card .card-group{
     justify-content: center;
-    gap: 10px;
+    gap: 15px;
     font-weight: 500;
 }
 .our-service-card .card-group .card{
     border-radius: 8px 8px 24px 24px;
     padding: 0px;
-    border: 0px solid #000000;
+    border: 1px solid #f1f1f1;
     animation: our-service-card-progress 5s;
-    background-color: rgba(0, 0, 0, .4);
+    box-shadow: 0 27px 20px -15px rgba(122,62,134,.31);
+    margin-bottom: 12px;
 }
 @keyframes our-service-card-progress {
     from{
@@ -163,13 +172,11 @@
 .our-service-card .card-group .card .card-body{
     border-radius: 0px 0px 24px 24px;
     padding: 5px 12px 20px;
-    color: white;
-    background-color: rgba(0, 0, 0, .5);
+    color: rgb(0, 0, 0);
 }
 .our-service-card .card-group .card .card-img-body{
     padding: 6px;
     border-radius: 6px 6px 0px 0px;
-    background-color: rgba(0, 0, 0, .5);
 }
 .our-service-card .card-group .card .card-body .card-title{
     font-weight: 700;
@@ -177,21 +184,26 @@
 }
 .why-choose-us-section{
     margin-bottom: 45px;
-    background-image: url(https://s3-cdnwhjr.whjr.online/website/desktop/bfs/bg-hero-bfs.png);
-    background-size: cover;
-    /* padding: 10px 0px; */
+    padding: 20px 0px 30px;
+    background-image: linear-gradient(91deg, #ffd9b2, white, #ddffc1);
+    box-shadow: 0px -10px 5px white inset;
 }
 .why-choose-us-section h3{
-    margin-bottom: 10px;
-    color: #fffbea;
-    border-radius: 0px 0px 12px 12px;
-    padding: 3px 5px 5px;
-    /* background-color: #a44314; */
-    background-color: #d58400;
+    border-radius: 0px 0px 24px 24px;
+    padding: 2px 5px 5px;
+    text-align: center;
+    font-family: Caveat, cursive;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 52px;
+    letter-spacing: -.01em;
+    color: #5444e2;
+    position: relative;
 }
 .choose-us-txt-banner{
     gap: 15px;
-    margin-top: 15px;
+    margin-top: 25px;
 }
 .choose-us-txt-banner .card{
     border: none;
@@ -221,7 +233,7 @@
     line-height: 1.2;
 }
 .choose-us-txt-banner .card-two-body{
-    background-color: #f4faff;
+    background-color: #ffffff;
     border-radius: 12px;
     border: 1px solid #f0f2f3;
 }
@@ -234,11 +246,11 @@
 .waiter-img-section .link-on-img{
    flex-direction: column;
    gap: 20px;
-   background-color: rgba(0, 0, 0, .4);
+   /* background-color: rgba(0, 0, 0, .4); */
    border-radius: 12px;
 }
 .waiter-img-section .link-on-img .card{
-    background-color: rgba(0, 0, 0, .4);
+    background-color: rgba(0, 0, 0, .6);
     color: #fff4cd;
     font-weight: 600;
     border-radius: 12px 12px 0px 0px !important;
@@ -255,6 +267,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+.link-on-img .card-text{
+    text-shadow: 0px 0px 13px #d58401;
 }
 .link-on-img .custom-btn-style{
     background-color:rgba(0, 0, 0, .5);
@@ -288,35 +303,36 @@
 }
 .work-gallery-section{
     position: relative;
-    background-size: cover;
-    background-image: url(https://s3-cdnwhjr.whjr.online/website/desktop/musicbanner1x.png);
-    background-repeat: no-repeat;
-    background-position: 50%;
-    display: none;
+    margin-bottom: 45px;
 }
 .work-gallery-section h3{
-    /* background-image: linear-gradient(235deg, #591b0d, #000000, #5a1b0e); */
-    margin-bottom: 10px;
-    margin-top: 10px;
-    color: #fffbea;
-    border-radius: 0px 0px 12px 12px;
-    padding: 3px 5px 5px;
-    /* background-color: #866900; */
-    background-color: #000000;
-    /* font-family: cursive; */
+    border-radius: 0px 0px 24px 24px;
+    padding: 2px 5px 5px;
+    text-align: center;
+    font-family: Caveat, cursive;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 52px;
+    letter-spacing: -.01em;
+    color: #4DCC62;
+    position: relative;
 }
+
 .gallery-txt-heading{
     width: 100%;
 }
 
 .image-album-cover{
     background-color: black;
-    padding: 36px 15px 15px;
-    border-radius: 6px 6px 0px 0px;
+    border-radius: 12px;
+    margin-top: 30px;
 }
 
-.image-album-cover img{
-    border: 2px solid #f4be00;
+.image-album-cover .bg-img{
+    border-radius: 12px;
+    width: 100%;
+    box-shadow: 0 27px 20px -15px rgb(0 0 0 / 31%)
 }
 @media(min-width: 992px){
     .waiter-img-section .link-on-img{
@@ -334,13 +350,32 @@
         height: 500px;
     }
 }
-
+@media(max-width:1199.98px){
+    .our-service-card .card-group {
+        gap: 10px;
+    }
+}
 @media(max-width:991.98px){
     .homepage-body .introduction-banner{
         height: 450px;
     }
+    .homepage-service-section{
+        padding-top: 20px;
+    }
+    .img-underline-heading h3{
+        font-size: 42px;
+        margin-bottom: 0px;
+    }
+    .img-underline-heading .img-underline{
+        top: 32px;
+        width: 370px;
+        height: 25px;
+    }   
     .why-txt-section{
         border-right: none !important;
+    }
+    .our-service-card{
+        margin-top: 15px;
     }
     .our-service-card .card-group{
         flex-wrap: wrap;
@@ -351,6 +386,7 @@
     .choose-us-txt-banner{
         flex-direction: column;
         gap: 26px;
+        margin-top: 15px;
     }
     .waiter-img-section .link-on-img{
         gap: 20px;
@@ -363,23 +399,16 @@
 
 @media(max-width:767.98px){
     .homepage-body .introduction-banner{
-        height: 450px;
+        height: 460px;
     }
     .card-group{
         flex-direction: column !important;
     }
-    .our-service-card .card{
-        margin-bottom: 16px !important;
-    }
-    .check-all-service-btn-section, .go-to-gallery-btn-section, .about-us-btn-section, .go-to-reviews-btn-section{
+    .check-all-service-btn-section{
         margin-top: 12px;
     }
-    .homepage-service-section .gradient-bg{
-        background-image: url('https://img.perceptpixel.com/pykhlszs/riya_caterer/bg-img-mob-one.webp');
-        background-position: center;
-    }
-    .homepage-service-section h3{
-        background-color: black
+    .why-choose-us-section{
+        padding-top: 10px !important;
     }
 }
 
@@ -395,7 +424,7 @@
         margin-bottom: 26px !important;
     }
     .check-all-service-btn-section, .go-to-gallery-btn-section, .about-us-btn-section, .go-to-reviews-btn-section{
-        margin-top: 28px;
+        margin-top: 30px;
     }
     .choose-us-txt-banner{
         display: flex;
@@ -403,11 +432,19 @@
     .why-choose-us-card{
         margin: 0px !important;
     }
+    .img-underline-heading h3{
+        font-size: 40px;
+    }
+    .img-underline-heading .img-underline{
+        top: 30px;
+        width: 350px;
+        height: 22px;
+    }
 }
 
 @media(max-width:483.98px){
     .homepage-body .introduction-banner{
-        height: 500px;
+        height: 525px;
     }
     .homepage-body .intro-txt{
         font-size: 18px;
@@ -415,13 +452,50 @@
     .homepage-body h3{
         font-size: 18px;
     }
+    .homepage-service-section{
+        padding-top: 12px;
+    }
+    .img-underline-heading h3{
+        font-size: 36px;
+    }
+    .img-underline-heading .img-underline{
+        top: 25px;
+        width: 335px;
+        height: 20px;
+    }
+    .our-service-card{
+        margin-top: 5px;
+    }
+    .choose-us-txt-banner{
+        margin-top: 8px;
+    }
 }
-
+@media(max-width:423.98px){
+    .img-underline-heading h3{
+        font-size: 32px;
+    }
+    .img-underline-heading .img-underline{
+        top: 26px;
+        width: 285px;
+        height: 18px;
+    }
+}
 @media(max-width:349.98px){
     .why-txt-section{
         font-size: 15px;
     }
     .card-one-body{
         padding: 12px;
+    }
+    .introduction-banner{
+        height: 550px !important;
+    }
+    .img-underline-heading h3{
+        font-size: 30px;
+    }
+    .img-underline-heading .img-underline{
+        top: 26px;
+        width: 256px;
+        height: 18px;
     }
 }

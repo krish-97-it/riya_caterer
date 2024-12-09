@@ -11,7 +11,7 @@ export default function Service(){
         // Simulate loading for 2 seconds
         setTimeout(() => {
             setLoading(false);
-        }, 1000);
+        }, 1500);
     }, []);
 
     return(
@@ -25,9 +25,9 @@ export default function Service(){
                             <div className="container">
                                 <div className="row">
                                     <picture>
-                                        <source media="(min-width:650px)" srcSet="https://img.perceptpixel.com/pykhlszs/riya_caterer/service_desktop_banner.webp"/>
-                                        <source media="(max-width:649.98px)" srcSet="https://img.perceptpixel.com/pykhlszs/riya_caterer/service_mob_banner.webp"/>
-                                        <img src="hhttps://img.perceptpixel.com/pykhlszs/riya_caterer/service_mob_banner.webp" className="banner-img" style={{width:"100%", height:"auto"}} alt="order history"/>
+                                        <source media="(min-width:650px)" srcSet="https://img.perceptpixel.com/pykhlszs/riya_caterer/service-page-banner.webp"/>
+                                        <source media="(max-width:649.98px)" srcSet="https://img.perceptpixel.com/pykhlszs/riya_caterer/mob-service-page-banner.webp"/>
+                                        <img src="https://img.perceptpixel.com/pykhlszs/riya_caterer/mob-service-page-banner.webp" className="banner-img" style={{width:"100%", height:"auto"}} alt="order history"/>
                                     </picture>
                                 </div>
                             </div>

@@ -7,6 +7,109 @@ body{
   -ms-overflow-style:none;
 }
 
+/* custom fonts include */
+@font-face{
+  font-family: 'Proxima Soft Extrabold';
+  src: url(./assets/font/Proxima_Soft/proxima_soft_extrabold.otf);
+  font-weight: 800;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Proxima Soft Black';
+  src: url(./assets/font/Proxima_Soft/proxima_soft_black.otf);
+  font-weight: 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Proxima Soft Bold';
+  src: url(./assets/font/Proxima_Soft/proxima_soft_bold.otf);
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Proxima Soft Semibold';
+  src: url(./assets/font/Proxima_Soft/proxima_soft_semibold.otf);
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Proxima Soft Medium';
+  src: url(./assets/font/Proxima_Soft/proxima_soft_medium.otf);
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Proxima Soft';
+  src:  url(./assets/font/Proxima_Soft/proxima_soft.otf);
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Proxima Soft Light';
+  src: url(./assets/font/Proxima_Soft/proxima_soft_light.otf);
+  font-weight: 300;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Proxima Soft Thin';
+  src: url(./assets/font/Proxima_Soft/proxima_soft_thin.otf);
+  font-weight: 200;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Proxima Nova Bold';
+  font-display: swap;
+  src: url(./assets/font/Proxima_Soft/proxima_nova_bold.otf);
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'Source Serif Pro';
+  font-display: swap;
+  src: url(./assets/font/Source_Serif_Pro/source_serif_pro_regular.otf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Source Serif Pro Bold';
+  font-display: swap;
+  src: url(./assets/font/Source_Serif_Pro/source_serif_pro_bold.otf);
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'Source Serif Pro Semibold';
+  src: url(./assets/font/Source_Serif_Pro/source_serif_pro_semibold.otf);
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family:  'Caveat';
+  src: local( 'Caveat'), url(./assets/font/Caveat/Caveat-Regular.ttf) format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Caveat';
+  src: local( 'Caveat'), url(./assets/font/Caveat/Caveat-Bold.ttf) format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Caveat SemiBold";
+  src: local("Caveat SemiBold"), url(./assets/font/Caveat/Caveat-SemiBold.ttf) format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Caveat Medium";
+  src: local("Caveat Medium"), url(./assets/font/Caveat/Caveat-Medium.ttf) format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+
 .app-body{
   margin-top: 60px;
   min-height: calc( 100vh - 80px );
