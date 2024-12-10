@@ -4,7 +4,8 @@ import './style/page-loading.css';
 import './style/home.css';
 import './style/google-review-widget.css';
 import './style/review.css';
-import './style/our-service.css'
+import './style/our-service.css';
+import './style/gallery-carousel.css';
 import './App.css';
 import Functons from './controller/functions';
 
