@@ -6,6 +6,7 @@ import GoToTop from "../component/go-to-top";
 import RedUnderline from "../assets/images/RedUnderline.avif";
 import GreenUnderline from "../assets/images/GreenUnderline.avif";
 import PurpleUnderline from "../assets/images/PurpleUnderline.avif";
+import GalleryCarousel from "../component/gallery-carousel";
 
 export default function Homepage({getReviewList}){
     return(
@@ -39,55 +40,57 @@ export default function Homepage({getReviewList}){
                             </div>
                         </div>
                 </div>
-                <div className="homepage-service-section">
-                    <div className="gradient-bg">
-                        <div className="container">
-                            <div className="img-underline-heading">
-                                <h3>Spice up your Occassions</h3>
-                                <img src={RedUnderline} alt="underline" className="img-underline"/>
-                            </div>
-                            <div className="our-service-card">
-                                <div className="card-group">
-                                    <div className="card first-card">
-                                        <div className="card-img-body">
-                                            <img src="https://img.perceptpixel.com/pykhlszs/riya_caterer/wedding.webp" className="card-img-top" alt="Wedding"/>
-                                        </div>
-                                        <div className="card-body">
-                                            <h5 className="card-title">Wedding & Anniversary</h5>
-                                            <p className="card-text">Rich the taste of food on your Wedding and Mairage Anniversary with us to make the day more special.</p>
-                                        </div>
-                                    </div>
-                                    <div className="card second-card">
-                                        <div className="card-img-body">
-                                            <img src="https://img.perceptpixel.com/pykhlszs/riya_caterer/corporate-party.webp" className="card-img-top" alt="Corporate"/>
-                                        </div>
-                                        <div className="card-body">
-                                            <h5 className="card-title">Corporate Event</h5>
-                                            <p className="card-text">No more worries regarding food on important Meetings or seminar. We cook, deliver and serve on any kind of corporate event.</p>
-                                        </div>
-                                    </div>
-                                    <div className="card">
-                                        <div className="card-img-body">
-                                            <img src="https://img.perceptpixel.com/pykhlszs/riya_caterer/family-functions.webp" className="card-img-top" alt="Family"/>
-                                        </div>
-                                        <div className="card-body">
-                                            <h5 className="card-title">Family Functions</h5>
-                                            <p className="card-text">Make your family functions more special with your near and dear ones without any worries.</p>
-                                        </div>
-                                    </div>
-                                    <div className="card">
-                                        <div className="card-img-body">
-                                            <img src="https://img.perceptpixel.com/pykhlszs/riya_caterer/get-together.webp" className="card-img-top" alt="Family"/>
-                                        </div>
-                                        <div className="card-body">
-                                            <h5 className="card-title">Festivals & Get Together</h5>
-                                            <p className="card-text">Celebration will be more special, joyful and big when you feel thge taste of food with us on small, medium and big any kind of event.</p>
-                                        </div>
-                                    </div>
+                <div className="our-service-section-wrap">
+                    <div className="homepage-service-section">
+                        <div className="gradient-bg">
+                            <div className="container">
+                                <div className="img-underline-heading">
+                                    <h3>Spice up your Occassions</h3>
+                                    <img src={RedUnderline} alt="underline" className="img-underline"/>
                                 </div>
+                                <div className="our-service-card">
+                                    <div className="card-group">
+                                        <div className="card first-card">
+                                            <div className="card-img-body">
+                                                <img src="https://img.perceptpixel.com/pykhlszs/riya_caterer/wedding.webp" className="card-img-top" alt="Wedding"/>
+                                            </div>
+                                            <div className="card-body">
+                                                <h5 className="card-title" style={{color:"#698b00"}}>Wedding Events</h5>
+                                                <p className="card-text">Rich the taste of food on your Wedding and Mairage Anniversary with us to make the day more special.</p>
+                                            </div>
+                                        </div>
+                                        <div className="card second-card">
+                                            <div className="card-img-body">
+                                                <img src="https://img.perceptpixel.com/pykhlszs/riya_caterer/corporate-party.webp" className="card-img-top" alt="Corporate"/>
+                                            </div>
+                                            <div className="card-body">
+                                                <h5 className="card-title" style={{color:"#db2f70"}}>Corporate Event</h5>
+                                                <p className="card-text">No more worries regarding food on important Meetings or seminar. We cook, deliver and serve on any kind of corporate event.</p>
+                                            </div>
+                                        </div>
+                                        <div className="card">
+                                            <div className="card-img-body">
+                                                <img src="https://img.perceptpixel.com/pykhlszs/riya_caterer/family-functions.webp" className="card-img-top" alt="Family"/>
+                                            </div>
+                                            <div className="card-body">
+                                                <h5 className="card-title" style={{color:"#c56e3e"}}>Family Functions</h5>
+                                                <p className="card-text">Make your family functions more special with your near and dear ones without any worries.</p>
+                                            </div>
+                                        </div>
+                                        <div className="card">
+                                            <div className="card-img-body">
+                                                <img src="https://img.perceptpixel.com/pykhlszs/riya_caterer/get-together.webp" className="card-img-top" alt="Family"/>
+                                            </div>
+                                            <div className="card-body">
+                                                <h5 className="card-title" style={{color:"#8e48e7"}}>Festivals & Others</h5>
+                                                <p className="card-text">Celebration will be more special, joyful and big when you feel thge taste of food with us on small, medium and big any kind of event.</p>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                                <div className="check-all-service-btn-section">
-                                    <NavLink to="/our-service">Check all Services</NavLink> 
+                                    <div className="check-all-service-btn-section">
+                                        <NavLink to="/our-service">Check all Services</NavLink> 
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -160,20 +163,22 @@ export default function Homepage({getReviewList}){
                         </div>
                     </div>
                 </div>
-                <div className="work-gallery-section">
+                <section className="homepage-gallery-slide-show">
                     <div className="container">
                         <div className="img-underline-heading">
                             <h3>Glimpse Of Success</h3>
                             <img src={GreenUnderline} alt="underline" className="img-underline"/>
                         </div>
-                        <div className="image-album-cover">
-                            <img className="bg-img" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/gallery-bg-img-homepage.webp" alt="gallery-bg"/>
-                        </div>
-                        <div className="go-to-gallery-btn-section">
-                            <NavLink to="/gallery">Go to Gallery</NavLink> 
+                    </div>
+                    <div className="work-gallery-section">
+                        <div className="container">
+                            <GalleryCarousel/>
+                            <div className="go-to-gallery-btn-section">
+                                <NavLink to="/gallery">Go to Gallery</NavLink> 
+                            </div>
                         </div>
                     </div>
-                </div>
+                </section>
             </div>
             <GoToTop/>
         </div>

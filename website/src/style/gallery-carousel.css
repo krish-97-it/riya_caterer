@@ -1,0 +1,237 @@
+.wrap-gallery{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    float: none;
+}
+.image-album-cover{
+    background-color: black;
+    border-radius: 12px;
+    margin-top: 30px;
+    margin-top: 0;
+    width: 650px;
+    height: 450px;
+    overflow: visible;
+    background: url('https://img.perceptpixel.com/pykhlszs/riya_caterer/slider-4-img.png') no-repeat;
+    background-size: 100%;
+    top: 0;
+}
+.gallery-img-Carousel{
+    /* margin: 48px 44px 31px 65px;
+    width: 81%; */
+    margin: 56px 70px 31px 96px;
+    width: 78%;
+    height: 376px;
+    float: left;
+}
+.gallery-img-Carousel h5{
+    padding: 10px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    float: left;
+    width: 100%;
+    text-align: center;
+    color: #e0a41d;
+    font-size: 26px;
+    font-family: 'Proxima Soft Black';
+}
+.gallery-img-Carousel .carousel-indicators{
+    top: 106%;
+}
+.gallery-img-Carousel .carousel-control-prev{
+    left: -115px;
+    font-weight: 700;
+}
+.gallery-img-Carousel .carousel-control-next{
+    right: -110px;
+}
+@media(min-width:1200px){
+    .image-album-cover{
+        width: 850px;
+        height: 585px;
+    }
+}
+@media(max-width:1199.98px){
+    .image-album-cover{
+        width: 750px;
+        height: 550px;
+    }
+    .gallery-img-Carousel{
+        margin: 48px auto 35px 83px;
+        width: 590px;
+        height: 435px;
+    }
+    .gallery-img-Carousel h5{
+        margin-top: 0px;
+    }
+}
+@media(min-width:768px) and (max-width:991.98px){
+    .image-album-cover{
+        width: 650px;
+        height: 455px;
+    }
+    .gallery-img-Carousel{
+        margin: 44px auto 36px 78px;
+        width: 498px;
+        height: 373px;
+        float: none;
+    }
+}
+@media(min-width:650px) and (max-width:767.98px){
+    .image-album-cover{
+        width: 690px;
+        height: 385px;
+        background-size: 100%, 555px;
+    }
+    .gallery-img-Carousel{
+        margin: 31px auto 34px 58px;
+        width: 403px;
+        height: 315px;
+    }
+    .gallery-img-Carousel .carousel-indicators{
+        top: 106%;
+    }
+    .gallery-img-Carousel .carousel-control-prev{
+        left: -86px;
+    }
+    .gallery-img-Carousel .carousel-control-next{
+        right: -78px;
+    }
+    .gallery-img-Carousel h5{
+        font-size: 20px;
+        padding: 2px 10px;
+    }
+}
+
+@media(min-width:500px) and (max-width:649.98px){
+    .image-album-cover{
+        width: 425px;
+        height: 310px;
+        background-size: 100%, 555px;
+    }
+    .gallery-img-Carousel{
+        margin: 28px auto 34px 51px;
+        width: 325px;
+        height: 250px;
+    }
+    .gallery-img-Carousel .carousel-indicators{
+        top: 106%;
+    }
+    .gallery-img-Carousel .carousel-control-prev{
+        left: -66px;
+    }
+    .gallery-img-Carousel .carousel-control-next{
+        right: -60px;
+    }
+    .gallery-img-Carousel h5{
+        font-size: 16px;
+        padding: 2.5px 10px;
+    }
+}
+
+@media(min-width:424px) and (max-width:499.98px){
+    .image-album-cover{
+        width: 365px;
+        height: 280px;
+        background-size: 100%, 555px;
+    }
+    .gallery-img-Carousel{
+        margin: 28px auto 34px 46px;
+        width: 276px;
+        height: 210px;
+    }
+    .gallery-img-Carousel .carousel-indicators{
+        top: 106%;
+    }
+    .gallery-img-Carousel .carousel-control-prev{
+        left: -62px;
+    }
+    .gallery-img-Carousel .carousel-control-next{
+        right: -56px;
+    }
+    .gallery-img-Carousel h5{
+        font-size: 14px;
+        padding: 2px 10px;
+    }
+}
+
+@media(min-width:384px) and (max-width:423.98px){
+    .image-album-cover{
+        width: 360px;
+        height: 280px;
+        background-size: 100%, 555px;
+    }
+    .gallery-img-Carousel{
+        margin: 28px auto 34px 46px;
+        width: 276px;
+        height: 210px;
+    }
+    .gallery-img-Carousel .carousel-indicators{
+        top: 106%;
+    }
+    .gallery-img-Carousel .carousel-control-prev{
+        display: none;
+    }
+    .gallery-img-Carousel .carousel-control-next{
+        display: none;
+    }
+    .gallery-img-Carousel h5{
+        font-size: 14px;
+        padding: 2px 10px;
+    }
+}
+
+@media(min-width:350px) and (max-width:383.98px){
+    .image-album-cover{
+        width: 328px;
+        height: 275px;
+        background-size: 100%, 555px;
+    }
+    .gallery-img-Carousel{
+        margin: 24px auto 34px 40px;
+        width: 250px;
+        height: 208px;
+    }
+    .gallery-img-Carousel .carousel-indicators{
+        top: 106%;
+    }
+    .gallery-img-Carousel .carousel-control-prev{
+        display: none;
+    }
+    .gallery-img-Carousel .carousel-control-next{
+        display: none;
+    }
+    .gallery-img-Carousel h5{
+        font-size: 13px;
+        padding: 4px 10px;
+    }
+}
+
+@media(min-width:320px) and (max-width:349.98px){
+    .image-album-cover{
+        width: 296px;
+        height: 242px;
+        background-size: 100%, 555px;
+    }
+    .gallery-img-Carousel{
+        margin: 22px auto 34px 37px;
+        width: 225px;
+        height: 175px;
+    }
+    .gallery-img-Carousel .carousel-indicators{
+        top: 106%;
+    }
+    .gallery-img-Carousel .carousel-control-prev{
+        display: none;
+    }
+    .gallery-img-Carousel .carousel-control-next{
+        display: none;
+    }
+    .gallery-img-Carousel h5{
+        font-size: 13px;
+        padding: 2px 2px;
+    }
+}
