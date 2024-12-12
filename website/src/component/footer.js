@@ -15,7 +15,7 @@ export default function Footer(){
                                 dolor sit amet, consectetur adipisicing elit.
                             </p>
                             <div className="mt-2">
-                                <div className="fw-bold d-none d-sm-block">
+                                <div className="fw-bold mb-2">
                                     <span>Follow Us On:</span>
                                 </div>
                                 <div>

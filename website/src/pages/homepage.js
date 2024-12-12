@@ -7,6 +7,7 @@ import RedUnderline from "../assets/images/RedUnderline.avif";
 import GreenUnderline from "../assets/images/GreenUnderline.avif";
 import PurpleUnderline from "../assets/images/PurpleUnderline.avif";
 import GalleryCarousel from "../component/gallery-carousel";
+import YellowUnderline from "../assets/images/yellowUnderline.webp";
 
 export default function Homepage({getReviewList}){
     return(
@@ -154,15 +155,22 @@ export default function Homepage({getReviewList}){
                         </div>
                     </div>
                 </div>
-                <div className="homepage-reviews-section">
+                <section className="homepage-customer-review">
                     <div className="container">
-                        <h3>Customer Reviews</h3>
-                        <GoogleReviews getReviewList={getReviewList}/>
-                        <div className="go-to-reviews-btn-section">
-                            <NavLink to="/reviews">Check All Reviews</NavLink> 
+                        <div className="img-underline-heading">
+                            <h3>Customer Reviews</h3>
+                            <img src={YellowUnderline} alt="underline" className="img-underline"/>
                         </div>
                     </div>
-                </div>
+                    <div className="homepage-reviews-section">
+                        <div className="container">
+                            <GoogleReviews getReviewList={getReviewList}/>
+                            <div className="go-to-reviews-btn-section">
+                                <NavLink to="/reviews">Check All Reviews</NavLink> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
                 <section className="homepage-gallery-slide-show">
                     <div className="container">
                         <div className="img-underline-heading">
