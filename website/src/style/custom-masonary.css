@@ -1,0 +1,143 @@
+.custom-masonary{
+    position: relative;
+    font-family: "Proxima Soft Bold";
+    box-shadow: 0px 11px 20px 0 rgb(106 98 90);
+    padding-left: 0px;
+    padding-right: 0px;
+    border-radius: 10px;
+}
+.custom-masonary .grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-gap: 5px;
+    grid-auto-rows: minmax(180px, auto);
+    grid-auto-flow: dense;
+    padding: 5px;
+    background-color: #000;
+    border-radius: 10px;
+    font-family: 'Proxima Soft Bold';
+    position: relative;
+}
+
+.custom-masonary .grid-item {
+    /* padding: 10px; */
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #000;
+    background-color: #ffffff;
+    border-radius: 10px;
+    position: relative;
+}
+
+/* column 2 */
+.custom-masonary .span-2 {
+    grid-column-end: span 2;
+}
+
+/* column 2 and row 4 */
+.custom-masonary .span-2-by-4 {
+    grid-area: span 2 / span 4; 
+}
+
+/* column 2 and row 2 */
+.custom-masonary .span-2-by-2{
+    grid-area: span 2 / span 2; 
+}
+
+/* column 2 and row 3 */
+.custom-masonary .span-2-by-3{
+    grid-area: span 2 / span 3;  
+}
+
+/* column 2 and row 1 */
+.custom-masonary .span-2-by-1{
+    grid-area: span 2 / span 1;  
+}
+/* column 1 and row 2 */
+.custom-masonary .span-1-by-2{
+    grid-area: span 1 / span 2;  
+}
+.custom-masonary .rounded-top{
+    border-radius: 10px 10px 0px 0px !important;
+}
+.grid-item .item{
+    background-position:center;
+    background-size: cover;
+    height:100%;
+    position: relative;
+    border-radius: 10px;
+}
+.grid-item .item-title{
+    padding: 10px;
+    color: #ffffff;
+    border-radius: 0px 0px 10px 10px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .7)
+}
+.grid-item-one .item{
+    background-image: url('https://img.perceptpixel.com/pykhlszs/riya_caterer/wedding-event.webp');
+}
+.grid-item-two .item{
+    background-image: url('https://img.perceptpixel.com/pykhlszs/riya_caterer/rice-ceremony.webp');
+}
+.grid-item-three .item{
+    background-image: url('https://img.perceptpixel.com/pykhlszs/riya_caterer/birthday-event.webp');
+}
+.grid-item-four .item{
+    background-image: url('https://img.perceptpixel.com/pykhlszs/riya_caterer/corporate-img.webp');
+}
+.grid-item-five .item{
+    background-image: url('https://img.perceptpixel.com/pykhlszs/riya_caterer/get-together-img.webp');
+}
+.grid-item-six .item{
+    background-image: url('https://img.perceptpixel.com/pykhlszs/riya_caterer/festivals-img.webp');
+}
+.grid-item-seven .item{
+    background-image: url('https://img.perceptpixel.com/pykhlszs/riya_caterer/griho-pravesh.webp');
+}
+.grid-item-eight .item{
+    background-image: url('https://img.perceptpixel.com/pykhlszs/riya_caterer/baby-shower.webp');
+}
+.grid-item-nine .item{
+    background-image: url('https://img.perceptpixel.com/pykhlszs/riya_caterer/upanayan-img.webp');
+}
+.grid-item-ten .item{
+    background-image: url('https://img.perceptpixel.com/pykhlszs/riya_caterer/engagement-img.jpg');
+}
+.grid-item-eleven .item{
+    background-image: url('https://img.perceptpixel.com/pykhlszs/riya_caterer/sraddho-event.webp');
+}
+.grid-item-twelve .item{
+    background-image: url('https://img.perceptpixel.com/pykhlszs/riya_caterer/anniversary.webp');
+}
+.grid-item-thirteen .item{
+    background-image: url('https://img.perceptpixel.com/pykhlszs/riya_caterer/others-img.webp');
+}
+
+@media(max-width:1200px){
+    .grid-item-six{
+        grid-area: span 1 / span 2;  
+    }
+}
+@media(max-width:991.98px){
+    .grid-item-six{
+        grid-area: span 1 / span 1;  
+    }
+}
+@media(max-width:399.98px){
+    .custom-masonary .grid-layout{
+        grid-template-columns: auto
+    }
+    .grid-item-four, .grid-item-eleven, .grid-item-eight{
+        grid-area: span 1 / span 2 !important;
+    }
+    .grid-item-five{
+        grid-area: span 2 / span 2 !important;
+    }
+}

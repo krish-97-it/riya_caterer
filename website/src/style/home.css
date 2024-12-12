@@ -86,12 +86,12 @@
     background-color: white;
 }
 .homepage-service-section{
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
     padding: 10px;
-    background: linear-gradient(60deg, #f4cb00, #f4a603, #e47400, #ffa164, #ffe99c, #f6ffa2, #7bce45, #63c519);
+    /* background: linear-gradient(60deg, #f4cb00, #f4a603, #e47400, #ffa164, #ffe99c, #f6ffa2, #7bce45, #63c519); */
     /* background-image: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82); */
-    animation: animatedgradient 2s ease alternate infinite;
-    background-size: 300% 300%;
+    /* animation: animatedgradient 2s ease alternate infinite;
+    background-size: 300% 300%; */
 }
 .homepage-service-section .gradient-bg{
     border-radius: 6px;
@@ -121,7 +121,8 @@
     font-size: 56px;
     line-height: 52px;
     letter-spacing: -.01em;
-    color: #804127;
+    /* color: #804127; */
+    color: #b6312b;
     position: relative;
 }
 .img-underline-heading{
@@ -213,10 +214,10 @@
     font-family: "Proxima Soft Semibold" !important;
 }
 .why-choose-us-section{
-    margin-bottom: 32px;
-    padding: 20px 0px 30px;
+    /* margin-bottom: 30px; */
+    padding: 20px 0px 40px;
     background-image: linear-gradient(91deg, #ffd9b2, white, #ddffc1);
-    box-shadow: 0px -10px 5px white inset;
+    /* box-shadow: 0px -10px 5px white inset; */
 }
 .why-choose-us-section h3{
     border-radius: 0px 0px 24px 24px;
@@ -228,7 +229,7 @@
     font-size: 56px;
     line-height: 52px;
     letter-spacing: -.01em;
-    color: #5444e2;
+    color: #4a3fb6;
     position: relative;
 }
 .choose-us-txt-banner{
@@ -309,39 +310,56 @@
     background-size: 300% 300%;
 }
 
+.homepage-customer-review{
+    background: white;
+    padding-top: 25px;
+}
 .homepage-reviews-section .review-submit-section{
     display: none;
 }
 .homepage-reviews-section{
-    margin-bottom:32px;
     background: url(https://img.perceptpixel.com/pykhlszs/riya_caterer/bg-img-three.webp);
     background-size: cover;
     background-repeat: no-repeat;
     padding-bottom: 30px;
+    margin-top: 20px;
 }
-.homepage-reviews-section h3{
-    margin-bottom: 10px;
-    margin-top: 10px;
-    border-radius: 0px 0px 16px 16px;
-    padding: 3px 5px 5px;
-    line-height: 1.2;
-    color: #ffdca8;
-    background-color: rgba(0, 0, 0, 0.7);
+.homepage-customer-review h3{
+    border-radius: 0px 0px 24px 24px;
+    padding: 2px 5px 5px;
+    text-align: center;
     font-family: Caveat, cursive;
-    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 52px;
+    letter-spacing: -.01em;
+    color: #e39b00;
+    position: relative;
+    z-index: 1;
 }
 .homepage-reviews-section .review-widget{
     box-shadow: 0 27px 20px -15px rgba(122,62,134,.31);
+}
+.review-widget-body .review-widget-carousel-arrow{
+    font-size: 22px;
+}
+.review-widget-body .fa-chevron-left, .review-widget-body .fa-chevron-right{
+    font-size: 22px;
 }
 .work-gallery-section{
     position: relative;
     background-size: 100%;
     background-repeat: no-repeat;
-    margin-bottom: 45px;
+    /* margin-bottom: 45px; */
     background-image: url('https://img.perceptpixel.com/pykhlszs/riya_caterer/bg-img-five.webp');
     margin-top: 16px;
     padding-top: 25px;
     padding-bottom: 25px;
+}
+.homepage-gallery-slide-show{
+    background: white;
+    padding-top: 25px;
 }
 .homepage-gallery-slide-show h3{
     border-radius: 0px 0px 24px 24px;
@@ -364,6 +382,9 @@
 @media(min-width: 992px){
     .waiter-img-section .link-on-img{
         height: 540px;
+    }
+    .work-gallery-section{
+        margin-top: 22px !important;
     }
 }
 
@@ -424,6 +445,12 @@
      }
     .waiter-img-section .link-on-img .card{
         margin-bottom: 0px;
+    }
+    .homepage-customer-review, .homepage-gallery-slide-show{
+        padding-top: 15px;
+    }
+    .homepage-reviews-section, .work-gallery-section{
+        margin-top: 12px !important;
     }
     .work-gallery-section{
         background-size: 115%;
@@ -508,6 +535,12 @@
     .choose-us-txt-banner{
         margin-top: 8px;
     }
+    .homepage-customer-review, .homepage-gallery-slide-show{
+        padding-top: 8px;
+    }
+    .homepage-reviews-section, .work-gallery-section{
+        margin-top: 6px !important;
+    }
     .work-gallery-section{
         background-size: 125%;
         background-position: center;
@@ -564,7 +597,10 @@
         width: 256px;
         height: 18px;
     }
-    /* .work-gallery-section .container{
-        padding: 0px;
-    } */
+    .homepage-customer-review, .homepage-gallery-slide-show{
+        padding-top: 5px;
+    }
+    .homepage-reviews-section, .work-gallery-section{
+        margin-top: 4px !important;
+    }
 }

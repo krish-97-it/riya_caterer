@@ -29,18 +29,26 @@ export default function GoogleReviews({getReviewList}){
         }
     };
     const leftArrowStyle = {
-        background: "transparent",
+        // background: "transparent",
         border: 0,
-        color: "rgb(124 124 124)",
+        color: "rgb(255 175 54)",
         fontSize: "20px",
-        padding: "0px 0px 0px 10px"
+        padding: "0px 8px 2px 6px",
+        background: "rgba(0, 0, 0, .6)",
+        borderRadius: "50%",
+        height:"32px",
+        width:"32px"
     };
     const rightArrowStyle = {
-        background: "transparent",
+        // background: "transparent",
         border: 0,
-        color: "rgb(124 124 124)",
+        color: "rgb(255 175 54)",
         fontSize: "20px",
-        padding: "0px 10px 0px 0px"
+        padding: "0px 6px 2px 10px",
+        background: "rgba(0, 0, 0, .6)",
+        borderRadius: "50%",
+        height:"32px",
+        width:"32px"
     };
     const CustomRight = ({ onClick }) => (
         <button className="review-widget-carousel-arrow right" onClick={() => slider?.current?.next(1)} style={rightArrowStyle}>
