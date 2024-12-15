@@ -69,7 +69,7 @@ export default function Service(){
                                                         </div>
                                                     </div>
                                                     <button to="/contact-us" className="btn service-book-btn">
-                                                        Free Enquiry Now
+                                                        Menu Planner
                                                     </button>
                                                 </div>
                                             </div>
@@ -93,7 +93,7 @@ export default function Service(){
                                                         </div>
                                                     </div>
                                                     <button to="/contact-us" className="btn service-book-btn">
-                                                        Free Enquiry Now
+                                                        Menu Planner
                                                     </button>
                                                 </div>
                                             </div>
@@ -115,6 +115,9 @@ export default function Service(){
                                         <CustomMasonary/>
                                     {/* </div> */}
                                 </div>
+                            </div>
+                            <div className="menu-plannner-section">
+                                
                             </div>
                         </div>
                     )
