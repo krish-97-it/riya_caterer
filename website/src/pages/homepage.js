@@ -8,38 +8,52 @@ import GreenUnderline from "../assets/images/GreenUnderline.avif";
 import PurpleUnderline from "../assets/images/PurpleUnderline.avif";
 import GalleryCarousel from "../component/gallery-carousel";
 import YellowUnderline from "../assets/images/yellowUnderline.webp";
+import BlackUnderline from "../assets/images/greyUnderline.webp";
 
 export default function Homepage({getReviewList}){
     return(
         <div className="app-body">
             <div className="main-content homepage-body">
                 <div className="introduction-banner">
-                        <div className="dark-opacity">
-                            <div className="intro-section">
-                                <p className="intro-heading typewriter">
-                                    <h2 className="type-txt">
-                                        <ReactTyped
-                                            strings={["Hello!!", "নমস্কার!!", "नमस्ते!!"]}
-                                            typeSpeed={150}
-                                            loop
-                                            backSpeed={50}
-                                            cursorChar="|"
-                                            showCursor={true}
-                                        />
-                                    </h2>
-                                </p>
-                                <div className="container intro-txt">
-                                    <p>Welcome to <b>RIYA CATERER.</b></p>
-                                    <p className="intro-qote">&nbsp;Looking for a perfect food catering service with a affordable cost range?&nbsp;</p>
-                                    <p className="intro-qote-two">Look no further! You are in correct place. Be it a large, mid or small sized event, Riya Caterer serves Good Food for different kind of occassions with both vegiterian and non-vegiterian options.</p>
-                                    <div className="enquiry-btn-section">
-                                        <Link to="/contact-us" className="btn enquiry-btn neon-glow-button">
-                                            Free Enquiry Now
-                                        </Link>
-                                    </div>
+                    <div className="dark-opacity">
+                        <div className="intro-section">
+                            <p className="intro-heading typewriter">
+                                <h2 className="type-txt">
+                                    <ReactTyped
+                                        strings={["Hello!!", "নমস্কার!!", "नमस्ते!!"]}
+                                        typeSpeed={150}
+                                        loop
+                                        backSpeed={50}
+                                        cursorChar="|"
+                                        showCursor={true}
+                                    />
+                                </h2>
+                            </p>
+                            <div className="container intro-txt">
+                                <p className="welcome-caterer">Welcome to <span className="caterer-name">RIYA CATERER</span></p>
+                                <div className="intro-qote">
+                                    <p className="first-p">Make your special Events</p>
+                                    <p className="second-p">more special with Us</p>
+                                </div>
+                                <p className="intro-qote-two">Do a free Ctaering Consultation and Book us right now!!</p>
+                                <div className="enquiry-btn-section">
+                                    <Link to="/contact-us" className="btn enquiry-btn neon-glow-button">
+                                        Free Consultation
+                                    </Link>
+                                    <Link to="/contact-us" className="btn enquiry-btn neon-glow-button">
+                                        Book For a Event
+                                    </Link>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div className="about-us-section">
+                    <div className="container">
+                        <h3>About Us</h3>
+                        <p className="first-p mb-1">One of the Fastest growing Caterer from Kolkata </p>
+                        <p className="second-p">We offer premium catering services with affordable cost range across different kind of indoor and outdoor events. So, Experience Culinary excellence like never before</p>
+                    </div>
                 </div>
                 <div className="our-service-section-wrap">
                     <div className="homepage-service-section">
@@ -47,13 +61,13 @@ export default function Homepage({getReviewList}){
                             <div className="container">
                                 <div className="img-underline-heading">
                                     <h3>Spice up your Occassions</h3>
-                                    <img src={RedUnderline} alt="underline" className="img-underline"/>
+                                    {/* <img src={BlackUnderline} alt="underline" className="img-underline"/> */}
                                 </div>
                                 <div className="our-service-card">
                                     <div className="card-group">
                                         <div className="card first-card">
                                             <div className="card-img-body">
-                                                <img src="https://img.perceptpixel.com/pykhlszs/riya_caterer/wedding.webp" className="card-img-top" alt="Wedding"/>
+                                                <img src="https://img.perceptpixel.com/pykhlszs/riya_caterer/wedding-event.webp" className="card-img-top" alt="Wedding"/>
                                             </div>
                                             <div className="card-body">
                                                 <h5 className="card-title" style={{color:"#698b00"}}>Wedding Events</h5>
@@ -62,7 +76,7 @@ export default function Homepage({getReviewList}){
                                         </div>
                                         <div className="card second-card">
                                             <div className="card-img-body">
-                                                <img src="https://img.perceptpixel.com/pykhlszs/riya_caterer/corporate-party.webp" className="card-img-top" alt="Corporate"/>
+                                                <img src="https://img.perceptpixel.com/pykhlszs/riya_caterer/corporate-img.webp" className="card-img-top" alt="Corporate"/>
                                             </div>
                                             <div className="card-body">
                                                 <h5 className="card-title" style={{color:"#db2f70"}}>Corporate Event</h5>
@@ -71,7 +85,7 @@ export default function Homepage({getReviewList}){
                                         </div>
                                         <div className="card">
                                             <div className="card-img-body">
-                                                <img src="https://img.perceptpixel.com/pykhlszs/riya_caterer/family-functions.webp" className="card-img-top" alt="Family"/>
+                                                <img src="https://img.perceptpixel.com/pykhlszs/riya_caterer/serving.webp" className="card-img-top" alt="Family"/>
                                             </div>
                                             <div className="card-body">
                                                 <h5 className="card-title" style={{color:"#c56e3e"}}>Family Functions</h5>
@@ -80,7 +94,7 @@ export default function Homepage({getReviewList}){
                                         </div>
                                         <div className="card">
                                             <div className="card-img-body">
-                                                <img src="https://img.perceptpixel.com/pykhlszs/riya_caterer/get-together.webp" className="card-img-top" alt="Family"/>
+                                                <img src="https://img.perceptpixel.com/pykhlszs/riya_caterer/get-together-img.webp" className="card-img-top" alt="Family"/>
                                             </div>
                                             <div className="card-body">
                                                 <h5 className="card-title" style={{color:"#8e48e7"}}>Festivals & Others</h5>

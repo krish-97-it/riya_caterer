@@ -1,4 +1,7 @@
 
+.homepage-body{
+    background-color: white;
+}
 .homepage-body .introduction-banner{
     background-image: url('https://img.perceptpixel.com/pykhlszs/riya_caterer/homepage-banner-images__1_.webp');
     background-size: cover;
@@ -29,39 +32,59 @@
     font-size: 18px;
     color: white !important;
 }
-.homepage-body .intro-txt b{
+
+.homepage-body .intro-txt .caterer-name{
     font-weight: 700;
-    color: rgb(238, 255, 46);
+    color: rgb(255 244 180);
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .homepage-body .intro-qote{
-    margin-bottom: 8px;
-    font-style: italic;
-    color: #efffb1;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: 500;
+    font-size: 30px;
+    letter-spacing: 1px;
+    margin-top: 20px;
+}
+.homepage-body .intro-qote .first-p{
+    margin-bottom: 0px;
+}
+.homepage-body .intro-qote .second-p{
+    margin-bottom: 2px;
 }
 .homepage-body .intro-qote-two{
     font-weight: 600;
+    font-size: 16px;
+    margin-top: 22px;
+    color: #fff4b4;
+    margin-bottom: 15px;
 }
 .enquiry-btn-section{
-    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 .neon-glow-button {
     align-items: center;
-    padding: 8px 20px;
-    font-size: 18px;
+    padding: 8px 14px;
+    font-size: 16px;
     font-weight: bold;
-    color: #fff;
+    color: #000000;
     border: none;
-    border-radius: 24px;
-    box-shadow: 0 0 20px #f4be00, 0 0 30px #f4be00, 0 0 40px #8d4b00 !important;
-    text-shadow: 0 0 10px #c05a45;
+    border-radius: 12px;
     cursor: pointer;
-    margin-top: 8px;
+    margin-top: 0px;
     transition: all 0.3s ease;
-    width: 220px;
-    background-color: rgba(0, 0, 0, .5);
+    width: 250px;
     border: 1px solid #000000;
+    background-color: white;
     transition: 0.1s all;
+    font-family: 'Proxima Soft Bold';
+    /* box-shadow: 0 0 20px #f4be00, 0 0 30px #f4be00, 0 0 40px #8d4b00 !important; */
+    /* text-shadow: 0 0 10px #c05a45; */
+    /* background-color: rgb(0 0 0 / 50%); */
 }
 .neon-glow-button:hover {
     box-shadow: 0 0 30px #00daa5, 0 0 40px #00bb49, 0 0 50px #00936e !important;
@@ -81,9 +104,32 @@
 .homepage-body h3{
     font-weight: 600;
 }
-.our-service-section-wrap{
-    /* padding: 10px; */
-    background-color: white;
+.about-us-section{
+    background-image: url(https://img.perceptpixel.com/pykhlszs/riya_caterer/bg-img-ten.webp);
+    min-height: 300px;
+    background-position: top;
+    background-size: cover;
+    padding: 50px 100px 20px;
+}
+.about-us-section h3{
+    font-family: Caveat, cursive;
+    font-size: 42px;
+    color: #ab2522;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+.about-us-section .first-p{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 24px;
+    font-weight: 700;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.about-us-section .second-p{
+    font-family: "Proxima Soft";
+    font-size: 18px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 .homepage-service-section{
     /* margin-bottom: 10px; */
@@ -96,7 +142,7 @@
 .homepage-service-section .gradient-bg{
     border-radius: 6px;
     padding-bottom: 30px;
-    background-color: white;
+    /* background-color: white; */
     padding-top: 15px;
 }
 
@@ -118,11 +164,13 @@
     font-family: Caveat, cursive;
     font-style: normal;
     font-weight: 700;
-    font-size: 56px;
+    font-size: 50px;
     line-height: 52px;
     letter-spacing: -.01em;
     /* color: #804127; */
-    color: #b6312b;
+    /* color: #b6312b; */
+    z-index: 1;
+    color: #1f1f1f;
     position: relative;
 }
 .img-underline-heading{
@@ -130,7 +178,7 @@
 }
 .img-underline-heading .img-underline{
     position: absolute;
-    top: 45px;
+    top: 40px;
     left: 0;
     bottom: 0;
     right: 0;
@@ -197,6 +245,9 @@
 .our-service-card .card-group .card img{
     border-radius: 8px 8px 0px 0px !important;
     background-color: white;
+    min-height: 200px;
+    max-height: 200px;
+    object-fit: cover;
 }
 .our-service-card .card-group .card .card-body{
     border-radius: 0px 0px 24px 24px;
@@ -226,7 +277,7 @@
     font-family: Caveat, cursive;
     font-style: normal;
     font-weight: 700;
-    font-size: 56px;
+    font-size: 50px;
     line-height: 52px;
     letter-spacing: -.01em;
     color: #4a3fb6;
@@ -331,7 +382,7 @@
     font-family: Caveat, cursive;
     font-style: normal;
     font-weight: 700;
-    font-size: 56px;
+    font-size: 50px;
     line-height: 52px;
     letter-spacing: -.01em;
     color: #e39b00;
@@ -368,7 +419,7 @@
     font-family: Caveat, cursive;
     font-style: normal;
     font-weight: 700;
-    font-size: 56px;
+    font-size: 50px;
     line-height: 52px;
     letter-spacing: -.01em;
     color: #527912;
@@ -398,11 +449,20 @@
     .homepage-body .introduction-banner{
         height: 500px;
     }
+    .our-service-card .card-group .card img{
+        min-height: 180px;
+        max-height: 180px;
+    }
 }
 @media(max-width:1199.98px){
     .our-service-card .card-group {
         gap: 10px;
     }
+    .our-service-card .card-group .card img{
+        min-height: 165px;
+        max-height: 165px;
+    }
+    
 }
 @media(max-width:991.98px){
     .homepage-body .introduction-banner{
@@ -456,6 +516,10 @@
         background-size: 115%;
         background-position: center;
     }
+    .our-service-card .card-group .card img{
+        min-height: 220px;
+        max-height: 220px;
+    }
 }
 
 @media(max-width:767.98px){
@@ -478,6 +542,10 @@
     }
     .our-service-card .card{
         margin-bottom: 20px !important;
+    }
+    .our-service-card .card-group .card img{
+        min-height: 325px;
+        max-height: 225px;
     }
 }
 
@@ -506,14 +574,32 @@
     .go-to-gallery-btn-section{
         margin-top: 15px !important;
     }
+    .our-service-card .card-group .card img{
+        min-height: 305px;
+        max-height: 305px;
+    }
 }
 
 @media(max-width:483.98px){
     .homepage-body .introduction-banner{
-        height: 525px;
+        height: 475px;
     }
     .homepage-body .intro-txt{
         font-size: 18px;
+    }
+    .welcome-caterer{
+        font-size: 16px !important;
+    }
+    .intro-qote{
+        font-size: 26px !important;
+    }
+    .intro-qote-two{
+        font-size: 14px !important;
+    }
+    .neon-glow-button{
+        font-size: 14px;
+        max-width: 160px;
+        padding: 6px 12px;
     }
     .homepage-body h3{
         font-size: 26px;
@@ -549,6 +635,10 @@
     .go-to-gallery-btn-section{
         margin-top: 5px !important;
     }
+    .our-service-card .card-group .card img{
+        min-height: 275px;
+        max-height: 275px;
+    }
 }
 @media(max-width:440px){
     .work-gallery-section{
@@ -578,17 +668,44 @@
     .go-to-gallery-btn-section{
         margin-top: 5px !important;
     }
+    .our-service-card .card-group .card img{
+        min-height: 225px;
+        max-height: 225px;
+    }
+}
+@media(max-width:373.98px){
+    .welcome-caterer{
+        font-size: 14px !important;
+    }
+    .intro-qote{
+        font-size: 24px !important;
+    }
+    .neon-glow-button{
+        font-size: 14px;
+        max-width: 160px;
+        padding: 6px 12px;
+    }
 }
 @media(max-width:349.98px){
+    .intro-qote{
+        font-size: 22px !important;
+    }
+    .neon-glow-button{
+        font-size: 13px;
+        padding: 6px 13px;
+    }
+    .enquiry-btn-section{
+        gap: 6px;
+    }
     .why-txt-section{
         font-size: 15px;
     }
     .card-one-body{
         padding: 12px;
     }
-    .introduction-banner{
+    /* .introduction-banner{
         height: 550px !important;
-    }
+    } */
     .img-underline-heading h3{
         font-size: 30px;
     }
@@ -602,5 +719,9 @@
     }
     .homepage-reviews-section, .work-gallery-section{
         margin-top: 4px !important;
+    }
+    .our-service-card .card-group .card img{
+        min-height: 160px;
+        max-height: 160px;
     }
 }

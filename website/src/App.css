@@ -108,7 +108,48 @@ body{
   font-style: normal;
   font-display: swap;
 }
-
+@font-face {
+  font-family: 'Chapeau Black';
+  src: url(./assets/font/chapeau/Chapeau-Black.otf);
+  font-weight: 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Chapeau Bold';
+  src: url(./assets/font/chapeau/Chapeau-Bold.otf);
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Chapeau Medium';
+  src: url(./assets/font/chapeau/Chapeau-Medium.otf);
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Chapeau Regular';
+  src:  url(./assets/font/chapeau/Chapeau-Regular.otf);
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Chapeau Mono';
+  src: url(./assets/font/chapeau/Chapeau-Mono.otf);
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Chapeau Light';
+  src: url(./assets/font/chapeau/Chapeau-Light.otf);
+  font-weight: 300;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Chapeau Thin';
+  src: url(./assets/font/chapeau/Chapeau-Thin.otf);
+  font-weight: 200;
+  font-display: swap;
+}
 
 .app-body{
   margin-top: 60px;
