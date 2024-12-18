@@ -61,7 +61,7 @@ export default function Homepage({getReviewList}){
                             <div className="container">
                                 <div className="img-underline-heading">
                                     <h3>Spice up your Occassions</h3>
-                                    {/* <img src={BlackUnderline} alt="underline" className="img-underline"/> */}
+                                    {/* <img src="https://img.perceptpixel.com/pykhlszs/riya_caterer/img-underline.webp" alt="underline" className="img-underline"/> */}
                                 </div>
                                 <div className="our-service-card">
                                     <div className="card-group">
@@ -92,7 +92,7 @@ export default function Homepage({getReviewList}){
                                                 <p className="card-text">Make your family functions more special with your near and dear ones without any worries.</p>
                                             </div>
                                         </div>
-                                        <div className="card">
+                                        <div className="card last-card">
                                             <div className="card-img-body">
                                                 <img src="https://img.perceptpixel.com/pykhlszs/riya_caterer/get-together-img.webp" className="card-img-top" alt="Family"/>
                                             </div>
@@ -115,7 +115,7 @@ export default function Homepage({getReviewList}){
                     <div className="container">
                         <div className="img-underline-heading">
                             <h3>Why do you choose us?</h3>
-                            <img src={PurpleUnderline} alt="underline" className="img-underline"/>
+                            {/* <img src={PurpleUnderline} alt="underline" className="img-underline"/> */}
                         </div>
                         <div className="card-group choose-us-txt-banner">
                             <div className="card why-choose-us-card">
@@ -134,7 +134,7 @@ export default function Homepage({getReviewList}){
                                     </div>
                                 </div>
                             </div>
-                            <div className="card why-choose-us-card">
+                            <div className="card why-choose-us-card second-card">
                                 <div className="card-body card-two-body">
                                     <div className="waiter-img-section">
                                         <div className="bg-img-section">
@@ -173,14 +173,16 @@ export default function Homepage({getReviewList}){
                     <div className="container">
                         <div className="img-underline-heading">
                             <h3>Customer Reviews</h3>
-                            <img src={YellowUnderline} alt="underline" className="img-underline"/>
+                            {/* <img src={YellowUnderline} alt="underline" className="img-underline"/> */}
                         </div>
                     </div>
                     <div className="homepage-reviews-section">
-                        <div className="container">
-                            <GoogleReviews getReviewList={getReviewList}/>
-                            <div className="go-to-reviews-btn-section">
-                                <NavLink to="/reviews">Check All Reviews</NavLink> 
+                        <div className="opacity-black">
+                            <div className="container">
+                                <GoogleReviews getReviewList={getReviewList}/>
+                                <div className="go-to-reviews-btn-section">
+                                    <NavLink to="/reviews">Check All Reviews</NavLink> 
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -189,7 +191,7 @@ export default function Homepage({getReviewList}){
                     <div className="container">
                         <div className="img-underline-heading">
                             <h3>Glimpse Of Success</h3>
-                            <img src={GreenUnderline} alt="underline" className="img-underline"/>
+                            {/* <img src={GreenUnderline} alt="underline" className="img-underline"/> */}
                         </div>
                     </div>
                     <div className="work-gallery-section">
