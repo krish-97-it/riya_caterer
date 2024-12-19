@@ -26,7 +26,10 @@ const navbar = () => {
                                 <NavLink className="nav-link" aria-current="page" to="/" onClick={closeOffCanvas}>Home</NavLink>
                             </li>
                             <li className="nav-item bottom-border">
-                                <NavLink className="nav-link" to="/our-service" onClick={closeOffCanvas}>Our Service</NavLink>
+                                <NavLink className="nav-link" to="/our-service" onClick={closeOffCanvas}>Our Services</NavLink>
+                            </li>
+                            <li className="nav-item bottom-border">
+                                <NavLink className="nav-link" to="/our-packages" onClick={closeOffCanvas}>Packeges</NavLink>
                             </li>
                             <li className="nav-item bottom-border">
                                 <NavLink className="nav-link" to="/gallery" onClick={closeOffCanvas}>Gallery</NavLink>

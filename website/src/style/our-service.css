@@ -5,13 +5,16 @@
 }
 .service-type-section{
     padding-top: 30px;
-    padding-bottom: 50px;
+    padding-bottom: 45px;
+    /* background-image: radial-gradient(ellipse, #ffffff 70%, #ffbf005e); */
+    box-shadow: inset 0px 0px 20px 7px rgb(87 79 71);
+    /* background-color: #fff9e7; */
 }
 .service-page-body h3{
-    font-family: Caveat, cursive;
-    font-size: 50px;
+    font-family: "Proxima Soft Semibold";
+    font-size: 40px;
     /* box-shadow: 0 0 0px #000000, 0 0 0px #000000, 0 0 40px #c7c7c7 !important; */
-    color: #000000;
+    color: #ffffff;
     border-radius: 0px 0px 24px 24px;
     padding: 2px 5px 5px;
     text-align: center;
@@ -26,12 +29,15 @@
     top: 36px;
     width: 400px;
 }
-.service-type-intro{
-    font-family: 'Proxima Soft Semibold';
+.service-type-section h3{
+    color: #43251d;
+}
+.service-type-section .service-intro{
+    font-family: Caveat, cursive;
     font-size: 22px;
     padding: 20px 20px 30px;
-    color: #452621;
-    line-height: 130%
+    color: #000000;
+    line-height: 130%;
 }
 .service-type-card{
     border: 0px;
@@ -51,7 +57,7 @@
     background-image: linear-gradient(to left, #e0f9ff, #fff4dc 100%)
 }
 .service-type-card-body{
-    padding: 0px 30px !important;
+    padding: 0px 30px 15px !important;
     position: relative;
 }
 .service-type-card-body .card-group{
@@ -78,33 +84,36 @@
     border-radius: 10px !important;
     border: none;
     border-bottom: 10px solid #f4a100;
-    /* background-color: #f2f2f2; */
+    background-color: #ffffff;
     /* box-shadow: 0px 16px 15px 0 rgba(0, 0, 0, .15); */
-    background-image: linear-gradient(to top, #fff, #efefef);
+    /* background-image: linear-gradient(to top, #fff, #efefef); */
     /* box-shadow: inset 0 -3px 20px 0px #808a2891; */
+    align-items: center;
+    padding-top: 15px;
 }
 .service-type-card-body .card-body{
-    padding: 28px 20px 0px;
+    padding: 20px 20px 0px;
     min-height: 140px;
     display: flex;
     justify-content: center;
-    align-items: center;
     font-family: 'Proxima Soft Bold';
     font-size: 18px;
     /* color: #505050; */
     line-height: 125%;
 }
 .service-type-img{
-    border-radius: 10px 10px 50% 50% !important;
+    border-radius: 50% !important;
     /* border-bottom: 20px solid #f4bb00; */
     max-height: 375px;
     object-fit: cover;
     box-shadow: 0px 11px 20px 0 rgb(87 79 71);
+    height: 180px;
+    width: 180px;
 }
 .service-type-p{
     border: 1px solid #e7e7e7;
     /* padding: 20px 30px; */
-    background-color: #9cb347;
+    background-color: #000000;
     border-radius: 10px 10px 0px 0px;
     color: white;
 }
@@ -161,7 +170,26 @@
 }
 
 .service-event-section{
+    background: url('https://img.perceptpixel.com/pykhlszs/riya_caterer/bg-img-thirteen.jpg');
+    min-height: 500px;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.service-event-section .bg-opacity{
+    padding-top: 30px;
     padding-bottom: 50px;
+    background-color: rgba(0,0,0,.6);
+}
+.service-event-section .service-intro{
+    font-family: Caveat, cursive;
+    font-size: 22px;
+    padding: 16px 20px 30px;
+    color: #fff1b8;
+    line-height: 130%;
+}
+.service-event-section .custom-masonary{
+    box-shadow: none;
 }
 @media(min-width: 992px){
     .service-banner-section .banner-img{
@@ -173,7 +201,7 @@
         flex-direction: row !important;
     }
     .service-type-card-body{
-        padding: 0px 20px !important;
+        padding: 0px 20px 15px !important;
     }
     .service-type-card-body .card-group{
         gap: 20px !important;
@@ -208,7 +236,7 @@
         width: 100% !important;
     }
     .service-type-card-body{
-        padding: 0px 20px !important;
+        padding: 0px 20px 15px !important;
         position: relative;
     }
     .service-type-card-body .card-group{
@@ -241,7 +269,7 @@
         top: 35px;
         width: 380px;
     }
-    .service-type-intro {
+    .service-intro {
         font-size: 20px;
         padding-top: 15px;
     }
@@ -292,12 +320,12 @@
         top: 35px;
         width: 350px;
     }
-    .service-type-intro {
+    .service-intro {
         padding-top: 12px;
         padding-bottom: 22px;
     }
     .service-type-card-body{
-        padding: 0px 15px !important;
+        padding: 0px 15px 15px !important;
         position: relative;
     }
     .service-type-img{
@@ -319,7 +347,7 @@
         top: 34px;
         width: 350px;
     }
-    .service-type-intro {
+    .service-intro {
         padding-top: 10px;
     }
     .service-type-img{
@@ -338,7 +366,7 @@
         top: 32px;
         width: 275px;
     }
-    .service-type-intro {
+    .service-intro {
         padding-top: 6px;
         padding-bottom: 22px;
     }

@@ -117,11 +117,53 @@ export default function Homepage({getReviewList}){
                             <h3>Why do you choose us?</h3>
                             {/* <img src={PurpleUnderline} alt="underline" className="img-underline"/> */}
                         </div>
-                        <div className="card-group choose-us-txt-banner">
+                        <div className="choose-options">
+                            <div className="ele ele-one">
+                                <img className="rounded-circle ele-img" src="https://img.perceptpixel.com/pykhlszs/indian-cuisine.webp"/>
+                                <p className="mb-0 mt-3"><span className="txt">Good Quality Food</span></p>
+                            </div>
+                            <div className="ele ele-two">
+                                <img className="rounded-circle ele-img" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/management.webp"/>
+                                <p className="mb-0 mt-3"><span className="txt">Proper Management</span></p>
+                            </div>
+                            <div className="ele ele-three">
+                                <img className="rounded-circle ele-img" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/cost-cut.webp"/>
+                                <p className="mb-0 mt-3"><span className="txt">Affordable Cost</span></p>
+                            </div>
+                            <div className="ele ele-four">
+                                <img className="rounded-circle ele-img" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/caterer-waiter.webp"/>
+                                <p className="mb-0 mt-3"><span className="txt">Professional chefs & Staffs</span></p>
+                            </div>
+                            <div className="ele ele-five">
+                                <img className="rounded-circle ele-img" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/many-food.webp"/>
+                                <p className="mb-0 mt-3"><span className="txt">300+ Food Menu</span></p>
+                            </div>
+                            <div className="ele ele-six">
+                                <img className="rounded-circle ele-img" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/live-stalls.webp"/>
+                                <p className="mb-0 mt-3"><span className="txt">Live Counters & Stalls</span></p>
+                            </div>
+                            <div className="ele ele-seven">
+                                <img className="rounded-circle ele-img" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/homepage-banner-images__1_.webp"/>
+                                <p className="mb-0 mt-3"><span className="txt">Buffet Style Option</span></p>
+                            </div>
+                            <div className="ele ele-eight">
+                                <img className="rounded-circle ele-img" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/clean.webp"/>
+                                <p className="mb-0 mt-3"><span className="txt">Post Covid Awarness</span></p>
+                            </div>
+                            <div className="ele ele-nine">
+                                <img className="rounded-circle ele-img" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/success.webp"/>
+                                <p className="mb-0 mt-3"><span className="txt">100+ Successfull Events</span></p>
+                            </div>
+                            <div className="ele ele-ten">
+                                <img className="rounded-circle ele-img" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/ratings.webp"/>
+                                <p className="mt-3 mb-0"><span className="txt">4.8+ Ratings on Google</span></p>
+                            </div>
+                        </div>
+                        {/* <div className="card-group choose-us-txt-banner">
                             <div className="card why-choose-us-card">
                                 <div className="card-body card-one-body">
                                     <div className="why-txt-section">
-                                        <p><span className="badge">1</span><span className="txt">Good Quality Food</span></p>
+                                        <p className="mb-0 mt-2"><span className="badge">1</span><span className="txt">Good Quality Food</span></p>
                                         <p><span className="badge">2</span><span className="txt">Proper Management</span></p>
                                         <p><span className="badge">3</span><span className="txt">Affordable Cost</span></p>
                                         <p><span className="badge">4</span><span className="txt">Professional chefs & Staffs</span></p>
@@ -163,7 +205,7 @@ export default function Homepage({getReviewList}){
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                         <div className="about-us-btn-section">
                             <NavLink to="/about-us">Know more About us</NavLink> 
                         </div>
