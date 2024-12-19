@@ -5,6 +5,7 @@ import PlusSymbol from "../assets/images/plus.svg";
 import GreyLine from "../assets/images/GreyLine4.avif";
 import BlackUnderline from "../assets/images/greyUnderline.webp";
 import CustomMasonary from "../component/custom-masonary";
+import ForkKnife from "../assets/images/cutlinary-icon.svg"
 
 export default function Service(){
     // Set loading state to true initially
@@ -43,9 +44,9 @@ export default function Service(){
                                     <div className="row">
                                         <div className="img-underline-heading">
                                             <h3>Type Of Services</h3>
-                                            <img src={BlackUnderline} alt="underline" className="img-underline"/>
+                                            {/* <img src={BlackUnderline} alt="underline" className="img-underline"/> */}
                                         </div>
-                                        <p className="service-type-intro mb-0">
+                                        <p className="service-intro mb-0">
                                             We are flexible to serve Food for any kind of indoor and outdoor event as per your Requirements. We provide two types of Services - one is Cooking & Serving on site at your event's location and another one is Cooking at our Kitchen and Delivery at your event location.
                                         </p>
                                         <div className="card-group service-type-card-group" style={{flexDirection:"column", display:"flex"}}>
@@ -54,7 +55,9 @@ export default function Service(){
                                                     <h5 className="card-title">Cooking & Serving</h5>
                                                     <div className="card-group">
                                                         <div className="card">
-                                                            <img className="card-img-top service-type-img" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/cooking-img.webp" alt="Card image cap"/>
+                                                            <div className="card-img-section">
+                                                                <img className="card-img-top service-type-img" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/cooking-img.webp" alt="Card image cap"/>
+                                                            </div>
                                                             <div className="card-body">
                                                                 <p className="card-text service-type-p">Cooking by Professional Chefs on spot at your event's Location.</p>
                                                             </div>
@@ -68,9 +71,9 @@ export default function Service(){
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <button to="/contact-us" className="btn service-book-btn">
+                                                    {/* <button to="/contact-us" className="btn service-book-btn">
                                                         Menu Planner
-                                                    </button>
+                                                    </button> */}
                                                 </div>
                                             </div>
                                             <div className="card service-type-card card-two">
@@ -92,9 +95,9 @@ export default function Service(){
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <button to="/contact-us" className="btn service-book-btn">
+                                                    {/* <button to="/contact-us" className="btn service-book-btn">
                                                         Menu Planner
-                                                    </button>
+                                                    </button> */}
                                                 </div>
                                             </div>
                                         </div>
@@ -103,20 +106,20 @@ export default function Service(){
                             </div>
 
                             <div className="service-event-section">
-                                <div className="container">
-                                    {/* <div className="row"> */}
-                                        <div className="img-underline-heading">
-                                            <h3>Services On Events</h3>
-                                            <img src={BlackUnderline} alt="underline" className="img-underline"/>
-                                        </div>
-                                        <p className="service-type-intro mb-0">
-                                            We serve Food on any kind of indoor and outdoor events as per your requirement and need. We are comfortable and flexible to serve food across any range of event such as small, mideum, large from 10 to 1000+ numbers of guest.
-                                        </p>
-                                        <CustomMasonary/>
-                                    {/* </div> */}
+                                <div className="bg-opacity">
+                                    <div className="container">
+                                            <div className="img-underline-heading">
+                                                <h3>Services On Events</h3>
+                                                {/* <img src={BlackUnderline} alt="underline" className="img-underline"/> */}
+                                            </div>
+                                            <p className="service-intro mb-0">
+                                                We serve Food on any kind of indoor and outdoor events as per your requirement and need. We are comfortable and flexible to serve food across any range of event such as small, mideum, large from 10 to 1000+ numbers of guest.
+                                            </p>
+                                            <CustomMasonary/>
+                                    </div>
                                 </div>
                             </div>
-                            <div className="menu-plannner-section">
+                            <div className="our-package-section">
                                 
                             </div>
                         </div>

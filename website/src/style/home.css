@@ -11,7 +11,7 @@
 }
 .homepage-body .introduction-banner .dark-opacity{
     background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0, 0.6); /* Black w/opacity/see-through */
+    background-color: rgba(0,0,0, 0.7); /* Black w/opacity/see-through */
     padding: 10px;
     height: 100%;
     position: relative;
@@ -119,7 +119,7 @@
 }
 .about-us-section h3{
     font-family: Caveat, cursive;
-    font-size: 48px;
+    font-size: 50px;
     color: #ab2522;
     margin-top: 25px;
     margin-bottom: 15px;
@@ -224,9 +224,10 @@
     animation: our-service-card-progress 5s;
     /* box-shadow: 0 27px 20px -15px rgb(79 79 79 / 31%); */
     /* box-shadow: 0px 8px 18px 0px rgb(75 146 194 / 50%); */
-    box-shadow: 0px 4px 15px 0px rgb(248 162 0);
     margin-bottom: 12px;
+    border: 1px solid #b4ad5ad6;
     background-color: black;
+    box-shadow: 0px 4px 12px 1px rgb(213 203 88 / 85%)
 }
 .our-service-card .card-group{
     gap: 35px;
@@ -296,7 +297,7 @@
     /* background-image: linear-gradient(91deg, #ffd9b2, white, #ddffc1); */
     /* background-image: radial-gradient(farthest-side at 0% 50%, #ffce65, #000000); */
     /* box-shadow: 0px -10px 5px white inset; */
-    background-image: url(https://img.perceptpixel.com/pykhlszs/riya_caterer/black-texture-bg.webp);
+    background-image: url('https://img.perceptpixel.com/pykhlszs/riya_caterer/bg-texture-img.webp');
     background-position: center;
     background-size: contain;
 }
@@ -329,6 +330,30 @@
 }
 .choose-us-txt-banner .second-card{
     box-shadow: 3px 4px 15px 0px rgb(140 140 140 / 45%);
+}
+.why-choose-us-section .ele{
+    min-height: 150px;
+    min-width: 210px;
+    padding: 15px;
+    border-radius: 12px;
+    background-color: rgba(0, 0, 0, .6);
+    color: #eeffae;
+    font-family: "Proxima Soft Semibold";
+}
+.why-choose-us-section .choose-options{
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: white;
+    padding-top: 30px;
+}
+.why-choose-us-section .ele-img{
+    height: 120px;
+    width: 120px;
+    border: 5px solid rgb(114 114 114 / 11%);
+    box-shadow: 0px 0px 12px 0px rgb(244 167 50);
+    object-fit: cover;
 }
 .why-txt-section{
     display: flex;
@@ -446,7 +471,8 @@
     background-size: 100%;
     background-repeat: no-repeat;
     /* margin-bottom: 45px; */
-    background-image: url('https://img.perceptpixel.com/pykhlszs/riya_caterer/bg-img-five.webp');
+    background-image: url('https://img.perceptpixel.com/pykhlszs/riya_caterer/bg-img-with-elements.webp');
+    background-position: center;
     margin-top: 16px;
     padding-top: 25px;
     padding-bottom: 25px;
@@ -486,6 +512,12 @@
 @media(min-width:1400px){
     .homepage-body .introduction-banner{
         height: 550px;
+    }
+    .about-us-section .first-p{
+        font-size: 28px;
+    }
+    .about-us-section .second-p{
+        font-size: 22px;
     }
 }
 

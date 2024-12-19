@@ -36,6 +36,7 @@
     padding: 10px;
     border-radius: 8px;
     color: wheat;
+    font-size: 14px;
 }
 .review-card-item{
     margin:0px 6px;
@@ -73,10 +74,11 @@
 }
 .review-card-item .review-summary{
     border-radius: 8px;
-    color: #ffffff;
+    color: #eeffae;
     font-size: 14px;
     font-weight: 500;
     /* padding: 0px 5px 10px; */
+    font-family: 'Proxima Soft Medium';
 }
 
 .review-card-item .review-summary a{
@@ -88,6 +90,6 @@
     padding: 5px;
 }
 .review-card-item{
-    background-image: linear-gradient(90deg, #ff754cd9, #bd4c90);
+    background-image: linear-gradient(90deg, #ff754c, #df57a9);
     border-radius: 12px;
 }
