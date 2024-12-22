@@ -1,0 +1,61 @@
+.gallery-page-body .banner-section{
+    background-color: black;
+    background-image: url('https://img.perceptpixel.com/pykhlszs/riya_caterer/gallery-banner-img.webp');
+    background-attachment: fixed;
+    background-position: bottom;
+    background-size: cover;
+}
+.gallery-page-body .banner-section .gradient-bg{
+    background-color: rgba(0,0,0,.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    min-height: 432px;
+}
+
+.gallery-page-body .banner-section h3{
+    color: #ffc100;
+    font-family: 'FontAwesome';
+    font-size: 50px;
+}
+
+.gallery-page-body .banner-section .page-heading{
+    font-size: 32px;
+    color: wheat;
+    padding: 5px 15px;
+    font-family: 'Proxima Soft Bold';
+    border-radius: 4px;
+    margin-top: 15px;
+    border: 2px solid rgb(100, 100, 100);
+}
+
+.gallery-page-body .banner-section .sub-txt{
+    color: white;
+    margin-top: 15px;
+    font-family: Caveat, cursive;
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.gallery-page-body .enquiry-btn-two{
+    min-width: 200px !important;
+}
+@media(min-width:768px){
+    .gallery-page-body .banner-section h3{
+        font-size: 56px;
+    }
+    .gallery-page-body .page-heading{
+        font-size: 36px;
+    }
+    .gallery-page-body .banner-section .sub-txt{
+        font-size: 26px;
+        margin-bottom: 10px;
+    }
+}
+@media(max-width:483.98px){
+    .gallery-page-body .banner-section .sub-txt{
+        font-size: 18px;
+    }
+}
