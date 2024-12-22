@@ -210,7 +210,7 @@
     }
 }
 
-@media(min-width:320px) and (max-width:349.98px){
+@media(max-width:349.98px){
     .image-album-cover{
         width: 296px;
         height: 242px;
