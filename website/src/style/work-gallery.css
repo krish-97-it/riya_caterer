@@ -42,7 +42,150 @@
 .gallery-page-body .enquiry-btn-two{
     min-width: 200px !important;
 }
+.gallery-box-section{
+    background-color: #ffffff;
+    padding: 30px 0px 30px 0px;
+}
+.gallery-box-section h3{
+    font-family: "Proxima Soft Semibold";
+    font-size: 40px;
+    /* box-shadow: 0 0 0px #000000, 0 0 0px #000000, 0 0 40px #c7c7c7 !important; */
+    color: #f4a300;
+    /* border-radius: 0px 0px 24px 24px; */
+    padding: 2px 5px 5px;
+    text-align: center;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 52px;
+    letter-spacing: -.01em;
+    position: relative;
+    z-index: 1;
+    background-color: black;
+    border: 1px solid white;
+    border-style: dashed;
+}
+.gallery-box-section .intro-txt{
+    color: rgb(0, 0, 0);
+    margin-top: 15px;
+    font-family: Caveat, cursive;
+    font-size: 22px;
+    padding: 15px;
+}
+.event-filter-section{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+    /* align-items: center; */
+    /* box-shadow: 0 24px 20px -15px #7a3e864f!important; */
+    margin-bottom: 20px;
+    justify-content: center;
+}
+.btn-for-scroll .chevron-left-button, .chevron-right-button {
+    background-color: orange;
+    border: none;
+    border-radius: 5px;
+    padding: 4px;
+}
+.gallery-box-section .chevron-right-button{
+    padding-left: 6px;
+}
+.gallery-box-section .food-category-buttons{
+    display: flex;
+    overflow: scroll;
+    flex-wrap: nowrap;
+    gap: 8px;
+    padding: 0px 2px 2px;
+    width: auto;
+}
+
+.food-category-buttons .btn{
+    font-weight: 600;
+    font-family: "Proxima Soft Semibold";
+    border: 1px solid #0000004d;
+    background: linear-gradient(121.19deg, rgba(133, 239, 49, 0) 25.73%, hsla(0, 0%, 100%, .3) 45.27%, rgba(133, 239, 49, 0) 62.27%), #ff3333;
+    color: white;
+    fill: currentColor;
+    animation: d 120s linear infinite;
+    border-bottom: 4px solid #d32121;
+    height: 32px;
+    line-height: .1;
+}
+.food-category-buttons .btn:hover{
+    border-bottom: 4px solid black;
+    border: 1px solid black;
+}
+.food-category-buttons [btn-active="true"]{
+    background: linear-gradient(121.19deg, rgba(133, 239, 49, 0) 25.73%, hsla(0, 0%, 100%, .3) 45.27%, rgba(133, 239, 49, 0) 62.27%), #f4a300;
+    color: #3a0000;
+    border-bottom: 4px solid #953d00;
+}
+.sort-by-filter-section-wrap{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.sort-by-filter-section{
+    align-items: baseline;
+    border: 2px solid silver;
+    border-radius: 5px;
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+    padding: 5px 0;
+}
+.sort-by-btn-section{
+    border-right: 2px solid #d9d9d9;
+}
+.file-type-option{
+    border-right: 2px solid #d9d9d9;
+}
+.gallery-box-section .dropdown-area-expand {
+    color: #b00a0a;
+    font-weight: 500;
+    min-width: 225px;
+}
+.gallery-box-section .sort-by-form-check, .gallery-box-section .filter-by-form-check{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    justify-content: space-between;
+    margin-right: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.sort-by-filter-section button{
+    background-color: initial !important;
+    border: none;
+    max-width: 105px;
+    padding-left: 10px;
+    padding-right: 14px;
+    font-family: 'Proxima Soft Semibold';
+    color: black;
+}
+.sort-by-filter-section .sort-by-btn{
+    color: #6909ff !important;
+}
+.sort-by-filter-section .filter-by-btn{
+    color: #944300 !important;
+}
+.gallery-page-body .show-images{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.gallery-page-body .show-images img{
+    height: 200px !important;
+    width: 200px !important;
+    border-radius: 12px;
+    border: 1px solid rgb(138, 138, 138);
+    object-fit: cover;
+}
 @media(min-width:768px){
+    .gallery-page-body .banner-section .gradient-bg{
+        min-height: 475px;
+    }
     .gallery-page-body .banner-section h3{
         font-size: 56px;
     }
@@ -54,8 +197,22 @@
         margin-bottom: 10px;
     }
 }
+@media(min-width:1200px){
+   
+}
+@media(min-width:992px) and (max-width:1199.98px){
+    
+}
+@media(min-width:768px) and (max-width:991.98px){
+   
+}
 @media(max-width:483.98px){
     .gallery-page-body .banner-section .sub-txt{
         font-size: 18px;
+    }
+}
+@media(max-width:349.98px){
+    .sort-by-filter-section button{
+        font-size: 13px;
     }
 }
