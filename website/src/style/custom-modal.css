@@ -1,4 +1,4 @@
-.login-modal{
+.img-view-modal{
     display: none; 
     position: fixed;
     z-index: 1031;
@@ -61,8 +61,8 @@
 .modal-header {
     padding: 10px 12px;
     /* background-color: #5cb85c; */
-    /* background-image: linear-gradient(to right, #ffbc87 0%, #f3f45d 50%, #2a8e75 100%);
-    color: rgb(0, 0, 0); */
+    /* background-image: linear-gradient(to right, #ffbc87 0%, #f3f45d 50%, #2a8e75 100%); */
+    /* color: rgb(0, 0, 0); */
     border-radius: 16px 16px 0px 0px;
     background-image: linear-gradient(to left, #ff6c75, #8C3FFF);
     color: white;
@@ -70,7 +70,8 @@
     background-position: center;
     font-size: 26px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
+    gap: 10px;
 }
 .modal-header button{
     color: white !important;
@@ -94,9 +95,9 @@
     font-weight: 700;
     border-radius: 0px 0px 15px 15px;
 }
-.login-modal[show-modal="show"]{
-    display: block;
+.img-view-modal[show-modal="show"]{
+    display: block !important;
 }
-.login-modal[show-modal="hide"]{
-    display: none;
+.img-view-modal[show-modal="hide"]{
+    display: none !important;
 }

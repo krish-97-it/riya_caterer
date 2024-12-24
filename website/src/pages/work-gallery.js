@@ -2,7 +2,8 @@ import React,{useState, useEffect, useRef} from "react";
 import { Link } from "react-router-dom";
 import Loading from "../component/page-loading";
 import GoToTop from "../component/go-to-top";
-import CustomModal from "../component/custom-modal";
+import ImageViewBoxModal from "../component/custom-modal";
+import fullScreenSymbol from "../assets/images/fullScreenIcon.svg";
 
 export default function Gallery({imageModal, openImageModal, closeImageModal, getSortByInput, getGalleryByAlbum, getFilterByInput, currentEvent, getFilteredItemList}){
     // Set loading state to true initially
@@ -146,14 +147,15 @@ export default function Gallery({imageModal, openImageModal, closeImageModal, ge
                                                                     <>
                                                                         {
                                                                             (data.file_type === "video")?
-                                                                            <div className={"gallery-img img-"+index} key={index}>
+                                                                            <div className={"gallery-img img-"+index} key={index} style={{height:"200px", width:"200px"}}>
                                                                                 <iframe width="200px" height="200px" style={{borderRadius:"12px"}}
                                                                                     src={data.file_src}>
                                                                                 </iframe>
                                                                             </div>
                                                                             :
                                                                             <div className={"gallery-img img-"+index} key={index}>
-                                                                                <img src={data.file_src} className="w-100" alt={data.alt_tag}/>
+                                                                                <img src={data.file_src} className="w-100 album-img" alt={data.alt_tag}/>
+                                                                                <button className="btn full-screen-btn" data-bs-target="#imgViewCarousel" data-bs-slide-to={index} onClick={openImageModal}><img src={fullScreenSymbol} alt="Full-Screen" className="w-100"/></button>
                                                                             </div>
                                                                         }
                                                                     </>
@@ -171,14 +173,7 @@ export default function Gallery({imageModal, openImageModal, closeImageModal, ge
                                     </div>
                                 </div>
                             </div>
-                            <>
-                                {
-                                    (imageModal === "show")?
-                                    <CustomModal imageModal={imageModal} openImageModal={openImageModal} closeImageModal={closeImageModal}/>
-                                    :
-                                    <></>
-                                }
-                            </>
+                            <ImageViewBoxModal imageModal={imageModal} openImageModal={openImageModal} closeImageModal={closeImageModal} getFilteredItemList={getFilteredItemList}/>
                         </div>
                     )
                 }

@@ -123,7 +123,7 @@ export default function MainFunction(){
                 <Route exact path="/contact-us" element={<Contact/>}/>
                 <Route exact path="/reviews" element={<Reviews getReviewList = {userReviews}/>}/>
                 <Route exact path="/our-service" element={<Service/>}/>
-                <Route exact path="/gallery" element={<Gallery getSortByInput={getSortByInput} getGalleryByAlbum={getGalleryByAlbum} getFilterByInput={getFilterByInput} currentEvent={currentEvent} getFilteredItemList={getFilteredItemList}/>}/>
+                <Route exact path="/gallery" element={<Gallery imageModal={imageModal} openImageModal={openImageModal} closeImageModal={closeImageModal} getSortByInput={getSortByInput} getGalleryByAlbum={getGalleryByAlbum} getFilterByInput={getFilterByInput} currentEvent={currentEvent} getFilteredItemList={getFilteredItemList}/>}/>
                 <Route exact path="*" element={<Errorpage />} />
             </Routes>
             <Footer/>
