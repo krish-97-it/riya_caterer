@@ -239,8 +239,8 @@ export default function Homepage({getReviewList}){
                                                 <p className="card-text p-four"><i className="fa fa-star glow"></i>&nbsp;Minimum Pax required 15</p>
                                                 <p className="card-text p-five"><i className="fa fa-star glow"></i>&nbsp;Free Serving</p>
                                             </div>
-                                            <div class="card-footer">
-                                                <small class="text-muted" style={{fontSize:"12px"}}>Terms & Condition included*</small>
+                                            <div className="card-footer">
+                                                <small className="text-muted" style={{fontSize:"12px"}}>Terms & Condition included*</small>
                                             </div>
                                         </div>
                                         <div className="card second-card">
@@ -254,8 +254,8 @@ export default function Homepage({getReviewList}){
                                                 <p className="card-text p-four"><i className="fa fa-star glow"></i>&nbsp;Minimum Pax required 15</p>
                                                 <p className="card-text p-five"><i className="fa fa-star glow"></i>&nbsp;Free Serving</p>
                                             </div>
-                                            <div class="card-footer">
-                                                <small class="text-muted" style={{fontSize:"12px"}}>Terms & Condition included*</small>
+                                            <div className="card-footer">
+                                                <small className="text-muted" style={{fontSize:"12px"}}>Terms & Condition included*</small>
                                             </div>
                                         </div>
                                         <div className="card third-card">
@@ -269,8 +269,8 @@ export default function Homepage({getReviewList}){
                                                 <p className="card-text p-four"><i className="fa fa-star glow"></i>&nbsp;Minimum Pax required 30</p>
                                                 <p className="card-text p-five"><i className="fa fa-star glow"></i>&nbsp;Free Serving</p>
                                             </div>
-                                            <div class="card-footer">
-                                                <small class="text-muted" style={{fontSize:"12px"}}>Terms & Condition included*</small>
+                                            <div className="card-footer">
+                                                <small className="text-muted" style={{fontSize:"12px"}}>Terms & Condition included*</small>
                                             </div>
                                         </div>
                                     </div>
