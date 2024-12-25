@@ -2,9 +2,9 @@ import React,{useState, useEffect, useRef} from "react";
 import { Link } from "react-router-dom";
 import Loading from "../component/page-loading";
 import GoToTop from "../component/go-to-top";
-import CustomModal from "../component/custom-modal";
+import ImageViewBoxModal from "../component/custom-modal";
 
-export default function Gallery({imageModal, openImageModal, closeImageModal, getSortByInput, getGalleryByAlbum, getFilterByInput, currentEvent, getFilteredItemList}){
+export default function Gallery({imageModal, openImageModal, closeImageModal, getSortByInput, getGalleryByAlbum, getFilterByInput, currentEvent, getFilteredItemList, currentImgIndex}){
     // Set loading state to true initially
     const [isLoading, setLoading] = useState(true);
 
@@ -146,14 +146,13 @@ export default function Gallery({imageModal, openImageModal, closeImageModal, ge
                                                                     <>
                                                                         {
                                                                             (data.file_type === "video")?
-                                                                            <div className={"gallery-img img-"+index} key={index}>
-                                                                                <iframe width="200px" height="200px" style={{borderRadius:"12px"}}
-                                                                                    src={data.file_src}>
-                                                                                </iframe>
+                                                                            <div className={"gallery-img gallery-yt-video img-"+index} key={data._id}>
+                                                                                <iframe height="200px" width="200px" className="yt-video-iframe" src={data.file_src} title="YouTube video player" frameborder="0" style={{borderRadius:"12px"}} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
                                                                             </div>
                                                                             :
-                                                                            <div className={"gallery-img img-"+index} key={index}>
-                                                                                <img src={data.file_src} className="w-100" alt={data.alt_tag}/>
+                                                                            <div className={"gallery-img img-"+index} key={data._id}>
+                                                                                <img src={data.file_src} className="w-100 album-img" alt={data.alt_tag}/>
+                                                                                <button className="btn full-screen-btn" data-bs-target="#imgViewCarousel" data-bs-slide-to={index} onClick={openImageModal} value={index}><i className="fa fa-expand" style={{fontSize:"24px", color:"white"}}></i></button>
                                                                             </div>
                                                                         }
                                                                     </>
@@ -174,7 +173,7 @@ export default function Gallery({imageModal, openImageModal, closeImageModal, ge
                             <>
                                 {
                                     (imageModal === "show")?
-                                    <CustomModal imageModal={imageModal} openImageModal={openImageModal} closeImageModal={closeImageModal}/>
+                                    <ImageViewBoxModal imageModal={imageModal} currentImgIndex={currentImgIndex} closeImageModal={closeImageModal} getFilteredItemList={getFilteredItemList}/>
                                     :
                                     <></>
                                 }
