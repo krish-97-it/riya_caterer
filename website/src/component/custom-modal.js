@@ -34,23 +34,27 @@ export default function ImageViewBoxModal({imageModal, currentImgIndex, closeIma
     let [orgWidth, setOrgWidth]   = useState(null);
     let [orgHeight, setOrgHeight] = useState(null);
     let [activeImgId, setActiveImgId] = useState(null);
-    function zoomIn(event){
-        let ele_id           = "image-"+event.currentTarget.value;
+    function zoomIn(event,index){
+        let ele_id           = "image-"+index;
         var elem             = document.getElementById(ele_id);
         
-        let width = elem.clientWidth;
-        let height = elem.clientHeight;
+        let width            = elem.clientWidth;
+        let height           = elem.clientHeight;
+
         if(orgWidth === null && orgHeight === null){
             setOrgWidth(width);
             setOrgHeight(height);
             setActiveImgId(ele_id);
             elem.style.width = (width + 50) + "px";
             elem.style.height = (height + 50) + "px";
-            elem.style.maxWidth = "none";
+            elem.style.maxWidth  = (width + 50) + "px";
+            // elem.style.height="100%";
         }else{
             if(width <= (orgWidth+550)){
                 elem.style.width = (width + 50) + "px";
                 elem.style.height = (height + 50) + "px";
+                elem.style.maxWidth  = (width + 50) + "px";
+                // elem.style.height=100%;
             }else{
                 console.log("10x zoom reached");
             }
@@ -58,11 +62,11 @@ export default function ImageViewBoxModal({imageModal, currentImgIndex, closeIma
         // elem.style["transition-duration"]= "300ms";
         // elem.style["transform"] = "translate3d(0px, 0px, 0px) scale(3)";
     }
-     function zoomOut(event) {
-        let ele_id           = "image-"+event.currentTarget.value;
+     function zoomOut(event,index) {
+        let ele_id           = "image-"+index;
         var elem             = document.getElementById(ele_id);
-        let width = elem.clientWidth;
-        let height = elem.clientHeight;
+        let width            = elem.clientWidth;
+        let height           = elem.clientHeight;
         if(orgWidth === null && orgHeight === null){
             setOrgWidth(width);
             setOrgHeight(height);
@@ -71,8 +75,10 @@ export default function ImageViewBoxModal({imageModal, currentImgIndex, closeIma
             if(width > orgWidth){
                 elem.style.width = (width - 50) + "px";
                 elem.style.height = (height - 50) + "px";
+                elem.style.maxWidth  = (width + 50) + "px";
             }else{
-                console.log("back to orginal size");
+                elem.style.width = "auto";
+                elem.style.height="auto";
                 elem.style.maxWidth = "100%";
             }
         }
@@ -84,15 +90,45 @@ export default function ImageViewBoxModal({imageModal, currentImgIndex, closeIma
         if(orgHeight !== null){
             let ele_id           = activeImgId;
             var elem             = document.getElementById(ele_id);
-            console.log(ele_id);
-            elem.style.width = orgWidth + "px";
-            elem.style.height = orgHeight + "px";
+            elem.style.width = "auto";
+            elem.style.height="auto";
             elem.style.maxWidth = "100%";
             setOrgWidth(null);
             setOrgHeight(null);
             setActiveImgId(null);
         }
     }
+
+    // let [mouseDown, setMouseDown] = useState(false);
+    // let startX, scrollLeft;
+    // const startDragging = (e,index) => {
+    //     let parentId = "#fullScreenEle-"+index;
+    //     let slider   = document.querySelectorAll(parentId);
+    //     console.log(slider);
+    //     console.log(parentId);
+    //     console.log(slider.offsetLeft);
+    //     setMouseDown(true);
+    //     startX = e.pageX - slider.offsetLeft;
+    //     scrollLeft = slider.scrollLeft;
+    // }
+      
+    // const stopDragging = (e) => {
+    //     setMouseDown(false);
+    // }
+      
+    // const move = (e,index) => {
+    //     e.preventDefault();
+    //     let parentId = "#fullScreenEle-"+index;
+    //     let slider   = document.querySelectorAll(parentId);
+    //     console.log(slider);
+    //     if(!mouseDown){ 
+    //         return; 
+    //     }
+    //     const x = e.pageX - slider.offsetLeft;
+    //     console.log(x);
+    //     const scroll = x - startX;
+    //     slider.scrollLeft = scrollLeft - scroll;
+    // }
 
     return(
         <div className="img-view-modal" id="imageViewBox" show-modal={imageModal}>
@@ -118,17 +154,19 @@ export default function ImageViewBoxModal({imageModal, currentImgIndex, closeIma
                                                                     <h5>Mairage Function, Rajarhat, Kolkata</h5>
                                                                     <div className="img-content-section" id={"fullScreenEle-"+i}>
                                                                         <div className="full-screen-wrap">
-                                                                            <img src={item.file_src} alt={item.alt_tag} className="d-block carousel-item-img" style={{maxWidth:"100%"}} id={"image-"+i}/>
-                                                                            <div className="image-view-box-controller">
-                                                                                <button type="button" className="zoom-in" onClick={zoomIn} value={i}><i className="fa fa-search-plus" style={{height:"21px", width:"21px"}}></i></button>
-                                                                                <button type="button" className="zoom-out" onClick={zoomOut} value={i}><i className="fa fa-search-minus"style={{height:"21px", width:"21px"}}></i></button>
-                                                                                <button type="button" className="full-screen" onClick={toggleFullScreen} value={i}><img src={fullScreenSymbol} alt="Full-Screen" className="w-100 full-screen-icon"/></button>
-                                                                            </div>
+                                                                            {/* <img src={item.file_src} alt={item.alt_tag} className="d-block carousel-item-img" style={{width:"auto", maxWidth:"100%"}} id={"image-"+i} onMouseMove={move} onMouseDown={(e)=>{startDragging(e,i)}} onMouseUp={(e)=>{stopDragging(e,i)}} onMouseLeave={(e)=>{stopDragging(e,i)}} value={i}/> */}
+                                                                            <img src={item.file_src} alt={item.alt_tag} className="d-block carousel-item-img" style={{width:"auto", maxWidth:"100%"}} id={"image-"+i} value={i} onDoubleClick={(e)=>{zoomIn(e,i)}}/>
+                                                                        </div>
+                                                                        <div className="image-view-box-controller">
+                                                                            <button type="button" className="zoom-in" onClick={(e)=>{zoomIn(e,i)}} value={i}><i className="fa fa-search-plus" style={{height:"21px", width:"21px"}}></i></button>
+                                                                            <button type="button" className="zoom-out" onClick={(e)=>{zoomOut(e,i)}} value={i}><i className="fa fa-search-minus"style={{height:"21px", width:"21px"}}></i></button>
+                                                                            <button type="button" className="full-screen" onClick={toggleFullScreen} value={i}><img src={fullScreenSymbol} alt="Full-Screen" className="w-100 full-screen-icon"/></button>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                                 :
-                                                                <div className="carousel-item-body">
+                                                                <div className="carousel-item-body carousel-video-item-body">
+                                                                    <h5>Mairage Function, Rajarhat, Kolkata</h5>
                                                                     <iframe width="200px" height="auto" className="carousel-item-video" src={item.file_src+"&rel=0"} title="YouTube video player"frameborder="0" style={{borderRadius:"12px"}} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
                                                                 </div>
                                                             }
