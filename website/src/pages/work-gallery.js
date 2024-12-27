@@ -2,7 +2,7 @@ import React,{useState, useEffect, useRef} from "react";
 import { Link } from "react-router-dom";
 import Loading from "../component/page-loading";
 import GoToTop from "../component/go-to-top";
-import ImageViewBoxModal from "../component/custom-modal";
+import ImageCarouselViewBoxModal from "../component/custom-modal";
 
 export default function Gallery({imageModal, openImageModal, closeImageModal, getSortByInput, getGalleryByAlbum, getFilterByInput, currentEvent, getFilteredItemList, currentImgIndex}){
     // Set loading state to true initially
@@ -146,8 +146,8 @@ export default function Gallery({imageModal, openImageModal, closeImageModal, ge
                                                                     <>
                                                                         {
                                                                             (data.file_type === "video")?
-                                                                            <div className={"gallery-img gallery-yt-video img-"+index} key={data._id}>
-                                                                                <iframe height="200px" width="200px" className="yt-video-iframe" src={data.file_src} title="YouTube video player" frameborder="0" style={{borderRadius:"12px"}} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+                                                                            <div className={"gallery-img gallery-yt-video span-1-by-1 img-"+index} key={data._id}>
+                                                                                <iframe height="200px" width="200px" className="yt-video-iframe" src={data.file_src} title="YouTube video player" frameborder="0" style={{borderRadius:"6px"}} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
                                                                             </div>
                                                                             :
                                                                             <div className={"gallery-img img-"+index} key={data._id}>
@@ -170,10 +170,21 @@ export default function Gallery({imageModal, openImageModal, closeImageModal, ge
                                     </div>
                                 </div>
                             </div>
+                            <div className="menuplanner-banner-section" style={{backgroundColor:"#25181b"}}>
+                                <div className="container">
+                                    <div className="row">
+                                        <picture>
+                                            <source media="(min-width:650px)" srcSet="https://img.perceptpixel.com/pykhlszs/riya_caterer/menu-planner-desktop.webp"/>
+                                            <source media="(max-width:649.98px)" srcSet="https://img.perceptpixel.com/pykhlszs/riya_caterer/menu-panner-banner-mob.webp"/>
+                                            <img src="https://img.perceptpixel.com/pykhlszs/riya_caterer/menu-panner-banner-mob.webp" className="w-100 banner-img" style={{width:"100%", height:"auto"}} alt="Menu Planner"/>
+                                        </picture>
+                                    </div>
+                                </div>
+                            </div>
                             <>
                                 {
                                     (imageModal === "show")?
-                                    <ImageViewBoxModal imageModal={imageModal} currentImgIndex={currentImgIndex} closeImageModal={closeImageModal} getFilteredItemList={getFilteredItemList}/>
+                                    <ImageCarouselViewBoxModal imageModal={imageModal} currentImgIndex={currentImgIndex} closeImageModal={closeImageModal} getFilteredItemList={getFilteredItemList}/>
                                     :
                                     <></>
                                 }

@@ -1,14 +1,31 @@
-import React,{useState} from "react";
+import React,{useState, Component} from "react";
+import { TransformWrapper, TransformComponent, useControls} from "react-zoom-pan-pinch";
 import fullScreenSymbol from "../assets/images/fullScreenIcon.svg";
 
-export default function ImageViewBoxModal({imageModal, currentImgIndex, closeImageModal, getFilteredItemList}){
+export default function ImageCarouselViewBoxModal({imageModal, currentImgIndex, closeImageModal, getFilteredItemList}){
+    const Controls = () => {
+        const { zoomIn, zoomOut, resetTransform } = useControls();
+        return (
+          <div className="tools">
+            <button onClick={() => zoomIn()}>+</button>
+            <button onClick={() => zoomOut()}>-</button>
+            <button onClick={() => resetTransform()}>x</button>
+          </div>
+        );
+    };
 
     function toggleFullScreen(event){
         let ele_id              = "fullScreenEle-"+event.currentTarget.value;
         var elem                = document.getElementById(ele_id);
         var check_full_screen   = document.fullscreenElement;
- 
+
+        let carouselCtrlLBtnId   = "carousel-control-lbtn-"+event.currentTarget.value;
+        let carouselControlLBtn  = document.getElementById(carouselCtrlLBtnId);
+        let carouselCtrlRBtnId   = "carousel-control-rbtn-"+event.currentTarget.value;
+        let carouselControlRBtn  = document.getElementById(carouselCtrlRBtnId);
         if(check_full_screen !== null){
+            carouselControlLBtn.style.display="block";
+            carouselControlRBtn.style.display="block";
             if (document.exitFullscreen){
                 document.exitFullscreen();
             }else if (document.webkitExitFullscreen){ //Safari
@@ -18,7 +35,10 @@ export default function ImageViewBoxModal({imageModal, currentImgIndex, closeIma
               }else if (document.msExitFullscreen){ // IE/Edge
                 document.msExitFullscreen();
             }
+            console.log("full scrreen")
         }else{
+            carouselControlLBtn.style.display="none";
+            carouselControlRBtn.style.display="none";
             if(elem.requestFullscreen){
                 elem.requestFullscreen();
             }else if (elem.mozRequestFullScreen){
@@ -30,70 +50,6 @@ export default function ImageViewBoxModal({imageModal, currentImgIndex, closeIma
             }
         }
     }
-
-    let [orgWidth, setOrgWidth]   = useState(null);
-    let [orgHeight, setOrgHeight] = useState(null);
-    let [activeImgId, setActiveImgId] = useState(null);
-    function zoomIn(event){
-        let ele_id           = "image-"+event.currentTarget.value;
-        var elem             = document.getElementById(ele_id);
-        
-        let width = elem.clientWidth;
-        let height = elem.clientHeight;
-        if(orgWidth === null && orgHeight === null){
-            setOrgWidth(width);
-            setOrgHeight(height);
-            setActiveImgId(ele_id);
-            elem.style.width = (width + 50) + "px";
-            elem.style.height = (height + 50) + "px";
-            elem.style.maxWidth = "none";
-        }else{
-            if(width <= (orgWidth+550)){
-                elem.style.width = (width + 50) + "px";
-                elem.style.height = (height + 50) + "px";
-            }else{
-                console.log("10x zoom reached");
-            }
-        }
-        // elem.style["transition-duration"]= "300ms";
-        // elem.style["transform"] = "translate3d(0px, 0px, 0px) scale(3)";
-    }
-     function zoomOut(event) {
-        let ele_id           = "image-"+event.currentTarget.value;
-        var elem             = document.getElementById(ele_id);
-        let width = elem.clientWidth;
-        let height = elem.clientHeight;
-        if(orgWidth === null && orgHeight === null){
-            setOrgWidth(width);
-            setOrgHeight(height);
-            setActiveImgId(ele_id);
-        }else{
-            if(width > orgWidth){
-                elem.style.width = (width - 50) + "px";
-                elem.style.height = (height - 50) + "px";
-            }else{
-                console.log("back to orginal size");
-                elem.style.maxWidth = "100%";
-            }
-        }
-        // elem.style["transition-duration"]= "300ms";
-        // elem.style["transform"] = "translate3d(0px, 0px, 0px) scale(1)";
-    }
-
-    function resetZoomFilter(){
-        if(orgHeight !== null){
-            let ele_id           = activeImgId;
-            var elem             = document.getElementById(ele_id);
-            console.log(ele_id);
-            elem.style.width = orgWidth + "px";
-            elem.style.height = orgHeight + "px";
-            elem.style.maxWidth = "100%";
-            setOrgWidth(null);
-            setOrgHeight(null);
-            setActiveImgId(null);
-        }
-    }
-
     return(
         <div className="img-view-modal" id="imageViewBox" show-modal={imageModal}>
             <div className="modal-dialog">
@@ -117,19 +73,64 @@ export default function ImageViewBoxModal({imageModal, currentImgIndex, closeIma
                                                                 <div className="carousel-item-body">
                                                                     <h5>Mairage Function, Rajarhat, Kolkata</h5>
                                                                     <div className="img-content-section" id={"fullScreenEle-"+i}>
-                                                                        <div className="full-screen-wrap">
-                                                                            <img src={item.file_src} alt={item.alt_tag} className="d-block carousel-item-img" style={{maxWidth:"100%"}} id={"image-"+i}/>
-                                                                            <div className="image-view-box-controller">
-                                                                                <button type="button" className="zoom-in" onClick={zoomIn} value={i}><i className="fa fa-search-plus" style={{height:"21px", width:"21px"}}></i></button>
-                                                                                <button type="button" className="zoom-out" onClick={zoomOut} value={i}><i className="fa fa-search-minus"style={{height:"21px", width:"21px"}}></i></button>
-                                                                                <button type="button" className="full-screen" onClick={toggleFullScreen} value={i}><img src={fullScreenSymbol} alt="Full-Screen" className="w-100 full-screen-icon"/></button>
-                                                                            </div>
+                                                                        <div className="full-screen-wrap" id={"wrap-container-"+i} style={{width:"100%", height:"100%"}}>
+                                                                            {/* <img src={item.file_src} alt={item.alt_tag} className="d-block carousel-item-img" style={{width:"auto", maxWidth:"100%"}} id={"image-"+i} onMouseMove={move} onMouseDown={(e)=>{startDragging(e,i)}} onMouseUp={(e)=>{stopDragging(e,i)}} onMouseLeave={(e)=>{stopDragging(e,i)}} value={i} onDoubleClick={(e)=>{zoomIn(e,i)}}/> */}
+                                                                            <TransformWrapper
+                                                                                initialScale={1}
+                                                                                // centerContent={false}
+                                                                                maxScale={4}
+                                                                                initialPositionX={0}
+                                                                                initialPositionY={0}
+                                                                                initialPositionZ={0}
+                                                                                wheel={{ step: 100 }}
+                                                                                centerOnInit={true}
+                                                                                centerZoomedOut={true}
+                                                                            >
+                                                                                {(
+                                                                                    { zoomIn, zoomOut, resetTransform, ...rest }) => (
+                                                                                    <>
+                                                                                        {/* <Controls /> */}
+                                                                                        <TransformComponent
+                                                                                            // wrapperStyle={{
+                                                                                            //     width: "100%",
+                                                                                            //     height: "100%",
+                                                                                            // }}
+                                                                                        >
+                                                                                            <img src={item.file_src} alt={item.alt_tag} className="d-block carousel-item-img" id={"image-"+i} style={{maxWidth:"100%"}}/>
+                                                                                        </TransformComponent>
+                                                                                        <div className="image-view-box-controller">
+                                                                                            <button type="button" className="zoom-in" onClick={()=>{zoomIn()}} value={i}><i className="fa fa-search-plus" style={{height:"21px", width:"21px"}}></i></button>
+                                                                                            <button type="button" className="zoom-out" onClick={()=>{zoomOut()}} value={i}><i className="fa fa-search-minus"style={{height:"21px", width:"21px"}}></i></button>
+                                                                                            <button type="button" className="full-screen" onClick={(e)=>{toggleFullScreen(e);resetTransform();}} value={i}><img src={fullScreenSymbol} alt="Full-Screen" className="w-100 full-screen-icon"/></button>
+                                                                                            <button onClick={() => {resetTransform()}}>x</button>
+                                                                                        </div>
+                                                                                        <button className="carousel-control-prev" type="button" data-bs-target="#imgViewCarousel" data-bs-slide="prev" id={"carousel-control-lbtn-"+i} onClick={() => {resetTransform()}}>
+                                                                                            <span><i className="fa fa-caret-left" style={{fontSize:"48px", color:"#f4be00"}}></i></span>
+                                                                                        </button>
+                                                                                        <button className="carousel-control-next" type="button" data-bs-target="#imgViewCarousel" data-bs-slide="next" id={"carousel-control-rbtn-"+i} onClick={() => {resetTransform()}}>
+                                                                                            <span><i className="fa fa-caret-right" style={{fontSize:"48px", color:"#f4be00"}}></i></span>
+                                                                                        </button>
+                                                                                    </>
+                                                                                )}
+                                                                            </TransformWrapper>
                                                                         </div>
+                                                                        {/* <div className="image-view-box-controller">
+                                                                            <button type="button" className="zoom-in" onClick={(e)=>{zoomIn(e,i)}} value={i}><i className="fa fa-search-plus" style={{height:"21px", width:"21px"}}></i></button>
+                                                                            <button type="button" className="zoom-out" onClick={(e)=>{zoomOut(e,i)}} value={i}><i className="fa fa-search-minus"style={{height:"21px", width:"21px"}}></i></button>
+                                                                            <button type="button" className="full-screen" onClick={toggleFullScreen} value={i}><img src={fullScreenSymbol} alt="Full-Screen" className="w-100 full-screen-icon"/></button>
+                                                                        </div> */}
                                                                     </div>
                                                                 </div>
                                                                 :
-                                                                <div className="carousel-item-body">
+                                                                <div className="carousel-item-body carousel-video-item-body">
+                                                                    <h5>Mairage Function, Rajarhat, Kolkata</h5>
                                                                     <iframe width="200px" height="auto" className="carousel-item-video" src={item.file_src+"&rel=0"} title="YouTube video player"frameborder="0" style={{borderRadius:"12px"}} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+                                                                    <button className="carousel-control-prev" type="button" data-bs-target="#imgViewCarousel" data-bs-slide="prev" id={"carousel-control-lbtn-"+i}>
+                                                                        <span><i className="fa fa-caret-left" style={{fontSize:"48px", color:"#f4be00"}}></i></span>
+                                                                    </button>
+                                                                    <button className="carousel-control-next" type="button" data-bs-target="#imgViewCarousel" data-bs-slide="next" id={"carousel-control-rbtn-"+i}>
+                                                                        <span><i className="fa fa-caret-right" style={{fontSize:"48px", color:"#f4be00"}}></i></span>
+                                                                    </button>
                                                                 </div>
                                                             }
                                                         </>
@@ -144,12 +145,12 @@ export default function ImageViewBoxModal({imageModal, currentImgIndex, closeIma
                                 }
                             </div>
 
-                            <button className="carousel-control-prev" type="button" data-bs-target="#imgViewCarousel" data-bs-slide="prev" onClick={resetZoomFilter}>
+                            {/* <button className="carousel-control-prev" type="button" data-bs-target="#imgViewCarousel" data-bs-slide="prev" onClick={() => resetTransform()}>
                                 <span><i className="fa fa-caret-left" style={{fontSize:"48px", color:"#f4be00"}}></i></span>
                             </button>
-                            <button className="carousel-control-next" type="button" data-bs-target="#imgViewCarousel" data-bs-slide="next" onClick={resetZoomFilter}>
+                            <button className="carousel-control-next" type="button" data-bs-target="#imgViewCarousel" data-bs-slide="next" onClick={() => resetTransform()}>
                                 <span><i className="fa fa-caret-right" style={{fontSize:"48px", color:"#f4be00"}}></i></span>
-                            </button>
+                            </button> */}
                         </div>
                     </div>
                 </div>
