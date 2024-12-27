@@ -138,9 +138,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: scroll;
-    overflow-y: scroll;
-    overflow-x: auto;
 }
 .img-view-modal .carousel-item-img{
     /* width: auto;
@@ -150,9 +147,6 @@
 .img-view-modal .carousel-item-video{
     width: 650px;
     height: 400px;
-}
-.gallery-yt-video{
-    display: flex;
 }
 .img-gallery-modal-carousel .carousel-control-next, .img-gallery-modal-carousel .carousel-control-prev{
     opacity:unset !important;
@@ -228,14 +222,6 @@
     .img-view-modal .carousel-item-body h5{
         font-size: 24px;
     }
-    .gallery-page-body .show-images .album-img {
-        height: 146px !important;
-        width: 146px !important;
-    }
-    .gallery-page-body .yt-video-iframe{
-        height: 146px !important;
-        width: 146px !important;
-    }
     .img-view-modal .carousel-item-video{
         width: 320px;
         height: 250px;
@@ -244,14 +230,6 @@
 @media(max-width:483.98px){
     .img-view-modal .carousel-item-body h5{
         font-size: 22px;
-    }
-    .gallery-page-body .show-images .album-img {
-        height: 150px !important;
-        width: 150px !important;
-    }
-    .gallery-page-body .yt-video-iframe{
-        height: 150px !important;
-        width: 150px !important;
     }
 }
 @media(max-width:423.98px){
@@ -264,14 +242,6 @@
     }
 }
 @media(max-width:349.98px){
-    .gallery-page-body .show-images .album-img {
-        height: 142px !important;
-        width: 142px !important;
-    }
-    .gallery-page-body .yt-video-iframe{
-        height: 142px !important;
-        width: 142px !important;
-    }
     .img-view-modal .carousel-item-video{
         width: 220px;
         height: 200px;

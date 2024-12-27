@@ -14,15 +14,15 @@ function GalleryCarousel(){
 
                     <div className="carousel-inner">
                         <div className="carousel-item carousel-item-style active">
-                            <img src="https://cdn1.byjus.com/wp-content/uploads/2022/05/anavarat-foundation.jpg" alt="Los Angeles" className="d-block w-100 carousel-item-img"/>
+                            <img src="https://img.perceptpixel.com/pykhlszs/riya_caterer/bg-image-twenty.webp" alt="wedding" className="d-block w-100 carousel-item-img"/>
                             <h5>Mairage Function, Rajarhat, Kolkata</h5>
                         </div>
                         <div className="carousel-item carousel-item-style">
-                            <img src="https://cdn1.byjus.com/byjusweb/csr1/slider-4-thumb-2.png" alt="Chicago" className="d-block w-100 carousel-item-img"/>
+                            <img src="https://img.perceptpixel.com/pykhlszs/riya_caterer/gallery-banner.webp" alt="get together" className="d-block w-100 carousel-item-img"/>
                             <h5>Rice Ceremony, Belgachia, Kolkata</h5>
                         </div>
                         <div className="carousel-item carousel-item-style">
-                            <img src="https://cdn1.byjus.com/byjusweb/csr1/slider-4-thumb-3.png" alt="New York" className="d-block w-100 carousel-item-img"/>
+                            <img src="https://img.perceptpixel.com/pykhlszs/riya_caterer/many-food.webp" alt="birthay" className="d-block w-100 carousel-item-img"/>
                             <h5>Food Delivery, Tangra, Kolkata</h5>
                         </div>
                     </div>
