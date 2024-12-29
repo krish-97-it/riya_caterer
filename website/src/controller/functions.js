@@ -110,14 +110,28 @@ export default function MainFunction(){
         return(temp_array);
     }
 
+    function loadAllImg(){
+        console.log("load all img")
+        updateCurrentEvent('');
+        setSortByInput("default");
+        setFilterByInput("mix");
+        document.getElementById("defaultSortBy").checked = true;
+        document.getElementById("defaultFilterBy").checked = true;
+        updateGalleryTempData(workGalleryData)
+    }
+
+    // Every time code rendered it will filtered the list with current selected Event
     let getFilteredItemList   = galleryTempData.filter((item) =>
         item.group.toLowerCase().includes(currentEvent)
     );
     getFilteredItemList = getFilteredItemList;
 
-    // check if any input of sort by is added or not, then rearrange the filtered data as per condition else store the filtered data only
+    // After checking current Event, check if any input of sort by is added or not, then rearrange the filtered data as per condition
     getFilteredItemList = sortByInput === 'default' ? getFilteredItemList : getSortByInputData(getFilteredItemList);
+
+    // Final check will be done for filter by, check what is the input of filterby and filteredthe list.
     getFilteredItemList = filterByInput === 'mix' ? getFilteredItemList : getFilterByInputData(getFilteredItemList);
+
 
     return(
         <Router>
@@ -127,7 +141,7 @@ export default function MainFunction(){
                 <Route exact path="/contact-us" element={<Contact/>}/>
                 <Route exact path="/reviews" element={<Reviews getReviewList = {userReviews}/>}/>
                 <Route exact path="/our-service" element={<Service/>}/>
-                <Route exact path="/gallery" element={<Gallery imageModal={imageModal} openImageModal={openImageModal} closeImageModal={closeImageModal} getSortByInput={getSortByInput} getGalleryByAlbum={getGalleryByAlbum} getFilterByInput={getFilterByInput} currentEvent={currentEvent} getFilteredItemList={getFilteredItemList} currentImgIndex={currentImgIndex}/>}/>
+                <Route exact path="/gallery" element={<Gallery imageModal={imageModal} openImageModal={openImageModal} closeImageModal={closeImageModal} getSortByInput={getSortByInput} getGalleryByAlbum={getGalleryByAlbum} getFilterByInput={getFilterByInput} currentEvent={currentEvent} getFilteredItemList={getFilteredItemList} currentImgIndex={currentImgIndex} loadAllImg={loadAllImg}/>}/>
                 <Route exact path="*" element={<Errorpage />} />
             </Routes>
             <Footer/>

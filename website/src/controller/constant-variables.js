@@ -10,6 +10,21 @@ const Costant_Variables = {
         {"gender":"boy", "img_link":"https://img.perceptpixel.com/pykhlszs/dp_boy_two.webp"},
     ],
 
+    event_Name : [
+        {"name":"Wedding", "value":"wedding"},
+        {"name":"Engagement", "value":"engagement"},
+        {"name":"Rice Ceremony", "value":"rice-ceremony"},
+        {"name":"Birthday", "value":"birthday"},
+        {"name":"Sraddho Anusthan", "value":"sraddho-anusthan"},
+        {"name":"Upanayan", "name":"upanayan"},
+        {"name":"Baby Shower", "value":"baby-shower"},
+        {"name":"Picnic", "value":"picnic"},
+        {"name":"Puja Occassions", "value":"puja-occassions"},
+        {"name":"Griho Pravesh", "value":"griho-pravesh"},
+        {"name":"Corporate Event", "value":"corporate-event"},
+        {"name":"Others", "name":"others"},
+    ],
+
     states : [
         "Andhra Pradesh",
         "Arunachal Pradesh",

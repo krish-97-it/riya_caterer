@@ -1,0 +1,18 @@
+.new-form-field label{
+    float: left;
+}
+.user-comment-field, .event-loc-field{
+    display: flex;
+    justify-content: left;
+    align-items: baseline;
+    flex-direction: column;
+    width: 100%;
+}
+
+.user-comment-field textarea, .event-loc-field textarea{
+    width: 100%;
+    height: 100px;
+    border-radius: 4px;
+    border: 1px solid #d9d9d9;
+    padding: 10px;
+}

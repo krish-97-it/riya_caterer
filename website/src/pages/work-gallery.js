@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 import Loading from "../component/page-loading";
 import GoToTop from "../component/go-to-top";
 import ImageCarouselViewBoxModal from "../component/custom-modal";
+import NoImgIcon from "../assets/images/no-image-icon.svg";
 
-export default function Gallery({imageModal, openImageModal, closeImageModal, getSortByInput, getGalleryByAlbum, getFilterByInput, currentEvent, getFilteredItemList, currentImgIndex}){
+export default function Gallery({imageModal, openImageModal, closeImageModal, getSortByInput, getGalleryByAlbum, getFilterByInput, currentEvent, getFilteredItemList, currentImgIndex, loadAllImg}){
     // Set loading state to true initially
     const [isLoading, setLoading] = useState(true);
 
@@ -91,7 +92,7 @@ export default function Gallery({imageModal, openImageModal, closeImageModal, ge
                                                                 <li>
                                                                     <div className="form-check form-check-inline sort-by-form-check">
                                                                         <label className="form-check-label" htmlFor="inlineRadio1">Default</label>
-                                                                        <input className="form-check-input-sort-by" type="radio" name="radiobtnsortby" id="radio-btn1" onChange={getSortByInput} value="default" defaultChecked/>
+                                                                        <input className="form-check-input-sort-by" type="radio" name="radiobtnsortby" id="defaultSortBy" onChange={getSortByInput} value="default" defaultChecked/>
                                                                     </div>
                                                                 </li>
                                                                 <li>
@@ -116,7 +117,7 @@ export default function Gallery({imageModal, openImageModal, closeImageModal, ge
                                                                 <li>
                                                                     <div className="form-check form-check-inline filter-by-form-check">
                                                                         <label className="form-check-label" htmlFor="inlineRadio1">Mix</label>
-                                                                        <input className="form-check-input-filter-by" type="radio" name="radiobtnfilterby" id="filter-by-radio-btn1" onChange={getFilterByInput} value="mix" defaultChecked/>
+                                                                        <input className="form-check-input-filter-by" type="radio" name="radiobtnfilterby" id="defaultFilterBy" onChange={getFilterByInput} value="mix" defaultChecked/>
                                                                     </div>
                                                                 </li>
                                                                 <li>
@@ -133,14 +134,15 @@ export default function Gallery({imageModal, openImageModal, closeImageModal, ge
                                                                 </li>
                                                             </ul>
                                                         </div>
-                                                        <button className="btn btn-primary">Reset Back</button>
+                                                        <button className="btn load-all-img" onClick={loadAllImg}>All Image</button>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div className="show-images-section">
-                                                <div className="show-images">
-                                                    {
-                                                        (getFilteredItemList.length > 0)?
+                                                {
+                                                    (getFilteredItemList.length > 0)?
+                                                    <div className="show-images">
+                                                        {
                                                             getFilteredItemList.map((data,index)=>{
                                                                 return(
                                                                     <>
@@ -159,12 +161,17 @@ export default function Gallery({imageModal, openImageModal, closeImageModal, ge
                                                                     
                                                                 )
                                                             })
-                                                        :
-                                                        <div className="no-image-found">
-                                                            No image Found by the applied filter.
+                                                        
+                                                        }
+                                                    </div>
+                                                    :
+                                                    <div className="no-image-found mt-3 mb-3" style={{display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center"}}>
+                                                        <div className="no-img-section">
+                                                            <img src={NoImgIcon} alt="no image" className="w-100"/>
                                                         </div>
-                                                    }
-                                                </div>
+                                                        <p className="mt-2" style={{fontWeight:"700", color:"grey"}}>No image Found by the applied filter.</p>
+                                                    </div>
+                                                }
                                             </div>
                                         </div>
                                     </div>
@@ -175,8 +182,8 @@ export default function Gallery({imageModal, openImageModal, closeImageModal, ge
                                     <div className="row">
                                         <picture>
                                             <source media="(min-width:650px)" srcSet="https://img.perceptpixel.com/pykhlszs/riya_caterer/menu-planner-desktop.webp"/>
-                                            <source media="(max-width:649.98px)" srcSet="https://img.perceptpixel.com/pykhlszs/riya_caterer/menu-panner-banner-mob.webp"/>
-                                            <img src="https://img.perceptpixel.com/pykhlszs/riya_caterer/menu-panner-banner-mob.webp" className="w-100 banner-img" style={{width:"100%", height:"auto"}} alt="Menu Planner"/>
+                                            <source media="(max-width:649.98px)" srcSet="https://img.perceptpixel.com/pykhlszs/riya_caterer/mob-menu-panner.webp"/>
+                                            <img src="https://img.perceptpixel.com/pykhlszs/riya_caterer/mob-menu-panner.webp" className="w-100 banner-img" style={{width:"100%", height:"auto"}} alt="Menu Planner"/>
                                         </picture>
                                     </div>
                                 </div>
