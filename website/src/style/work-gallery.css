@@ -44,7 +44,7 @@
 }
 .gallery-box-section{
     background-color: #ffffff;
-    padding: 30px 0px 30px 0px;
+    padding: 30px 0px 50px 0px;
 }
 .gallery-box-section h3{
     font-family: "Proxima Soft Semibold";
@@ -168,6 +168,9 @@
 .sort-by-filter-section .filter-by-btn{
     color: #944300 !important;
 }
+.image-album-section{
+    box-shadow: 0 27px 20px -19px rgb(122 62 134 / 31%);
+}
 .show-image-section{
     position: relative;
     font-family: "Proxima Soft Bold";
@@ -184,7 +187,7 @@
     grid-auto-flow: dense;
     padding: 5px;
     gap: 5px;
-    background-color: #000;
+    background-color: #ffffff;
     border-radius: 10px;
     font-family: 'Proxima Soft Bold';
     position: relative;
@@ -227,7 +230,6 @@
     width: 30x !important;
     border: none;
 }
-
 @media(min-width:768px){
     .gallery-page-body .banner-section .gradient-bg{
         min-height: 475px;
@@ -246,18 +248,15 @@
         padding: 8px;
     }
 }
-@media(min-width:1200px){
-   
-}
-@media(min-width:992px) and (max-width:1199.98px){
-    
-}
-@media(min-width:768px) and (max-width:991.98px){
-   
-}
 @media(max-width:767.98px){
     .gallery-page-body .show-images{
-        gap: 0px;
+        gap: 5px;
+    }
+}
+@media(max-width:649.98px){
+    .menuplanner-banner-section{
+        border-top: 10px solid rgb(37, 24, 27);
+        border-bottom: 20px solid rgb(37, 24, 27);
     }
 }
 @media(max-width:575.98px){
