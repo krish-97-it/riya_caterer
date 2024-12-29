@@ -167,7 +167,7 @@ export default function Gallery({imageModal, openImageModal, closeImageModal, ge
                                                     :
                                                     <div className="no-image-found mt-3 mb-3" style={{display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center"}}>
                                                         <div className="no-img-section">
-                                                            <img src={NoImgIcon} alt="no image" className="w-100"/>
+                                                            <img src={NoImgIcon} alt="noimgicon" className="w-100"/>
                                                         </div>
                                                         <p className="mt-2" style={{fontWeight:"700", color:"grey"}}>No image Found by the applied filter.</p>
                                                     </div>

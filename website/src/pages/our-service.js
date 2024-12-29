@@ -2,10 +2,10 @@ import React,{useState, useEffect} from "react";
 import GoToTop from "../component/go-to-top";
 import Loading from "../component/page-loading";
 import PlusSymbol from "../assets/images/plus.svg";
-import GreyLine from "../assets/images/GreyLine4.avif";
-import BlackUnderline from "../assets/images/greyUnderline.webp";
+// import GreyLine from "../assets/images/GreyLine4.avif";
+// import BlackUnderline from "../assets/images/greyUnderline.webp";
 import CustomMasonary from "../component/custom-masonary";
-import ForkKnife from "../assets/images/cutlinary-icon.svg"
+// import ForkKnife from "../assets/images/cutlinary-icon.svg";
 
 export default function Service(){
     // Set loading state to true initially
@@ -56,7 +56,7 @@ export default function Service(){
                                                     <div className="card-group">
                                                         <div className="card">
                                                             <div className="card-img-section">
-                                                                <img className="card-img-top service-type-img" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/cooking-img.webp" alt="Card image cap"/>
+                                                                <img className="card-img-top service-type-img" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/cooking-img.webp" alt="cook"/>
                                                             </div>
                                                             <div className="card-body">
                                                                 <p className="card-text service-type-p">Cooking by Professional Chefs on spot at your event's Location.</p>
@@ -65,7 +65,7 @@ export default function Service(){
                                                         <div className="straight-line"></div>
                                                         <div className="plus-symbol"><img src={PlusSymbol} className="" alt="plus"/></div>
                                                         <div className="card">
-                                                            <img className="card-img-top service-type-img" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/serving.webp" alt="Card image cap"/>
+                                                            <img className="card-img-top service-type-img" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/serving.webp" alt="serv"/>
                                                             <div className="card-body">
                                                                 <p className="card-text service-type-p">Serving Food by experienced Staffs with proper management.</p>
                                                             </div>
@@ -81,7 +81,7 @@ export default function Service(){
                                                     <h5 className="card-title">Cooking & Delivery</h5>
                                                     <div className="card-group">
                                                         <div className="card">
-                                                            <img className="card-img-top service-type-img" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/cooking-img-two.webp" alt="Card image cap"/>
+                                                            <img className="card-img-top service-type-img" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/cooking-img-two.webp" alt="cook"/>
                                                             <div className="card-body">
                                                                 <p className="card-text service-type-p">Cooking by Professional Chefs as per requirement for the event.</p>
                                                             </div>
@@ -89,7 +89,7 @@ export default function Service(){
                                                         <div className="straight-line"></div>
                                                         <div className="plus-symbol"><img src={PlusSymbol} className="" alt="plus"/></div>
                                                         <div className="card">
-                                                            <img className="card-img-top service-type-img" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/untitled-design-675a181a01631.webp" alt="Card image cap"/>
+                                                            <img className="card-img-top service-type-img" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/untitled-design-675a181a01631.webp" alt="delivery"/>
                                                             <div className="card-body">
                                                                 <p className="card-text service-type-p">Cooked Food will be delivered on the event at the correct time.</p>
                                                             </div>

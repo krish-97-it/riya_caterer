@@ -6,7 +6,7 @@ import FbIcon from "../assets/images/social-media-icons/facebookIcon.svg";
 import WpIcon from "../assets/images/social-media-icons/whatsappIcon.svg";
 import GmailIcon from "../assets/images/social-media-icons/gmailIcon.svg";
 import phoneIcon from "../assets/images/social-media-icons/phoneIcon.svg";
-import TouchIcon from "../assets/images/touch-icon.webp";
+// import TouchIcon from "../assets/images/touch-icon.webp";
 import { ContactForm } from "../component/contact-form";
 import BlackUnderline from "../assets/images/greyUnderline.webp"
  
@@ -152,7 +152,7 @@ export default function Contact(){
                                 <div className="contact-form-wrap">
                                     <div className="container">
                                         <div className="form-description">
-                                            <p>Send us your message or query with your requirement and get a response back soon!</p>
+                                            <p className="mb-0">Send us your message or query with your requirement and get a response back soon!</p>
                                         </div>
                                         <div className="contact-us-form-section">
                                             <ContactForm/>
@@ -167,7 +167,7 @@ export default function Contact(){
                                 </div>
                                 <div className="container">
                                     <div className="contact-us-map-section" >
-                                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.0965179342793!2d88.38465977627244!3d22.61287067946289!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f89d82587de72f%3A0xe0805472c836baff!2sRiya%20Caterers!5e0!3m2!1sen!2sin!4v1735387584841!5m2!1sen!2sin" width="600" height="450" style={{border:"0", borderRadius:"12px", width:"100%"}} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                        <iframe title="address-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.0965179342793!2d88.38465977627244!3d22.61287067946289!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f89d82587de72f%3A0xe0805472c836baff!2sRiya%20Caterers!5e0!3m2!1sen!2sin!4v1735387584841!5m2!1sen!2sin" width="600" height="450" style={{border:"0", borderRadius:"12px", width:"100%"}} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                                     </div>
                                 </div>
                             </div>

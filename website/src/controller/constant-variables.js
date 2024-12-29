@@ -16,13 +16,13 @@ const Costant_Variables = {
         {"name":"Rice Ceremony", "value":"rice-ceremony"},
         {"name":"Birthday", "value":"birthday"},
         {"name":"Sraddho Anusthan", "value":"sraddho-anusthan"},
-        {"name":"Upanayan", "name":"upanayan"},
+        {"name":"Upanayan", "value":"upanayan"},
         {"name":"Baby Shower", "value":"baby-shower"},
         {"name":"Picnic", "value":"picnic"},
         {"name":"Puja Occassions", "value":"puja-occassions"},
         {"name":"Griho Pravesh", "value":"griho-pravesh"},
         {"name":"Corporate Event", "value":"corporate-event"},
-        {"name":"Others", "name":"others"},
+        {"name":"Others", "value":"others"},
     ],
 
     states : [

@@ -2,11 +2,11 @@ import React,{useState} from "react";
 import Costant_Variables from "../controller/constant-variables";
 import ValidationFunctions from "../controller/validation";
 import Swal from "sweetalert2";
-import axios from "axios";
+// import axios from "axios";
 
 export function ContactForm(){
 
-    const apiUrl            =   Costant_Variables.SERVER_BASE_URL+'/addNewUser';
+    const apiUrl            =   Costant_Variables.SERVER_BASE_URL+'/submitQueries';
 
     const [newUserData, setNewUserData] = useState({
         fullName: '',
@@ -34,13 +34,15 @@ export function ContactForm(){
         let ele         =   e.target.name;
         let ele_val     =   e.target.value;
 
+        console.log(ele_val)
+
         if(ele === "emailId"){
             ele_val = ele_val.toLowerCase();
         }
         setNewUserData({...newUserData, [ele] : ele_val});
 
         if(ele === 'fullName'){
-            let isfullNameValid = ValidationFunctions.nameValidation(ele,ele_val);
+            let isfullNameValid = ValidationFunctions.nameValidation("Full Name",ele_val,false);
 
             if(isfullNameValid !== 'valid'){
                 updateFullNameErr({...fullNameErr, err_mssg: isfullNameValid, isValid: "invalid"})
@@ -48,7 +50,7 @@ export function ContactForm(){
                 updateFullNameErr({...fullNameErr, err_mssg: isfullNameValid, isValid: "valid"})
             }
         }else if(ele === 'emailId'){
-            let isEmailValid = ValidationFunctions.emailValidation(ele,ele_val);
+            let isEmailValid = ValidationFunctions.emailValidation("Email Id",ele_val,false);
             if(isEmailValid !== 'valid'){
                 updateEmailIdErr({...emailIdErr, err_mssg: isEmailValid, isValid: "invalid"})
             }else{
@@ -56,7 +58,7 @@ export function ContactForm(){
 
             }
         }else if(ele === 'phoneNum'){
-            let isPhoneNumValid = ValidationFunctions.phoneValidation(ele,ele_val);
+            let isPhoneNumValid = ValidationFunctions.phoneValidation("Mobile No.",ele_val,false);
 
             if(isPhoneNumValid !== 'valid'){
                 updatePhoneNumErr({...phoneNumErr, err_mssg: isPhoneNumValid, isValid: "invalid"})
@@ -64,8 +66,8 @@ export function ContactForm(){
                 updatePhoneNumErr({...phoneNumErr, err_mssg: isPhoneNumValid, isValid: "valid"})
 
             }
-        }else if(ele === 'eventType'){
-            let isEventNameValid = ValidationFunctions.requiredValidation("eventType",ele_val);
+        }else if(ele === 'eventName'){
+            let isEventNameValid = ValidationFunctions.requiredValidation("Event Name",ele_val,false);
 
             if(isEventNameValid !== 'valid'){
                 updateEventNameErr({...eventNameErr, err_mssg: isEventNameValid, isValid: "invalid"})
@@ -73,7 +75,7 @@ export function ContactForm(){
                 updateEventNameErr({...eventNameErr, err_mssg: isEventNameValid, isValid: "valid"})
             }
         }else if(ele === 'servieType'){
-            let isServieTypeValid = ValidationFunctions.servieTypeValidation(ele,ele_val,true);
+            let isServieTypeValid = ValidationFunctions.requiredValidation("Service Type",ele_val,false);
 
             if(isServieTypeValid !== 'valid'){
                 updateServiceTypeErr({...serviceTypeErr, err_mssg: isServieTypeValid, isValid: "invalid"})
@@ -82,7 +84,7 @@ export function ContactForm(){
 
             }
         }else if(ele === 'paxCount'){
-            let ispaxCountValid = ValidationFunctions.requiredValidation("paxCount",ele_val);
+            let ispaxCountValid = ValidationFunctions.numberValidation("Plate Count",ele_val,false);
 
             if(ispaxCountValid !== 'valid'){
                 updatePaxCountErr({...paxCountErr, err_mssg: ispaxCountValid, isValid: "invalid"})
@@ -95,42 +97,42 @@ export function ContactForm(){
     }
 
     const onSubmitValidation = (data) => {
-        let isfullNameValid = ValidationFunctions.nameValidation("fullName",data.fullName);
+        let isfullNameValid = ValidationFunctions.nameValidation("Full Name",data.fullName,false);
         if(isfullNameValid !== 'valid'){
             updateFullNameErr({...fullNameErr, err_mssg: isfullNameValid, isValid: "invalid"})
         }else{
             updateFullNameErr({...fullNameErr, err_mssg: isfullNameValid, isValid: "valid"})
         }
         
-        let isEmailValid = ValidationFunctions.emailValidation("emailId",data.emailId);
+        let isEmailValid = ValidationFunctions.emailValidation("Email Id",data.emailId,false);
         if(isEmailValid !== 'valid'){
             updateEmailIdErr({...emailIdErr, err_mssg: isEmailValid, isValid: "invalid"})
         }else{
             updateEmailIdErr({...emailIdErr, err_mssg: isEmailValid, isValid: "valid"})
         }
 
-        let isPhoneNumValid = ValidationFunctions.phoneValidation("phoneNum",data.phoneNum);
+        let isPhoneNumValid = ValidationFunctions.phoneValidation("Mobile No.",data.phoneNum,false);
         if(isPhoneNumValid !== 'valid'){
             updatePhoneNumErr({...phoneNumErr, err_mssg: isPhoneNumValid, isValid: "invalid"})
         }else{
             updatePhoneNumErr({...phoneNumErr, err_mssg: isPhoneNumValid, isValid: "valid"})
         }
 
-        let isEventNameValid = ValidationFunctions.requiredValidation("eventType",data.eventType);
+        let isEventNameValid = ValidationFunctions.requiredValidation("Event Name",data.eventName,false);
         if(isEventNameValid !== 'valid'){
             updateEventNameErr({...eventNameErr, err_mssg: isEventNameValid, isValid: "invalid"})
         }else{
             updateEventNameErr({...eventNameErr, err_mssg: isEventNameValid, isValid: "valid"})
         }
 
-        let isServiceTypeValid = ValidationFunctions.requiredValidation("serviceType",data.serviceType);
+        let isServiceTypeValid = ValidationFunctions.requiredValidation("Service Type",data.serviceType,false);
         if(isServiceTypeValid !== 'valid'){
             updateServiceTypeErr({...serviceTypeErr, err_mssg: isServiceTypeValid, isValid: "invalid"})
         }else{
             updateServiceTypeErr({...serviceTypeErr, err_mssg: isServiceTypeValid, isValid: "valid"})
         }
 
-        let isPaxCountValid = ValidationFunctions.requiredValidation("paxCount",data.paxCount);
+        let isPaxCountValid = ValidationFunctions.numberValidation("Plate Count",data.paxCount,false);
         if(isPaxCountValid !== 'valid'){
             updatePaxCountErr({...paxCountErr, err_mssg: isPaxCountValid, isValid: "invalid"})
         }else{
@@ -151,15 +153,16 @@ export function ContactForm(){
         let validationFlag  = onSubmitValidation(newUserData);
 
         if(validationFlag){
-            setLoadingMssg("Please wait !! submitting form...")
+            setLoadingMssg("Please wait !! submitting form...");
+            console.log(newUserData.eventLocation);
             const formData  = {
                 name: newUserData.fullName,
                 email: newUserData.emailId,
-                phone: parseInt(newUserData.phoneNum),
-                event: newUserData.eventName,
-                service: newUserData.serviceType,
-                pax: newUserData.paxCount,
-                location: newUserData.eventLocation,
+                phone_no: parseInt(newUserData.phoneNum),
+                event_name: newUserData.eventName,
+                service_type: newUserData.serviceType,
+                plate_count: newUserData.paxCount,
+                event_location: newUserData.eventLocation,
                 comment: newUserData.userComment,
             };
             const formDataJsonString    =   JSON.stringify(formData);
@@ -180,7 +183,7 @@ export function ContactForm(){
                         Swal.fire(
                             {
                                 title: "Success!",
-                                text: "Query Sent Successfully!!",
+                                text: "Query Sent Successfully!! You will get a response within 12 hours.",
                                 icon: "success"
                             }
                         )
@@ -203,7 +206,7 @@ export function ContactForm(){
 
             }
             catch(error){
-                console.log("Something went wrong!! please try again later");
+                console.log(error+"Something went wrong!! please try again later");
             }
 
         }else{
@@ -315,14 +318,14 @@ export function ContactForm(){
             </div>
             <div className="col-md-12 col-sm-12 new-form-field event-loc-field">
                 <label htmlFor="eventLocation" className="form-label">Event Location</label>
-                <textarea name="eventLocation" id="eventLocation" placeholder="Enter your event location/address..."></textarea>
+                <textarea name="eventLocation" id="eventLocation" placeholder="Enter your event location/address..." onChange={(e)=>handlenewUserInput(e)}></textarea>
             </div>
             <div className="col-md-12 col-sm-12 new-form-field user-comment-field">
                 <label htmlFor="userComment" className="form-label">Comments</label>
-                <textarea id="userComment" name="userComment" placeholder="Enter your comments here..."></textarea>
+                <textarea id="userComment" name="userComment" placeholder="Enter your comments here..." onChange={(e)=>handlenewUserInput(e)}></textarea>
             </div>
             <div className="col-sm-12">
-                <button className="btn btn-primary new-user-form-submit" type="submit">Submit form</button>
+                <button className="btn btn-primary new-user-form-submit" type="submit">Send your query</button>
                 <p style={{fontWeight:"600"}} error-mssg-style={msgStyle}>{loadingMssg}</p>
             </div>
         </form>
