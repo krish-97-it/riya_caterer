@@ -13,7 +13,7 @@ import Errorpage from "../pages/404-page";
 
 export default function MainFunction(){
 
-    let websiteBaseUrl = window.location.origin;
+    // let websiteBaseUrl = window.location.origin;
     const [imageModal, updateImageModal]            = useState('hide');
     const [sortByInput, setSortByInput]             = useState('default');
     const [filterByInput, setFilterByInput]         = useState('mix');

@@ -1,14 +1,14 @@
-import React,{useState} from "react";
+import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import {ReactTyped} from 'react-typed';
 import GoogleReviews from "../component/google-review-widget";
 import GoToTop from "../component/go-to-top";
-import RedUnderline from "../assets/images/RedUnderline.avif";
-import GreenUnderline from "../assets/images/GreenUnderline.avif";
-import PurpleUnderline from "../assets/images/PurpleUnderline.avif";
+// import RedUnderline from "../assets/images/RedUnderline.avif";
+// import GreenUnderline from "../assets/images/GreenUnderline.avif";
+// import PurpleUnderline from "../assets/images/PurpleUnderline.avif";
 import GalleryCarousel from "../component/gallery-carousel";
-import YellowUnderline from "../assets/images/yellowUnderline.webp";
-import BlackUnderline from "../assets/images/greyUnderline.webp";
+// import YellowUnderline from "../assets/images/yellowUnderline.webp";
+// import BlackUnderline from "../assets/images/greyUnderline.webp";
 import Logo from '../assets/images/riya_caterer_logo.webp';
 
 export default function Homepage({getReviewList}){
@@ -126,43 +126,43 @@ export default function Homepage({getReviewList}){
                         <div className="container">
                             <div className="choose-options">
                                 <div className="ele ele-one">
-                                    <img className="rounded-circle ele-img" src="https://img.perceptpixel.com/pykhlszs/indian-cuisine.webp"/>
+                                    <img className="rounded-circle ele-img" src="https://img.perceptpixel.com/pykhlszs/indian-cuisine.webp" alt="quality"/>
                                     <p className="mb-0 mt-3"><span className="txt">Good Quality Food</span></p>
                                 </div>
                                 <div className="ele ele-two">
-                                    <img className="rounded-circle ele-img" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/management.webp"/>
+                                    <img className="rounded-circle ele-img" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/management.webp" alt="manegement"/>
                                     <p className="mb-0 mt-3"><span className="txt">Proper Management</span></p>
                                 </div>
                                 <div className="ele ele-three">
-                                    <img className="rounded-circle ele-img" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/cost-cut.webp"/>
+                                    <img className="rounded-circle ele-img" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/cost-cut.webp" alt="cost"/>
                                     <p className="mb-0 mt-3"><span className="txt">Affordable Cost</span></p>
                                 </div>
                                 <div className="ele ele-four">
-                                    <img className="rounded-circle ele-img" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/caterer-waiter.webp"/>
+                                    <img className="rounded-circle ele-img" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/caterer-waiter.webp" alt="staffs"/>
                                     <p className="mb-0 mt-3"><span className="txt">Professional chefs & Staffs</span></p>
                                 </div>
                                 <div className="ele ele-five">
-                                    <img className="rounded-circle ele-img" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/many-food.webp"/>
+                                    <img className="rounded-circle ele-img" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/many-food.webp" alt="food"/>
                                     <p className="mb-0 mt-3"><span className="txt">300+ Food Menu</span></p>
                                 </div>
                                 <div className="ele ele-six">
-                                    <img className="rounded-circle ele-img" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/live-stalls.webp"/>
+                                    <img className="rounded-circle ele-img" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/live-stalls.webp" alt="counters"/>
                                     <p className="mb-0 mt-3"><span className="txt">Live Counters & Stalls</span></p>
                                 </div>
                                 <div className="ele ele-seven">
-                                    <img className="rounded-circle ele-img" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/homepage-banner-images__1_.webp"/>
+                                    <img className="rounded-circle ele-img" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/homepage-banner-images__1_.webp" alt="buffet"/>
                                     <p className="mb-0 mt-3"><span className="txt">Buffet Style Option</span></p>
                                 </div>
                                 <div className="ele ele-eight">
-                                    <img className="rounded-circle ele-img" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/clean.webp"/>
+                                    <img className="rounded-circle ele-img" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/clean.webp" alt="awarness"/>
                                     <p className="mb-0 mt-3"><span className="txt">Post Covid Awarness</span></p>
                                 </div>
                                 <div className="ele ele-nine">
-                                    <img className="rounded-circle ele-img" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/success.webp"/>
+                                    <img className="rounded-circle ele-img" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/success.webp" alt="success"/>
                                     <p className="mb-0 mt-3"><span className="txt">100+ Successfull Events</span></p>
                                 </div>
                                 <div className="ele ele-ten">
-                                    <img className="rounded-circle ele-img" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/ratings.webp"/>
+                                    <img className="rounded-circle ele-img" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/ratings.webp" alt="ratings"/>
                                     <p className="mt-3 mb-0"><span className="txt">4.8+ Ratings on Google</span></p>
                                 </div>
                             </div>

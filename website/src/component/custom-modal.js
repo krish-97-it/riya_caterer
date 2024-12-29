@@ -1,18 +1,18 @@
-import React,{useState, Component} from "react";
-import { TransformWrapper, TransformComponent, useControls} from "react-zoom-pan-pinch";
+import React from "react";
+import { TransformWrapper, TransformComponent} from "react-zoom-pan-pinch";
 import fullScreenSymbol from "../assets/images/fullScreenIcon.svg";
 
 export default function ImageCarouselViewBoxModal({imageModal, currentImgIndex, closeImageModal, getFilteredItemList}){
-    const Controls = () => {
-        const { zoomIn, zoomOut, resetTransform } = useControls();
-        return (
-          <div className="tools">
-            <button onClick={() => zoomIn()}>+</button>
-            <button onClick={() => zoomOut()}>-</button>
-            <button onClick={() => resetTransform()}>x</button>
-          </div>
-        );
-    };
+    // const Controls = () => {
+    //     const { zoomIn, zoomOut, resetTransform } = useControls();
+    //     return (
+    //       <div className="tools">
+    //         <button onClick={() => zoomIn()}>+</button>
+    //         <button onClick={() => zoomOut()}>-</button>
+    //         <button onClick={() => resetTransform()}>x</button>
+    //       </div>
+    //     );
+    // };
 
     function toggleFullScreen(event){
         let ele_id              = "fullScreenEle-"+event.currentTarget.value;
@@ -35,7 +35,6 @@ export default function ImageCarouselViewBoxModal({imageModal, currentImgIndex, 
               }else if (document.msExitFullscreen){ // IE/Edge
                 document.msExitFullscreen();
             }
-            console.log("full scrreen")
         }else{
             carouselControlLBtn.style.display="none";
             carouselControlRBtn.style.display="none";
