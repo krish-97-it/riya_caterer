@@ -138,12 +138,19 @@ export default function GoogleReviews({getReviewList}){
             </div>
             <div className="review-submit-section">
                 <div className="rating-star">
-                    <p><img src={GoogleLogo} alt="google-logo"></img>Reviews</p>
-                    <p></p>
-                    
+                    <p className="mb-1" style={{display:"flex", alignItems:"center", fontSize:"20px", gap:"4px"}}><img src={GoogleLogo} alt="google-logo"></img>Reviews</p>
+                    <p className="mb-0" style={{float:"left", fontSize:"20px"}}>
+                        <span>4.8+ </span>
+                        <span className='rating-star-style' style={{color:'rgb(244 190 0)'}}><i className="fa fa-star"></i></span>
+                        <span className='rating-star-style' style={{color:'rgb(244 190 0)'}}><i className="fa fa-star"></i></span>
+                        <span className='rating-star-style' style={{color:'rgb(244 190 0)'}}><i className="fa fa-star"></i></span>
+                        <span className='rating-star-style' style={{color:'rgb(244 190 0)'}}><i className="fa fa-star"></i></span>
+                        <span className='rating-star-style' style={{color:'rgb(244 190 0)'}}><i class="fa fa-star-half-o" style={{color:"rgb(244 190 0)"}}></i></span>
+                    </p>
+
                 </div>
                 <div className="review-on-google-link">
-                    <NavLink to="https://www.google.com/search?hl=en-IN&gl=in&q=Riya+Caterers,+1/H/98,+Sarba+Khan+Rd,+Paikpara+First+Row,+Paikpara,+Kolkata,+West+Bengal+700037&ludocid=16177022713476856575&lsig=AB86z5VPIMrE8azbOjuIirXKLIEV#lrd=0x39f89d82587de72f:0xe0805472c836baff,3" target="_blank" rel="noopener noreferrer">Review Us On Google</NavLink> 
+                    <NavLink to="https://www.google.com/search?hl=en-IN&gl=in&q=Riya+Caterers,+1/H/98,+Sarba+Khan+Rd,+Paikpara+First+Row,+Paikpara,+Kolkata,+West+Bengal+700037&ludocid=16177022713476856575&lsig=AB86z5VPIMrE8azbOjuIirXKLIEV#lrd=0x39f89d82587de72f:0xe0805472c836baff,3" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{borderRadius:"24px", fontSize:"15px", width:"200px", fontFamily:"Proxima Soft Semibold"}}>Review Us On Google</NavLink> 
                 </div>
             </div>
         </div>
