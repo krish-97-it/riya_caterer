@@ -1,3 +1,109 @@
 .review-page-banner-section{
-    background-image: linear-gradient(330deg,#470b10,#6f1707,#7e2308,#c54300);
+    background-color: black;
+    background-image: url('https://img.perceptpixel.com/pykhlszs/riya_caterer/bg-img-twenty-one.webp');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.review-page-banner-section .section-wrap{
+    padding: 30px 0px;
+    background-color: rgba(0, 0, 0, .6);
+    color: #f6f0e1;
+    font-size: 18px;
+    font-family: "Proxima Soft Semibold";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 650px;
+}
+
+.review-banner-txt-section{
+    padding: 15px 0px;
+}
+.review-banner-txt-section p{
+    font-size: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.review-banner-txt-section h1{
+    background-color: black;
+    padding: 15px 10px 20px;
+    text-align: center;
+    /* font-family: Caveat, cursive; */
+    font-style: normal;
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 52px;
+    letter-spacing: -.01em;
+    color: #edb763;
+    position: relative;
+    font-family: 'FontAwesome';
+    background-color: rgb(0 0 0 / 70%)
+}
+.customer-reviews-section{
+    padding-bottom: 30px;
+}
+.customer-reviews-section h3{
+    margin-top: -36px;
+    background-color: white;
+    border-radius: 12px 12px 0px 0px;
+    font-family: 'Proxima Soft Bold';
+    padding: 8px 12px 12px 12px;
+    border-top: 5px solid #f4a400;
+    color: #3a0000;
+    text-underline-offset: 5px;
+    text-decoration-line: underline;
+    text-decoration-style: dotted;
+    text-underline-position: under;
+}
+.customer-reviews-section .intro-p{
+    font-family: "Proxima Soft Semibold";
+    margin-bottom: 0px;
+}
+.customer-reviews-section .review-widget-body{
+    background-color: #f0f0f0;
+    border-radius: 12px;
+    padding: 20px 42px;
+}
+
+.customer-reviews-section .review-widget-body .left{
+    left: 8px;
+}
+.customer-reviews-section .review-widget-body .right{
+    right: 8px;
+}
+
+@media(min-width:1400px){
+    .review-page-banner-section .section-wrap{
+        min-height: 700px;
+    }
+}
+
+@media(min-width:1900px){
+    .review-page-banner-section .section-wrap{
+        min-height: 800px;
+    }
+}
+
+@media(max-width:767.98px){
+    .review-page-banner-section .section-wrap{
+        min-height:550px;
+    }
+    .review-banner-txt-section h1{
+        font-size: 48px;
+    }
+    .review-banner-txt-section p{
+        font-size: 18px;
+    }
+}
+
+@media(max-width:483.98px){
+    .review-banner-txt-section p{
+        font-size: 16px;
+    }
+    .review-banner-txt-section h1{
+        font-size: 42px;
+    }
 }

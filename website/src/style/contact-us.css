@@ -115,12 +115,12 @@
     padding-top: 4px;
 }
 
-.card-footer{
+.contact-card-section .card-footer{
     background-color: white;
     padding: 0px;
     border: none;
 }
-.card-footer .btn{
+.contact-card-section .card-footer .btn{
     background-color: #fce0a3;
     border-radius: 0px 0px 6px 6px;
     width: 100%;

@@ -159,6 +159,9 @@
     display: flex;
     align-items: center;
 }
+.about-us-section .container{
+    padding-top: 30px;
+}
 .homepage-brand-logo{
     height: 100px;
     width: 100px;
@@ -642,6 +645,9 @@
 /* .homepage-reviews-section .review-widget{
     box-shadow: 0 27px 20px -15px rgba(122,62,134,.31);
 } */
+.homepage-reviews-section .review-widget{
+    padding-top: 45px !important;
+}
 .review-widget-body .review-widget-carousel-arrow{
     font-size: 22px;
 }
@@ -1041,6 +1047,10 @@
     .our-service-card .card-group .card img{
         min-height: 225px;
         max-height: 225px;
+    }
+    .about-us-section .second-p{
+        padding-left: 0px !important;
+        padding-right: 25%;
     }
 }
 @media(max-width:373.98px){
