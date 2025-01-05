@@ -10,6 +10,7 @@ import Contact from "../pages/contact-us"
 import Gallery from "../pages/work-gallery";
 import Service from "../pages/our-service";
 import Errorpage from "../pages/404-page";
+import MenuPackage from "../pages/menu-package";
 
 export default function MainFunction(){
 
@@ -64,9 +65,9 @@ export default function MainFunction(){
         updateImageModal('hide');
     }
 
-      //search images and videos of a particular event once click on event category filter
-      const [currentEvent, updateCurrentEvent] = useState('');
-      const getGalleryByAlbum = (event) =>{
+    //search images and videos of a particular event once click on event category filter
+    const [currentEvent, updateCurrentEvent] = useState('');
+    const getGalleryByAlbum = (event) =>{
         let ele_val= event.currentTarget.value;
         updateCurrentEvent(ele_val.toLowerCase());
         const abc = workGalleryData.filter((data) =>
@@ -75,6 +76,13 @@ export default function MainFunction(){
         updateGalleryTempData(abc);
     }
 
+    // get current package setails
+    const [currentPackage, updateCurrentPackage] = useState('economy');
+    const getPackageDetails = (event) =>{
+        let ele_val= event.currentTarget.value;
+        console.log(ele_val);
+        updateCurrentPackage(ele_val.toLowerCase());
+    }
 
     // help to get input of sort by filter
     function getSortByInput(event){
@@ -141,6 +149,7 @@ export default function MainFunction(){
                 <Route exact path="/contact-us" element={<Contact/>}/>
                 <Route exact path="/reviews" element={<Reviews getReviewList = {userReviews}/>}/>
                 <Route exact path="/our-service" element={<Service/>}/>
+                <Route exact path="/menu-packages" element={<MenuPackage currentPackage={currentPackage} getPackageDetails={getPackageDetails}/>}/>
                 <Route exact path="/gallery" element={<Gallery imageModal={imageModal} openImageModal={openImageModal} closeImageModal={closeImageModal} getSortByInput={getSortByInput} getGalleryByAlbum={getGalleryByAlbum} getFilterByInput={getFilterByInput} currentEvent={currentEvent} getFilteredItemList={getFilteredItemList} currentImgIndex={currentImgIndex} loadAllImg={loadAllImg}/>}/>
                 <Route exact path="*" element={<Errorpage />} />
             </Routes>

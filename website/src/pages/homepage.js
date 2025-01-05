@@ -276,7 +276,7 @@ export default function Homepage({getReviewList}){
                                     </div>
                                 </div>
                                 <div className="go-to-reviews-btn-section">
-                                    <NavLink to="/our-packages">Check All Packages</NavLink> 
+                                    <NavLink to="/menu-packages">Check All Packages</NavLink> 
                                 </div>
                             </div>
                         </div>
