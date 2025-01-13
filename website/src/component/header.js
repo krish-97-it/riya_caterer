@@ -1,24 +1,25 @@
-import React, {useState} from "react";
+import React from "react";
 import { NavLink } from 'react-router-dom';
 import Logo from '../assets/images/riya_caterer_logo.webp';
 import HamburgerIcon from "../assets/images/hamburger.svg";
+import BookingModal from "../component/booking-form-modal";
 
 
-const Navbar = () => {
+const Navbar = (props) => {
     function closeOffCanvas() {
         if(window.outerWidth < 768){
             document.querySelector("button.navbar-toggler").click();
         }
     }
 
-    const [isActive, setActive] = useState(null);
-    function highlightActiveItem(e){
-        let eleid       = e.target.id;
-        if(eleid){
-            setActive(eleid);
-        }
-        closeOffCanvas();
-    }
+    // const [isActive, setActive] = useState(null);
+    // function highlightActiveItem(e){
+    //     let eleid       = e.target.id;
+    //     if(eleid){
+    //         setActive(eleid);
+    //     }
+    //     closeOffCanvas();
+    // }
 
     return(
         <header>
@@ -54,22 +55,39 @@ const Navbar = () => {
                             </li>
                         </ul>
                         <div className="right-align-nav-elements">
-                            <div className="dropdown" style={{textAlign:"left"}}>
-                                <button className="btn btn-secondary dropdown-toggle profile-dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false" style={{paddingLeft:"0px", paddingRight:"0px", display:"flex", alignItems:"center"}}>
+                            <button className="btn btn-secondary navbar-book-now-btn" type="button" onClick={props.openBookingModal}>
+                                <span>Book Now</span>
+                            </button>
+                            {/* {
+                                (isLoggedIn === true)?
+                                <div className="dropdown" style={{textAlign:"left"}}>
+                                    <button className="btn btn-secondary dropdown-toggle profile-dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false" style={{paddingLeft:"0px", paddingRight:"0px", display:"flex", alignItems:"center"}}>
+                                        <i className="fa fa-user" style={{fontSize:"28px"}}></i>
+                                        <span style={{paddingLeft:"10px"}}>Ram</span>
+                                    </button>
+                                    <ul className="dropdown-menu dropdown-menu-end dropdown-menu-start custom-dropdown-menu-style">
+                                        <div className="triangle-up"></div>
+                                        <li><NavLink className="dropdown-item-custom-style" id="dropdown-one" to="/my-profile" onClick={(e)=>{highlightActiveItem(e)}} dropdown-item-active={(isActive === 'dropdown-one')?"true":"false"}>My Profile</NavLink></li>
+                                        <li><NavLink className="dropdown-item-custom-style" id="dropdown-two" to="/my-profile/booking-history" onClick={(e)=>{highlightActiveItem(e)}} dropdown-item-active={(isActive === 'dropdown-two')?"true":"false"}>Booking History</NavLink></li>  
+                                        <li><button className="dropdown-item dropdown-item-custom-style" type="button">Sign Out</button></li>
+                                    </ul>
+                                </div>
+                                :
+                                <button className="btn btn-secondary sign-in-btn" type="button" style={{paddingLeft:"0px", paddingRight:"0px", display:"flex", alignItems:"center"}}>
                                     <i className="fa fa-user" style={{fontSize:"28px"}}></i>
                                     <span style={{paddingLeft:"10px"}}>Sign In</span>
                                 </button>
-                                <ul className="dropdown-menu dropdown-menu-end dropdown-menu-start custom-dropdown-menu-style">
-                                    <div className="triangle-up"></div>
-                                    <li><NavLink className="dropdown-item-custom-style" id="dropdown-one" to="/my-profile" onClick={(e)=>{highlightActiveItem(e)}} dropdown-item-active={(isActive === 'dropdown-one')?"true":"false"}>My Profile</NavLink></li>
-                                    <li><NavLink className="dropdown-item-custom-style" id="dropdown-two" to="/my-profile/booking-history" onClick={(e)=>{highlightActiveItem(e)}} dropdown-item-active={(isActive === 'dropdown-two')?"true":"false"}>Booking History</NavLink></li>  
-                                    <li><button className="dropdown-item dropdown-item-custom-style" type="button">Sign Out</button></li>
-                                </ul>
-                            </div>
+                            } */}
+                            
                         </div>
                     </div>
                 </div>
             </nav>
+            <>
+            {
+                <BookingModal showBookingModal={props.showBookingModal} closeBookingModal={props.closeBookingModal} packageDetails={props.packageDetails} bookingStartDate={props.bookingStartDate} bookingEndDate={props.bookingEndDate}/>
+            } 
+            </>
         </header>
     )
 }

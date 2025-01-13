@@ -16,16 +16,10 @@ const UserQuerySchema = new Schema(
         phone_no: {
             type: Number
         },
-        event_name: {
+        query_type: {
             type: String
         },
-        service_type: {
-            type: String
-        },
-        plate_count: {
-            type: Number
-        },
-        event_location: {
+        appointment_time_slot: {
             type: String
         },
         comment: {

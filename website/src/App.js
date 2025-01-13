@@ -12,6 +12,7 @@ import './style/menu-package.css';
 import './style/gallery-carousel.css';
 import './style/custom-masonary.css';
 import './style/custom-modal.css';
+import './style/booking-modal.css';
 import './App.css';
 import Functons from './controller/functions';
 
