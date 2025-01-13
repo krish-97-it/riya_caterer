@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import axios from "axios";
-import Costant_Variables from "./constant-variables";
+import Constant_Variables from "./constant-variables";
 import Header from "../component/header";
 import Footer from "../component/footer";
 import Homepage from "../pages/homepage";
@@ -19,6 +19,7 @@ export default function MainFunction(){
     const [sortByInput, setSortByInput]             = useState('default');
     const [filterByInput, setFilterByInput]         = useState('mix');
     const [galleryTempData, updateGalleryTempData]  = useState([]);
+    const [packageDetails, updatePackageDetails]    = useState([]);
 
     // api call to get food menus from backend db. Api written in backend project
     const [userReviews, updateUserReviews]          =   useState([]);
@@ -26,8 +27,9 @@ export default function MainFunction(){
 
     // listing api endpoints urls
     const APIUrls                                   =   {
-        "getUserReviewsUrl"   : Costant_Variables.SERVER_BASE_URL+'/loadreviews',
-        "getGalleryImagesUrl" : Costant_Variables.SERVER_BASE_URL+'/loadgallery',
+        "getUserReviewsUrl"     : Constant_Variables.SERVER_BASE_URL+'/loadreviews',
+        "getGalleryImagesUrl"   : Constant_Variables.SERVER_BASE_URL+'/loadgallery',
+        "getPackageDetailsUrl"  : Constant_Variables.SERVER_BASE_URL+'/getPackageDetails'
     };
 
 
@@ -48,16 +50,25 @@ export default function MainFunction(){
         });
     }
 
+    function getPackageDetails(){
+        axios.get(APIUrls.getPackageDetailsUrl).then((res) => {
+            updatePackageDetails(res.data.data);
+        }).catch((error) => {
+            console.log(error);
+        });
+    }
+
     useEffect(() => {
         loadUserReviews();
         getGalleryImages();
+        getPackageDetails();
+        futureDateValidation();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const [currentImgIndex, updateCurrentImgIndex] = useState(null);
     const openImageModal = (e)=> {
         let ele_id = e.currentTarget.value;
-        console.log(ele_id)
         updateCurrentImgIndex(ele_id);
         updateImageModal('show');
     }
@@ -76,12 +87,16 @@ export default function MainFunction(){
         updateGalleryTempData(abc);
     }
 
-    // get current package setails
-    const [currentPackage, updateCurrentPackage] = useState('economy');
-    const getPackageDetails = (event) =>{
-        let ele_val= event.currentTarget.value;
-        console.log(ele_val);
-        updateCurrentPackage(ele_val.toLowerCase());
+    //Book Now Pop Up Form
+    const [showBookingModal, updateBookingModal] = useState('hide')
+    function openBookingModal(){
+        updateBookingModal('show');
+        if(window.outerWidth < 768){
+            document.querySelector("button.navbar-toggler").click();
+        }
+    }
+    function closeBookingModal(){
+        updateBookingModal('hide');
     }
 
     // help to get input of sort by filter
@@ -119,7 +134,6 @@ export default function MainFunction(){
     }
 
     function loadAllImg(){
-        console.log("load all img")
         updateCurrentEvent('');
         setSortByInput("default");
         setFilterByInput("mix");
@@ -140,17 +154,55 @@ export default function MainFunction(){
     // Final check will be done for filter by, check what is the input of filterby and filteredthe list.
     getFilteredItemList = filterByInput === 'mix' ? getFilteredItemList : getFilterByInputData(getFilteredItemList);
 
+    const [startDate, setStartDate] = useState('');
+    const [endDate, setEndDate] = useState('');
+    function futureDateValidation(ele, ele_val){
+        var todays_Date = new Date();    // Get today's date.
+        var todays_time = todays_Date.getTime();
+        // var y           = 12     // 1y   = 12m
+        var m           = 12     // 1y   = 12m
+        var d           = 30     // 1m   = 30d
+        var h           = 24     // 1day = 24h
+        var min         = 60     // 1h   =  60min
+        var sec         = 60     // 1min = 60sec
+        var ms          = 1000   // 1sec = 1000 mili-second
+
+        var max_time_span   = ms*sec*min*h*d*m*2;   // 2years  1000*60*60*24*30*12*2
+        var min_time_span   = ms*sec*min*h*1;       //  1day  1000*60*60*24*1
+        var max_future_date = todays_time+max_time_span;  //2years from today
+        var min_start_date  = todays_time+min_time_span;
+
+        //convert milisecond to date object
+        var max_date = new Date(max_future_date);
+        var min_date = new Date(min_start_date);
+
+        //Get Formated date
+        var max_date_format = getFormatedDate(max_date,'-');
+        var min_date_format = getFormatedDate(min_date,'-');
+
+        setStartDate(min_date_format);
+        setEndDate(max_date_format);
+    
+    }
+
+    function getFormatedDate(date,symbol){
+        var year        = date.getFullYear();            // yyyy
+        var month       = ("0" + (date.getMonth() + 1)).slice(-2); // mm
+        var day         = ("0" + date.getDate()).slice(-2);   // dd
+        var finalDate   = (year + symbol + month + symbol + day);
+        return finalDate
+    }
 
     return(
         <Router>
-            <Header />
+            <Header showBookingModal={showBookingModal} openBookingModal={openBookingModal} closeBookingModal={closeBookingModal} packageDetails={packageDetails} bookingStartDate={startDate} bookingEndDate={endDate}/>
             <Routes>
-                <Route exact path="/" element={<Homepage getReviewList = {userReviews}/>}/>
-                <Route exact path="/contact-us" element={<Contact/>}/>
+                <Route exact path="/" element={<Homepage getReviewList = {userReviews} openBookingModal={openBookingModal}/>}/>
+                <Route exact path="/contact-us" element={<Contact bookingStartDate={startDate} bookingEndDate={endDate}/>}/>
                 <Route exact path="/reviews" element={<Reviews getReviewList = {userReviews}/>}/>
                 <Route exact path="/our-service" element={<Service/>}/>
-                <Route exact path="/menu-packages" element={<MenuPackage currentPackage={currentPackage} getPackageDetails={getPackageDetails}/>}/>
-                <Route exact path="/gallery" element={<Gallery imageModal={imageModal} openImageModal={openImageModal} closeImageModal={closeImageModal} getSortByInput={getSortByInput} getGalleryByAlbum={getGalleryByAlbum} getFilterByInput={getFilterByInput} currentEvent={currentEvent} getFilteredItemList={getFilteredItemList} currentImgIndex={currentImgIndex} loadAllImg={loadAllImg}/>}/>
+                <Route exact path="/menu-packages" element={<MenuPackage packageDetails={packageDetails}/>}/>
+                <Route exact path="/gallery" element={<Gallery imageModal={imageModal} openImageModal={openImageModal} closeImageModal={closeImageModal} getSortByInput={getSortByInput} getGalleryByAlbum={getGalleryByAlbum} getFilterByInput={getFilterByInput} currentEvent={currentEvent} getFilteredItemList={getFilteredItemList} currentImgIndex={currentImgIndex} loadAllImg={loadAllImg} openBookingModal={openBookingModal}/>}/>
                 <Route exact path="*" element={<Errorpage />} />
             </Routes>
             <Footer/>

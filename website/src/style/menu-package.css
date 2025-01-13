@@ -16,6 +16,10 @@
     font-family: 'Proxima Soft Bold';
     font-size: 20px;
 }
+.banner-content-section p{
+    padding-left: 10px;
+    padding-right: 10px;
+}
 .menu-package-banner-section h1{
     background-color: black;
     padding: 15px 10px 20px;
@@ -99,8 +103,12 @@
     --side-rotate: 60deg;
     margin-right: -12px;
 }
+.our-package-intro{
+    font-family: "Proxima Soft Semibold";
+    font-size: 18px;
+}
 .package-data-carousel{
-    border-top: 15px solid white;
+    border-top: 20px solid white;
 }
 .package-data-carousel .carousel-inner{
     margin-top: 20.8px;
@@ -127,12 +135,12 @@
     background-color: white;
     height: 35px;
     font-weight: 600;
-    font-family: "Proxima Soft Semibold";
+    font-family: "Proxima Soft Bold";
     /* border: 1px solid #0000004d; */
     background: linear-gradient(121.19deg, rgba(133, 239, 49, 0) 25.73%, hsla(0, 0%, 100%, .3) 45.27%, rgba(133, 239, 49, 0) 62.27%), #ff3333;
     color: white;
     fill: currentColor;
-    animation: d 40s linear infinite;
+    animation: d 20s linear infinite;
     /* border-bottom: 4px solid #d32121; */
     line-height: 1.5;
     border-radius: 4px;
@@ -141,11 +149,6 @@
     background-color: rgba(0,0,0,.6);
     width: 100%;
     padding:0px 0px 30px;
-}
-.term-policy-section{
-    /* min-height: 100vh;
-    display: grid;
-    place-items: center; */
 }
 
 .our-package-ul{
@@ -160,8 +163,8 @@
     /* margin-top: 20.2px; */
 }
 .our-package-ul li{
-    background-color: rgba(0, 0, 0, .4) !important;
-    box-shadow: inset 0px 0px 8px 0px rgb(202 172 132);
+    background-color: rgba(0, 0, 0, 0.671) !important;
+    box-shadow: inset 0px 0px 8px 0px rgb(218, 180, 131);
 }
 .our-package-ul li.card{
     position: relative;
@@ -171,11 +174,14 @@
     background-image: linear-gradient(to right, rgb(0 0 0 / .15), transparent);
     transform-style: preserve-3d;
     color: var(--color);
-    display: grid;
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; */
     grid-template: 'icon' 'title' 'content';
     row-gap: 0.5rem;
-    column-gap: 2rem;
+    column-gap: 1rem;
     box-shadow: 0 27px 20px -19px rgba(134, 118, 64, 0.42);
+    /* font-family: "Proxima Soft Semibold"; */
 }
 .our-package-ul li.card::before, .our-package-ul li.card::after {
     --side-rotate: 60deg;
@@ -194,20 +200,24 @@
   
 .our-package-ul li.card .icon {
     grid-area: icon;
-    display: grid;
-    place-items: center;
+    /* display: grid;
+    place-items: center; */
 }
 .our-package-ul li.card .icon i {
-    font-size: 2rem;
+    font-size: 2.5rem;
+    color: #f4c900;
+    padding-top: 4px;
 }
 .our-package-ul li.card .title{
     grid-area: title;
     font-size: 1.25rem;
-    font-weight: 700;
     text-align: center;
+    font-family: "Proxima Soft Bold";
 }
 .our-package-ul li.card .content{
     grid-area: content;
+    padding-top: 2px;
+    font-family: "Proxima Soft Semibold";
 }
 .download-btn-section{
     height: 46px;
@@ -266,12 +276,26 @@
         width:44px !important
     }
 }
+@media(max-width:575.98px){
+    .menu-package-banner-section h1{
+        font-size: 45px !important;
+    }
+    .menu-package-banner-section .banner-content-section {
+        font-size: 18px;
+    }
+}
 @media(max-width:483.98px){
+    .menu-package-banner-section h1{
+        font-size: 42px !important;
+    }
     .menu-package-banner-section .transparent-wrap{
         min-height: 550px;
     }
     .package-details-section h3{
         font-size: 32px;
+    }
+    .our-package-ul li.card {
+        flex-direction: column;
     }
 }
 @media(max-width:349.98px){

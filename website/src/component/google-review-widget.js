@@ -134,7 +134,7 @@ export default function GoogleReviews({getReviewList}){
                     }
                 </Carousel>
                 <CustomRight/>
-                {/* <div class="elfsight-app-f0dae060-0083-49a1-bd36-45faa8b0ba4a" data-elfsight-app-lazy></div> */}
+                {/* <div className="elfsight-app-f0dae060-0083-49a1-bd36-45faa8b0ba4a" data-elfsight-app-lazy></div> */}
             </div>
             <div className="review-submit-section">
                 <div className="rating-star">
@@ -145,7 +145,7 @@ export default function GoogleReviews({getReviewList}){
                         <span className='rating-star-style' style={{color:'rgb(244 190 0)'}}><i className="fa fa-star"></i></span>
                         <span className='rating-star-style' style={{color:'rgb(244 190 0)'}}><i className="fa fa-star"></i></span>
                         <span className='rating-star-style' style={{color:'rgb(244 190 0)'}}><i className="fa fa-star"></i></span>
-                        <span className='rating-star-style' style={{color:'rgb(244 190 0)'}}><i class="fa fa-star-half-o" style={{color:"rgb(244 190 0)"}}></i></span>
+                        <span className='rating-star-style' style={{color:'rgb(244 190 0)'}}><i className="fa fa-star-half-o" style={{color:"rgb(244 190 0)"}}></i></span>
                     </p>
 
                 </div>

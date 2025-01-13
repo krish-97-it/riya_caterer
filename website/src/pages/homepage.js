@@ -11,7 +11,7 @@ import GalleryCarousel from "../component/gallery-carousel";
 // import BlackUnderline from "../assets/images/greyUnderline.webp";
 import Logo from '../assets/images/riya_caterer_logo.webp';
 
-export default function Homepage({getReviewList}){
+export default function Homepage({getReviewList, openBookingModal}){
     return(
         <div className="app-body">
             <div className="main-content homepage-body">
@@ -19,7 +19,7 @@ export default function Homepage({getReviewList}){
                     <div className="dark-opacity">
                         <div className="intro-section">
                             <p className="intro-heading typewriter">
-                                <h2 className="type-txt">
+                                <span className="type-txt">
                                     <ReactTyped
                                         strings={["Hello!!", "নমস্কার!!", "नमस्ते!!"]}
                                         typeSpeed={150}
@@ -28,7 +28,7 @@ export default function Homepage({getReviewList}){
                                         cursorChar="|"
                                         showCursor={true}
                                     />
-                                </h2>
+                                </span>
                             </p>
                             <div className="container intro-txt">
                                 <p className="welcome-caterer">Welcome to <span className="caterer-name">RIYA CATERER</span></p>
@@ -43,11 +43,11 @@ export default function Homepage({getReviewList}){
                                             Free Consultation
                                         </span>
                                     </Link>
-                                    <Link to="/contact-us" className="btn enquiry-btn-two neon-glow-button">
+                                    <button to="/contact-us" className="btn enquiry-btn-two neon-glow-button" onClick={openBookingModal}>
                                         <span>
                                             Book For a Event
                                         </span>
-                                    </Link>
+                                    </button>
                                 </div>
                             </div>
                         </div>

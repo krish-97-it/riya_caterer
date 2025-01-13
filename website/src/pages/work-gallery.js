@@ -5,7 +5,7 @@ import GoToTop from "../component/go-to-top";
 import ImageCarouselViewBoxModal from "../component/custom-modal";
 import NoImgIcon from "../assets/images/no-image-icon.svg";
 
-export default function Gallery({imageModal, openImageModal, closeImageModal, getSortByInput, getGalleryByAlbum, getFilterByInput, currentEvent, getFilteredItemList, currentImgIndex, loadAllImg}){
+export default function Gallery({imageModal, openImageModal, closeImageModal, getSortByInput, getGalleryByAlbum, getFilterByInput, currentEvent, getFilteredItemList, currentImgIndex, loadAllImg, openBookingModal}){
     // Set loading state to true initially
     const [isLoading, setLoading] = useState(true);
 
@@ -51,11 +51,11 @@ export default function Gallery({imageModal, openImageModal, closeImageModal, ge
                                     <p className="page-heading">Image & Video Gallery</p>
                                     <p className="sub-txt">Let's taste together the Glimpse Of Success</p>
                                     <div className="enquiry-btn-section">
-                                        <Link to="/contact-us" className="btn enquiry-btn-two neon-glow-button">
+                                        <button to="/contact-us" className="btn enquiry-btn-two neon-glow-button">
                                             <span>
-                                                Book For a Event
+                                                Get Free Consultation
                                             </span>
-                                        </Link>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -149,7 +149,7 @@ export default function Gallery({imageModal, openImageModal, closeImageModal, ge
                                                                         {
                                                                             (data.file_type === "video")?
                                                                             <div className={"gallery-img gallery-yt-video span-1-by-1 img-"+index} key={data._id}>
-                                                                                <iframe height="200px" width="200px" className="yt-video-iframe" src={data.file_src} title="YouTube video player" frameborder="0" style={{borderRadius:"6px"}} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+                                                                                <iframe height="200px" width="200px" className="yt-video-iframe" src={data.file_src} title="YouTube video player" frameborder="0" style={{borderRadius:"6px"}} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen=""></iframe>
                                                                             </div>
                                                                             :
                                                                             <div className={"gallery-img img-"+index} key={data._id}>

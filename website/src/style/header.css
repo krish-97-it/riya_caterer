@@ -49,6 +49,64 @@
 .navbar-toggler:focus{
     box-shadow: none !important;
 }
+.navbar-book-now-btn {
+    align-items: center;
+    padding: 0px !important;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000000;
+    border: none;
+    border-radius: 24px;
+    cursor: pointer;
+    margin-top: 0px;
+    transition: all 0.3s ease;
+    max-width: 250px;
+    border-bottom: 4px solid #950000;
+    background-color: #950000;
+    transition: 0.1s all;
+    font-family: 'Proxima Soft Bold';
+}
+.navbar-book-now-btn span{
+    animation: d 53s linear infinite;
+    background: linear-gradient(121.19deg, rgba(133, 239, 49, 0) 25.73%, hsla(0, 0%, 100%, .3) 45.27%, rgba(133, 239, 49, 0) 62.27%), #ff3131;
+    color: white;
+    border-radius: 24px;
+    fill: currentColor;
+    padding: 8px 15px 6px;
+    display: block;
+    width: auto;
+    -webkit-animation: d 53s linear infinite;
+    animation: d 53s linear infinite;
+}
+@keyframes d {
+    0% {
+        background-position: -5000px 0
+    }
+
+    to {
+        background-position: 5000px 0
+    }
+}
+@-webkit-keyframes d {
+    0% {
+        background-position: -5000px 0
+    }
+
+    to {
+        background-position: 5000px 0
+    }
+}
+.navbar-book-now-btn:hover {
+    border-bottom: 4px solid #953d00;
+}
+.navbar-book-now-btn span:hover{
+    background: linear-gradient(121.19deg, rgba(133, 239, 49, 0) 25.73%, hsla(0, 0%, 100%, .3) 45.27%, rgba(133, 239, 49, 0) 62.27%), #f4a300;
+    color: #3a0000;
+}
+.navbar-book-now-btn:active {
+    border-bottom: none !important;
+    transform: translateY(2px);
+}
 .profile-dropdown{
     background-color: initial;
     border: none;
@@ -92,7 +150,6 @@
     font-weight: 700;
 }
 
-
 @media(min-width:768px){
     .navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
         border: 2px solid #ce914e;
@@ -116,12 +173,26 @@
         right: 5px;
     }
 }
+@media(min-width:992px){
+    .navbar-book-now-btn span{
+        padding: 8px 36px 6px;
+    }
+}
 @media(min-width:768px) and (max-width:991.98px){
     .navbar-nav{
         gap: 2px;
     }
+    .brand-logo-section{
+        margin-right: 10px;
+    }
     .navbar-nav .nav-item .nav-link{
-        font-size: 15px !important;
+        font-size: 14px !important;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    .navbar-book-now-btn span{
+        padding-left: 12px;
+        padding-right: 12px;
     }
 }
 @media(max-width: 767.98px){
@@ -137,6 +208,13 @@
     }
     .navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
         color: rgb(149 61 0) !important;
+    }
+    .navbar-book-now-btn{
+        float: left;
+        margin-top: 8px;
+    }
+    .navbar-book-now-btn span{
+        padding: 8px 25px 6px;
     }
     .custom-dropdown-menu-style {
         position: relative;
