@@ -8,9 +8,10 @@ import GmailIcon from "../assets/images/social-media-icons/gmailIcon.svg";
 import phoneIcon from "../assets/images/social-media-icons/phoneIcon.svg";
 // import TouchIcon from "../assets/images/touch-icon.webp";
 import { ContactForm } from "../component/contact-form";
-import BlackUnderline from "../assets/images/greyUnderline.webp"
+import BlackUnderline from "../assets/images/greyUnderline.webp";
+import FaqSection from "../component/faq-accordion";
  
-export default function Contact(){
+export default function Contact({packageDetails, openGuidelines, openBookingModal}){
     // Set loading state to true initially
     const [isLoading, setLoading] = useState(true);
 
@@ -171,6 +172,7 @@ export default function Contact(){
                                     </div>
                                 </div>
                             </div>
+                            <FaqSection openGuidelines={openGuidelines} openBookingModal={openBookingModal}/>
                         </div>
                     )
                 }

@@ -99,6 +99,15 @@ export default function MainFunction(){
         updateBookingModal('hide');
     }
 
+    //Guidlines Popup
+    const [showGuidelinesPopup, updateShowGuidelinesPopup] = useState('hide')
+    function openGuidelines(){
+        updateShowGuidelinesPopup('show');
+    }
+    function closeGuidelines(){
+        updateShowGuidelinesPopup('hide');
+    }
+
     // help to get input of sort by filter
     function getSortByInput(event){
         let ele_val      = event.target.value;
@@ -198,14 +207,14 @@ export default function MainFunction(){
             <Header showBookingModal={showBookingModal} openBookingModal={openBookingModal} closeBookingModal={closeBookingModal} packageDetails={packageDetails} bookingStartDate={startDate} bookingEndDate={endDate}/>
             <Routes>
                 <Route exact path="/" element={<Homepage getReviewList = {userReviews} openBookingModal={openBookingModal}/>}/>
-                <Route exact path="/contact-us" element={<Contact bookingStartDate={startDate} bookingEndDate={endDate}/>}/>
+                <Route exact path="/contact-us" element={<Contact bookingStartDate={startDate} bookingEndDate={endDate} openGuidelines={openGuidelines} openBookingModal={openBookingModal}/>}/>
                 <Route exact path="/reviews" element={<Reviews getReviewList = {userReviews}/>}/>
-                <Route exact path="/our-service" element={<Service/>}/>
-                <Route exact path="/menu-packages" element={<MenuPackage packageDetails={packageDetails}/>}/>
+                <Route exact path="/our-service" element={<Service openBookingModal={openBookingModal} openGuidelines={openGuidelines}/>}/>
+                <Route exact path="/menu-packages" element={<MenuPackage packageDetails={packageDetails} openGuidelines={openGuidelines} openBookingModal={openBookingModal}/>}/>
                 <Route exact path="/gallery" element={<Gallery imageModal={imageModal} openImageModal={openImageModal} closeImageModal={closeImageModal} getSortByInput={getSortByInput} getGalleryByAlbum={getGalleryByAlbum} getFilterByInput={getFilterByInput} currentEvent={currentEvent} getFilteredItemList={getFilteredItemList} currentImgIndex={currentImgIndex} loadAllImg={loadAllImg} openBookingModal={openBookingModal}/>}/>
                 <Route exact path="*" element={<Errorpage />} />
             </Routes>
-            <Footer/>
+            <Footer openBookingModal={openBookingModal} showGuidelinesPopup={showGuidelinesPopup} openGuidelines={openGuidelines} closeGuidelines={closeGuidelines}/>
         </Router>
     )
 }

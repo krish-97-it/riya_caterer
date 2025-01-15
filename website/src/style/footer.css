@@ -12,4 +12,24 @@ footer p{
 footer a{
     text-decoration: none;
     color: white !important;
+    cursor: pointer;
+}
+
+footer .steps-info-heading .card-text{
+    color: black !important;
+}
+
+@media(min-width:768px) and (max-width:991.98px){
+    .footer-custom-style .row{
+        font-size: 14px;
+        font-family: "Proxima Soft";
+    }
+    .footer-custom-style .text-uppercase{
+        font-size: 14px;
+        font-family: "Proxima Soft Bold";
+    }
+    .footer-copyright-section{
+        font-family: 'Proxima Soft Bold';
+        font-size: 14px;
+    }
 }

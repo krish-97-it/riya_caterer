@@ -15,8 +15,8 @@ const mail_html       = '<div style="font-family: Helvetica,Arial,sans-serif;min
                                     '<p>Thank you for choosing Riya Caterers. You have successfully booked us for your upcomming event.</p>'+
                                     '<p>Your Booking Id is - </p>'+
                                     '<h2 style="background: #00466a;margin: 0 auto;width: max-content;padding: 0 10px;color: #fff;border-radius: 4px;">'+bookId+'</h2>'+
-                                    '<p>Soon we will contact with you to confirm your order and discuss payment.</p>'+
-                                    '<p style="font-size:0.9em;">Regards,<br />Team KrishMish</p>'+
+                                    '<p>Soon we will contact with you for further discussion.</p>'+
+                                    '<p style="font-size:0.9em;">Regards,<br />Team Riya Caterers</p>'+
                                     // '<img src="https://img.perceptpixel.com/pykhlszs/shop-logo-one-1.jpg" alt="brand logo" width="80px" height="80px">'+
                                     '<hr style="border:none;border-top:1px solid #eee" />'+
                                 '</div>'
@@ -37,33 +37,32 @@ exports.saveBookingData = async(req,response) => {
                 const user_email        = data.email;
                 const booking_id        = (data._id).toString();
 
-                //Set Up Email Server and Parameters
-                const transporter       = nodemailer.createTransport({
-                    service: 'gmail',
-                    host:'smtp.gmail.com',
-                    port: 465,
-                    secure: true, // true for port 465, false for other ports
-                    auth: {
-                        user: 'mish.krish1996@gmail.com',
-                        pass: process.env.EMAIL_APP_PASS
+                // if user email is not empty
+                if(user_email !== '' || user_email !== 'undefined' || user_email !== undefined){
+                    const transporter       = nodemailer.createTransport({  //Set Up Email Server and Parameters
+                        service: 'gmail',
+                        host:'smtp.gmail.com',
+                        port: 465,
+                        secure: true, // true for port 465, false for other ports
+                        auth: {
+                            user: 'mish.krish1996@gmail.com',
+                            pass: process.env.EMAIL_APP_PASS
+                        }
+                    });
+                    const emailHtml         = createEmailHtml(booking_id);
+                    const email_params      = {
+                        from: '"KrishMish" <mish.krish1996@gmail.com>', 
+                        to: user_email, // list of receivers
+                        subject: "OTP Verification", 
+                        html: emailHtml
                     }
-                });
-                const emailHtml         = createEmailHtml(booking_id);
-                const email_params      = {
-                    from: '"KrishMish" <mish.krish1996@gmail.com>', 
-                    to: user_email, // list of receivers
-                    subject: "OTP Verification", 
-                    // text: "Your OTP is - "+otp_code,
-                    html: emailHtml
-                }
 
-                try{
                     transporter.sendMail(email_params).then(
                         (res) => {
                             if(res.accepted.length > 0){
-                                return response.status(200).json({success:true, message: "Booked Successfully!!. Booking Id is sent on the given email", data:data});
+                                response.status(200).json({success:{is_booked:true, is_email_sent:true}, message: "Booked Successfully!!. Booking Id is sent on the given email", data:data});
                             }else{
-                                return response.status(200).json({success:false, message: "Something went wrong! Please try again after sometimes"});
+                                response.status(200).json({success:{is_booked:true, is_email_sent: false}, message: "Booked Successfully! Failed to sent booking Id to the given mail", data:data});
                             }
                         }
                     ).catch(
@@ -75,15 +74,12 @@ exports.saveBookingData = async(req,response) => {
                             })
                         }
                     );
-                }catch(error){
-                    console.log(error);
+                }else{
+                    response.status(200).json({success:{is_booked:true, is_email_sent: false}, message: "Booking Successfull! Booking Id will be sent in your number", data:data});
                 }
 
-                // response.status(200).json({success:true, message: "Booking Successfull!", data:data});
-
-
             }else{
-                response.status(200).json({success:false, message: "Booking Failed!. Try again after sometimes.", error:"Operation Failed"})
+                response.status(200).json({success:{is_booked:false, is_email_sent: false}, message: "Booking Failed!. Try again after sometimes.", error:"Operation Failed"})
             }   
         }
     ).catch(

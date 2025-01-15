@@ -2,8 +2,9 @@ import React,{useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 import GoToTop from "../component/go-to-top";
 import Loading from "../component/page-loading";
+import FaqSection from "../component/faq-accordion";
 
-export default function MenuPackage({packageDetails}){
+export default function MenuPackage({packageDetails, openGuidelines, openBookingModal}){
     // Set loading state to true initially
     const [isLoading, setLoading] = useState(true);
 
@@ -80,36 +81,6 @@ export default function MenuPackage({packageDetails}){
                                                                                     )
                                                                                 }))
                                                                             }
-                                                                            {/* <li className="card" style={{color:"#ececec", backgroundColor:"#E98B43"}}>
-                                                                                <div className="icon"><i className="fa-solid fa-house"></i></div>
-                                                                                <div className="title">Price range</div>
-                                                                                <div className="content">Starts from Rs.350 per plate</div>
-                                                                            </li>
-                                                                            <li className="card" style={{color:"#ececec", backgroundColor:"#C23D2A"}}>
-                                                                                <div className="icon"><i className="fa-solid fa-gear"></i></div>
-                                                                                <div className="title">Service</div>
-                                                                                <div className="content">Cooking & Serving</div>
-                                                                            </li>
-                                                                            <li className="card" style={{color:"#ececec", backgroundColorcolor:"#842C2A"}}>
-                                                                                <div className="icon"><i className="fa-solid fa-magnifying-glass"></i></div>
-                                                                                <div className="title">No. of food</div>
-                                                                                <div className="content">You can choose maximum 10-12 Food items</div>
-                                                                            </li>
-                                                                            <li className="card" style={{color:"#ececec", backgroundColor:"#022F46"}}>
-                                                                                <div className="icon"><i className="fa-solid fa-chart-column"></i></div>
-                                                                                <div className="title">Food Stall</div>
-                                                                                <div className="content">Extra Charges Included</div>
-                                                                            </li>
-                                                                            <li className="card" style={{color:"#ececec", backgroundColor:"#032437"}}>
-                                                                                <div className="icon"><i className="fa-solid fa-circle-star"></i></div>
-                                                                                <div className="title">Buffet</div>
-                                                                                <div className="content">Buffet Style option available</div>
-                                                                            </li>
-                                                                            <li className="card" style={{color:"#ececec", backgroundColor:"#032437"}}>
-                                                                                <div className="icon"><i className="fa-solid fa-circle-star"></i></div>
-                                                                                <div className="title">Free Delivery</div>
-                                                                                <div className="content">Free Delivery with in 5km. (charges may vary on distance & no. of plate)</div>
-                                                                            </li> */}
                                                                         </ul>
                                                                         {/* <div className="download-btn-section">
                                                                             <button className="btn enquiry-btn-two neon-glow-button">
@@ -125,46 +96,6 @@ export default function MenuPackage({packageDetails}){
                                                     <>
                                                     </>
                                                 }
-                                                {/* <div className="carousel-item active">
-                                                    <ul className="our-package-ul">
-                                                        <h5>Economy Package</h5>
-                                                        <li className="card" style={{color:"#ececec", backgroundColor:"#E98B43"}}>
-                                                            <div className="icon"><i className="fa-solid fa-house"></i></div>
-                                                            <div className="title">Price range</div>
-                                                            <div className="content">Starts from Rs.350 per plate</div>
-                                                        </li>
-                                                        <li className="card" style={{color:"#ececec", backgroundColor:"#C23D2A"}}>
-                                                            <div className="icon"><i className="fa-solid fa-gear"></i></div>
-                                                            <div className="title">Service</div>
-                                                            <div className="content">Cooking & Serving</div>
-                                                        </li>
-                                                        <li className="card" style={{color:"#ececec", backgroundColorcolor:"#842C2A"}}>
-                                                            <div className="icon"><i className="fa-solid fa-magnifying-glass"></i></div>
-                                                            <div className="title">No. of food</div>
-                                                            <div className="content">You can choose maximum 10-12 Food items</div>
-                                                        </li>
-                                                        <li className="card" style={{color:"#ececec", backgroundColor:"#022F46"}}>
-                                                            <div className="icon"><i className="fa-solid fa-chart-column"></i></div>
-                                                            <div className="title">Food Stall</div>
-                                                            <div className="content">Extra Charges Included</div>
-                                                        </li>
-                                                        <li className="card" style={{color:"#ececec", backgroundColor:"#032437"}}>
-                                                            <div className="icon"><i className="fa-solid fa-circle-star"></i></div>
-                                                            <div className="title">Buffet</div>
-                                                            <div className="content">Buffet Style option available</div>
-                                                        </li>
-                                                        <li className="card" style={{color:"#ececec", backgroundColor:"#032437"}}>
-                                                            <div className="icon"><i className="fa-solid fa-circle-star"></i></div>
-                                                            <div className="title">Free Delivery</div>
-                                                            <div className="content">Free Delivery with in 5km. (charges may vary on distance & no. of plate)</div>
-                                                        </li>
-                                                    </ul>
-                                                    <div className="download-btn-section">
-                                                        <button className="btn enquiry-btn-two neon-glow-button">
-                                                            <span>Download This Package</span>
-                                                        </button>
-                                                    </div>
-                                                </div> */}
                                             </div>
                                             <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
                                                 <i className="fa fa-lg fa-chevron-left"></i>
@@ -177,6 +108,7 @@ export default function MenuPackage({packageDetails}){
                                 </div>
                             </div>
                         </div>
+                        <FaqSection openGuidelines={openGuidelines} openBookingModal={openBookingModal}/>
                     </div>
                 )
             }

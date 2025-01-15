@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import Constant_Variables from "../controller/constant-variables";
 import ValidationFunctions from "../controller/validation";
 import Swal from 'sweetalert2';
@@ -8,8 +8,10 @@ import CreateableFormSection from "./create-form-section";
 
 export default function LoginModal({showBookingModal, closeBookingModal, packageDetails, bookingStartDate, bookingEndDate}){
 
+    // Booking Api Url
     const bookingApiUrl                 =   Constant_Variables.SERVER_BASE_URL+'/submitBooking';
 
+    //booking form first slide form data management
     const [newUserData, setNewUserData] = useState({
         firstName: '',
         lastName: '',
@@ -34,6 +36,7 @@ export default function LoginModal({showBookingModal, closeBookingModal, package
     const [msgStyle, setMsgStyle]                           = useState("success");
 
 
+    // helps to validate and input from the user
     const handlenewUserInput = (e) => {
         let ele         =   e.target.name;
         let ele_val     =   e.target.value;
@@ -60,11 +63,11 @@ export default function LoginModal({showBookingModal, closeBookingModal, package
                 updateLastNameErr({...lastNameErr, err_mssg: isLastNameValid, isValid: "valid"})
             }
         }else if(ele === 'emailId'){
-            let isEmailValid = ValidationFunctions.emailValidation("Email Id",ele_val,false);
+            let isEmailValid = ValidationFunctions.emailValidation("Email Id",ele_val,true);
             if(isEmailValid !== 'valid'){
                 updateEmailIdErr({...emailIdErr, err_mssg: isEmailValid, isValid: "invalid"})
             }else{
-                updateEmailIdErr({...emailIdErr, err_mssg: isEmailValid, isValid: "valid"})
+                updateEmailIdErr({...emailIdErr, err_mssg: isEmailValid, isValid: "optional"})
 
             }
         }else if(ele === 'phoneNum'){
@@ -115,6 +118,7 @@ export default function LoginModal({showBookingModal, closeBookingModal, package
 
     }
 
+    // To check first slide form validation
     const onSubmitFirstSlide = (data) => {
         let isfirstNameValid = ValidationFunctions.nameValidation("First Name",data.firstName,false);
         if(isfirstNameValid !== 'valid'){
@@ -130,11 +134,11 @@ export default function LoginModal({showBookingModal, closeBookingModal, package
             updateLastNameErr({...lastNameErr, err_mssg: isLastNameValid, isValid: "valid"})
         }
         
-        let isEmailValid = ValidationFunctions.emailValidation("Email Id",data.emailId,false);
+        let isEmailValid = ValidationFunctions.emailValidation("Email Id",data.emailId,true);
         if(isEmailValid !== 'valid'){
             updateEmailIdErr({...emailIdErr, err_mssg: isEmailValid, isValid: "invalid"})
         }else{
-            updateEmailIdErr({...emailIdErr, err_mssg: isEmailValid, isValid: "valid"})
+            updateEmailIdErr({...emailIdErr, err_mssg: isEmailValid, isValid: "optional"})
         }
 
         let isPhoneNumValid = ValidationFunctions.phoneValidation("Mobile No.",data.phoneNum,false);
@@ -190,6 +194,8 @@ export default function LoginModal({showBookingModal, closeBookingModal, package
         }
     }
 
+
+    // Second slide form data management
     const [eventData, setEventData] = useState({
         eventName: '',
         eventDate:'',
@@ -213,7 +219,7 @@ export default function LoginModal({showBookingModal, closeBookingModal, package
 
 
 
-    // Second Slide Data Validations & Final Form Submit
+    // Second Slide Data Validations and input data from user
     const handleEventDataInput = (e) => {
         let ele         =   e.target.name;
         let ele_val     =   e.target.value;
@@ -285,6 +291,7 @@ export default function LoginModal({showBookingModal, closeBookingModal, package
         }
     }
 
+    // Data management for meal menu input fields
     const [mealMenuInputs, setMealMenuInputs] = useState([
         { 
             mealType: '',
@@ -297,6 +304,8 @@ export default function LoginModal({showBookingModal, closeBookingModal, package
         }
     ]);
 
+
+    // helps to create a new section to add another menu and data for a meal
     const mealMenuAddChange = (e,i) => {
         e.preventDefault();
         let mealMenuInputValid = checkMealMenuValidation();
@@ -305,6 +314,7 @@ export default function LoginModal({showBookingModal, closeBookingModal, package
         }
     };
 
+    // helps to validate and take input from user
     const handlemealMenuInputChange = (event, index, field) => {
         if(field === 'liveCounters'){
             // let new_arr = event.map((item) => item.value);  // Pick only value from the selected items
@@ -396,6 +406,7 @@ export default function LoginModal({showBookingModal, closeBookingModal, package
         }
     };
 
+    // helps to delete a added form section for a specific meal
     const mealMenuDeleteChange = (event,index) => {
         event.preventDefault();
         const newArray = [...mealMenuInputs];
@@ -403,6 +414,7 @@ export default function LoginModal({showBookingModal, closeBookingModal, package
         setMealMenuInputs(newArray);
     };
 
+    // to check a already selected meal
     function checkExistingMealType(val){
         if(mealMenuInputs.length>0){
             for(var k=0; k<mealMenuInputs.length; k++){
@@ -416,6 +428,7 @@ export default function LoginModal({showBookingModal, closeBookingModal, package
 
     let mealMenuData = [...mealMenuInputs];
 
+    // Validation check for all required fields
     const onSubmitValidation = (data) => {
         const end_d   = (1000*60*60*24*30*12*2);    //2 years
         const start_d = (1000*60*60*24*1);         //1 days
@@ -472,7 +485,6 @@ export default function LoginModal({showBookingModal, closeBookingModal, package
 
         }
 
-        // let mealMenuInputValid = checkMealMenuValidation()
 
         if(isEventNameValid === 'valid' && isEventDateValid === 'valid' && isServiceTypeValid === 'valid' && isStateValid === 'valid' && isDistrictValid === 'valid' && isCityValid==='valid' && isPinCodeValid==='valid' && (mealMenuInputs.length>0)){
             let mealMenuInputValid = checkMealMenuValidation()
@@ -484,6 +496,7 @@ export default function LoginModal({showBookingModal, closeBookingModal, package
         }
     }
 
+    // To validate and show alert of error message for meal menu input fields
     function checkMealMenuValidation(){
         for(var i=0; i<mealMenuInputs.length; i++){
             if(mealMenuInputs[i]['mealType'] === ''){
@@ -536,6 +549,7 @@ export default function LoginModal({showBookingModal, closeBookingModal, package
         return true
     }
 
+    // Api call to book now (asynchronous function call)
     const placeBooking          = async() =>{
         setLoadingMssg("Please wait !! submitting form...");
         setMsgStyle("");
@@ -611,6 +625,8 @@ export default function LoginModal({showBookingModal, closeBookingModal, package
             }
         }
     }
+
+    // On Click Final submit button
     const bookingFormSubmit = (e) => {
         e.preventDefault();
         let validationFlag  = onSubmitValidation(eventData);
@@ -625,7 +641,7 @@ export default function LoginModal({showBookingModal, closeBookingModal, package
                 icon: 'warning'
             }
             ).then((result) => {
-                if (result.isConfirmed) {
+                if (result.isConfirmed) {   //Once user clicked on ok bbutton on swal popup
                     placeBooking()
                 } else{
                     Swal.close();
@@ -637,25 +653,132 @@ export default function LoginModal({showBookingModal, closeBookingModal, package
         }
     }
 
+    // Back button to slide on previous field
     function goToPrevSlide(){
         document.querySelector("button.carousel-prev-btn").click();
     }
 
+    const [showSteps, updateShowSteps] = useState('show');
+    const [showForm, updateShowForm]   = useState('hide');
+
+    function showFormFields(){
+        updateShowSteps('hide');
+        updateShowForm('show');
+    }
+
+    function showBookingSteps(){
+        updateShowSteps('show');
+        updateShowForm('hide');
+    }
 
     return(
         <div className="booking-modal" id="bookingModal" show-modal={showBookingModal}>
             <div className="modal-dialog">
                 <div className="modal-content">
-                    <div className="modal-header">
-                        <h1 className="modal-title fs-5" id="exampleModalLabel">Booking Form</h1>
+                    <div className="modal-header" style={(showForm==='hide')?{justifyContent:"right"}:{justifyContent:"space-between"}}>
+                        <h1 className="modal-title fs-5" id="exampleModalLabel" show-modal-section={showForm}>Booking Form</h1>
                         <button type="button" className="login-modal-close" onClick={closeBookingModal}>X</button>
                     </div>
                     <div className="modal-body" style={{display:"flex", justifyContent:"center", padding:"24px 14px"}}>
                         <form className="needs-validation book-now-form" id="bookNowForm" onSubmit={bookingFormSubmit}>
-                            <div id="carouselExample" className="carousel slide" data-bs-touch="false">
+                            <div className="steps-info-heading" show-modal-section={showSteps}>
+                                <div className="mb-3"  style={{display:"flex", flexDirection:"row", justifyContent:"right", alignItems:"center", gap:"6px"}}>
+                                    <button className="btn btn-secondary" type="button" onClick={showFormFields} style={{ padding: "0px", paddingLeft:"10px", lineHeight:"1.5", fontFamily: 'Proxima Soft bold', backgroundColor:"white", color:"#730000", border:"0px", display:"flex", alignItems:"center"}}>
+                                        <span style={{color:"#730000"}}>Skip To Form</span>
+                                        &nbsp;
+                                        <i className="fa fa-long-arrow-right" style={{fontSize:"20px"}}></i>
+                                    </button>
+                                </div>
+                                <h3>
+                                    <span className="booking-heading">
+                                        <span>Booking</span>
+                                        <i className="fas fa-arrows-alt-h" style={{color:"balck"}}></i>
+                                        <span>Serving</span>
+                                    </span>
+                                    <span className="mini-heading">Guidlines & Process</span>
+                                </h3>
+                                <div className="card-group">
+                                    <div className="steps-points card mt-5">
+                                        <div className="step-icon-wrap">
+                                            <i className="fab fa-wpforms step-icon"></i>
+                                        </div>
+                                        <div className="step-description card-body" id="0" >
+                                            <h5 className="card-title">Filling & Submit Form</h5>
+                                            <p className="mb-0 card-text">Fill your basic information and requirement details like menu, event location etc.</p>
+                                        </div>
+                                        <i className="fas fas fa-share move-next-icon"></i>
+                                    </div>
+                                
+                                    <div className="steps-points card mt-5">
+                                        <div className="step-icon-wrap">
+                                            <i className="fa fa-phone step-icon"></i>
+                                        </div>
+                                        <div className="step-description card-body" id="1">
+                                            <h5 className="card-title">Discuss & Finalise Requirement</h5>
+                                            <p className="mb-0 card-text">One to One discussion and finalization your requirement and estimated cost</p>
+                                        </div>
+                                        <i className="fas fas fa-share move-next-icon"></i>
+                                    </div>
+                                
+                                    
+                                    <div className="steps-points card mt-5">
+                                        <div className="step-icon-wrap">
+                                            <i className="fa fa-credit-card step-icon"></i>
+                                        </div>
+                                        <div className="step-description card-body" id="2">
+                                            <h5 className="card-title">Advanded Payment</h5>
+                                            <p className="card-text mb-0">Pay the minimal Token Amount as booking advance to secure your booking more.</p>
+                                        </div>
+                                        <i className="fas fas fa-share move-next-icon"></i>
+                                    </div>
+                                    
+                                    <div className="steps-points card mt-5">
+                                        <div className="step-icon-wrap">
+                                            <i className="fa fa-check step-icon"></i>
+                                        </div>
+                                        <div className="step-description card-body" id="3">
+                                            <h5 className="card-title">Final Callback</h5>
+                                            <p className="mb-0 card-text">Last updation & changes to your menu two days before main event with 50% payment of estimated cost.</p>
+                                        </div>
+                                        <i className="fas fas fa-share move-next-icon"></i>
+                                    </div>
+
+                                    <div className="steps-points card mt-5">
+                                        <div className="step-icon-wrap">
+                                            <i className="fas fa-calendar-alt step-icon"></i>
+                                        </div>
+                                        <div className="step-description card-body" id="4">
+                                            <h5 className="card-title">Event Day</h5>
+                                            <p className="card-text mb-0">No more worries!! we will be there at your event at correct time</p>
+                                        </div>
+                                        <i className="fas fas fa-share move-next-icon"></i>
+                                    </div>
+                                    <div className="steps-points card mt-5 mb-0">
+                                        <div className="step-icon-wrap">
+                                            <i className="fas fa-smile step-icon"></i>
+                                        </div>
+                                        <div className="step-description card-body" id="5">
+                                            <h5 className="card-title">Remaining Payment & Feed back</h5>
+                                            <p className="card-text mb-0">Share your feedback & Clear remaining dues</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                {/* <div className="skip-to-booking-form-btn mb-2">
+                                    <button className="btn btn-primary" type="button" onClick={showFormFields} style={{minWidth:"180px", fontFamily:"Proxima Soft Semibold", minHeight:"46px", fontSize:"18px"}}>
+                                        <span>Start Filling Form</span>
+                                    </button>
+                                </div> */}
+                            </div>
+                            <div id="carouselExample" className="carousel slide" data-bs-touch="false" show-modal-section={showForm}>
                                 <div className="carousel-inner">
                                     <div className="carousel-item active" style={{padding:"0px 10px"}}>
                                         <div className="row">
+                                            {/* <div className="col-sm-12 mb-3"  style={{display:"flex", flexDirection:"row", justifyContent:"right", alignItems:"center", gap:"6px"}}>
+                                                <i className="fa fa-long-arrow-left" style={{fontSize:"20px"}}></i>
+                                                <button className="btn btn-dark" type="button" onClick={showBookingSteps} style={{minWidth:"90px", padding: "0px", lineHeight:"1.5", fontFamily: 'Proxima Soft Semibold'}}>
+                                                    Go Back
+                                                </button>
+                                            </div> */}
                                             <div className="col-sm-12 event-form-heading mt-3" style={{textAlign:"left", padding:"5px 10px 10px 10px"}}>
                                                 <h5 className="mb-0">
                                                     <span className="h-txt" style={{minWidth:"126px"}}>Basic Details</span>
@@ -691,7 +814,7 @@ export default function LoginModal({showBookingModal, closeBookingModal, package
                                                 }
                                             </div>
                                             <div className="col-md-6 col-sm-12 new-form-field mb-3" style={{position:"relative"}}>
-                                                <label htmlFor="emailId" className="form-label">Email<span style={{color:"red"}}>*</span></label>
+                                                <label htmlFor="emailId" className="form-label">Email</label>
                                                 <input type="text" className="form-control" id="emailId" name="emailId" placeholder="Enter your email..." value={newUserData.emailId} onChange={(e)=>handlenewUserInput(e)} form-valid={emailIdErr.isValid} style={{paddingRight:"85px"}}/>
                                                 {
                                                     (emailIdErr.isValid === "invalid")?
@@ -1032,7 +1155,14 @@ export default function LoginModal({showBookingModal, closeBookingModal, package
                             </div>
                         </form>
                     </div>
-                    <div className="modal-footer">
+                    <div className="modal-footer" style={(showForm==='hide')?{minHeight:"76px"}:{minHeight:"10px"}}>
+                        <div className="btn-section" style={{position: "fixed", bottom: "0", padding:"0px 10px", width:"100%", maxWidth:"980px"}}>
+                            <div className="start-form-filling-btn-wrap">
+                                <button className="start-form-filling-button btn btn-primary" style={(showForm==='hide')?{display:"block"}:{display:"none"}} onClick={showFormFields}>
+                                    <span>Start Filling Form</span>
+                                </button>
+                            </div>
+                        </div>
                         <button className="carousel-prev-btn visually-hidden" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
                             <span>Previous</span>
                         </button>

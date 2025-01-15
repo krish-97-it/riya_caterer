@@ -7,7 +7,7 @@
     padding-top: 30px;
     padding-bottom: 45px;
     /* background-image: radial-gradient(ellipse, #ffffff 70%, #ffbf005e); */
-    box-shadow: inset 0px 0px 20px 7px rgb(87 79 71);
+    /* box-shadow: inset 0px 0px 20px 7px rgb(87 79 71); */
     /* background-color: #fff9e7; */
 }
 .service-page-body h3{
@@ -33,7 +33,7 @@
     color: #43251d;
 }
 .service-type-section .service-intro{
-    font-family: Caveat, cursive;
+    font-family: "Proxima Soft Semibold";
     font-size: 22px;
     padding: 20px 20px 30px;
     color: #000000;
@@ -182,7 +182,8 @@
     background-color: rgba(0,0,0,.6);
 }
 .service-event-section .service-intro{
-    font-family: Caveat, cursive;
+    /* font-family: Caveat, cursive; */
+    font-family: "Proxima Soft Semibold";
     font-size: 22px;
     padding: 16px 20px 30px;
     color: #fff1b8;
