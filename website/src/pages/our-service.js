@@ -6,8 +6,9 @@ import PlusSymbol from "../assets/images/plus.svg";
 // import BlackUnderline from "../assets/images/greyUnderline.webp";
 import CustomMasonary from "../component/custom-masonary";
 // import ForkKnife from "../assets/images/cutlinary-icon.svg";
+import FaqSection from "../component/faq-accordion";
 
-export default function Service(){
+export default function Service({openBookingModal, openGuidelines}){
     // Set loading state to true initially
     const [isLoading, setLoading] = useState(true);
 
@@ -44,7 +45,6 @@ export default function Service(){
                                     <div className="row">
                                         <div className="img-underline-heading">
                                             <h3>Type Of Services</h3>
-                                            {/* <img src={BlackUnderline} alt="underline" className="img-underline"/> */}
                                         </div>
                                         <p className="service-intro mb-0">
                                             We are flexible to serve Food for any kind of indoor and outdoor event as per your Requirements. We provide two types of Services - one is Cooking & Serving on site at your event's location and another one is Cooking at our Kitchen and Delivery at your event location.
@@ -119,9 +119,7 @@ export default function Service(){
                                     </div>
                                 </div>
                             </div>
-                            <div className="our-package-section">
-                                
-                            </div>
+                            <FaqSection openGuidelines={openGuidelines} openBookingModal={openBookingModal}/>
                         </div>
                     )
                 }

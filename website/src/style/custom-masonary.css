@@ -120,7 +120,14 @@
 .grid-item-thirteen .item{
     background-image: url('https://img.perceptpixel.com/pykhlszs/riya_caterer/others-img.webp');
 }
-
+@media(min-width:1400px){
+    .grid-item-twelve{
+        grid-area: span 2 / span 2 !important;
+    }
+    .grid-item-thirteen{
+        grid-area: span 1 / span 2 !important;
+    }
+}
 @media(max-width:1200px){
     .grid-item-six{
         grid-area: span 1 / span 2;  

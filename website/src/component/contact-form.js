@@ -144,16 +144,18 @@ export function ContactForm({bookingStartDate, bookingEndDate}){
                             {
                                 title: "Success!",
                                 text: "Query Sent Successfully!! You will get a response within 12 hours.",
-                                icon: "success"
+                                icon: "success",
+                                allowOutsideClick: false,
+                                allowEscapeKey: false
                             }
                         )
-                        // .then(
-                        //     (result) =>{
-                        //         if (result.isConfirmed) {
-                        //             window.location.href = window.location.origin;;
-                        //         }
-                        //     }
-                        // )
+                        .then(
+                            (result) =>{
+                                if (result.isConfirmed) {
+                                    window.location.href = window.location.origin;;
+                                }
+                            }
+                        )
                     }else{
                         setLoadingMssg("");
                         Swal.fire(

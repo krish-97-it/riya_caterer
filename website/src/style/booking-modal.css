@@ -79,6 +79,11 @@
     font-family: "Proxima Soft Bold";
     border-radius: 6px 6px 0px 0px;
 }
+.booking-modal .modal-footer{
+    justify-content: center;
+    /* padding: 0px 20px 20px; */
+    /* background-image: linear-gradient(to left, #ff6c75, #8C3FFF); */
+}
 .booking-modal .modal-header h1{
     padding-left: 12px !important;
 }
@@ -101,6 +106,123 @@
     overflow-x: scroll;
     overflow-y: scroll;
 }
+[show-modal-section="show"]{
+    display: block;
+}
+[show-modal-section="hide"]{
+    display: none;
+}
+.steps-info-heading{
+    overflow: hidden;
+    /* height: calc( 100vh - 80px ); */
+    overflow-y: scroll;
+}
+.steps-info-heading h3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    font-family: "Proxima Soft Bold";
+}
+.steps-info-heading{
+    padding: 30px;
+}
+.steps-info-heading .mini-heading{
+    font-size: 20px;
+    background-color: #000000;
+    padding: 6px 15px;
+    color: #ffffff;
+    border-radius: 4px;
+    /* width: 245px; */
+    width: 100%;
+    margin-top: -3px;
+}
+.steps-info-heading .booking-heading{
+    padding: 10px 15px 8px;
+    margin-top: 10px;
+    color: orange;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 2px solid rgb(223, 223, 223);
+    border-radius: 12px 12px 0px 0px;
+}
+.steps-info-heading .booking-heading span{
+    color: #000 !important;
+}
+.steps-info-heading .card-group{
+    flex-direction: column;
+    gap: 50px;
+}
+.steps-info-heading .steps-points{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    font-family: "Proxima Soft Semibold";
+    /* gap: 10px; */
+    padding-left: 132px;
+    border-radius: 0px 12px 12px 0px;
+    border: 1px solid #632300 !important;
+    min-height: 104px;
+}
+.steps-points .step-icon{
+    padding: 38px 40px;
+    border: 2px solid #ffa503;
+    border-radius: 50%;
+    color: #ffffff;
+    background-color: #ffa503;
+    z-index: 1;
+    font-size: 70px;
+}
+.steps-points .step-icon-wrap{
+    position: absolute;
+    left: 0;
+    left: -2px;
+    background-color: white;
+    border-radius: 0px 50% 50% 0px;
+}
+.steps-points .step-description{
+    text-align: left;
+    /* border: 2px solid #d0d0d0; */
+    padding: 12px 20px;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: center;
+    border-radius: 0px 12px 12px 0px;
+}
+.steps-points .step-description h5{
+    font-family: "Proxima Soft Bold";
+}
+.steps-points .move-next-icon{
+    position: absolute;
+    right: -18px;
+    rotate: 149deg;
+    bottom: -92px;
+    font-size: 65px;
+    color: #5f7c0061;
+}
+.step-icon-wrap .fa-wpforms{
+    padding: 28px 32px !important;
+}
+.step-icon-wrap .fa-phone{
+    padding: 28px 28px !important;
+}
+.step-icon-wrap .fa-credit-card{
+    padding: 28px 24px !important;
+}
+.step-icon-wrap .fa-calendar-alt{
+    padding: 28px 32px !important;
+}
+.step-icon-wrap .fa-check{
+    padding: 28px 28px !important;
+}
+.step-icon-wrap .fa-smile{
+    padding: 28px 28px !important;
+}
+
 .book-now-form .form-label{
     margin-bottom: .2rem;
     font-family: 'Proxima Soft Semibold';
@@ -151,6 +273,26 @@
     text-align: left;
     width: 100%;
 }
+.start-form-filling-btn-wrap{
+    background-color: #efefef;
+    padding: 15px 15px 12px;
+    width: 100%;
+    border-top: 2px solid rgb(255, 255, 255);
+}
+.start-form-filling-button{
+    width: 180px;
+    font-family: "Proxima Soft Semibold";
+    height: 48px;
+    font-size: 18px;
+    width: 100%;
+}
+
+@media (min-width: 576px) {
+    .steps-points{
+        border: 1px solid #632300 !important;
+        border-radius: 0px 12px 12px 0px !important;
+    }
+}
 @media(max-width:991.98px){
     .booking-modal .modal-dialog{
         display: flex;
@@ -165,4 +307,54 @@
     .booking-modal .modal-header h1{
         padding-left: 6px !important;
     }
+    .steps-info-heading{padding: 15px;}
+    .steps-info-heading .card-group{
+        margin-top: 45px;
+    }
+    .steps-info-heading .steps-points {
+        padding-left: 0px;
+        padding-top: 62px;
+    }
+    .steps-points .step-icon-wrap {
+        border-radius: 0% 50%;
+        top: -70px;
+        left: -3px;
+    }
+}
+@media(max-width:575.98px){
+    .steps-info-heading .steps-points {
+        padding-left: 0px;
+        padding-top: 48px;
+    }
+    .steps-points .step-icon-wrap {
+        border-radius: 0% 50%;
+        top: -54px;
+        left: -3px;
+    }
+    .steps-info-heading .step-icon{
+        font-size: 56px;
+    }
+    .step-icon-wrap .fa-wpforms{
+        padding: 20.5px 24px!important;
+        font-size: 56px;
+    }
+    .step-icon-wrap .fa-phone{
+        padding: 23.5px 23.5px !important;
+        font-size: 50px;
+    }
+    .step-icon-wrap .fa-credit-card{
+        padding: 23px 20px !important;
+        font-size: 50px;
+    }
+    .step-icon-wrap .fa-check{
+        padding: 23px 23px !important;
+        font-size: 50px;
+    }
+    .step-icon-wrap .fa-calendar-alt{
+        padding: 20px 23.5px !important;
+    }
+    .step-icon-wrap .fa-smile{
+        padding: 23px 23px !important;
+    }
+    
 }

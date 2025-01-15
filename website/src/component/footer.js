@@ -1,8 +1,10 @@
 import React from "react";
+import CustomChatBot from "./chat-bot";
+import ProcessGuidlines from "./process-guidlines";
 
-export default function Footer(){
+export default function Footer({openBookingModal, showGuidelinesPopup, openGuidelines, closeGuidelines}){
     return(
-        <footer className="text-center text-lg-start bg-body-tertiary text-muted">
+        <footer className="text-center text-lg-start bg-body-tertiary text-muted footer-custom-style">
             <section className="border-bottom">
                 <div className="container text-center text-md-start">
                     <div className="row pt-3">
@@ -11,44 +13,43 @@ export default function Footer(){
                                 Riya Caterer
                             </h6>
                             <p>
-                                Here you can use rows and columns to organize your footer content. Lorem ipsum
-                                dolor sit amet, consectetur adipisicing elit.
+                                We offer premium catering services with affordable cost range for any kind of indoor and outdoor events.
                             </p>
                             <div className="mt-2">
                                 <div className="fw-bold mb-2">
                                     <span>Follow Us On:</span>
                                 </div>
                                 <div>
-                                    <a href="" className="me-4">
-                                        <i className="fa fa-facebook-f"></i>
+                                    <a href="https://www.facebook.com/people/Riya-caterers/100091846194256/?mibextid=ZbWKwL" target="_blank" className="me-4">
+                                        <i className="fab fa-facebook-f"></i>
                                     </a>
-                                    <a href="" className="me-4">
-                                        <i className="fa fa-google"></i>
+                                    <a href="https://maps.app.goo.gl/DN9Dzxy5EJeiSF4k9" target="_blank" className="me-4">
+                                        <i className="fab fa-google"></i>
                                     </a>
-                                    <a href="" className="me-4">
-                                        <i className="fa fa-instagram"></i>
+                                    <a href="https://www.instagram.com/riya.caterer/profilecard/?igsh=MTJndTRlYnBwcDZuNw%3D%3D" target="_blank" className="me-4">
+                                        <i className="fab fa-instagram"></i>
                                     </a>
                                     <a href="" className="">
-                                        <i className="fa fa-whatsapp"></i>
+                                        <i className="fab fa-whatsapp"></i>
                                     </a>
                                 </div>
                             </div>
                         </div>
                         <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-2">
                             <h6 className="text-uppercase fw-bold mb-2">
-                                Products
+                                Servives
                             </h6>
                             <p>
-                                <a href="#!" className="text-reset">Angular</a>
+                                <a href="#!" className="text-reset">Explore Menu</a>
                             </p>
                             <p>
-                                <a href="#!" className="text-reset">React</a>
+                                <a href="#!" className="text-reset">Package</a>
                             </p>
                             <p>
-                                <a href="#!" className="text-reset">Vue</a>
+                                <a href="#!" className="text-reset">FAQs</a>
                             </p>
                             <p>
-                                <a href="#!" className="text-reset">Laravel</a>
+                                <a href="#!" className="text-reset">Booking Form</a>
                             </p>
                         </div>
                         <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-2">
@@ -56,13 +57,13 @@ export default function Footer(){
                                 Useful links
                             </h6>
                             <p>
-                                <a href="#!" className="text-reset">Pricing</a>
+                                <a href="#!" className="text-reset">Search Booking</a>
                             </p>
                             <p>
-                                <a href="#!" className="text-reset">Settings</a>
+                                <a type="btn" className="text-reset" onClick={openGuidelines}>Guidelines</a>
                             </p>
                             <p>
-                                <a href="#!" className="text-reset">Orders</a>
+                                <a href="#!" className="text-reset">Find us</a>
                             </p>
                             <p>
                                 <a href="#!" className="text-reset">Help</a>
@@ -83,10 +84,13 @@ export default function Footer(){
                 </div>
             </section>
 
-            <div className="text-center p-2" style={{backgroundColor: "rgb(0 0 0)"}}>
+            <div className="text-center footer-copyright-section p-2" style={{backgroundColor: "rgb(0 0 0)"}}>
                 © 2021 Copyright: 
                 <a className="text-reset fw-bold" href="https://mdbootstrap.com/"> riya-caterer.com</a>
             </div>
+
+            <ProcessGuidlines showGuidelinesPopup={showGuidelinesPopup} closeGuidelines={closeGuidelines}/>
+            <CustomChatBot/>
         </footer>
     )
 }
