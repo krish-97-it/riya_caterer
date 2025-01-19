@@ -6,6 +6,7 @@ const workGalleryController =   require('./controller/workGalleryApi');
 const userQueryController   =   require('./controller/sendQueryApi');
 const foodPackageController =   require('./controller/packageDataApi');
 const bookingFormController =   require('./controller/bookingFormApi');
+const chatBotMssgController =   require('./controller/chatBotMssgApi');
 
 
 //user review fetch
@@ -20,8 +21,10 @@ router.get('/getPackageDetails', foodPackageController.getFoodPackage);
 //user query submit apis
 router.post('/submitQueries', userQueryController.saveUserQuery);
 
-//user query submit apis
+//user booking submit apis
 router.post('/submitBooking', bookingFormController.saveBookingData);
 
+//load chatbot messages api
+router.get('/loadChatBot', chatBotMssgController.getChatBotMssg)
 
 module.exports = router;

@@ -1,8 +1,9 @@
 import React from "react";
 import CustomChatBot from "./chat-bot";
 import ProcessGuidlines from "./process-guidlines";
+import chatIcon from "../assets/images/chat_icon_three.png";
 
-export default function Footer({openBookingModal, showGuidelinesPopup, openGuidelines, closeGuidelines}){
+export default function Footer({openBookingModal, showGuidelinesPopup, openGuidelines, closeGuidelines, showChatBox, openChatBox, closeChatBox, msgInputChange, sendUserMsgInput, msgInput, chat, doTask, lastMsg}){
     return(
         <footer className="text-center text-lg-start bg-body-tertiary text-muted footer-custom-style">
             <section className="border-bottom">
@@ -88,9 +89,16 @@ export default function Footer({openBookingModal, showGuidelinesPopup, openGuide
                 © 2021 Copyright: 
                 <a className="text-reset fw-bold" href="https://mdbootstrap.com/"> riya-caterer.com</a>
             </div>
+            <div className="chat-bot-icon-section">
+                <button onClick={openChatBox}>
+                    <span>
+                        <img src={chatIcon} alt="chat bot"></img>
+                    </span>
+                </button>
+            </div>
 
-            <ProcessGuidlines showGuidelinesPopup={showGuidelinesPopup} closeGuidelines={closeGuidelines}/>
-            <CustomChatBot/>
+            <ProcessGuidlines showGuidelinesPopup={showGuidelinesPopup} showChatBox={showChatBox} closeGuidelines={closeGuidelines}/>
+            <CustomChatBot showChatBox={showChatBox} closeChatBox={closeChatBox} openBookingModal={openBookingModal} msgInputChange={msgInputChange} sendUserMsgInput={sendUserMsgInput} msgInput={msgInput} chat={chat} doTask={doTask} lastMsg={lastMsg}/>
         </footer>
     )
 }

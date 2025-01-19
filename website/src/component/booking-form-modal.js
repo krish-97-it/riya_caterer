@@ -584,7 +584,7 @@ export default function LoginModal({showBookingModal, closeBookingModal, package
 
         try {
             const response = await axios.post(bookingApiUrl, formData, {config})
-            if(response.data.success === true){
+            if(response.data.success.is_booked === true){
                 setLoadingMssg("");
                 Swal.fire(
                     {
