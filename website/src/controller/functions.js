@@ -21,17 +21,27 @@ export default function MainFunction(){
     const [galleryTempData, updateGalleryTempData]  = useState([]);
     const [packageDetails, updatePackageDetails]    = useState([]);
 
-    // api call to get food menus from backend db. Api written in backend project
-    const [userReviews, updateUserReviews]          =   useState([]);
-    const [workGalleryData, updateWorkGalleryData]  =   useState([]);
+    // api call to get reviews, galleryimg, chatbotMssg from backend db. Api written in backend project
+    const [userReviews, updateUserReviews]          = useState([]);
+    const [workGalleryData, updateWorkGalleryData]  = useState([]);
+    const [chatbotReplyMssg, sethatbotReplyMssg]    = useState([]);
 
     // listing api endpoints urls
     const APIUrls                                   =   {
         "getUserReviewsUrl"     : Constant_Variables.SERVER_BASE_URL+'/loadreviews',
         "getGalleryImagesUrl"   : Constant_Variables.SERVER_BASE_URL+'/loadgallery',
-        "getPackageDetailsUrl"  : Constant_Variables.SERVER_BASE_URL+'/getPackageDetails'
+        "getPackageDetailsUrl"  : Constant_Variables.SERVER_BASE_URL+'/getPackageDetails',
+        "getChatBotMssgUrl"     : Constant_Variables.SERVER_BASE_URL+'/loadChatBot'
     };
 
+
+    function loadChatBotMssg(){
+        axios.get(APIUrls.getChatBotMssgUrl).then((res) => {
+            sethatbotReplyMssg(res.data.data);
+        }).catch((error) => {
+            console.log(error)
+        });
+    }
 
     function loadUserReviews(){
         axios.get(APIUrls.getUserReviewsUrl).then((res) => {
@@ -59,6 +69,7 @@ export default function MainFunction(){
     }
 
     useEffect(() => {
+        loadChatBotMssg();
         loadUserReviews();
         getGalleryImages();
         getPackageDetails();
@@ -106,6 +117,15 @@ export default function MainFunction(){
     }
     function closeGuidelines(){
         updateShowGuidelinesPopup('hide');
+    }
+
+    //ChatBot Box
+    const [showChatBox, setShowChatBox] = useState('hide')
+    function openChatBox(){
+        setShowChatBox('show');
+    }
+    function closeChatBox(){
+        setShowChatBox('hide');
     }
 
     // help to get input of sort by filter
@@ -193,13 +213,132 @@ export default function MainFunction(){
         setEndDate(max_date_format);
     
     }
-
     function getFormatedDate(date,symbol){
         var year        = date.getFullYear();            // yyyy
         var month       = ("0" + (date.getMonth() + 1)).slice(-2); // mm
         var day         = ("0" + date.getDate()).slice(-2);   // dd
         var finalDate   = (year + symbol + month + symbol + day);
         return finalDate
+    }
+
+
+    // chat bot fns
+    const [chat, updateChat] = useState([
+        {
+            msg_title:"Intro",
+            msg_text:"Hi, I am Riya. How can i help you?",
+            buttons:[],
+            links:[],
+            lists:[],
+            keys:"intro, hello",
+            next_msg:"quick links",
+            isUser:false,
+            lastMsg:''
+        }
+    ])
+    const [lastMsg, updateLastMsg] = useState('');
+
+    function chatBotNextMsg(){
+        let chat_len = chat.length;
+        if(chat_len>0){
+            if(chat[chat_len-1].next_msg !== ''){
+                // setSearchInput(chat[chat_len-1].next_msg);
+                getChatReply(chat[chat_len-1].next_msg);
+            }
+        }
+    }
+
+    function getChatReply(arr){
+        if(msgInput !== ''){
+            let abc = chatbotReplyMssg.filter((msg) =>
+                msg.msg_keys.toLowerCase().includes(msgInput.toLowerCase())
+            );
+            if(abc.length < 1){
+                abc = chatbotReplyMssg.filter((msg) =>
+                    msg.msg_keys.toLowerCase().includes('error')
+                );
+            }
+            for(var i=0; i<abc.length; i++){
+                let update_arr = [...arr, {
+                    msg_title: abc[i].msg_title,
+                    msg_text:abc[i].msg_text,
+                    buttons:abc[i].buttons,
+                    links:abc[i].links,
+                    lists:abc[i].lists,
+                    keys:abc[i].keys,
+                    next_msg:abc[i].keys,
+                    isUser:false,
+                    lastMsg:lastMsg,
+                }]
+                updateChat(update_arr);
+            }
+            updateLastMsg('bot');
+            // console.log(updateArr);
+            // updateChat(updateArr);
+        }
+    }
+
+    const [msgInput, setMsgInput] = useState("");
+    function msgInputChange(e){
+        let input_val = e.target.value
+        setMsgInput(input_val);
+    }
+
+    function sendUserMsgInput(val){
+        if(msgInput !== ''){
+            let new_arr = [...chat, {
+                msg_title:"User Input",
+                msg_text:msgInput,
+                buttons:[],
+                links:[],
+                lists:[],
+                keys:"",
+                next_msg:"",
+                isUser:true,
+                lastMsg:lastMsg
+            }]
+            updateLastMsg('user');
+            updateChat(new_arr);
+            getChatReply(new_arr);
+            setMsgInput("");
+        }
+    }
+
+    function doTask(event,fn){
+        event.preventDefault();
+        if(fn === 'openBookingModal'){
+            // setMsgInput("Booking Form");
+            let new_arr = [...chat, {
+                msg_title:"User Input",
+                msg_text:'Booking Form',
+                buttons:[],
+                links:[],
+                lists:[],
+                keys:"",
+                next_msg:"",
+                isUser:true,
+                lastMsg:lastMsg
+            }]
+            updateLastMsg('user')
+            updateChat(new_arr);
+            openBookingModal();
+        }else if(fn === 'openGuidelines'){
+            // setMsgInput("Work Flow");
+            let new_arr = [...chat, {
+                msg_title:"User Input",
+                msg_text:'Work Flow',
+                buttons:[],
+                links:[],
+                lists:[],
+                keys:"",
+                next_msg:"",
+                isUser:true,
+                lastMsg:lastMsg
+            }]
+            updateLastMsg('user');
+            updateChat(new_arr);
+            openGuidelines();
+        }
     }
 
     return(
@@ -214,7 +353,7 @@ export default function MainFunction(){
                 <Route exact path="/gallery" element={<Gallery imageModal={imageModal} openImageModal={openImageModal} closeImageModal={closeImageModal} getSortByInput={getSortByInput} getGalleryByAlbum={getGalleryByAlbum} getFilterByInput={getFilterByInput} currentEvent={currentEvent} getFilteredItemList={getFilteredItemList} currentImgIndex={currentImgIndex} loadAllImg={loadAllImg} openBookingModal={openBookingModal}/>}/>
                 <Route exact path="*" element={<Errorpage />} />
             </Routes>
-            <Footer openBookingModal={openBookingModal} showGuidelinesPopup={showGuidelinesPopup} openGuidelines={openGuidelines} closeGuidelines={closeGuidelines}/>
+            <Footer openBookingModal={openBookingModal} showGuidelinesPopup={showGuidelinesPopup} openGuidelines={openGuidelines} closeGuidelines={closeGuidelines} showChatBox={showChatBox} openChatBox={openChatBox} closeChatBox={closeChatBox} msgInputChange={msgInputChange} sendUserMsgInput={sendUserMsgInput} msgInput={msgInput} chat={chat} doTask={doTask} lastMsg={lastMsg}/>
         </Router>
     )
 }
