@@ -108,7 +108,9 @@ export default function MenuPackage({packageDetails, openGuidelines, openBooking
                                 </div>
                             </div>
                         </div>
-                        <FaqSection openGuidelines={openGuidelines} openBookingModal={openBookingModal}/>
+                        <div>
+                            <FaqSection openGuidelines={openGuidelines} openBookingModal={openBookingModal} showAllItem='false'/>
+                        </div>
                     </div>
                 )
             }

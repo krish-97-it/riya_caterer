@@ -98,6 +98,7 @@
     text-align: center !important;
 }
 .received-chats-img {
+    margin-top: 6px;
     display: flex;
     flex-direction: row;
     justify-content: left;
@@ -129,10 +130,11 @@
     font-family: "Proxima Soft Medium";
 }
 .outgoing-chats {
-    margin: 12px 0px;
+    /* margin: 12px 0px; */
     text-align: center !important;
 }
 .outgoing-chats-img {
+    margin-top: 6px;
     display: flex;
     flex-direction: row;
     justify-content: right;

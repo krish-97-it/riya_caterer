@@ -9,7 +9,6 @@ import phoneIcon from "../assets/images/social-media-icons/phoneIcon.svg";
 // import TouchIcon from "../assets/images/touch-icon.webp";
 import { ContactForm } from "../component/contact-form";
 import BlackUnderline from "../assets/images/greyUnderline.webp";
-import FaqSection from "../component/faq-accordion";
  
 export default function Contact({packageDetails, openGuidelines, openBookingModal}){
     // Set loading state to true initially
@@ -172,7 +171,6 @@ export default function Contact({packageDetails, openGuidelines, openBookingModa
                                     </div>
                                 </div>
                             </div>
-                            <FaqSection openGuidelines={openGuidelines} openBookingModal={openBookingModal}/>
                         </div>
                     )
                 }

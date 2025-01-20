@@ -5,6 +5,15 @@ a:hover,a:focus{
 .faq-accordion{
     font-size: 18px;
 }
+.faq-section-heading{
+    font-family: "Proxima Soft Bold" !important;
+    margin-bottom: 20px !important;
+    font-size: 36px;
+    text-underline-offset: 5px !important;
+    text-decoration-line: underline !important;
+    text-decoration-style:dotted !important;
+    text-underline-position: under !important;
+}
 .faq-accordion p{
     font-family: "Proxima Soft semiBold";
 }
@@ -26,9 +35,32 @@ a:hover,a:focus{
 .faq-accordion .accordion-item{
     border-bottom: 0px;
 }
-
+.faq-page-body .faq-accordion-section .container{
+    margin-top: -10px !important;
+}
+.faq-banner-section{
+    /* background: #3a5b66;
+    border-radius: 0px 0px 50% 50%; */
+}
+.faq-banner-section img{
+    width: 92% !important;
+}
+@media(min-width:992px){
+    .faq-banner-section{
+        margin-top: -30px;
+    }
+}
 @media(max-width:767.98px){
     .faq-section-heading{
         font-size: 24px !important;
+    }
+    .faq-section-heading{
+        font-size: 24px !important;
+    }
+    .faq-page-body .faq-accordion-section .container {
+        margin-top: 10px !important;
+    }
+    .faq-banner-section img{
+        width: 100% !important;
     }
 }

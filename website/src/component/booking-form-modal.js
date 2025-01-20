@@ -21,6 +21,8 @@ export default function LoginModal({showBookingModal, closeBookingModal, package
         userDistrict: '',
         userCity: '',
         userPinCode: '',
+        openTimeSlot: '06:00',
+        closeTimeSlot: '21:00',
     });
 
     const [firstNameErr, updateFirstNameErr]                = useState({});
@@ -187,10 +189,23 @@ export default function LoginModal({showBookingModal, closeBookingModal, package
     // On click on next button of the form carousel
     function goToNextSlide(e){
         e.preventDefault();
-        let validationFlag  = onSubmitFirstSlide(newUserData);
+        let validationFlag      = onSubmitFirstSlide(newUserData);
 
         if(validationFlag){
             document.querySelector("button.carousel-next-btn").click();
+        }
+    }
+    function getAmPmTime(time,meridiem){
+        var [h, m]    = time.split(":");
+        console.log(h)
+        console.log(m)
+        if(meridiem === 'yes'){
+            var format_time = ((h % 12 ? h % 12 : 12) + ":" + m);
+            var full_time   = h >= 12 ? format_time+'PM' : format_time+'AM';
+            return full_time
+        }else{
+            var full_time = ((h % 12 ? h % 12 : 12) + ":" + m);
+            return full_time
         }
     }
 
@@ -551,31 +566,35 @@ export default function LoginModal({showBookingModal, closeBookingModal, package
 
     // Api call to book now (asynchronous function call)
     const placeBooking          = async() =>{
+        let openTimeSlot_full   = getAmPmTime((newUserData.openTimeSlot),'yes');
+        let closeTimeSlot_full  = getAmPmTime((newUserData.closeTimeSlot),'yes');
+        let concat_time_slot    = (openTimeSlot_full === closeTimeSlot_full)?openTimeSlot_full:(openTimeSlot_full+" - "+closeTimeSlot_full);
         setLoadingMssg("Please wait !! submitting form...");
         setMsgStyle("");
         const formData          = {
-            first_name          : newUserData.firstName,
-            last_name           : newUserData.lastName,
-            email               : newUserData.emailId,
-            phone_no            : parseInt(newUserData.phoneNum),
-            user_address        : {
-                state           : newUserData.userState,
-                district        : newUserData.userDistrict,
-                city            : newUserData.userCity,
-                pincode         : parseInt(newUserData.userPinCode)
+            first_name              : newUserData.firstName,
+            last_name               : newUserData.lastName,
+            email                   : newUserData.emailId,
+            phone_no                : parseInt(newUserData.phoneNum),
+            user_address            : {
+                state               : newUserData.userState,
+                district            : newUserData.userDistrict,
+                city                : newUserData.userCity,
+                pincode             : parseInt(newUserData.userPinCode)
             },
-            event_name          : eventData.eventName,
-            event_date          : eventData.eventDate,
-            preffered_package   : eventData.prefferedPackage,
-            service_type        : eventData.serviceType,
-            event_location      : {
-                state           : eventData.state,
-                district        : eventData.district,
-                city            : eventData.city,
-                pincode         : parseInt(eventData.pinCode),
-                landmark        : parseInt(eventData.eventLandmark)
+            event_name              : eventData.eventName,
+            event_date              : eventData.eventDate,
+            preffered_package       : eventData.prefferedPackage,
+            service_type            : eventData.serviceType,
+            event_location          : {
+                state               : eventData.state,
+                district            : eventData.district,
+                city                : eventData.city,
+                pincode             : parseInt(eventData.pinCode),
+                landmark            : parseInt(eventData.eventLandmark)
             },
-            meal_menu           : mealMenuInputs
+            appointment_time_slot   : concat_time_slot,
+            meal_menu               : mealMenuInputs
         };
 
         const config = {
@@ -703,12 +722,42 @@ export default function LoginModal({showBookingModal, closeBookingModal, package
                                             <i className="fab fa-wpforms step-icon"></i>
                                         </div>
                                         <div className="step-description card-body" id="0" >
-                                            <h5 className="card-title">Filling & Submit Form</h5>
-                                            <p className="mb-0 card-text">Fill your basic information and requirement details like menu, event location etc.</p>
+                                            <h5 className="card-title">Start Filling Form</h5>
+                                            <p className="mb-0 card-text">Fill your basic information like name, email, phone, address etc and click next</p>
                                         </div>
                                         <i className="fas fas fa-share move-next-icon"></i>
                                     </div>
-                                
+                                    <div className="steps-points card mt-5">
+                                        <div className="step-icon-wrap">
+                                            <i className="fa fa-check-square step-icon" style={{padding:"28px 32px !important"}}></i>
+                                        </div>
+                                        <div className="step-description card-body" id="3">
+                                            <h5 className="card-title">Fill Event Details</h5>
+                                            <p className="mb-0 card-text">Fill event details like event name, booking date, preffered package etc.</p>
+                                        </div>
+                                        <i className="fas fas fa-share move-next-icon"></i>
+                                    </div>
+                                    <div className="steps-points card mt-5">
+                                        <div className="step-icon-wrap">
+                                            <i className="fa fa-plus-square step-icon" style={{padding:"28px 32px !important"}}></i>
+                                        </div>
+                                        <div className="step-description card-body" id="3">
+                                            <h5 className="card-title">Add Meal & Menu</h5>
+                                            <p className="mb-0 card-text">Add details of specific meal type like plate count, menu etc and Click add more to add more menu for more than one meal.</p>
+                                        </div>
+                                        <i className="fas fas fa-share move-next-icon"></i>
+                                    </div>
+                                    <div className="steps-points card mt-5">
+                                        <div className="step-icon-wrap">
+                                            <i className="fa fas fa-route  step-icon" style={{color:"white !important"}}></i>
+                                        </div>
+                                        <div className="step-description card-body" id="3">
+                                            <h5 className="card-title">Add Event Location</h5>
+                                            <p className="mb-0 card-text">Enter Event location details - state, district, city/village, pin code etc and Click Submit button.</p>
+                                        </div>
+                                        <i className="fas fas fa-share move-next-icon"></i>
+                                    </div>
+                            
                                     <div className="steps-points card mt-5">
                                         <div className="step-icon-wrap">
                                             <i className="fa fa-phone step-icon"></i>
@@ -729,41 +778,10 @@ export default function LoginModal({showBookingModal, closeBookingModal, package
                                             <h5 className="card-title">Advanded Payment</h5>
                                             <p className="card-text mb-0">Pay the minimal Token Amount as booking advance to secure your booking more.</p>
                                         </div>
-                                        <i className="fas fas fa-share move-next-icon"></i>
-                                    </div>
-                                    
-                                    <div className="steps-points card mt-5">
-                                        <div className="step-icon-wrap">
-                                            <i className="fa fa-check step-icon"></i>
-                                        </div>
-                                        <div className="step-description card-body" id="3">
-                                            <h5 className="card-title">Final Callback</h5>
-                                            <p className="mb-0 card-text">Last updation & changes to your menu two days before main event with 50% payment of estimated cost.</p>
-                                        </div>
-                                        <i className="fas fas fa-share move-next-icon"></i>
-                                    </div>
-
-                                    <div className="steps-points card mt-5">
-                                        <div className="step-icon-wrap">
-                                            <i className="fas fa-calendar-alt step-icon"></i>
-                                        </div>
-                                        <div className="step-description card-body" id="4">
-                                            <h5 className="card-title">Event Day</h5>
-                                            <p className="card-text mb-0">No more worries!! we will be there at your event at correct time</p>
-                                        </div>
-                                        <i className="fas fas fa-share move-next-icon"></i>
-                                    </div>
-                                    <div className="steps-points card mt-5 mb-0">
-                                        <div className="step-icon-wrap">
-                                            <i className="fas fa-smile step-icon"></i>
-                                        </div>
-                                        <div className="step-description card-body" id="5">
-                                            <h5 className="card-title">Remaining Payment & Feed back</h5>
-                                            <p className="card-text mb-0">Share your feedback & Clear remaining dues</p>
-                                        </div>
+                                        {/* <i className="fas fas fa-share move-next-icon"></i> */}
                                     </div>
                                 </div>
-                                {/* <div className="skip-to-booking-form-btn mb-2">
+                                {/* <div className="skip-to-booking-form-btn mt-5 mb-2">
                                     <button className="btn btn-primary" type="button" onClick={showFormFields} style={{minWidth:"180px", fontFamily:"Proxima Soft Semibold", minHeight:"46px", fontSize:"18px"}}>
                                         <span>Start Filling Form</span>
                                     </button>
@@ -1138,9 +1156,23 @@ export default function LoginModal({showBookingModal, closeBookingModal, package
                                                     </div>
                                                 }
                                             </div>
-                                            <div className="col-md-6 col-sm-12 new-form-field event-landmark-field mb-3">
+                                            <div className="col-md-12 col-sm-12 new-form-field event-landmark-field mb-3">
                                                 <label htmlFor="eventLandmark" className="form-label">Landmark</label>
                                                 <textarea name="eventLandmark" id="eventLandmark" placeholder="Enter your event location/address..." value={eventData.eventLandmark} onChange={(e)=>handleEventDataInput(e)}></textarea>
+                                            </div>
+                                            <div className="col-sm-12 event-form-heading mt-2 mb-0" style={{textAlign:"left", padding:"5px 10px 0px 10px"}}>
+                                                <h5 className="mb-0">
+                                                    <span className="h-txt" style={{minWidth:"218px"}}>Appointment Time Slot</span>
+                                                    <span className="hr-line"></span>
+                                                </h5>
+                                            </div>
+                                            <div className="col-md-6 col-sm-6 col-xs-6 new-form-field mt-2">
+                                                <label htmlFor="openTimeSlot" className="form-label">From<span style={{color:"red"}}>*</span></label>
+                                                <input id="openTimeSlot" type="time" className="form-control" name="openTimeSlot" min="06:00" max="11:59" onChange={(e)=>handlenewUserInput(e)} value={(newUserData.openTimeSlot !== '')?newUserData.openTimeSlot:''} required/>
+                                            </div>
+                                            <div className="col-md-6 col-sm-6 col-xs-6 new-form-field mt-2">
+                                                <label htmlFor="closeTimeSlot" className="form-label">To<span style={{color:"red"}}>*</span></label>
+                                                <input id="closeTimeSlot" className="form-control" type="time" name="closeTimeSlot" min="12:00" max="21:00" onChange={(e)=>handlenewUserInput(e)} value={(newUserData.closeTimeSlot !== '')?newUserData.closeTimeSlot:''} required/>
                                             </div>
                                             <div className="col-sm-12 mb-2 mt-4"  style={{display:"flex", flexDirection:"row", justifyContent:"center", gap:"10px"}}>
                                                 {/* <button className="btn btn-primary" type="button" onClick={goToPrevSlide} style={{minWidth:"100px"}}>
@@ -1156,7 +1188,7 @@ export default function LoginModal({showBookingModal, closeBookingModal, package
                         </form>
                     </div>
                     <div className="modal-footer" style={(showForm==='hide')?{minHeight:"76px"}:{minHeight:"10px"}}>
-                        <div className="btn-section" style={{position: "fixed", bottom: "0", padding:"0px 10px", width:"100%", maxWidth:"980px"}}>
+                        <div className="btn-section" style={(showForm==='hide')?{display:"block",position: "fixed", bottom: "0", padding:"0px 10px", width:"100%"}:{display:"none"}}>
                             <div className="start-form-filling-btn-wrap">
                                 <button className="start-form-filling-button btn btn-primary" style={(showForm==='hide')?{display:"block"}:{display:"none"}} onClick={showFormFields}>
                                     <span>Start Filling Form</span>

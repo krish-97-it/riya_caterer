@@ -49,6 +49,9 @@ const bookingFormSchema = new Schema(
             type: Array,
             required: true,
         },
+        appointment_time_slot: {
+            type: String
+        },
         meal_menu:{
             type: Array,
             required: true,
