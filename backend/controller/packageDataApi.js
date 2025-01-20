@@ -10,8 +10,12 @@ exports.getFoodPackage = async (req,res) =>{
             }
         }
     ).catch(
-        (error)=> {
-            res.status(500).body({success: false, message:error});
+        (error) => {
+            response.status(500).json({
+                success: false,
+                message: "Internal server error",
+                error: error.message
+            })
         }
     );
 }
