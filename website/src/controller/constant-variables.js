@@ -1,5 +1,5 @@
 const Constant_Variables = {
-    SERVER_BASE_URL : 'https://riya-caterer.vercel.app/',
+    SERVER_BASE_URL : 'https://riya-caterer.vercel.app',
     dp_array : [
         {"gender":"girl", "img_link":"https://img.perceptpixel.com/pykhlszs/dp_girl_two.webp"},
         {"gender":"girl", "img_link":"https://img.perceptpixel.com/pykhlszs/dp_girl_one.webp"},
