@@ -21,8 +21,8 @@ exports.getFoodPackage = (req,res) => {
             res.json([{message: "success"},{"data":food}]);
         }
     ).catch(
-        (error) =>{
-            res.status(500).json({
+        (error) => {
+            response.status(500).json({
                 success: false,
                 message: "Internal server error",
                 error: error.message
