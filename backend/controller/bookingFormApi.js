@@ -45,13 +45,13 @@ exports.saveBookingData = async(req,response) => {
                         port: 465,
                         secure: true, // true for port 465, false for other ports
                         auth: {
-                            user: 'mish.krish1996@gmail.com',
+                            user: 'riyacaterer.web@gmail.com',
                             pass: process.env.EMAIL_APP_PASS
                         }
                     });
                     const emailHtml         = createEmailHtml(booking_id);
                     const email_params      = {
-                        from: '"KrishMish" <mish.krish1996@gmail.com>', 
+                        from: '"Riya Caterers" <riyacaterer.web@gmail.com>', 
                         to: user_email, // list of receivers
                         subject: "OTP Verification", 
                         html: emailHtml
