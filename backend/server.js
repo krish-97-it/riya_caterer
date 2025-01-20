@@ -1,11 +1,11 @@
-// const cors          = require('cors');
+const cors          = require('cors');
 const app           = require('./app');
 const express       = require('express');
 const dotenv        = require('dotenv');
 const DB_CONN       = require('./db');
 const customApis    = require('./routes');
 
-// app.use(cors());
+app.use(cors());
 
 
 //setting up config file to access env variables
