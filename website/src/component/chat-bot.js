@@ -4,7 +4,6 @@ import userIcon from '../assets/images/icons8-user-default-96.png';
 
 
 export default function CustomChatBot({showChatBox, closeChatBox, openBookingModal, msgInputChange, sendUserMsgInput, msgInput, chat, doTask, lastMsg}){
-
     return(
         <div className="chatbot-wrap" show-chatbox={showChatBox}>
             <div className="container">

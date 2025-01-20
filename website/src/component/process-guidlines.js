@@ -64,7 +64,6 @@ export default function ProcessGuidlines({showGuidelinesPopup, closeGuidelines})
                                     </div>
                                     <i className="fas fas fa-share move-next-icon"></i>
                                 </div>
-
                                 <div className="steps-points card mt-5">
                                     <div className="step-icon-wrap">
                                         <i className="fas fa-calendar-alt step-icon"></i>

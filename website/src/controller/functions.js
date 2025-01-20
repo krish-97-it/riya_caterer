@@ -11,6 +11,7 @@ import Gallery from "../pages/work-gallery";
 import Service from "../pages/our-service";
 import Errorpage from "../pages/404-page";
 import MenuPackage from "../pages/menu-package";
+import FAQ from "../pages/faq-page";
 
 export default function MainFunction(){
 
@@ -234,6 +235,37 @@ export default function MainFunction(){
             next_msg:"quick links",
             isUser:false,
             lastMsg:''
+        },
+        {
+            msg_title: "Quick Links",
+            msg_text: "Here are a few helpful things you can check out to get started:",
+            buttons: [
+                {
+                    value: "bookingform",
+                    name: "Booking Form"
+                },
+                {
+                    value: "openGuidelines",
+                    name: "Work Flow"
+                }
+            ],
+            links: [
+                {
+                    href: "/track-booking",
+                    name: "Track Booking",
+                    type: "button"
+                },
+                {
+                    href: "/menu-packages",
+                    name: "Packages",
+                    type: "button"
+                }
+            ],
+            lists: [],
+            msg_keys: "quick links,important links",
+            next_msg: "",
+            isUser:false,
+            lastMsg:'bot'
         }
     ])
     const [lastMsg, updateLastMsg] = useState('');
@@ -250,6 +282,7 @@ export default function MainFunction(){
 
     function getChatReply(arr){
         if(msgInput !== ''){
+            // updateLastMsg('user');
             let abc = chatbotReplyMssg.filter((msg) =>
                 msg.msg_keys.toLowerCase().includes(msgInput.toLowerCase())
             );
@@ -268,7 +301,7 @@ export default function MainFunction(){
                     keys:abc[i].keys,
                     next_msg:abc[i].keys,
                     isUser:false,
-                    lastMsg:lastMsg,
+                    lastMsg:abc[i].lastMsg,
                 }]
                 updateChat(update_arr);
             }
@@ -297,8 +330,8 @@ export default function MainFunction(){
                 isUser:true,
                 lastMsg:lastMsg
             }]
-            updateLastMsg('user');
             updateChat(new_arr);
+            updateLastMsg('user');
             getChatReply(new_arr);
             setMsgInput("");
         }
@@ -319,8 +352,8 @@ export default function MainFunction(){
                 isUser:true,
                 lastMsg:lastMsg
             }]
-            updateLastMsg('user')
             updateChat(new_arr);
+            updateLastMsg('user')
             openBookingModal();
         }else if(fn === 'openGuidelines'){
             // setMsgInput("Work Flow");
@@ -335,8 +368,8 @@ export default function MainFunction(){
                 isUser:true,
                 lastMsg:lastMsg
             }]
-            updateLastMsg('user');
             updateChat(new_arr);
+            updateLastMsg('user');
             openGuidelines();
         }
     }
@@ -351,6 +384,7 @@ export default function MainFunction(){
                 <Route exact path="/our-service" element={<Service openBookingModal={openBookingModal} openGuidelines={openGuidelines}/>}/>
                 <Route exact path="/menu-packages" element={<MenuPackage packageDetails={packageDetails} openGuidelines={openGuidelines} openBookingModal={openBookingModal}/>}/>
                 <Route exact path="/gallery" element={<Gallery imageModal={imageModal} openImageModal={openImageModal} closeImageModal={closeImageModal} getSortByInput={getSortByInput} getGalleryByAlbum={getGalleryByAlbum} getFilterByInput={getFilterByInput} currentEvent={currentEvent} getFilteredItemList={getFilteredItemList} currentImgIndex={currentImgIndex} loadAllImg={loadAllImg} openBookingModal={openBookingModal}/>}/>
+                <Route exact path="/faq" element={<FAQ openBookingModal={openBookingModal} openGuidelines={openGuidelines}/>}/>
                 <Route exact path="*" element={<Errorpage />} />
             </Routes>
             <Footer openBookingModal={openBookingModal} showGuidelinesPopup={showGuidelinesPopup} openGuidelines={openGuidelines} closeGuidelines={closeGuidelines} showChatBox={showChatBox} openChatBox={openChatBox} closeChatBox={closeChatBox} msgInputChange={msgInputChange} sendUserMsgInput={sendUserMsgInput} msgInput={msgInput} chat={chat} doTask={doTask} lastMsg={lastMsg}/>

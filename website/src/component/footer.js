@@ -44,13 +44,13 @@ export default function Footer({openBookingModal, showGuidelinesPopup, openGuide
                                 <a href="#!" className="text-reset">Explore Menu</a>
                             </p>
                             <p>
-                                <a href="#!" className="text-reset">Package</a>
-                            </p>
-                            <p>
-                                <a href="#!" className="text-reset">FAQs</a>
+                                <a href="#!" className="text-reset">Cost Estimator</a>
                             </p>
                             <p>
                                 <a href="#!" className="text-reset">Booking Form</a>
+                            </p>
+                            <p>
+                                <a href="#!" className="text-reset">Find Us</a>
                             </p>
                         </div>
                         <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-2">
@@ -58,13 +58,13 @@ export default function Footer({openBookingModal, showGuidelinesPopup, openGuide
                                 Useful links
                             </h6>
                             <p>
-                                <a href="#!" className="text-reset">Search Booking</a>
+                                <a href="#!" className="text-reset">Track Booking</a>
                             </p>
                             <p>
-                                <a type="btn" className="text-reset" onClick={openGuidelines}>Guidelines</a>
+                                <a type="btn" className="text-reset" onClick={openGuidelines}>Work Flow</a>
                             </p>
                             <p>
-                                <a href="#!" className="text-reset">Find us</a>
+                                <a href="/faq" className="text-reset">FAQs</a>
                             </p>
                             <p>
                                 <a href="#!" className="text-reset">Help</a>

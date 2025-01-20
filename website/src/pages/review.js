@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import GoogleReviews from "../component/google-review-widget";
 import GoToTop from "../component/go-to-top";
 import Loading from "../component/page-loading";
+import FaqSection from "../component/faq-accordion";
 
 export default function Review({getReviewList}){    
     // Set loading state to true initially
@@ -54,6 +55,7 @@ export default function Review({getReviewList}){
                                     </div>
                                 </div>
                             </div>
+                            <div><FaqSection/></div>
                         </div>
                     )
                 }
