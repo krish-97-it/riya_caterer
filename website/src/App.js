@@ -15,7 +15,8 @@ import './style/custom-modal.css';
 import './style/booking-modal.css';
 import './style/faq-section.css';
 import './style/guidelines-modal.css';
-import './style/chat-bot.css'
+import './style/chat-bot.css';
+import './style/track-booking.css';
 import './App.css';
 import Functons from './controller/functions';
 

@@ -56,12 +56,33 @@ const bookingFormSchema = new Schema(
             type: Array,
             required: true,
         },
-        is_canceled:{
-            type: Boolean
-        },
         booking_date: {
             type: Date,
             default: Date.now,
+        },
+        is_responded:{
+            type: Boolean,
+            default:'no'
+        },
+        token_money_paid:{
+            type: Boolean,
+            default:0
+        },
+        total_expected_cost:{
+            type: Boolean,
+            default:0
+        },
+        due_amount:{
+            type: Boolean,
+            default:0
+        },
+        is_service_done:{
+            type: Boolean,
+            default:'no'
+        },
+        is_service_canceled:{
+            type: Boolean,
+            default:'no'
         },
         updated_at: {
             type: Date,

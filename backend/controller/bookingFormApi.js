@@ -92,3 +92,52 @@ exports.saveBookingData = async(req,response) => {
         }
     )  
 }
+
+exports.getBookingDetails = async(req,res) => {
+    const bookingId  = req.body.bookingId;
+    const firstName  = req.body.firstName;
+    const lastName   = req.body.lastName;
+    const phoneNum   = req.body.phoneNum;
+    const eventDate  = req.body.eventDate;
+
+    try{
+        if(bookingId !== ''){
+            const booking_data = await bookingFormModel.find({"_id.$oid": bookingId});
+            res.json({message: "success","data":booking_data});
+        }else{
+            if(eventDate !== ''){
+                let options      = {
+                    first_name : firstName,
+                    last_name  : lastName,
+                    phone_no   : phoneNum,
+                    booking_date  : eventDate,
+                }
+                let booking_data = await bookingFormModel.find(options);
+                (booking_data) =>{
+                    if(booking_data.length > 0){
+                        return res.status(200).json({success:true, message: "Successfully fetched Order History!", data: booking_data});
+                    }else{
+                        return res.status(200).json({success:false, message: "No booking history found"});
+                    }
+                }
+            }else{
+                let options      = {
+                    first_name : firstName,
+                    last_name  : lastName,
+                    phone_no   : phoneNum,
+                }
+                let booking_data = await bookingFormModel.find(options);
+                console.log("else2");
+                console.log(booking_data);
+                res.json({message: "success","data":booking_data});
+            }
+        }
+        
+    }catch(error) {
+        return res.status(500).json({
+            success: false,
+            message: "Internal server error",
+            error: error.message
+        })
+    }
+}
