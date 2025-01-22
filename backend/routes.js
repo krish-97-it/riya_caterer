@@ -23,6 +23,7 @@ router.post('/submitQueries', userQueryController.saveUserQuery);
 
 //user booking submit apis
 router.post('/submitBooking', bookingFormController.saveBookingData);
+router.post('/getBookingData', bookingFormController.getBookingDetails);
 
 //load chatbot messages api
 router.get('/loadChatBot', chatBotMssgController.getChatBotMssg)

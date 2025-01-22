@@ -22,16 +22,21 @@ footer .steps-info-heading .card-text{
 .chat-bot-icon-section button{
     border: none;
     border-radius: 50%;
-    bottom: 88px;
+    bottom: 30px;
     box-shadow: 0px 3px 4px 0px #0003;
     cursor: pointer;
-    height: 70px;
+    height: 68px;
     position: fixed;
     right: 20px;
-    width: 70px;
-    z-index: 999;
+    width: 68px;
+    z-index: 1031;
     background-color: black;
     background-image: linear-gradient(to left, #ff6c75, #8C3FFF);
+}
+.chat-bot-icon-section .close-btn{
+    background-color: rgb(108, 108, 108);
+    color: white;
+    background-image:none !important;
 }
 .chat-bot-icon-section img{
     height: 42px;
@@ -49,5 +54,18 @@ footer .steps-info-heading .card-text{
     .footer-copyright-section{
         font-family: 'Proxima Soft Bold';
         font-size: 14px;
+    }
+}
+@media(max-width:483.98px){
+    .chat-bot-icon-section img {
+        height: 32px;
+    }
+    .chat-bot-icon-section button{
+        height: 56px;
+        right: 10px;
+        width: 56px;
+    }
+    .chat-bot-icon-section button i{
+        font-size: 30px !important;
     }
 }

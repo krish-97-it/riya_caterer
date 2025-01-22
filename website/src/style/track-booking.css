@@ -1,0 +1,67 @@
+.tracking-banner-section{
+    /* padding: 30px 0px 30px 0px; */
+    background-color: #d5f5f3;
+}
+.search-form-wrap{
+    /* background-color: #eaf5fbab; */
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 45px;
+}
+.search-booking-form-section{
+    padding: 20px;
+    box-shadow: 0 27px 20px -15px rgb(62 72 134 / 31%);
+    border-radius: 12px;
+    background-color: white;
+    border: 1px solid rgb(9 118 172 / 28%);
+}
+.search-booking-form .form-label{
+    margin-bottom: .2rem;
+    font-family: 'Proxima Soft Semibold';
+}
+.search-input-box-section h3{
+    border-radius: 0px 0px 24px 24px;
+    padding: 15px 10px 5px;
+    text-align: center;
+    font-family: "Proxima Soft Bold";
+    font-size: 36px;
+    font-style: normal;
+    font-size: 36px;
+    letter-spacing: -.01em;
+    color: #497bc8;
+    position: relative;
+    z-index: 1;
+    text-underline-offset: 5px;
+    text-decoration-line: underline;
+    text-decoration-style: dotted;
+    text-underline-position: under;
+}
+.show-tracking-graph{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.show-tracking-graph ul{
+    display: flex;
+}
+@media(min-width:992px){
+    .tracking-banner-section img{
+        width: 75% !important;
+    }
+}
+@media(min-width:1200px){
+    .tracking-banner-section img{
+        width: 70% !important;
+    }
+}
+@media(min-width:1800px){
+    .tracking-banner-section img{
+        width: 85% !important;
+    }
+}
+@media(max-width:575.98px){
+    .tracking-banner-section{
+        padding: 30px 0px 0px 0px;
+    }
+}

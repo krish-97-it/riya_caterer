@@ -47,10 +47,10 @@ export default function Footer({openBookingModal, showGuidelinesPopup, openGuide
                                 <a href="#!" className="text-reset">Cost Estimator</a>
                             </p>
                             <p>
-                                <a href="#!" className="text-reset">Booking Form</a>
+                                <a onClick={openBookingModal} className="text-reset">Booking Form</a>
                             </p>
                             <p>
-                                <a href="#!" className="text-reset">Find Us</a>
+                                <a href="https://maps.app.goo.gl/XiLAWsCwCtBJbtsr5" className="text-reset">Find Us</a>
                             </p>
                         </div>
                         <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-2">
@@ -58,7 +58,7 @@ export default function Footer({openBookingModal, showGuidelinesPopup, openGuide
                                 Useful links
                             </h6>
                             <p>
-                                <a href="#!" className="text-reset">Track Booking</a>
+                                <a href="/track-booking" className="text-reset">Track Booking</a>
                             </p>
                             <p>
                                 <a type="btn" className="text-reset" onClick={openGuidelines}>Work Flow</a>
@@ -67,7 +67,7 @@ export default function Footer({openBookingModal, showGuidelinesPopup, openGuide
                                 <a href="/faq" className="text-reset">FAQs</a>
                             </p>
                             <p>
-                                <a href="#!" className="text-reset">Help</a>
+                                <a onClick={openChatBox} className="text-reset">Help</a>
                             </p>
                         </div>
                        
@@ -90,11 +90,20 @@ export default function Footer({openBookingModal, showGuidelinesPopup, openGuide
                 <a className="text-reset fw-bold" href="https://mdbootstrap.com/"> riya-caterer.com</a>
             </div>
             <div className="chat-bot-icon-section">
-                <button onClick={openChatBox}>
-                    <span>
-                        <img src={chatIcon} alt="chat bot"></img>
-                    </span>
-                </button>
+                {
+                    (showChatBox === 'show')?
+                        <button onClick={closeChatBox} className="close-btn">
+                            <span>
+                                <i className="fa fa-close" style={{fontSize:"36px", color:"white"}}></i>
+                            </span>
+                        </button>
+                    :
+                    <button onClick={openChatBox}>
+                        <span>
+                            <img src={chatIcon} alt="chat bot"></img>
+                        </span>
+                    </button>
+                }
             </div>
 
             <ProcessGuidlines showGuidelinesPopup={showGuidelinesPopup} showChatBox={showChatBox} closeGuidelines={closeGuidelines}/>

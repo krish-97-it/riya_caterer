@@ -240,11 +240,13 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: left;
 }
 .event-form-heading .h-txt{
     /* min-width: 140px; */
     font-family: "Proxima Soft Bold";
     color: #7000b1;
+    text-align: left;
 }
 .event-form-heading .hr-line{
     /* content: ""; */

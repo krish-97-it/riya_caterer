@@ -35,6 +35,7 @@ export default function LoginModal({showBookingModal, closeBookingModal, package
     const [userCityErr, updateUserCityErr]                  = useState({});
 
     const [loadingMssg, setLoadingMssg]                     = useState("");
+    const [isSubmit, setIsSubmit]                           = useState(false);
     const [msgStyle, setMsgStyle]                           = useState("success");
 
 
@@ -569,6 +570,7 @@ export default function LoginModal({showBookingModal, closeBookingModal, package
         let openTimeSlot_full   = getAmPmTime((newUserData.openTimeSlot),'yes');
         let closeTimeSlot_full  = getAmPmTime((newUserData.closeTimeSlot),'yes');
         let concat_time_slot    = (openTimeSlot_full === closeTimeSlot_full)?openTimeSlot_full:(openTimeSlot_full+" - "+closeTimeSlot_full);
+        setIsSubmit(true);
         setLoadingMssg("Please wait !! submitting form...");
         setMsgStyle("");
         const formData          = {
@@ -604,6 +606,7 @@ export default function LoginModal({showBookingModal, closeBookingModal, package
         try {
             const response = await axios.post(bookingApiUrl, formData, {config})
             if(response.data.success.is_booked === true){
+                setIsSubmit(false);
                 setLoadingMssg("");
                 Swal.fire(
                     {
@@ -622,6 +625,7 @@ export default function LoginModal({showBookingModal, closeBookingModal, package
                     }
                 )
             }else{
+                setIsSubmit(false);
                 setLoadingMssg("");
                 Swal.fire(
                     {
@@ -633,6 +637,8 @@ export default function LoginModal({showBookingModal, closeBookingModal, package
             }
         }
         catch (error) {
+            setIsSubmit(false);
+            setLoadingMssg("");
             if (error.response) {       // Request made but the server responded with an error
                 console.log(error.response.data);
                 console.log(error.response.status);
@@ -709,12 +715,12 @@ export default function LoginModal({showBookingModal, closeBookingModal, package
                                     </button>
                                 </div>
                                 <h3>
-                                    <span className="booking-heading">
+                                    {/* <span className="booking-heading">
                                         <span>Booking</span>
                                         <i className="fas fa-arrows-alt-h" style={{color:"balck"}}></i>
                                         <span>Serving</span>
-                                    </span>
-                                    <span className="mini-heading">Guidlines & Process</span>
+                                    </span> */}
+                                    <span className="mini-heading mt-2">Steps & Guidlines</span>
                                 </h3>
                                 <div className="card-group">
                                     <div className="steps-points card mt-5">
@@ -1178,7 +1184,10 @@ export default function LoginModal({showBookingModal, closeBookingModal, package
                                                 {/* <button className="btn btn-primary" type="button" onClick={goToPrevSlide} style={{minWidth:"100px"}}>
                                                     <span>Go Back</span>
                                                 </button> */}
-                                                <button className="btn btn-primary new-user-form-submit" type="submit">Submit Booking</button>
+                                                <button className="btn btn-primary new-user-form-submit" type="submit">
+                                                    <i class="fa fa-spinner fa-spin" style={(isSubmit === true)?{display:"block"}:{display:"none"}}></i>
+                                                    <span style={(isSubmit === true)?{display:"none"}:{display:"block"}}>Submit Booking</span>
+                                                </button>
                                             </div>
                                             <p style={(msgStyle === 'error')? {color:"red"}:{color:"black"}}>{loadingMssg}</p>
                                         </div>

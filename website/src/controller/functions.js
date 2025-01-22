@@ -12,6 +12,7 @@ import Service from "../pages/our-service";
 import Errorpage from "../pages/404-page";
 import MenuPackage from "../pages/menu-package";
 import FAQ from "../pages/faq-page";
+import TrackBooking from "../pages/track-booking";
 
 export default function MainFunction(){
 
@@ -385,6 +386,7 @@ export default function MainFunction(){
                 <Route exact path="/menu-packages" element={<MenuPackage packageDetails={packageDetails} openGuidelines={openGuidelines} openBookingModal={openBookingModal}/>}/>
                 <Route exact path="/gallery" element={<Gallery imageModal={imageModal} openImageModal={openImageModal} closeImageModal={closeImageModal} getSortByInput={getSortByInput} getGalleryByAlbum={getGalleryByAlbum} getFilterByInput={getFilterByInput} currentEvent={currentEvent} getFilteredItemList={getFilteredItemList} currentImgIndex={currentImgIndex} loadAllImg={loadAllImg} openBookingModal={openBookingModal}/>}/>
                 <Route exact path="/faq" element={<FAQ openBookingModal={openBookingModal} openGuidelines={openGuidelines}/>}/>
+                <Route exact path="/track-booking" element={<TrackBooking/>}/>
                 <Route exact path="*" element={<Errorpage />} />
             </Routes>
             <Footer openBookingModal={openBookingModal} showGuidelinesPopup={showGuidelinesPopup} openGuidelines={openGuidelines} closeGuidelines={closeGuidelines} showChatBox={showChatBox} openChatBox={openChatBox} closeChatBox={closeChatBox} msgInputChange={msgInputChange} sendUserMsgInput={sendUserMsgInput} msgInput={msgInput} chat={chat} doTask={doTask} lastMsg={lastMsg}/>
