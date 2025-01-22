@@ -1,4 +1,4 @@
-import React,{useState, useEffect} from "react";
+import React,{useState, useEffect, useRef} from "react";
 import Loading from "../component/page-loading";
 import Constant_Variables from "../controller/constant-variables";
 import ValidationFunctions from "../controller/validation";
@@ -22,6 +22,15 @@ const TrackBooking = () => {
     };
 
     //search form input data management
+    // const [step, setSteps] = useState({
+    //     fill_form :'active',
+    //     discussion: '',
+    //     advanced_payment: '',
+    //     final_callback:'',
+    //     event_day:'',
+    //     feedback:''
+    // })
+    const [searchResult, updateSearchResult] = useState([]);
     const [searchData, setSearchData] = useState({
         firstName: '',
         lastName: '',
@@ -33,6 +42,8 @@ const TrackBooking = () => {
     const [firstNameErr, updateFirstNameErr]                = useState({});
     const [lastNameErr, updateLastNameErr]                  = useState({});
     const [phoneNumErr, updatePhoneNumErr]                  = useState({});
+
+    const [isSubmit, setIsSubmit]                           = useState(false);
 
     function handleSearchInput(e){
         let ele         =   e.target.name;
@@ -116,15 +127,14 @@ const TrackBooking = () => {
         e.preventDefault();
         let validationFlag = onSubmitValidation(searchData);
         if(validationFlag){
-            // setLoadingMssg("Please wait !! submitting form...");
+            setIsSubmit(true);
             const formData  = {
                 firstName: searchData.firstName,
-                firstName: searchData.lastName,
+                lastName: searchData.lastName,
                 phoneNum: parseInt(searchData.phoneNum),
                 bookId: searchData.bookId,
                 eventDate : searchData.eventDate,
             };
-            const formDataJsonString    =   JSON.stringify(formData);
 
             const config = {
                         headers: { 'Content-Type': 'application/json'}
@@ -132,31 +142,48 @@ const TrackBooking = () => {
             
                     try {
                         const response = await axios.post(APIUrls.getBookingData, formData, {config});
-                        console.log(response.data.data);
-                        if(response.data.message === 'success'){
-                            // setLoadingMssg("");
-                            Swal.fire(
-                                {
-                                    title: "Success!",
-                                    text: "Record Found!!.",
-                                    icon: "success",
-                                    // closeOnClickOutside: false,
-                                    allowOutsideClick: false,
-                                    allowEscapeKey: false
-                                }
-                            )
+                        if(response.data.success === true){
+                            setIsSubmit(false);
+                            let res_data = response.data.data
+                            if(res_data.length >0){
+                                updateSearchResult(res_data);
+                                Swal.fire(
+                                    {
+                                        title: "Success!",
+                                        text: response.data.message,
+                                        icon: "success",
+                                        // closeOnClickOutside: false,
+                                        allowOutsideClick: false,
+                                        allowEscapeKey: false
+                                    }
+                                )
+                            }else{
+                                updateSearchResult([]);
+                                Swal.fire(
+                                    {
+                                        title: "",
+                                        text: "No Record Found!!.",
+                                        icon: "warning",
+                                        // closeOnClickOutside: false,
+                                        allowOutsideClick: false,
+                                        allowEscapeKey: false
+                                    }
+                                )
+                            }    
                         }else{
-                            // setLoadingMssg("");
+                            setIsSubmit(false);
+                            updateSearchResult([]);
                             Swal.fire(
                                 {
                                     title: "Failed!",
-                                    text: "No record found!!.",
-                                    icon: "error"
+                                    text: response.data.message,
+                                    icon: "warning"
                                 }
                             )
                         }
                     }
                     catch (error) {
+                        setIsSubmit(false);
                         if (error.response) {       // Request made but the server responded with an error
                             console.log(error.response.data);
                             console.log(error.response.status);
@@ -169,8 +196,47 @@ const TrackBooking = () => {
                     }
 
         }else{
+            setIsSubmit(false);
             console.log("Invalid Form Fields");
         }
+    }
+
+    const filterCatItem     =   useRef();
+    const catFilterScroll   =   (direction) => {
+        sideScroll(filterCatItem.current,direction,20,140,10);
+    }
+    function sideScroll(element,direction,speed,distance,step){
+        var scrollAmount    = 0;
+        var slideTimer      = setInterval(function(){
+            if(direction === 'left'){
+                element.scrollLeft -= step;
+            } else {
+                element.scrollLeft += step;
+            }
+            scrollAmount += step;
+            if(scrollAmount >= distance){
+                clearInterval(slideTimer);
+            }
+        }, speed);
+    }
+
+    function convertDate(date){
+        let d               = new Date(date);
+        // const month      = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+        // const day        = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Sturday"];
+
+        // let month_Name   = month[d.getMonth()];
+        // let day_Name     = day[d.getDay()];
+        // let year         = d.getFullYear();
+        let time            = d.toLocaleTimeString();
+        let dateString      = d.toDateString();
+
+        const date_time     = {
+            date : dateString,
+            time : time
+        }
+
+        return date_time
     }
 
     return(
@@ -187,8 +253,8 @@ const TrackBooking = () => {
                                 </div>
                             </div>
                             <div className="search-input-box-section mt-4">
-                                <div className="img-underline-heading">
-                                    <h3>Send Us Your Query</h3>
+                                <div className="">
+                                    <h3>Track Your Booking</h3>
                                     {/* <img src={BlackUnderline} alt="underline" className="img-underline"/> */}
                                 </div>
                                 <div className="search-form-wrap">
@@ -264,57 +330,211 @@ const TrackBooking = () => {
                                                     <input type="date" className="form-control" id="eventDate" name="eventDate" onChange={(e)=>handleSearchInput(e)} select-color={searchData.eventDate === ''?'novalue':'withvalue'}/>
                                                 </div>
                                                 <div className="col-sm-12 mt-4">
-                                                    <button className="btn btn-primary search-booking-form-submit" type="submit">Search Booking</button>
+                                                    <button className="btn btn-primary new-user-form-submit" type="submit" disabled={(isSubmit === true)?true:false}>
+                                                        <i className="fa fa-spinner fa-spin" style={(isSubmit === true)?{display:"block"}:{display:"none"}}></i>
+                                                        <span>{(isSubmit === true)?'Searching...':'Search Booking'}</span>
+                                                    </button>
                                                 </div>
                                             </form>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div className="show-tracking-graph">
-                                <ul>
-                                    <li>
-                                        <i className="icons awesome fa-solid fa-user"></i>
-                                        <div className="step first">
-                                            <p>1</p>
-                                            <i className="awesome fa-solid fa-check"></i>
+
+                            {/* Searh result section */}
+                            {
+                                
+                                (searchResult.length > 0)?
+                                    <div className="search-result-section">
+                                        <div className="">
+                                            <h3>Search Results</h3>
+                                            {/* <img src={BlackUnderline} alt="underline" className="img-underline"/> */}
                                         </div>
-                                        <p className="label">Profile</p>
-                                    </li>
-                                    <li>
-                                        <i className="icons awesome fa-solid fa-coins"></i>
-                                        <div className="step second">
-                                            <p>2</p>
-                                            <i className="awesome fa-solid fa-check"></i>
-                                        </div>
-                                        <p className="label">Finances</p>
-                                    </li>
-                                    <li>
-                                        <i className="icons awesome fa-solid fa-house"></i>
-                                        <div className="step third">
-                                            <p>3</p>
-                                            <i className="awesome fa-solid fa-check"></i>
-                                        </div>
-                                        <p className="label">Property</p>
-                                    </li>
-                                    <li>
-                                        <i className="icons awesome fa-regular fa-star-half-stroke"></i>
-                                        <div className="step fourth">
-                                            <p>4</p>
-                                            <i className="awesome fa-solid fa-check"></i>
-                                        </div>
-                                        <p className="label">Evaluation</p>
-                                    </li>
-                                    <li>
-                                        <i className="icons awesome fa-solid fa-thumbs-up"></i>
-                                        <div className="step fifth">
-                                            <p>5</p>
-                                            <i className="awesome fa-solid fa-check"></i>
-                                        </div>
-                                        <p className="label">Approval</p>
-                                    </li>
-                                </ul>
-                            </div>
+                                        {
+                                            searchResult.map((data,i)=>{
+                                                return(
+                                                    <div className="booking-data mt-4 pt-2 mb-5" key={i}>
+                                                        <div className="container">
+                                                            <div className="booking-id-section">
+                                                                <p className="mb-0">Booking id: {data._id}</p>
+                                                            </div>
+                                                            <div className="basic-details">
+                                                                <div className="accordion accordion-flush booking-data-accordion" id={"bookingDataAccordion"+i}>
+                                                                    <div className="accordion-item">
+                                                                        <h5 className="accordion-header">
+                                                                            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={"#flushCollapse"+i} aria-expanded="" aria-controls={"flushCollapse"+i} style={{display:"flex", justifyContent:"space-between", alignItems:"center", gap:"15px"}}>
+                                                                                <span style={{display:"flex", justifyContent:"left", alignItems:"center", gap:"5px", flexWrap:"wrap"}}>
+                                                                                    <span>Event Date:</span>
+                                                                                    <span>{data.event_date}</span>
+                                                                                </span>
+                                                                                <span style={{padding:"4px 8px", backgroundColor:"black", color:"white", fontSize:"16px", borderRadius:"6px", minWidth:"110px"}}>View Details</span>
+                                                                            </button>
+                                                                        </h5>
+                                                                        <div id={"flushCollapse"+i} className="accordion-collapse collapse" data-bs-parent={"bookingDataAccordion"+i}>
+                                                                            <div className="accordion-body">
+                                                                                <div className="customer-details-section">
+                                                                                    <p className="booked-on">
+                                                                                        <span className="label">Booked On:</span>
+                                                                                        <span>{convertDate((data.booking_date)).date}</span>
+                                                                                        {/* &nbsp;<span>{convertDate((data.booking_date)).time}</span> */}
+                                                                                    </p>
+                                                                                    <p className="customer-name">
+                                                                                        <span className="label">Customer Name:</span>
+                                                                                        <span>{data.first_name+" "+data.last_name}</span>
+                                                                                    </p>
+                                                                                    <p className="contact-number">
+                                                                                        <span className="label">Phone No.:</span> 
+                                                                                        <span>{data.phone_no}</span>
+                                                                                    </p>
+                                                                                    <p className="contact-email"><span className="label">Email id:</span> <span>{data.email}</span></p>
+                                                                                    <p className="contact-address"><span className="label">Address:</span> <span>{data.user_address[0].city}, {data.user_address[0].district}, {data.user_address[0].state}, {data.user_address[0].pincode}</span></p>
+                                                                                </div>
+                                                                                <div className="event-details-section">
+                                                                                    <p className="event-name"><span className="label">Event Name:</span> <span>{data.event_name}</span></p>
+                                                                                    <p className="event-date"><span className="label">Event Date:</span> <span>{convertDate(data.event_date).date}</span></p>
+                                                                                    <p className="event-package"><span className="label">Preffered Package:</span> <span>{data.preffered_package}</span></p>
+                                                                                    <p className="service-type"><span className="label">Service Type:</span> <span>{data.service_type}</span></p>
+                                                                                    <p className="event-location"><span className="label">Event Location:</span> <span>{data.event_location[0].city}, {data.event_location[0].district}, {data.event_location[0].state}, {data.event_location[0].pincode} {(data.event_location[0].landmark)?', '+data.event_location[0].landmark:''}</span></p>
+                                                                                </div>
+                                                                                <div className="event-menu-details-section">
+                                                                                    {
+                                                                                        (data.meal_menu).map((meal,index)=>{
+                                                                                            return(
+                                                                                                <>
+                                                                                                    <div className="event-form-heading mt-4 mb-2" style={{textAlign:"left"}}>
+                                                                                                        <h5 className="mb-0">
+                                                                                                            <span className="h-txt" style={{minWidth:"140px"}}>Menu For {meal.mealType}:</span>
+                                                                                                            <span className="hr-line"></span>
+                                                                                                        </h5>
+                                                                                                    </div>
+                                                                                                    <div className="meal-details">
+                                                                                                        <p className="total-plate"><span className="label">Total Plate Count:</span> <span>{meal.totalPlateCount}</span></p>
+                                                                                                        <p className="veg-plate"><span className="label">Veg Plate Count:</span> <span>{meal.vegPlateCount}</span></p>
+
+                                                                                                        <p className="serving-type">
+                                                                                                            <span className="label">Meal Serving Type:</span>
+                                                                                                            <ul className="mb-0">
+                                                                                                                {
+                                                                                                                    meal.servingType.map((type,j)=>{
+                                                                                                                        return(
+                                                                                                                            <li key={j}>{type}</li>
+                                                                                                                        )
+                                                                                                                    })
+                                                                                                                }
+                                                                                                            </ul>
+                                                                                                        </p>
+                                                                                                        <p className="meal-menu">
+                                                                                                            <span className="label">Food Menu:</span>
+                                                                                                            <ul className="mb-0">
+                                                                                                                {
+                                                                                                                    meal.foodMenu.map((type,k)=>{
+                                                                                                                        return(
+                                                                                                                            <li key={k}>{type.label}</li>
+                                                                                                                        )
+                                                                                                                    })
+                                                                                                                }
+                                                                                                            </ul>
+                                                                                                        </p>
+                                                                                                        <p className="live-counters">
+                                                                                                            <span className="label">Live Counters:</span>
+                                                                                                            <ul className="mb-0">
+                                                                                                                {
+                                                                                                                    meal.liveCounters.map((type,z)=>{
+                                                                                                                        return(
+                                                                                                                            <li key={z}>{type.label}</li>
+                                                                                                                        )
+                                                                                                                    })
+                                                                                                                }
+                                                                                                            </ul>
+                                                                                                        </p>
+                                                                                                        <p className="event-note"><span className="label">customer Note:</span> <span>{meal.userNote}</span></p>
+                                                                                                    </div>
+                                                                                                </>
+                                                                                            )
+                                                                                        })
+                                                                                    }
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div className="track-booking-status">
+                                                                <p className="mb-0">Status: <span>{(data.is_any_due === true)?'In Progress':'Completed'}</span></p>
+                                                            </div>
+                                                            <div className="track-steps-section">
+                                                                {/* <div className="btn-for-scroll">
+                                                                    <button className="chevron-left-button" onClick={() => catFilterScroll('left')}><i className="fa fa-lg fa-chevron-left"></i></button>
+                                                                </div> */}
+                                                                {/* <div className="container"> */}
+                                                                    <div className="show-tracking-graph" ref={filterCatItem}>
+                                                                        <ul>
+                                                                            <li>
+                                                                                {/* <i className="icons awesome fa-solid fa-user"></i> */}
+                                                                                <i className="icons awesome fab fa-wpforms"></i>
+                                                                                <div className="step first active">
+                                                                                    <p>1</p>
+                                                                                    <i className="awesome fa-solid fa-check"></i>
+                                                                                </div>
+                                                                                <p className="label">Filling Form</p>
+                                                                            </li>
+                                                                            <li>
+                                                                                <i className="icons awesome fa fa-phone"></i>
+                                                                                <div className={(data.is_responded === true)? "step second active": "step second"} pre-active="true">
+                                                                                    <p>2</p>
+                                                                                    <i className="awesome fa-solid fa-check"></i>
+                                                                                </div>
+                                                                                <p className="label">Discussion</p>
+                                                                            </li>
+                                                                            <li>
+                                                                                <i className="icons awesome fa fa-credit-card"></i>
+                                                                                <div className={(data.token_money_paid > 0)? "step third active": "step third"} pre-active={(data.is_responded === true)? "true": "false"}>
+                                                                                    <p>3</p>
+                                                                                    <i className="awesome fa-solid fa-check"></i>
+                                                                                </div>
+                                                                                <p className="label">Advanded Payment</p>
+                                                                            </li>
+                                                                            <li>
+                                                                                <i className="icons awesome fas fa-edit"></i>
+                                                                                <div className={(data.is_final_callbacked === true)? "step fourth active": "step fourth"} pre-active={(data.token_money_paid > 0)? "true": "false"}>
+                                                                                    <p>4</p>
+                                                                                    <i className="awesome fa-solid fa-check"></i>
+                                                                                </div>
+                                                                                <p className="label">Changes & Update</p>
+                                                                            </li>
+                                                                            <li>
+                                                                                <i className="icons awesome fas fa-calendar-alt"></i>
+                                                                                <div className={(data.is_service_done === true)? "step fifth active": "step fifth"} pre-active={(data.is_final_callbacked === true)? "true": "false"}>
+                                                                                    <p>5</p>
+                                                                                    <i className="awesome fa-solid fa-check"></i>
+                                                                                </div>
+                                                                                <p className="label">Event Day</p>
+                                                                            </li>
+                                                                            <li>
+                                                                                <i className="icons awesome fas fa-calendar-alt"></i>
+                                                                                <div className={(data.is_any_due === false)? "step sixth active": "step sixth"} pre-active={(data.is_service_done === true)? "true": "false"}>
+                                                                                    <p>6</p>
+                                                                                    <i className="awesome fa-solid fa-check"></i>
+                                                                                </div>
+                                                                                <p className="label">Fedback & Dues</p>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                {/* </div> */}
+                                                                {/* <div className="btn-for-scroll">
+                                                                    <button className="chevron-right-button" onClick={() => catFilterScroll('right')}><i className="fa fa-lg fa-chevron-right"></i></button>
+                                                                </div> */}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                )
+                                            })
+                                        }
+                                    </div>
+                                :
+                                <></>
+                            }
+
                         </div>
                     )
                 }

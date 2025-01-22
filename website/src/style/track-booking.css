@@ -19,12 +19,11 @@
     margin-bottom: .2rem;
     font-family: 'Proxima Soft Semibold';
 }
-.search-input-box-section h3{
+.track-booking-page-body h3{
     border-radius: 0px 0px 24px 24px;
     padding: 15px 10px 5px;
     text-align: center;
     font-family: "Proxima Soft Bold";
-    font-size: 36px;
     font-style: normal;
     font-size: 36px;
     letter-spacing: -.01em;
@@ -36,14 +35,216 @@
     text-decoration-style: dotted;
     text-underline-position: under;
 }
-.show-tracking-graph{
+.booking-data .booking-id-section{
+    padding: 10px 15px;
+    background-color: #ff3132;
+    font-family: 'Proxima Soft Bold';
+    color: white;
+    text-align: left;
+    border-radius: 12px 12px 0px 0px;
+    font-size: 18px;
     display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+.booking-data-accordion{
+    font-size: 18px;
+}
+.faq-section-heading{
+    font-family: "Proxima Soft Bold" !important;
+    margin-bottom: 20px !important;
+    font-size: 36px;
+    text-underline-offset: 5px !important;
+    text-decoration-line: underline !important;
+    text-decoration-style:dotted !important;
+    text-underline-position: under !important;
+}
+.booking-data-accordion p{
+    font-family: "Proxima Soft semiBold";
+    padding: 4px 0px;
+    display: flex
+;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    /* align-items: center; */
+    /* flex-direction: column; */
+    gap: 10px;
+    /* align-items: flex-start; */
+    align-items: center;
+    
+}
+.booking-data-accordion p span{
+    background-color: #ecf5ff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    width: 100%;
+}
+.booking-data-accordion p .label{
+    font-family: "Proxima Soft Bold";
+    background-color: transparent !important;
+    padding: 0px !important;
+}
+.booking-data-accordion .accordion-button{
+    background-color: #ffdd00;
+    /* border-radius: 0px 0px 12px 12px !important; */
+    font-family: "Proxima Soft Bold";
+    font-size: 18px;
+    padding: 15px;
+}
+.booking-data-accordion .accordion-button:focus{
+    box-shadow: none !important;
+}
+.booking-data-accordion .accordion-button::after{
+    display: none;
+}
+
+.booking-data-accordion .accordion-collapse{
+    border: 4px solid #efe8ff;
+    border-radius: 0px 0px 12px 12px;
+}
+.booking-data-accordion .accordion-body{
+    text-align: left;
+    padding: 15px;
+}
+.booking-data-accordion .accordion-item{
+    border-bottom: 0px;
+}
+.booking-data-accordion .meal-details{
+    border: 2px solid #e8e8e8;
+    padding: 12px;
+    border-radius: 6px;
+    background-color: #ffffff7a;
+}
+.booking-data-accordion .meal-details li{
+    color: #005b01;
+    list-style-type: decimal;
+}
+.booking-data-accordion .h-txt{
+    color:#ff3132 !important;
+    font-size: 18px;
+    min-width: fit-content !important
+}
+.booking-data-accordion .event-form-heading h5{
+    gap: 6px;
+}
+.track-booking-status{
+    padding: 10px 15px;
+    background-color: #ffffff;
+    font-family: 'Proxima Soft Bold';
+    color: #000000;
+    text-align: left;
+    border-radius: 0px 0px 0px 0px;
+    font-size: 18px;
+    border: 4px solid #f4f4f4;
+}
+.track-booking-status span{
+    color: #1b761b;
+}
+.track-steps-section{
+    /* margin-left: 12px; */
+    /* margin-right: 12px; */
+    /* display: flex; */
+    gap: 12px;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    /* margin-top: 20px; */
+    margin-bottom: 40px;
+}
+.show-tracking-graph{
+    display: flex;
+    /* overflow: scroll; */
+    flex-wrap: nowrap;
+    padding: 20px 0px 0px 0px;
+    width: auto;
+    border-radius: 0px 0px 12px 12px;
+    box-shadow: 0 27px 20px -15px rgb(62 72 134 / 31%);
+    border: 4px solid #f4f4f4;
+    justify-content: center;
 }
 .show-tracking-graph ul{
     display: flex;
+    gap: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+}
+.show-tracking-graph ul li{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:flex-start ;
+    /* margin: 0 40px; */
+    width: 134px;
+}
+.show-tracking-graph ul li .icons {
+    font-size: 25px;
+    color: #ff3132;
+    /* margin: 0 60px; */
+}
+
+.show-tracking-graph  ul li .label {
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 10px;
+    /* font-family: "Proxima Soft Bold"; */
+}
+
+.show-tracking-graph ul li .step {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: #b7b7b7;
+    margin: 16px 0 10px;
+    display: grid;
+    place-items: center;
+    color: ghostwhite;
+    position: relative;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.show-tracking-graph  .step::after {
+    content: "";
+    position: absolute;
+    width: 124px;
+    height: 3px;
+    background-color: #d7d7c3;
+    right: 30px;
+}
+
+.show-tracking-graph .first::after {
+    width: 0;
+    height: 0;
+}
+.show-tracking-graph  ul li .step .awesome {
+    display: none;
+}
+
+.show-tracking-graph  ul li .step p {
+    font-size: 18px;
+}
+
+.show-tracking-graph ul li .active{
+    background-color: #1b761b;
+
+}
+.show-tracking-graph li .pre-active::after {
+    background-color: #1b761b !important;
+}
+
+.show-tracking-graph ul li .active p {
+    display: none;
+}
+
+.show-tracking-graph ul li .active .awesome {
+    display: flex;
+}
+.show-tracking-graph li [pre-active='true']::after{
+    background-color: #1b761b !important;
 }
 @media(min-width:992px){
     .tracking-banner-section img{
@@ -60,8 +261,48 @@
         width: 85% !important;
     }
 }
+@media(max-width:992px){
+    .track-booking-page-body h3{
+        font-size: 32px;
+    }
+    .track-steps-section{
+        display: block;
+    }
+    .show-tracking-graph{
+        overflow: hidden;
+        justify-content: center;
+    }
+    .show-tracking-graph ul{
+        flex-direction: column;
+    }
+    .show-tracking-graph ul li{
+        min-width: 200px;
+    }
+    .show-tracking-graph  .step::before {
+        content: "";
+        position: absolute;
+        width: 96px;
+        height: 3px;
+        background-color: #d7d7c3;
+        left: 30px;
+        min-width: 1000px;
+    }
+    .show-tracking-graph .sixth::before {
+        width: 0;
+        height: 0;
+    }
+    .show-tracking-graph li .active::before {
+        background-color: #1b761b !important;
+    }
+    .show-tracking-graph .step::after {
+        min-width: 1000px;
+    }
+}
 @media(max-width:575.98px){
     .tracking-banner-section{
         padding: 30px 0px 0px 0px;
+    }
+    .track-booking-page-body h3{
+        font-size: 28px;
     }
 }

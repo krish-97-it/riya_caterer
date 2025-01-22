@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import CustomChatBot from "./chat-bot";
 import ProcessGuidlines from "./process-guidlines";
 import chatIcon from "../assets/images/chat_icon_three.png";
@@ -41,7 +42,7 @@ export default function Footer({openBookingModal, showGuidelinesPopup, openGuide
                                 Servives
                             </h6>
                             <p>
-                                <a href="#!" className="text-reset">Explore Menu</a>
+                                <Link href="/menu-packages" className="text-reset">Explore Menu</Link>
                             </p>
                             <p>
                                 <a href="#!" className="text-reset">Cost Estimator</a>
@@ -50,7 +51,7 @@ export default function Footer({openBookingModal, showGuidelinesPopup, openGuide
                                 <a onClick={openBookingModal} className="text-reset">Booking Form</a>
                             </p>
                             <p>
-                                <a href="https://maps.app.goo.gl/XiLAWsCwCtBJbtsr5" className="text-reset">Find Us</a>
+                                <a href="https://maps.app.goo.gl/XiLAWsCwCtBJbtsr5" className="text-reset" target="_blank">Find Us</a>
                             </p>
                         </div>
                         <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-2">
@@ -58,13 +59,13 @@ export default function Footer({openBookingModal, showGuidelinesPopup, openGuide
                                 Useful links
                             </h6>
                             <p>
-                                <a href="/track-booking" className="text-reset">Track Booking</a>
+                                <Link to="/track-booking" className="text-reset">Track Booking</Link>
                             </p>
                             <p>
                                 <a type="btn" className="text-reset" onClick={openGuidelines}>Work Flow</a>
                             </p>
                             <p>
-                                <a href="/faq" className="text-reset">FAQs</a>
+                                <Link to="/faq" className="text-reset">FAQs</Link>
                             </p>
                             <p>
                                 <a onClick={openChatBox} className="text-reset">Help</a>
