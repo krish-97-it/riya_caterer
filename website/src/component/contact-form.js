@@ -24,6 +24,7 @@ export function ContactForm({bookingStartDate, bookingEndDate}){
     const [queryTypeErr, updateQueryTypeErr]            = useState({});
 
     const [loadingMssg, setLoadingMssg]                 = useState("");
+    const [isSubmit, setIsSubmit]                       = useState(false);
     const [msgStyle, setMsgStyle]                       = useState("success");
 
 
@@ -139,6 +140,7 @@ export function ContactForm({bookingStartDate, bookingEndDate}){
                 const responseData = isJson && await response.json();
                 if(response.ok === true){
                     if(responseData.success === true){
+                        setIsSubmit(false);
                         setLoadingMssg("");
                         Swal.fire(
                             {
@@ -157,6 +159,7 @@ export function ContactForm({bookingStartDate, bookingEndDate}){
                             }
                         )
                     }else{
+                        setIsSubmit(false);
                         setLoadingMssg("");
                         Swal.fire(
                             {
@@ -167,6 +170,7 @@ export function ContactForm({bookingStartDate, bookingEndDate}){
                         )
                     }
                 }else{
+                    setIsSubmit(false);
                     setLoadingMssg("Something went wrong !! Please try after sometimes...");
                     setMsgStyle("error");
                     const error = (responseData && responseData.message) || response.status;
@@ -175,6 +179,9 @@ export function ContactForm({bookingStartDate, bookingEndDate}){
 
             }
             catch(error){
+                setIsSubmit(false);
+                setLoadingMssg("Something went wrong !! Please try after sometimes...");
+                setMsgStyle("error");
                 console.log(error+"Something went wrong!! please try again later");
             }
 
@@ -290,7 +297,10 @@ export function ContactForm({bookingStartDate, bookingEndDate}){
                 <textarea id="userComment" name="userComment" placeholder="Enter your comments here..." value={newUserData.userComment} onChange={(e)=>handlenewUserInput(e)}></textarea>
             </div>
             <div className="col-sm-12">
-                <button className="btn btn-primary new-user-form-submit" type="submit">Send your query</button>
+                <button className="btn btn-primary new-user-form-submit" type="submit" disabled={(isSubmit === true)?true:false}>
+                    <i class="fa fa-spinner fa-spin" style={(isSubmit === true)?{display:"block"}:{display:"none"}}></i>
+                    <span>Send your query</span>
+                </button>
                 <p style={{fontWeight:"600"}} error-mssg-style={msgStyle}>{loadingMssg}</p>
             </div>
         </form>

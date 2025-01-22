@@ -1,5 +1,7 @@
 const bookingFormModel = require('../db_models/booking_form_model');
 const nodemailer       = require("nodemailer");
+const {ObjectId}       = require('mongodb');
+
 
 // Create a Html Body For OTP verification mail
 const createEmailHtml = (bookId)=>{
@@ -7,7 +9,7 @@ const mail_html       = '<div style="font-family: Helvetica,Arial,sans-serif;min
                             '<div style="margin:50px auto;width:70%;padding:20px 0">'+
                                 '<div style="border-bottom:2px solid #eee">'+
                                     '<div style="background-image: linear-gradient(to right, #ffbc87 0%, #f3f45d 50%, #2a8e75 100%); padding-left: 10px; margin-bottom: 5px;">'+
-                                        '<a href="#" style="background-color:black; color:white !important; text-decoration:none !important; font-size: 18px; font-weight:600; padding:2px 8px; border-radius:6px">Riya Caterers</a>'+
+                                        '<a href="https://riya-caterer.onrender.com/" style="background-color:black; color:white !important; text-decoration:none !important; font-size: 18px; font-weight:600; padding:2px 8px; border-radius:6px">Riya Caterers</a>'+
                                     '</div>'+
                                 '</div>'+
                                 '<div style="padding-left:10px; padding-right: 10px;">'+
@@ -60,26 +62,29 @@ exports.saveBookingData = async(req,response) => {
                     transporter.sendMail(email_params).then(
                         (res) => {
                             if(res.accepted.length > 0){
-                                response.status(200).json({success:{is_booked:true, is_email_sent:true}, message: "Booked Successfully!!. Booking Id is sent on the given email", data:data});
+                                console.log("email sent");
+                                // return response.status(200).json({success:{is_booked:true, is_email_sent:true}, message: "Booked Successfully!!. Booking Id is sent on the given email", data:data});
                             }else{
-                                response.status(200).json({success:{is_booked:true, is_email_sent: false}, message: "Booked Successfully! Failed to sent booking Id to the given mail", data:data});
+                                console.log("email not sent");
+                                // return response.status(200).json({success:{is_booked:true, is_email_sent: false}, message: "Booked Successfully! Failed to sent booking Id to the given mail", data:data});
                             }
                         }
                     ).catch(
                         (error) =>{
-                            response.status(500).json({
-                                success: false,
-                                message: "Internal server error",
-                                error: error
-                            })
+                            console.log(error);
+                            // return response.status(500).json({
+                            //     success: false,
+                            //     message: "Internal server error",
+                            //     error: error
+                            // })
                         }
                     );
-                }else{
-                    response.status(200).json({success:{is_booked:true, is_email_sent: false}, message: "Booking Successfull! Booking Id will be sent in your number", data:data});
                 }
 
+               return response.status(200).json({success:{is_booked:true, is_email_sent: false}, message: "Booking Successfull! Booking Id will be sent in your number or email", data:data});
+
             }else{
-                response.status(200).json({success:{is_booked:false, is_email_sent: false}, message: "Booking Failed!. Try again after sometimes.", error:"Operation Failed"})
+               return response.status(200).json({success:{is_booked:false, is_email_sent: false}, message: "Booking Failed!. Try again after sometimes.", error:"Operation Failed"})
             }   
         }
     ).catch(
@@ -94,7 +99,7 @@ exports.saveBookingData = async(req,response) => {
 }
 
 exports.getBookingDetails = async(req,res) => {
-    const bookingId  = req.body.bookingId;
+    const bookingId  = req.body.bookId;
     const firstName  = req.body.firstName;
     const lastName   = req.body.lastName;
     const phoneNum   = req.body.phoneNum;
@@ -102,38 +107,29 @@ exports.getBookingDetails = async(req,res) => {
 
     try{
         if(bookingId !== ''){
-            const booking_data = await bookingFormModel.find({"_id.$oid": bookingId});
-            res.json({message: "success","data":booking_data});
+            const obj_id       = new ObjectId(bookingId);
+            const booking_data = await bookingFormModel.find({_id: obj_id});
+            return res.status(200).json({success:true, message: "Successfully fetched Booking Details!",data:booking_data});
         }else{
             if(eventDate !== ''){
-                let options      = {
-                    first_name : firstName,
-                    last_name  : lastName,
-                    phone_no   : phoneNum,
-                    booking_date  : eventDate,
-                }
-                let booking_data = await bookingFormModel.find(options);
-                (booking_data) =>{
-                    if(booking_data.length > 0){
-                        return res.status(200).json({success:true, message: "Successfully fetched Order History!", data: booking_data});
-                    }else{
-                        return res.status(200).json({success:false, message: "No booking history found"});
-                    }
+                let booking_data = await bookingFormModel.find({"first_name":firstName, "last_name":lastName, "phone_no":phoneNum, "event_date":eventDate});
+                if(booking_data.length > 0){
+                    return res.status(200).json({success:true, message: "Successfully fetched Booking Details!", data: booking_data});
+                }else{
+                    return res.status(200).json({success:false, message: "No booking history found"});
                 }
             }else{
-                let options      = {
-                    first_name : firstName,
-                    last_name  : lastName,
-                    phone_no   : phoneNum,
+                let booking_data = await bookingFormModel.find({"first_name":firstName, "last_name":lastName, "phone_no":phoneNum});
+                if(booking_data.length > 0){
+                    return res.status(200).json({success:true, message: "Successfully fetched Booking Details!", data: booking_data});
+                }else{
+                    return res.status(200).json({success:false, message: "No booking history found"});
                 }
-                let booking_data = await bookingFormModel.find(options);
-                console.log("else2");
-                console.log(booking_data);
-                res.json({message: "success","data":booking_data});
             }
         }
         
-    }catch(error) {
+    }
+    catch(error) {
         return res.status(500).json({
             success: false,
             message: "Internal server error",

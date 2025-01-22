@@ -19,7 +19,6 @@ const bookingFormSchema = new Schema(
         },
         email: {
             type: String,
-            required: true
         },
         phone_no: {
             type: Number,
@@ -65,24 +64,28 @@ const bookingFormSchema = new Schema(
             default:'no'
         },
         token_money_paid:{
-            type: Boolean,
+            type: Number,
             default:0
+        },
+        is_final_callbacked:{
+            type: Boolean,
+            default:false
         },
         total_expected_cost:{
-            type: Boolean,
+            type: Number,
             default:0
         },
-        due_amount:{
+        is_any_due:{
             type: Boolean,
-            default:0
+            default:true
         },
         is_service_done:{
             type: Boolean,
-            default:'no'
+            default:false
         },
         is_service_canceled:{
             type: Boolean,
-            default:'no'
+            default:false
         },
         updated_at: {
             type: Date,

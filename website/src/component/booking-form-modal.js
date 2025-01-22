@@ -611,13 +611,14 @@ export default function LoginModal({showBookingModal, closeBookingModal, package
                 Swal.fire(
                     {
                         title: "Success!",
-                        text: "Booked Successfully!! You will get a response from us in sometimes.",
+                        text: "Form Submitted Successfully!! Your Booking id: "+response.data.data._id+". You will get a response from us in sometimes.",
                         icon: "success",
                         // closeOnClickOutside: false,
                         allowOutsideClick: false,
                         allowEscapeKey: false
                     }
-                ).then(
+                )
+                .then(
                     (result) =>{
                         if (result.isConfirmed) {
                             window.location.href = window.location.origin;;
@@ -1184,9 +1185,9 @@ export default function LoginModal({showBookingModal, closeBookingModal, package
                                                 {/* <button className="btn btn-primary" type="button" onClick={goToPrevSlide} style={{minWidth:"100px"}}>
                                                     <span>Go Back</span>
                                                 </button> */}
-                                                <button className="btn btn-primary new-user-form-submit" type="submit">
+                                                <button className="btn btn-primary new-user-form-submit" type="submit" disabled={(isSubmit === true)?true:false}>
                                                     <i class="fa fa-spinner fa-spin" style={(isSubmit === true)?{display:"block"}:{display:"none"}}></i>
-                                                    <span style={(isSubmit === true)?{display:"none"}:{display:"block"}}>Submit Booking</span>
+                                                    <span>{(isSubmit === true)?'Submitting...':'Submit Form'}</span>
                                                 </button>
                                             </div>
                                             <p style={(msgStyle === 'error')? {color:"red"}:{color:"black"}}>{loadingMssg}</p>
