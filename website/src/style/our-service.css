@@ -24,6 +24,7 @@
     letter-spacing: -.01em;
     position: relative;
     z-index: 1;
+    margin-bottom: 15px;
 }
 .service-type-section .img-underline{
     top: 36px;
@@ -35,7 +36,7 @@
 .service-type-section .service-intro{
     font-family: "Proxima Soft Semibold";
     font-size: 22px;
-    padding: 20px 20px 30px;
+    padding: 0px 20px 30px;
     color: #000000;
     line-height: 130%;
 }

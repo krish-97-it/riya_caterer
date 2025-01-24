@@ -131,7 +131,7 @@
     color: #474f00;
 }
 .send-us-your-query-form{
-    padding: 30px 0px;
+    padding: 20px 0px;
 }
 .contact-us-form-section{
     padding: 20px;
@@ -143,7 +143,7 @@
 .contact-form-wrap{
     background-color: #eaf5fbab;
     margin-top: 20px;
-    padding-top: 20px;
+    padding-top: 12px;
     padding-bottom: 45px;
 }
 .send-us-your-query-form .form-description{
@@ -158,7 +158,7 @@
     font-family: "Proxima Soft Bold";
 }
 .contact-us-map-section{
-    padding: 20px 0px;
+    padding: 15px 0px 30px;
 }
 @media(min-width:992px) and (max-width:1199.98px){
     .contact-card-section{

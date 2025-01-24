@@ -73,7 +73,7 @@ export default function Contact({packageDetails, openGuidelines, openBookingModa
                                                         </div>
                                                     </div>
                                                     <div className="card-footer">
-                                                        <button className="btn call-us-btn">Call Us!</button>
+                                                        <Link className="btn call-us-btn" to="tel:+919038335342">Call Us!</Link>
                                                     </div>
                                                 </div>
                                             </div>
@@ -93,7 +93,7 @@ export default function Contact({packageDetails, openGuidelines, openBookingModa
                                                         </div>
                                                     </div>
                                                     <div className="card-footer">
-                                                        <button className="btn call-us-btn">Chat with us</button>
+                                                        <Link className="btn whatsapp-chat-btn" to="https://wa.me/+919038335342?text=Hello%21%21">Chat with us</Link>
                                                     </div>
                                                 </div>
                                             </div>
@@ -113,10 +113,11 @@ export default function Contact({packageDetails, openGuidelines, openBookingModa
                                                         </div>
                                                     </div>
                                                     <div className="card-footer">
-                                                        <button className="btn fb-connect-btn">
+                                                        {/* <button className="btn fb-connect-btn">
                                                             <span>Text Us </span>
-                                                            {/* <img src={TouchIcon} alt="click" style={{width:"24px", height:"24px"}}/> */}
-                                                        </button>
+                                                            <img src={TouchIcon} alt="click" style={{width:"24px", height:"24px"}}/>
+                                                        </button> */}
+                                                        <Link className="btn fb-connect-btn" to="https://www.facebook.com/share/1GLSHRAiud/">Text Us</Link>
                                                     </div>
                                                 </div>
                                             </div>
@@ -128,7 +129,7 @@ export default function Contact({packageDetails, openGuidelines, openBookingModa
                                                     <div className="card-body">
                                                         <h5 className="card-title">Email Us</h5>
                                                         <div className="card-description">
-                                                            <p className="card-text">You can send us mail on - riyacaterers@gmailcom</p>
+                                                            <p className="card-text">You can send us mail on - riyacaterer19@gmail.com</p>
                                                             <small className="text-muted">
                                                                 <span>7 days a week </span>
                                                                 <span>( Any time )</span>
@@ -136,7 +137,7 @@ export default function Contact({packageDetails, openGuidelines, openBookingModa
                                                         </div>
                                                     </div>
                                                     <div className="card-footer">
-                                                        <button className="btn send-email-btn">Go to Gmail</button>
+                                                        <Link className="btn btn-primary send-email-btn" to="mailto:riyacaterer19@gmail.com">Drop Mail</Link>
                                                     </div>
                                                 </div>
                                             </div>

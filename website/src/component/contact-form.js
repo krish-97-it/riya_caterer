@@ -296,7 +296,7 @@ export function ContactForm({bookingStartDate, bookingEndDate}){
                 <label htmlFor="userComment" className="form-label">Comments</label>
                 <textarea id="userComment" name="userComment" placeholder="Enter your comments here..." value={newUserData.userComment} onChange={(e)=>handlenewUserInput(e)}></textarea>
             </div>
-            <div className="col-sm-12">
+            <div className="col-sm-12" style={{display:"flex", justifyContent:"center"}}>
                 <button className="btn btn-primary new-user-form-submit" type="submit" disabled={(isSubmit === true)?true:false} style={{display:"flex", gap:"10px", justifyContent:"center", alignItems:"center"}}>
                     <i className="fa fa-spinner fa-spin" style={(isSubmit === true)?{display:"block"}:{display:"none"}}></i>
                     <span>Send your query</span>
