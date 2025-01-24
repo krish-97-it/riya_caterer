@@ -41,7 +41,7 @@ const FaqSection = ({openGuidelines,openBookingModal,showAllItem}) => {
                     <div id="collapseTwo" className="accordion-collapse collapse" data-bs-parent="#FaqAccordionExample">
                         <div className="accordion-body">
                             <p>You can track your existing booking with with the booking Id. Hence you can track booking history by searching with mobile number & name also</p>
-                            <p>Search a booking</p>
+                            <Link className="btn btn-primary" to="/track-booking">Track Booking</Link>
                         </div>
                     </div>
                 </div>
@@ -102,11 +102,11 @@ const FaqSection = ({openGuidelines,openBookingModal,showAllItem}) => {
                     <>
                          <div className="accordion-item mb-2">
                             <h2 className="accordion-header">
-                            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
                                 What is the Advanced amount for booking?
                             </button>
                             </h2>
-                            <div id="collapseFive" className="accordion-collapse collapse" data-bs-parent="#FaqAccordionExample">
+                            <div id="collapseSix" className="accordion-collapse collapse" data-bs-parent="#FaqAccordionExample">
                                 <div className="accordion-body">
                                     <p>Token money for booking is Rs. 5000 for the total booking amount which is more than more than 20000 and Rs. 3000 where total booking amount is less than 20000</p>
                                 </div>
@@ -114,11 +114,11 @@ const FaqSection = ({openGuidelines,openBookingModal,showAllItem}) => {
                         </div>
                         <div className="accordion-item mb-2">
                             <h2 className="accordion-header">
-                            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
                                 What is the Last date to change or update menu of my booking?
                             </button>
                             </h2>
-                            <div id="collapseFive" className="accordion-collapse collapse" data-bs-parent="#FaqAccordionExample">
+                            <div id="collapseSeven" className="accordion-collapse collapse" data-bs-parent="#FaqAccordionExample">
                                 <div className="accordion-body">
                                     <p>You can change menu of your event maximum 3days prior of your event date.</p>
                                 </div>
@@ -126,11 +126,11 @@ const FaqSection = ({openGuidelines,openBookingModal,showAllItem}) => {
                         </div>
                         <div className="accordion-item mb-2">
                             <h2 className="accordion-header">
-                            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
                                 Is advanced amount is refundable?
                             </button>
                             </h2>
-                            <div id="collapseFive" className="accordion-collapse collapse" data-bs-parent="#FaqAccordionExample">
+                            <div id="collapseEight" className="accordion-collapse collapse" data-bs-parent="#FaqAccordionExample">
                                 <div className="accordion-body">
                                     <p>No token money is not refundable</p>
                                 </div>
@@ -138,11 +138,11 @@ const FaqSection = ({openGuidelines,openBookingModal,showAllItem}) => {
                         </div>
                         <div className="accordion-item mb-2">
                             <h2 className="accordion-header">
-                            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
                                 What is the last date of cancelation?
                             </button>
                             </h2>
-                            <div id="collapseFive" className="accordion-collapse collapse" data-bs-parent="#FaqAccordionExample">
+                            <div id="collapseNine" className="accordion-collapse collapse" data-bs-parent="#FaqAccordionExample">
                                 <div className="accordion-body">
                                     <p>All though you can cancel it before paying token money, cancelation period should be closed before 10 days of the main event</p>
                                 </div>
@@ -150,11 +150,11 @@ const FaqSection = ({openGuidelines,openBookingModal,showAllItem}) => {
                         </div>
                         <div className="accordion-item mb-2">
                             <h2 className="accordion-header">
-                            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
                                 How to Change or update my booking?
                             </button>
                             </h2>
-                            <div id="collapseSix" className="accordion-collapse collapse" data-bs-parent="#FaqAccordionExample">
+                            <div id="collapseTen" className="accordion-collapse collapse" data-bs-parent="#FaqAccordionExample">
                                 <div className="accordion-body">
                                     <p><u>To Change or Update Booking. There are two ways you can go - </u></p>
                                     <p>1. you have to call us to change / update menu</p>
@@ -177,7 +177,7 @@ const FaqSection = ({openGuidelines,openBookingModal,showAllItem}) => {
                         </div>
                     </>
                     :
-                    <Link to="/faq" className="btn btn-linght mt-3" style={{border:"2px solid grey", width:"120px"}}>View All</Link>
+                    <Link to="/faq" className="btn btn-linght" style={{border:"2px solid grey", width:"120px", marginTop:"15px"}}>View All</Link>
                 }
             </div>
         </div>

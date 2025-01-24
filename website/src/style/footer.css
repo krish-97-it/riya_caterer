@@ -1,7 +1,7 @@
 .bg-body-tertiary{
     background-color: #222222 !important;
     color: #f4be00 !important;
-    border-top: 5px solid #e0774a;
+    border-top: 4px solid #000000;
     /* margin-top: 20px; */
 }
 
@@ -19,6 +19,14 @@ footer .steps-info-heading .card-text{
     color: black !important;
 }
 
+.follow-us-links{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+.follow-us-links a{
+    display: flex;
+}
 .chat-bot-icon-section button{
     border: none;
     border-radius: 50%;
@@ -54,6 +62,11 @@ footer .steps-info-heading .card-text{
     .footer-copyright-section{
         font-family: 'Proxima Soft Bold';
         font-size: 14px;
+    }
+}
+@media(max-width:767.98px){
+    .follow-us-links{
+        justify-content: center;
     }
 }
 @media(max-width:483.98px){

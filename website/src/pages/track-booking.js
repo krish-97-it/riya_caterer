@@ -333,8 +333,8 @@ const TrackBooking = ({openBookingModal, openGuidelines}) => {
                                                     <label htmlFor="eventDate" className="form-label">Event Date</label>
                                                     <input type="date" className="form-control" id="eventDate" name="eventDate" onChange={(e)=>handleSearchInput(e)} select-color={searchData.eventDate === ''?'novalue':'withvalue'}/>
                                                 </div>
-                                                <div className="col-sm-12 mt-4">
-                                                    <button className="btn btn-primary new-user-form-submit" type="submit" disabled={(isSubmit === true)?true:false}>
+                                                <div className="col-sm-12 mt-4" style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
+                                                    <button className="btn btn-primary new-user-form-submit" type="submit" disabled={(isSubmit === true)?true:false} style={{display:"flex", gap:"10px", justifyContent:"center", alignItems:"center"}}>
                                                         <i className="fa fa-spinner fa-spin" style={(isSubmit === true)?{display:"block"}:{display:"none"}}></i>
                                                         <span>{(isSubmit === true)?'Searching...':'Search Booking'}</span>
                                                     </button>

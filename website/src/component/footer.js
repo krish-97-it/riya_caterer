@@ -8,7 +8,7 @@ import { HashLink } from 'react-router-hash-link';
 export default function Footer({openBookingModal, showGuidelinesPopup, openGuidelines, closeGuidelines, showChatBox, openChatBox, closeChatBox, msgInputChange, sendUserMsgInput, msgInput, chat, doTask, lastMsg}){
     return(
         <footer className="text-center text-lg-start bg-body-tertiary text-muted footer-custom-style">
-            <section className="border-bottom">
+            <section className="border-bottom pt-2 pb-1">
                 <div className="container text-center text-md-start">
                     <div className="row pt-3">
                         <div className="col-md-4 col-lg-4 col-xl-3 mx-auto mb-4">
@@ -22,19 +22,19 @@ export default function Footer({openBookingModal, showGuidelinesPopup, openGuide
                                 <div className="fw-bold mb-2">
                                     <span>Follow Us On:</span>
                                 </div>
-                                <div>
-                                    <a href="https://www.facebook.com/people/Riya-caterers/100091846194256/?mibextid=ZbWKwL" target="_blank" className="me-4">
-                                        <i className="fab fa-facebook-f"></i>
-                                    </a>
-                                    <a href="https://maps.app.goo.gl/DN9Dzxy5EJeiSF4k9" target="_blank" className="me-4">
-                                        <i className="fab fa-google"></i>
-                                    </a>
-                                    <a href="https://www.instagram.com/riya.caterer/profilecard/?igsh=MTJndTRlYnBwcDZuNw%3D%3D" target="_blank" className="me-4">
-                                        <i className="fab fa-instagram"></i>
-                                    </a>
-                                    <a href="" className="">
-                                        <i className="fab fa-whatsapp"></i>
-                                    </a>
+                                <div className="follow-us-links">
+                                    <Link to="https://www.facebook.com/people/Riya-caterers/100091846194256/?mibextid=ZbWKwL" target="_blank" className="me-4">
+                                        <i className="fab fa-facebook-f" style={{fontSize:"15px"}}></i>
+                                    </Link>
+                                    <Link to="https://www.instagram.com/riya.caterer/profilecard/?igsh=MTJndTRlYnBwcDZuNw%3D%3D" target="_blank" className="me-4">
+                                        <i className="fab fa-instagram" style={{fontSize:"18px", paddingTop:"3px"}}></i>
+                                    </Link>
+                                    <Link to="https://wa.me/+919038335342" className="me-4">
+                                        <i class="fa-brands fa-youtube" style={{fontSize:"18px", paddingTop:"3px"}}></i>
+                                    </Link>
+                                    <Link to="https://maps.app.goo.gl/DN9Dzxy5EJeiSF4k9" target="_blank" className="">
+                                        <i className="fab fa-google" style={{fontSize:"15PX", paddingTop:"3px"}}></i>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -46,13 +46,13 @@ export default function Footer({openBookingModal, showGuidelinesPopup, openGuide
                                 <HashLink to="/menu-packages#exploremenu" className="text-reset">Explore Menu</HashLink>
                             </p>
                             <p>
-                                <a href="#!" className="text-reset">Cost Estimator</a>
+                                <Link href="#!" className="text-reset">Cost Estimator</Link>
                             </p>
                             <p>
-                                <a onClick={openBookingModal} className="text-reset">Booking Form</a>
+                                <Link onClick={openBookingModal} className="text-reset">Booking Form</Link>
                             </p>
                             <p>
-                                <a href="https://maps.app.goo.gl/XiLAWsCwCtBJbtsr5" className="text-reset" target="_blank">Find Us</a>
+                                <Link to="https://maps.app.goo.gl/XiLAWsCwCtBJbtsr5" className="text-reset" target="_blank">Find Us</Link>
                             </p>
                         </div>
                         <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-2">
@@ -63,25 +63,25 @@ export default function Footer({openBookingModal, showGuidelinesPopup, openGuide
                                 <Link to="/track-booking" className="text-reset">Track Booking</Link>
                             </p>
                             <p>
-                                <a type="btn" className="text-reset" onClick={openGuidelines}>Work Flow</a>
+                                <Link type="btn" className="text-reset" onClick={openGuidelines}>Work Flow</Link>
                             </p>
                             <p>
                                 <Link to="/faq" className="text-reset">FAQs</Link>
                             </p>
                             <p>
-                                <a onClick={openChatBox} className="text-reset">Help</a>
+                                <Link onClick={openChatBox} className="text-reset">Help</Link>
                             </p>
                         </div>
                        
                         <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-2">
                             <h6 className="text-uppercase fw-bold mb-2">Contact</h6>
-                            <p><i className="fa fa-home me-3"></i> New York, NY 10012, US</p>
+                            <p><i className="fa fa-home me-3"></i>Paikpara, Kolkata</p>
                             <p>
                                 <i className="fa fa-envelope me-3"></i>
-                                info@example.com
+                                riyacaterer19@gmail.com
                             </p>
-                            <p><i className="fa fa-phone me-3"></i> + 01 234 567 88</p>
-                            <p><i className="fa fa-print me-3"></i> + 01 234 567 89</p>
+                            <p><i className="fa fa-phone me-3"></i>+919038335342</p>
+                            <p><i className="fab fa-whatsapp-square me-3" style={{fontSize:"19px"}}></i>+919038335342</p>
                         </div>
                     </div>
                 </div>
@@ -89,7 +89,7 @@ export default function Footer({openBookingModal, showGuidelinesPopup, openGuide
 
             <div className="text-center footer-copyright-section p-2" style={{backgroundColor: "rgb(0 0 0)"}}>
                 © 2021 Copyright: 
-                <a className="text-reset fw-bold" href="https://mdbootstrap.com/"> riya-caterer.com</a>
+                <Link className="text-reset fw-bold" href="https://https://riya-caterer.onrender.com/"> Riya Caterer</Link>
             </div>
             <div className="chat-bot-icon-section">
                 {

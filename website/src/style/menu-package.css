@@ -43,8 +43,9 @@
 }
 .package-details-section{
     font-family: 'Roboto', sans-serif;
-    background-color: #060606;
-    background-image: url('https://img.perceptpixel.com/pykhlszs/riya_caterer/bg-img-sixteeen.webp');
+    background-color: #ffffff;
+    /* background-image: url(https://img.perceptpixel.com/pykhlszs/riya_caterer/package-bg-three.webp); */
+    background-image: url('https://img.perceptpixel.com/pykhlszs/riya_caterer/package-img-six.webp');
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -53,7 +54,7 @@
     font-family: "Proxima Soft Bold";
     font-size: 40px;
     color: #340000;
-    padding: 5px 5px 10px;
+    /* padding: 5px 5px 10px; */
     text-align: center;
     font-style: normal;
     font-weight: 700;
@@ -68,20 +69,17 @@
     text-decoration-style:dotted;
     text-underline-position: under;
     width: 100%;
-    background-color: rgb(255, 255, 255);
     height: 60px;
     margin-bottom: 0px;
 }
 .package-filter-section-wrap{
     width: 100%;
     padding: 30px 0px 0px;
-    background-color: rgb(255, 255, 255)
 }
 .our-package-heading{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: -80px;
 }
 .our-package-heading .left-triangle{
     width: 60px;
@@ -92,6 +90,7 @@
     border-top: solid 30px transparent;
     --side-rotate: 60deg;
     margin-left: -12px;
+    display: none;
 }
 .our-package-heading .right-triangle{
     width: 60px;
@@ -102,13 +101,12 @@
     border-top: solid 30px transparent;
     --side-rotate: 60deg;
     margin-right: -12px;
+    display: none;
 }
 .our-package-intro{
-    font-family: "Proxima Soft Semibold";
+    font-family: "Proxima Soft Bold";
     font-size: 18px;
-}
-.package-data-carousel{
-    border-top: 10px solid rgba(255, 255, 255, 0);
+    margin-top: 15px;
 }
 .package-data-carousel .carousel-inner{
     margin-top: 20.8px;
@@ -118,37 +116,35 @@
     border: none;
     border-radius: 5px;
     padding: 4px;
-    height: 34.6px;
+    height: 35px;
     opacity: 1;
     width: 38px !important;
-    top: 21px;
+    top: 0px;
 }
 .package-data-carousel .carousel-control-prev{
     border-radius: 5px 0px 0px 5px;
-    border-right: 2px solid black;
+    /* border-right: 2px solid black; */
 }
 .package-data-carousel .carousel-control-next{
     border-radius: 0px 5px 5px 0px;
-    border-left: 2px solid black;
+    /* border-left: 2px solid black; */
 }
 .package-data-carousel h5{
     background-color: white;
     height: 35px;
     font-weight: 600;
     font-family: "Proxima Soft Bold";
-    /* border: 1px solid #0000004d; */
-    background: linear-gradient(121.19deg, rgba(133, 239, 49, 0) 25.73%, hsla(0, 0%, 100%, .3) 45.27%, rgba(133, 239, 49, 0) 62.27%), #ff3333;
+    background-color: #340000d4;
     color: white;
     fill: currentColor;
     animation: d 20s linear infinite;
-    /* border-bottom: 4px solid #d32121; */
-    line-height: 1.5;
+    line-height: 1.7;
     border-radius: 4px;
 }
 .package-details-section-wrap{
-    background-color: rgba(0,0,0,.2);
     width: 100%;
     padding:0px 0px 30px;
+    box-shadow: 0 24px 20px -15px rgba(122, 62, 134, .31);
 }
 
 .our-package-ul{
@@ -160,10 +156,9 @@
     perspective: 1000px;
     display: grid;
     row-gap: 0.5rem;
-    /* margin-top: 20.2px; */
 }
 .our-package-ul li{
-    background-color: rgba(0, 0, 0, 0.671) !important;
+    background-color: rgb(92 95 16 / 75%) !important;
     box-shadow: inset 0px 0px 8px 0px rgb(218, 180, 131);
 }
 .our-package-ul li.card{
@@ -222,11 +217,33 @@
 .download-btn-section{
     height: 46px;
 }
-
-/* .explore-menu-section{
-    scroll-margin-top: 55px;
+.explore-menu-heading h3{
+    font-family: "Proxima Soft Bold";
+    font-size: 40px;
+    color: #340000;
+    text-align: center;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 52px;
+    letter-spacing: -.01em;
+    position: relative;
+    z-index: 1;
+    border: 1px solid white;
+    border-style: none;
+    text-underline-offset: 5px;
+    text-decoration-line: underline;
+    text-decoration-style: dotted;
+    text-underline-position: under;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    height: 60px;
 }
-   */
+.explore-menu-section .menu-intro-p{
+    font-family: "Proxima Soft Bold";
+    font-size: 18px;
+    margin-top: 15px;
+    padding: 0px 10px;
+}
 @media (min-width: 30rem){
     .our-package-ul li.card {
       grid-template: 'icon title' 'icon content';
@@ -275,9 +292,15 @@
         min-height: 800px;
     }
 }
-@media(max-width:991.98px)and(min-width:768px){
+@media(min-width:768px)and(max-width:991.98px){
     .package-data-carousel .carousel-control-prev, .package-data-carousel .carousel-control-next{
         width:44px !important
+    }
+}
+@media(max-width:767.98px){
+    .package-details-section{
+        background-position: left;
+        background-size: cover;
     }
 }
 @media(max-width:575.98px){
@@ -286,6 +309,21 @@
     }
     .menu-package-banner-section .banner-content-section {
         font-size: 18px;
+    }
+    .package-details-section h3{
+        background-color: rgb(255 255 255 / 50%);
+        font-size: 30px;
+    }
+    .our-package-intro{
+        background-color: rgb(255 255 255 / 50%);
+        padding:5px;
+        margin-top: 5px !important;
+    }
+    .explore-menu-heading h3{
+        font-size: 30px;
+    }
+    .menu-intro-p{
+        margin-top: 5px !important;
     }
 }
 @media(max-width:483.98px){

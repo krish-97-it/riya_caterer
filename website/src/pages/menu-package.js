@@ -52,13 +52,13 @@ export default function MenuPackage({packageDetails, openGuidelines, openBooking
                                         <h3>Our Packages</h3>
                                         <div className="right-triangle"></div>
                                     </div>
-                                    <p className="mt-4 mb-0 our-package-intro" style={{color:"black"}}>We offers best in class packages from low to high budget. You can download a package and check details esily.</p>
+                                    <p className="mt-3 mb-0 our-package-intro" style={{color:"black"}}>We offers best in class packages from low to high budget. You can download a package and check details esily.</p>
                                 </div>
                             </div>
                             <div className="package-details-section-wrap">
                                 <div className="container">
                                     <div className="term-policy-section">
-                                        <div style={{border: "10px solid white", borderRadius: "0px 0px 10px 10px"}}></div>
+                                        <div style={{border: "0px solid white", borderRadius: "0px 0px 10px 10px"}}></div>
                                         <div id="carouselExampleFade" className="carousel slide carousel-fade package-data-carousel">
                                             <div className="carousel-inner">
                                                 {
@@ -110,11 +110,10 @@ export default function MenuPackage({packageDetails, openGuidelines, openBooking
                                 </div>
                             </div>
                         </div>
-                        <div className="explore-menu-section pt-4 pb-4" id="exploremenu">
+                        <div className="explore-menu-section pt-5 pb-4" id="exploremenu">
                             <div className="explore-menu-heading">
-                                <h3>Our Packages</h3>
+                                <h3>Explore Menu</h3>
                             </div>
-                            <p style={{fontFamily:"Proxima Soft Semibold"}}>We provide a wide range of food options to you. Explore more than 250+ food menu across different category.</p>
                             <FoodMenus/>
                         </div>
                         <div className="menuplanner-banner-section" style={{backgroundColor:"#25181b"}}>
