@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import CustomChatBot from "./chat-bot";
 import ProcessGuidlines from "./process-guidlines";
 import chatIcon from "../assets/images/chat_icon_three.png";
+import { HashLink } from 'react-router-hash-link';
 
 export default function Footer({openBookingModal, showGuidelinesPopup, openGuidelines, closeGuidelines, showChatBox, openChatBox, closeChatBox, msgInputChange, sendUserMsgInput, msgInput, chat, doTask, lastMsg}){
     return(
@@ -42,7 +43,7 @@ export default function Footer({openBookingModal, showGuidelinesPopup, openGuide
                                 Servives
                             </h6>
                             <p>
-                                <Link href="/menu-packages" className="text-reset">Explore Menu</Link>
+                                <HashLink to="/menu-packages#exploremenu" className="text-reset">Explore Menu</HashLink>
                             </p>
                             <p>
                                 <a href="#!" className="text-reset">Cost Estimator</a>

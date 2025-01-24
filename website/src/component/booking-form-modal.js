@@ -621,7 +621,7 @@ export default function LoginModal({showBookingModal, closeBookingModal, package
                 .then(
                     (result) =>{
                         if (result.isConfirmed) {
-                            window.location.href = window.location.origin;;
+                            window.location.href = window.location.origin;
                         }
                     }
                 )
@@ -999,7 +999,7 @@ export default function LoginModal({showBookingModal, closeBookingModal, package
                                             </div>
                                             <div className="col-md-6 col-sm-12 new-form-field mb-3">
                                                 <label htmlFor="eventDate" className="form-label">Event Date<span style={{color:"red"}}>*</span></label>
-                                                <input type="date" className="form-control" id="eventDate" name="eventDate" min={bookingStartDate} max={bookingEndDate} onChange={(e)=>handleEventDataInput(e)} form-valid={eventDateErr.isValid} select-color={eventData.eventDate === ''?'novalue':'withvalue'} maxLength={10}/>
+                                                <input type="date" className="form-control" id="eventDate" name="eventDate" min={bookingStartDate} max={bookingEndDate} onChange={(e)=>handleEventDataInput(e)} form-valid={eventDateErr.isValid} select-color={eventData.eventDate === ''?'novalue':'withvalue'} value={(eventData.eventDate==='')?bookingStartDate:eventData.eventDate}/>
                                                 {
                                                     (eventDateErr.err_mssg !== 'valid')?
                                                     <div className="invalid-feedback">
@@ -1185,8 +1185,8 @@ export default function LoginModal({showBookingModal, closeBookingModal, package
                                                 {/* <button className="btn btn-primary" type="button" onClick={goToPrevSlide} style={{minWidth:"100px"}}>
                                                     <span>Go Back</span>
                                                 </button> */}
-                                                <button className="btn btn-primary new-user-form-submit" type="submit" disabled={(isSubmit === true)?true:false}>
-                                                    <i class="fa fa-spinner fa-spin" style={(isSubmit === true)?{display:"block"}:{display:"none"}}></i>
+                                                <button className="btn btn-primary new-user-form-submit" type="submit" disabled={(isSubmit === true)?true:false} style={{display:"flex", gap:"10px", justifyContent:"center", alignItems:"center"}}>
+                                                    <i className="fa fa-spinner fa-spin" style={(isSubmit === true)?{display:"block"}:{display:"none"}}></i>
                                                     <span>{(isSubmit === true)?'Submitting...':'Submit Form'}</span>
                                                 </button>
                                             </div>

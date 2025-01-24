@@ -297,8 +297,8 @@ export function ContactForm({bookingStartDate, bookingEndDate}){
                 <textarea id="userComment" name="userComment" placeholder="Enter your comments here..." value={newUserData.userComment} onChange={(e)=>handlenewUserInput(e)}></textarea>
             </div>
             <div className="col-sm-12">
-                <button className="btn btn-primary new-user-form-submit" type="submit" disabled={(isSubmit === true)?true:false}>
-                    <i class="fa fa-spinner fa-spin" style={(isSubmit === true)?{display:"block"}:{display:"none"}}></i>
+                <button className="btn btn-primary new-user-form-submit" type="submit" disabled={(isSubmit === true)?true:false} style={{display:"flex", gap:"10px", justifyContent:"center", alignItems:"center"}}>
+                    <i className="fa fa-spinner fa-spin" style={(isSubmit === true)?{display:"block"}:{display:"none"}}></i>
                     <span>Send your query</span>
                 </button>
                 <p style={{fontWeight:"600"}} error-mssg-style={msgStyle}>{loadingMssg}</p>
