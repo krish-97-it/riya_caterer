@@ -4,8 +4,10 @@ import Constant_Variables from "../controller/constant-variables";
 import ValidationFunctions from "../controller/validation";
 import Swal from "sweetalert2";
 import axios from "axios";
+import GoToTop from "../component/go-to-top";
+import FaqSection from "../component/faq-accordion";
 
-const TrackBooking = () => {
+const TrackBooking = ({openBookingModal, openGuidelines}) => {
      // Set loading state to true initially
     const [isLoading, setLoading] = useState(true);
 
@@ -157,6 +159,8 @@ const TrackBooking = () => {
                                         allowEscapeKey: false
                                     }
                                 )
+                                const section = document.querySelector( '#resultsection' );
+                                section.scrollIntoView( { behavior: 'smooth', block: 'start' } );
                             }else{
                                 updateSearchResult([]);
                                 Swal.fire(
@@ -342,10 +346,11 @@ const TrackBooking = () => {
                             </div>
 
                             {/* Searh result section */}
-                            {
-                                
-                                (searchResult.length > 0)?
-                                    <div className="search-result-section">
+                            <div className="search-result-section" id="resultsection">
+                                {
+                                    
+                                    (searchResult.length > 0)?
+                                    <>
                                         <div className="">
                                             <h3>Search Results</h3>
                                             {/* <img src={BlackUnderline} alt="underline" className="img-underline"/> */}
@@ -411,7 +416,7 @@ const TrackBooking = () => {
                                                                                                         <p className="total-plate"><span className="label">Total Plate Count:</span> <span>{meal.totalPlateCount}</span></p>
                                                                                                         <p className="veg-plate"><span className="label">Veg Plate Count:</span> <span>{meal.vegPlateCount}</span></p>
 
-                                                                                                        <p className="serving-type">
+                                                                                                        <div className="serving-type">
                                                                                                             <span className="label">Meal Serving Type:</span>
                                                                                                             <ul className="mb-0">
                                                                                                                 {
@@ -422,8 +427,8 @@ const TrackBooking = () => {
                                                                                                                     })
                                                                                                                 }
                                                                                                             </ul>
-                                                                                                        </p>
-                                                                                                        <p className="meal-menu">
+                                                                                                        </div>
+                                                                                                        <div className="meal-menu">
                                                                                                             <span className="label">Food Menu:</span>
                                                                                                             <ul className="mb-0">
                                                                                                                 {
@@ -434,8 +439,8 @@ const TrackBooking = () => {
                                                                                                                     })
                                                                                                                 }
                                                                                                             </ul>
-                                                                                                        </p>
-                                                                                                        <p className="live-counters">
+                                                                                                        </div>
+                                                                                                        <div className="live-counters">
                                                                                                             <span className="label">Live Counters:</span>
                                                                                                             <ul className="mb-0">
                                                                                                                 {
@@ -446,7 +451,7 @@ const TrackBooking = () => {
                                                                                                                     })
                                                                                                                 }
                                                                                                             </ul>
-                                                                                                        </p>
+                                                                                                        </div>
                                                                                                         <p className="event-note"><span className="label">customer Note:</span> <span>{meal.userNote}</span></p>
                                                                                                     </div>
                                                                                                 </>
@@ -530,15 +535,19 @@ const TrackBooking = () => {
                                                 )
                                             })
                                         }
-                                    </div>
-                                :
-                                <></>
-                            }
-
+                                    </>   
+                                    :
+                                    <></>
+                                }
+                            </div>
+                            <div>
+                                <FaqSection openGuidelines={openGuidelines} openBookingModal={openBookingModal} showAllItem='false'/>
+                            </div>
                         </div>
                     )
                 }
             </div>
+            <GoToTop/>
         </div>
     )
 

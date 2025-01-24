@@ -1,0 +1,83 @@
+.explore-menu-heading h3{
+    font-family: "Proxima Soft Bold";
+    font-size: 40px;
+    color: #340000;
+    padding: 5px 5px 10px;
+    text-align: center;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 52px;
+    letter-spacing: -.01em;
+    position: relative;
+    z-index: 1;
+    border: 1px solid white;
+    border-style: none;
+    text-underline-offset: 5px;
+    text-decoration-line: underline;
+    text-decoration-style: dotted;
+    text-underline-position: under;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    height: 60px;
+    margin-bottom: 30px;
+}
+.explore-menu-accordion .accordion-item{
+    border-bottom: 0px !important;
+}
+.explore-menu-accordion .accordion-button{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    background-color: #e8e8e8;
+    border-radius: 12px 12px 0px 0px !important;
+    font-family: "Proxima Soft Bold";
+    font-size: 18px;
+    color: #ffffff;
+    padding: 15px;
+    background-image: linear-gradient(to left, #ffd16c82, #490000b3);
+}
+.explore-menu-accordion .accordion-button:focus{
+    box-shadow: none !important;
+}
+.explore-menu-accordion .accordion-button::after{
+    display: none;
+}
+.explore-menu-accordion .view-btn{
+    padding: 4px 8px;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    border-radius: 6px;
+    min-width: 75px;
+    text-align: center;
+}
+.explore-menu-accordion .accordion-collapse{
+    border: 2px solid #e6e6e6;
+    font-family: "Proxima Soft Bold";
+    border-radius: 0px 0px 12px 12px !important;
+    padding: 12px 6px;
+}
+.explore-menu-accordion .accordion-collapse .row{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.explore-menu-accordion .accordion-collapse p{
+    border: 1px solid #e6e6e6;
+    font-family: "Proxima Soft Bold";
+    /* text-align: left; */
+    padding: 12px 6px;
+    box-shadow: 0px 13px 20px -15px rgb(62 72 134 / 31%);
+}
+.explore-menu-accordion .accordion-collapse .menu-item-section{
+    padding-left: 6px;
+    padding-right: 6px;
+}
+@media(max-width:575.98px){
+    .explore-menu-heading h3{
+        font-family: "Proxima Soft Bold";
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+}

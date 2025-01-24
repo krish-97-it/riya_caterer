@@ -6,7 +6,7 @@
     /* background-color: #eaf5fbab; */
     margin-top: 20px;
     padding-top: 10px;
-    padding-bottom: 45px;
+    padding-bottom: 15px;
 }
 .search-booking-form-section{
     padding: 20px;
@@ -62,8 +62,7 @@
 .booking-data-accordion p{
     font-family: "Proxima Soft semiBold";
     padding: 4px 0px;
-    display: flex
-;
+    display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
     /* align-items: center; */
@@ -73,13 +72,29 @@
     align-items: center;
     
 }
+.booking-data-accordion .serving-type, .booking-data-accordion .meal-menu, .booking-data-accordion .live-counters{
+    font-family: "Proxima Soft semiBold";
+    padding: 4px 0px;
+    margin-bottom: 5px;
+}
 .booking-data-accordion p span{
     background-color: #ecf5ff;
     padding: 5px 10px;
     border-radius: 4px;
     width: 100%;
 }
+.booking-data-accordion .serving-type span, .booking-data-accordion .meal-menu span, .booking-data-accordion .live-counters span{
+    background-color: #ecf5ff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    width: 100%;
+}
 .booking-data-accordion p .label{
+    font-family: "Proxima Soft Bold";
+    background-color: transparent !important;
+    padding: 0px !important;
+}
+.booking-data-accordion .serving-type .label, .booking-data-accordion .meal-menu .label, .booking-data-accordion .live-counters .label{
     font-family: "Proxima Soft Bold";
     background-color: transparent !important;
     padding: 0px !important;
@@ -245,6 +260,9 @@
 }
 .show-tracking-graph li [pre-active='true']::after{
     background-color: #1b761b !important;
+}
+.search-result-section{
+    scroll-margin-bottom: 56px;
 }
 @media(min-width:992px){
     .tracking-banner-section img{

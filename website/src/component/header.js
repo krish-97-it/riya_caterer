@@ -42,7 +42,7 @@ const Navbar = (props) => {
                                 <NavLink className="nav-link" to="/our-service" onClick={closeOffCanvas}>Our Services</NavLink>
                             </li>
                             <li className="nav-item bottom-border">
-                                <NavLink className="nav-link" to="/menu-packages" onClick={closeOffCanvas}>Packeges</NavLink>
+                                <NavLink className="nav-link" to="/menu-packages" onClick={closeOffCanvas}>Menu & Packeges</NavLink>
                             </li>
                             <li className="nav-item bottom-border">
                                 <NavLink className="nav-link" to="/gallery" onClick={closeOffCanvas}>Gallery</NavLink>

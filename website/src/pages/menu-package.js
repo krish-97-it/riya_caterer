@@ -1,8 +1,9 @@
 import React,{useState, useEffect} from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import GoToTop from "../component/go-to-top";
 import Loading from "../component/page-loading";
 import FaqSection from "../component/faq-accordion";
+import FoodMenus from "../component/explore-menu";
 
 export default function MenuPackage({packageDetails, openGuidelines, openBookingModal}){
     // Set loading state to true initially
@@ -57,6 +58,7 @@ export default function MenuPackage({packageDetails, openGuidelines, openBooking
                             <div className="package-details-section-wrap">
                                 <div className="container">
                                     <div className="term-policy-section">
+                                        <div style={{border: "10px solid white", borderRadius: "0px 0px 10px 10px"}}></div>
                                         <div id="carouselExampleFade" className="carousel slide carousel-fade package-data-carousel">
                                             <div className="carousel-inner">
                                                 {
@@ -108,6 +110,24 @@ export default function MenuPackage({packageDetails, openGuidelines, openBooking
                                 </div>
                             </div>
                         </div>
+                        <div className="explore-menu-section pt-4 pb-4" id="exploremenu">
+                            <div className="explore-menu-heading">
+                                <h3>Our Packages</h3>
+                            </div>
+                            <p style={{fontFamily:"Proxima Soft Semibold"}}>We provide a wide range of food options to you. Explore more than 250+ food menu across different category.</p>
+                            <FoodMenus/>
+                        </div>
+                        <div className="menuplanner-banner-section" style={{backgroundColor:"#25181b"}}>
+                                <div className="container">
+                                    <div className="row">
+                                        <picture>
+                                            <source media="(min-width:650px)" srcSet="https://img.perceptpixel.com/pykhlszs/riya_caterer/menu-planner-desktop.webp"/>
+                                            <source media="(max-width:649.98px)" srcSet="https://img.perceptpixel.com/pykhlszs/riya_caterer/mob-menu-panner.webp"/>
+                                            <img src="https://img.perceptpixel.com/pykhlszs/riya_caterer/mob-menu-panner.webp" className="w-100 banner-img" style={{width:"100%", height:"auto"}} alt="Menu Planner"/>
+                                        </picture>
+                                    </div>
+                                </div>
+                            </div>
                         <div>
                             <FaqSection openGuidelines={openGuidelines} openBookingModal={openBookingModal} showAllItem='false'/>
                         </div>
