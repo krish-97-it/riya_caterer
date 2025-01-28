@@ -22,7 +22,7 @@ export default function FoodMenus(){
                             <span className="view-btn">View</span>
                         </button>
                     </h5>
-                    <div id="menuCatOne" className="accordion-collapse collapse show" data-bs-parent="#exploreMenuAccordion">
+                    <div id="menuCatOne" className="accordion-collapse collapse show" >
                         <div className="row">
                             {
                                 Constant_Variables.event_meals_menu.map((item,i)=>{
@@ -64,7 +64,7 @@ export default function FoodMenus(){
                             <span className="view-btn">View</span>
                         </button>
                     </h5>
-                    <div id="menuCatTwo" className="accordion-collapse collapse" data-bs-parent="#exploreMenuAccordion">
+                    <div id="menuCatTwo" className="accordion-collapse collapse" >
                         <div className="row">
                             {
                                 Constant_Variables.event_meals_menu.map((item,i)=>{
@@ -106,7 +106,7 @@ export default function FoodMenus(){
                             <span className="view-btn">View</span>
                         </button>
                     </h5>
-                    <div id="menuCatThree" className="accordion-collapse collapse" data-bs-parent="#exploreMenuAccordion">
+                    <div id="menuCatThree" className="accordion-collapse collapse" >
                         <div className="row">
                             {
                                 Constant_Variables.event_meals_menu.map((item,i)=>{
@@ -148,7 +148,7 @@ export default function FoodMenus(){
                             <span className="view-btn">View</span>
                         </button>
                     </h5>
-                    <div id="menuCatFour" className="accordion-collapse collapse" data-bs-parent="#exploreMenuAccordion">
+                    <div id="menuCatFour" className="accordion-collapse collapse" >
                         <div className="row">
                             {
                                 Constant_Variables.event_meals_menu.map((item,i)=>{
@@ -190,7 +190,7 @@ export default function FoodMenus(){
                             <span className="view-btn">View</span>
                         </button>
                     </h5>
-                    <div id="menuCatFive" className="accordion-collapse collapse" data-bs-parent="#exploreMenuAccordion">
+                    <div id="menuCatFive" className="accordion-collapse collapse" >
                         <div className="row">
                             {
                                 Constant_Variables.event_meals_menu.map((item,i)=>{
@@ -232,7 +232,7 @@ export default function FoodMenus(){
                             <span className="view-btn">View</span>
                         </button>
                     </h5>
-                    <div id="menuCatSix" className="accordion-collapse collapse" data-bs-parent="#exploreMenuAccordion">
+                    <div id="menuCatSix" className="accordion-collapse collapse" >
                         <div className="row">
                             {
                                 Constant_Variables.event_meals_menu.map((item,i)=>{
@@ -274,7 +274,7 @@ export default function FoodMenus(){
                             <span className="view-btn">View</span>
                         </button>
                     </h5>
-                    <div id="menuCatSeven" className="accordion-collapse collapse" data-bs-parent="#exploreMenuAccordion">
+                    <div id="menuCatSeven" className="accordion-collapse collapse" >
                         <div className="row">
                             {
                                 Constant_Variables.event_meals_menu.map((item,i)=>{
@@ -316,7 +316,7 @@ export default function FoodMenus(){
                             <span className="view-btn">View</span>
                         </button>
                     </h5>
-                    <div id="menuCatEight" className="accordion-collapse collapse" data-bs-parent="#exploreMenuAccordion">
+                    <div id="menuCatEight" className="accordion-collapse collapse" >
                         <div className="row">
                             {
                                 Constant_Variables.event_meals_menu.map((item,i)=>{

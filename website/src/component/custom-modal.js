@@ -123,7 +123,7 @@ export default function ImageCarouselViewBoxModal({imageModal, currentImgIndex, 
                                                                 :
                                                                 <div className="carousel-item-body carousel-video-item-body">
                                                                     <h5>Mairage Function, Rajarhat, Kolkata</h5>
-                                                                    <iframe width="200px" height="auto" className="carousel-item-video" src={item.file_src+"&rel=0"} title="YouTube video player"frameborder="0" style={{borderRadius:"12px"}} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullscreen=""></iframe>
+                                                                    <iframe width="200px" height="auto" className="carousel-item-video" src={item.file_src+"&rel=0"} title="YouTube video player" frame-border="0" style={{borderRadius:"12px"}} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullscreen=""></iframe>
                                                                     <button className="carousel-control-prev" type="button" data-bs-target="#imgViewCarousel" data-bs-slide="prev" id={"carousel-control-lbtn-"+i}>
                                                                         <span><i className="fa fa-caret-left" style={{fontSize:"48px", color:"#f4be00"}}></i></span>
                                                                     </button>

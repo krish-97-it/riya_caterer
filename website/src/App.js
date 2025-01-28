@@ -18,6 +18,7 @@ import './style/guidelines-modal.css';
 import './style/chat-bot.css';
 import './style/track-booking.css';
 import './style/explore-menu.css';
+import './style/cost-estimator.css';
 import './App.css';
 import Functons from './controller/functions';
 
