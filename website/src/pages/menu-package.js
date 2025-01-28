@@ -4,6 +4,7 @@ import GoToTop from "../component/go-to-top";
 import Loading from "../component/page-loading";
 import FaqSection from "../component/faq-accordion";
 import FoodMenus from "../component/explore-menu";
+import CostCalculator from "../component/cost-estimator-calculator";
 
 export default function MenuPackage({packageDetails, openGuidelines, openBookingModal}){
     // Set loading state to true initially
@@ -116,17 +117,15 @@ export default function MenuPackage({packageDetails, openGuidelines, openBooking
                             </div>
                             <FoodMenus/>
                         </div>
-                        <div className="menuplanner-banner-section" style={{backgroundColor:"#25181b"}}>
-                                <div className="container">
-                                    <div className="row">
-                                        <picture>
-                                            <source media="(min-width:650px)" srcSet="https://img.perceptpixel.com/pykhlszs/riya_caterer/menu-planner-desktop.webp"/>
-                                            <source media="(max-width:649.98px)" srcSet="https://img.perceptpixel.com/pykhlszs/riya_caterer/mob-menu-panner.webp"/>
-                                            <img src="https://img.perceptpixel.com/pykhlszs/riya_caterer/mob-menu-panner.webp" className="w-100 banner-img" style={{width:"100%", height:"auto"}} alt="Menu Planner"/>
-                                        </picture>
-                                    </div>
-                                </div>
+                        <div className="cost-estimator-btn-section pt-3 pb-4" id="costcalculator">
+                            <div className="explore-menu-heading">
+                                <h3>Create & Estimate</h3>
                             </div>
+                            {/* <p>Create your own menu and get an idea of esitimated cost instantly. Let's check our Cost Essitmate Calculator</p> */}
+                            <div className="explore-form-section mt-3 pt-4 pb-5" style={{backgroundColor:"rgb(108 129 22 / 10%)"}}>
+                                <CostCalculator/>
+                            </div>
+                        </div>
                         <div>
                             <FaqSection openGuidelines={openGuidelines} openBookingModal={openBookingModal} showAllItem='false'/>
                         </div>

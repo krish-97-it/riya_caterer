@@ -1,0 +1,10 @@
+.cost-estimate-form-wrap{
+    background-color: white;
+    padding: 20px 15px 15px;
+    border-radius: 12px;
+    box-shadow: 0 27px 20px -15px rgb(62 72 134 / 31%);
+}
+.cost-estimate-form label{
+    margin-bottom: .2rem;
+    font-family: 'Proxima Soft Semibold';
+}

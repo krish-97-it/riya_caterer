@@ -30,7 +30,7 @@ export default function Footer({openBookingModal, showGuidelinesPopup, openGuide
                                         <i className="fab fa-instagram" style={{fontSize:"18px", paddingTop:"3px"}}></i>
                                     </Link>
                                     <Link to="https://wa.me/+919038335342" className="me-4">
-                                        <i class="fa-brands fa-youtube" style={{fontSize:"18px", paddingTop:"3px"}}></i>
+                                        <i className="fa-brands fa-youtube" style={{fontSize:"18px", paddingTop:"3px"}}></i>
                                     </Link>
                                     <Link to="https://maps.app.goo.gl/DN9Dzxy5EJeiSF4k9" target="_blank" className="">
                                         <i className="fab fa-google" style={{fontSize:"15PX", paddingTop:"3px"}}></i>
@@ -46,7 +46,7 @@ export default function Footer({openBookingModal, showGuidelinesPopup, openGuide
                                 <HashLink to="/menu-packages#exploremenu" className="text-reset">Explore Menu</HashLink>
                             </p>
                             <p>
-                                <Link href="#!" className="text-reset">Cost Estimator</Link>
+                                <HashLink to="/menu-packages#costcalculator" className="text-reset">Cost Estimator</HashLink>
                             </p>
                             <p>
                                 <Link onClick={openBookingModal} className="text-reset">Booking Form</Link>
