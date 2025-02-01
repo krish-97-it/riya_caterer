@@ -7,6 +7,7 @@ import PlusSymbol from "../assets/images/plus.svg";
 import CustomMasonary from "../component/custom-masonary";
 // import ForkKnife from "../assets/images/cutlinary-icon.svg";
 import FaqSection from "../component/faq-accordion";
+import { Link } from "react-router-dom";
 
 export default function Service({openBookingModal, openGuidelines}){
     // Set loading state to true initially
@@ -31,11 +32,13 @@ export default function Service({openBookingModal, openGuidelines}){
                             <div className="service-banner-section">
                                 <div className="container">
                                     <div className="row">
-                                        <picture>
-                                            <source media="(min-width:650px)" srcSet="https://img.perceptpixel.com/pykhlszs/riya_caterer/service-page-banner.webp"/>
-                                            <source media="(max-width:649.98px)" srcSet="https://img.perceptpixel.com/pykhlszs/riya_caterer/mob-service-page-banner.webp"/>
-                                            <img src="https://img.perceptpixel.com/pykhlszs/riya_caterer/mob-service-page-banner.webp" className="banner-img" style={{width:"100%", height:"auto"}} alt="order history"/>
-                                        </picture>
+                                        <Link type="button" onClick={openBookingModal}>
+                                            <picture>
+                                                <source media="(min-width:650px)" srcSet="https://img.perceptpixel.com/pykhlszs/riya_caterer/service-page-banner.webp"/>
+                                                <source media="(max-width:649.98px)" srcSet="https://img.perceptpixel.com/pykhlszs/riya_caterer/mob-service-page-banner.webp"/>
+                                                <img src="https://img.perceptpixel.com/pykhlszs/riya_caterer/mob-service-page-banner.webp" className="banner-img" style={{width:"100%", height:"auto"}} alt="order history"/>
+                                            </picture>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>

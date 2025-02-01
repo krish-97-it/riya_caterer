@@ -38,12 +38,12 @@ export default function Homepage({getReviewList, openBookingModal}){
                                 </div>
                                 <p className="intro-qote-two">Do a free Ctaering Consultation and Book us right now!!</p>
                                 <div className="enquiry-btn-section">
-                                    <Link className="btn enquiry-btn-one neon-glow-button">
+                                    <Link to="https://wa.me/+919038335342?text=Hello%21%21" target="_blank" className="btn enquiry-btn-one neon-glow-button">
                                         <span>
                                             Free Consultation
                                         </span>
                                     </Link>
-                                    <button to="/contact-us" className="btn enquiry-btn-two neon-glow-button" onClick={openBookingModal}>
+                                    <button className="btn enquiry-btn-two neon-glow-button" onClick={openBookingModal}>
                                         <span>
                                             Book For a Event
                                         </span>

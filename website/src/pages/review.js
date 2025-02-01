@@ -34,7 +34,7 @@ export default function Review({getReviewList}){
                                             <h1>Riya Caterer</h1>
                                             <p>- Every feedback is important to us -</p>
                                             <div className="enquiry-btn-section">
-                                                <Link to="/contact-us" className="btn enquiry-btn-two neon-glow-button">
+                                                <Link to="https://www.google.com/search?hl=en-IN&gl=in&q=Riya+Caterers,+1/H/98,+Sarba+Khan+Rd,+Paikpara+First+Row,+Paikpara,+Kolkata,+West+Bengal+700037&ludocid=16177022713476856575&lsig=AB86z5VPIMrE8azbOjuIirXKLIEV#lrd=0x39f89d82587de72f:0xe0805472c836baff,3" target="_blank" className="btn enquiry-btn-two neon-glow-button">
                                                     <span>
                                                         Share your review
                                                     </span>

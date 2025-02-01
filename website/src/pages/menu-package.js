@@ -5,6 +5,7 @@ import Loading from "../component/page-loading";
 import FaqSection from "../component/faq-accordion";
 import FoodMenus from "../component/explore-menu";
 import CostCalculator from "../component/cost-estimator-calculator";
+import { HashLink } from 'react-router-hash-link';
 
 export default function MenuPackage({packageDetails, openGuidelines, openBookingModal}){
     // Set loading state to true initially
@@ -18,6 +19,12 @@ export default function MenuPackage({packageDetails, openGuidelines, openBooking
         }, 1500);
     }, []);
 
+    function scrollToCostCalculator(e){
+        e.preventDefault();
+        const element = document.getElementById("costcalculator");
+        //you can do it by jquery. no matter
+        element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+    }
     return(
         <div className="app-body">
             {
@@ -35,7 +42,7 @@ export default function MenuPackage({packageDetails, openGuidelines, openBooking
                                         <h1>Riya Caterer</h1>
                                         <p>Customize Menu Planner & Cost Calculator</p>
                                         <div className="enquiry-btn-section">
-                                            <Link to="/contact-us" className="btn enquiry-btn-two neon-glow-button">
+                                            <Link onClick={scrollToCostCalculator} className="btn enquiry-btn-two neon-glow-button">
                                                 <span>
                                                     Go For Menu Planner
                                                 </span>

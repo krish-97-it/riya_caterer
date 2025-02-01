@@ -14,7 +14,7 @@ const FaqSection = ({openGuidelines,openBookingModal,showAllItem}) => {
                             How to book us?
                         </button>
                     </h2>
-                    <div id="collapseOne" className="accordion-collapse collapse" data-bs-parent="#FaqAccordionExample">
+                    <div id="collapseOne" className="accordion-collapse collapse" >
                         <div className="accordion-body">
                             <p><u>Booking us for your event is so easy. There are two ways you can go - </u></p>
                             <p>1. Filling your Basic Required Details & Requirements  by own</p>
@@ -38,7 +38,7 @@ const FaqSection = ({openGuidelines,openBookingModal,showAllItem}) => {
                             How to track your Booking?
                         </button>
                     </h2>
-                    <div id="collapseTwo" className="accordion-collapse collapse" data-bs-parent="#FaqAccordionExample">
+                    <div id="collapseTwo" className="accordion-collapse collapse" >
                         <div className="accordion-body">
                             <p>You can track your existing booking with with the booking Id. Hence you can track booking history by searching with mobile number & name also</p>
                             <Link className="btn btn-primary" to="/track-booking">Track Booking</Link>
@@ -51,7 +51,7 @@ const FaqSection = ({openGuidelines,openBookingModal,showAllItem}) => {
                         How do we work?
                     </button>
                     </h2>
-                    <div id="collapseThree" className="accordion-collapse collapse" data-bs-parent="#FaqAccordionExample">
+                    <div id="collapseThree" className="accordion-collapse collapse" >
                         <div className="accordion-body">
                             <p>We work with a smooth process from the very begining and help our customer to have the best experience in taste. You can check how we work usally from begining to the end of a succesfull event</p>
                             <button className="btn btn-primary" onClick={openGuidelines}>View Guidlines</button>
@@ -64,7 +64,7 @@ const FaqSection = ({openGuidelines,openBookingModal,showAllItem}) => {
                         How to cancel booking?
                     </button>
                     </h2>
-                    <div id="collapseFour" className="accordion-collapse collapse" data-bs-parent="#FaqAccordionExample">
+                    <div id="collapseFour" className="accordion-collapse collapse" >
                         <div className="accordion-body">
                             <p><u>To Cancel Booking. There are two ways you can go - </u></p>
                             <p>1. Cancel your booking by calling us</p>
@@ -91,7 +91,7 @@ const FaqSection = ({openGuidelines,openBookingModal,showAllItem}) => {
                         Is there minimum limit of Plate Count?
                     </button>
                     </h2>
-                    <div id="collapseFive" className="accordion-collapse collapse" data-bs-parent="#FaqAccordionExample">
+                    <div id="collapseFive" className="accordion-collapse collapse" >
                         <div className="accordion-body">
                             <p>Minimum Booking or Order Plate Count is 15 and there is no limit in maximum booking or order plate count.</p>
                         </div>
@@ -106,7 +106,7 @@ const FaqSection = ({openGuidelines,openBookingModal,showAllItem}) => {
                                 What is the Advanced amount for booking?
                             </button>
                             </h2>
-                            <div id="collapseSix" className="accordion-collapse collapse" data-bs-parent="#FaqAccordionExample">
+                            <div id="collapseSix" className="accordion-collapse collapse" >
                                 <div className="accordion-body">
                                     <p>Token money for booking is Rs. 5000 for the total booking amount which is more than more than 20000 and Rs. 3000 where total booking amount is less than 20000</p>
                                 </div>
@@ -118,7 +118,7 @@ const FaqSection = ({openGuidelines,openBookingModal,showAllItem}) => {
                                 What is the Last date to change or update menu of my booking?
                             </button>
                             </h2>
-                            <div id="collapseSeven" className="accordion-collapse collapse" data-bs-parent="#FaqAccordionExample">
+                            <div id="collapseSeven" className="accordion-collapse collapse" >
                                 <div className="accordion-body">
                                     <p>You can change menu of your event maximum 3days prior of your event date.</p>
                                 </div>
@@ -130,7 +130,7 @@ const FaqSection = ({openGuidelines,openBookingModal,showAllItem}) => {
                                 Is advanced amount is refundable?
                             </button>
                             </h2>
-                            <div id="collapseEight" className="accordion-collapse collapse" data-bs-parent="#FaqAccordionExample">
+                            <div id="collapseEight" className="accordion-collapse collapse" >
                                 <div className="accordion-body">
                                     <p>No token money is not refundable</p>
                                 </div>
@@ -142,7 +142,7 @@ const FaqSection = ({openGuidelines,openBookingModal,showAllItem}) => {
                                 What is the last date of cancelation?
                             </button>
                             </h2>
-                            <div id="collapseNine" className="accordion-collapse collapse" data-bs-parent="#FaqAccordionExample">
+                            <div id="collapseNine" className="accordion-collapse collapse" >
                                 <div className="accordion-body">
                                     <p>All though you can cancel it before paying token money, cancelation period should be closed before 10 days of the main event</p>
                                 </div>
@@ -154,7 +154,7 @@ const FaqSection = ({openGuidelines,openBookingModal,showAllItem}) => {
                                 How to Change or update my booking?
                             </button>
                             </h2>
-                            <div id="collapseTen" className="accordion-collapse collapse" data-bs-parent="#FaqAccordionExample">
+                            <div id="collapseTen" className="accordion-collapse collapse" >
                                 <div className="accordion-body">
                                     <p><u>To Change or Update Booking. There are two ways you can go - </u></p>
                                     <p>1. you have to call us to change / update menu</p>
