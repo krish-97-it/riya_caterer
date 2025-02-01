@@ -4,6 +4,7 @@ import Loading from "../component/page-loading";
 import GoToTop from "../component/go-to-top";
 import ImageCarouselViewBoxModal from "../component/custom-modal";
 import NoImgIcon from "../assets/images/no-image-icon.svg";
+import { HashLink } from 'react-router-hash-link';
 
 export default function Gallery({imageModal, openImageModal, closeImageModal, getSortByInput, getGalleryByAlbum, getFilterByInput, currentEvent, getFilteredItemList, currentImgIndex, loadAllImg, openBookingModal}){
     // Set loading state to true initially
@@ -51,7 +52,7 @@ export default function Gallery({imageModal, openImageModal, closeImageModal, ge
                                     <p className="page-heading">Image & Video Gallery</p>
                                     <p className="sub-txt">Let's taste together the Glimpse Of Success</p>
                                     <div className="enquiry-btn-section">
-                                        <button to="/contact-us" className="btn enquiry-btn-two neon-glow-button">
+                                        <button to="https://wa.me/+919038335342?text=Hello%21%21" className="btn enquiry-btn-two neon-glow-button">
                                             <span>
                                                 Get Free Consultation
                                             </span>
@@ -180,11 +181,13 @@ export default function Gallery({imageModal, openImageModal, closeImageModal, ge
                             <div className="menuplanner-banner-section" style={{backgroundColor:"#25181b"}}>
                                 <div className="container">
                                     <div className="row">
-                                        <picture>
-                                            <source media="(min-width:650px)" srcSet="https://img.perceptpixel.com/pykhlszs/riya_caterer/menu-planner-desktop.webp"/>
-                                            <source media="(max-width:649.98px)" srcSet="https://img.perceptpixel.com/pykhlszs/riya_caterer/mob-menu-panner.webp"/>
-                                            <img src="https://img.perceptpixel.com/pykhlszs/riya_caterer/mob-menu-panner.webp" className="w-100 banner-img" style={{width:"100%", height:"auto"}} alt="Menu Planner"/>
-                                        </picture>
+                                        <HashLink to="/menu-packages#costcalculator">
+                                            <picture>
+                                                <source media="(min-width:650px)" srcSet="https://img.perceptpixel.com/pykhlszs/riya_caterer/menu-planner-desktop.webp"/>
+                                                <source media="(max-width:649.98px)" srcSet="https://img.perceptpixel.com/pykhlszs/riya_caterer/mob-menu-panner.webp"/>
+                                                <img src="https://img.perceptpixel.com/pykhlszs/riya_caterer/mob-menu-panner.webp" className="w-100 banner-img" style={{width:"100%", height:"auto"}} alt="Menu Planner"/>
+                                            </picture>
+                                        </HashLink>
                                     </div>
                                 </div>
                             </div>

@@ -40,7 +40,7 @@ export default function Contact({packageDetails, openGuidelines, openBookingModa
                                             Contact with Us Now!
                                         </p>
                                         <div className="enquiry-btn-section">
-                                            <Link to="/contact-us" className="btn enquiry-btn-two neon-glow-button">
+                                            <Link to="https://wa.me/+919038335342?text=Hello%21%21" target="_blank" className="btn enquiry-btn-two neon-glow-button">
                                                 <span>
                                                     Quick Chat With Us
                                                 </span>
@@ -93,7 +93,7 @@ export default function Contact({packageDetails, openGuidelines, openBookingModa
                                                         </div>
                                                     </div>
                                                     <div className="card-footer">
-                                                        <Link className="btn whatsapp-chat-btn" to="https://wa.me/+919038335342?text=Hello%21%21">Chat with us</Link>
+                                                        <Link className="btn whatsapp-chat-btn" to="https://wa.me/+919038335342?text=Hello%21%21" target="_blank">Chat with us</Link>
                                                     </div>
                                                 </div>
                                             </div>

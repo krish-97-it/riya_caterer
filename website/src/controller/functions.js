@@ -104,6 +104,9 @@ export default function MainFunction(){
     const [showBookingModal, updateBookingModal] = useState('hide')
     function openBookingModal(){
         updateBookingModal('show');
+    }
+    function openHeaderBookingModal(){
+        updateBookingModal('show');
         if(window.outerWidth < 768){
             document.querySelector("button.navbar-toggler").click();
         }
@@ -242,7 +245,7 @@ export default function MainFunction(){
             msg_text: "Here are a few helpful things you can check out to get started:",
             buttons: [
                 {
-                    value: "bookingform",
+                    value: "openBookingModal",
                     name: "Booking Form"
                 },
                 {
@@ -377,7 +380,7 @@ export default function MainFunction(){
 
     return(
         <Router>
-            <Header showBookingModal={showBookingModal} openBookingModal={openBookingModal} closeBookingModal={closeBookingModal} packageDetails={packageDetails} bookingStartDate={startDate} bookingEndDate={endDate}/>
+            <Header showBookingModal={showBookingModal} openBookingModal={openHeaderBookingModal} closeBookingModal={closeBookingModal} packageDetails={packageDetails} bookingStartDate={startDate} bookingEndDate={endDate}/>
             <Routes>
                 <Route exact path="/" element={<Homepage getReviewList = {userReviews} openBookingModal={openBookingModal}/>}/>
                 <Route exact path="/contact-us" element={<Contact bookingStartDate={startDate} bookingEndDate={endDate} openGuidelines={openGuidelines} openBookingModal={openBookingModal}/>}/>
