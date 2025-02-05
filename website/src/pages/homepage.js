@@ -36,7 +36,7 @@ export default function Homepage({getReviewList, openBookingModal}){
                                     <p className="first-p">Make your special Events</p>
                                     <p className="second-p">more special with Us</p>
                                 </div>
-                                <p className="intro-qote-two">Do a free Ctaering Consultation and Book us right now!!</p>
+                                <p className="intro-qote-two">Do a free Catering Consultation and Book us right now!!</p>
                                 <div className="enquiry-btn-section">
                                     <Link to="https://wa.me/+919038335342?text=Hello%21%21" target="_blank" className="btn enquiry-btn-one neon-glow-button">
                                         <span>
@@ -58,7 +58,7 @@ export default function Homepage({getReviewList, openBookingModal}){
                         <img className="homepage-brand-logo" src={Logo} alt="logo"/>
                         <h3>About Us</h3>
                         <p className="first-p mb-1">One of the Fastest growing Caterer from Kolkata </p>
-                        <p className="second-p">We offer premium catering services with affordable cost range across different kind of indoor and outdoor events. So, Experience Culinary excellence like never before</p>
+                        <p className="second-p">We offer premium catering services with affordable cost range across different kind of indoor and outdoor events. Experience the Culinary excellence like never before with us.</p>
                     </div>
                 </div>
                 <div className="our-service-section-wrap">
@@ -95,7 +95,7 @@ export default function Homepage({getReviewList, openBookingModal}){
                                             </div>
                                             <div className="card-body">
                                                 <h5 className="card-title" style={{color:"#c56e3e"}}>Family Functions</h5>
-                                                <p className="card-text">Make your family functions more special with your near and dear ones without any worries.</p>
+                                                <p className="card-text">Make your family functions more special with your near and dear ones without any worries regarding food.</p>
                                             </div>
                                         </div>
                                         <div className="card last-card">
@@ -104,7 +104,7 @@ export default function Homepage({getReviewList, openBookingModal}){
                                             </div>
                                             <div className="card-body">
                                                 <h5 className="card-title" style={{color:"#8e48e7"}}>Festivals & Others</h5>
-                                                <p className="card-text">Celebration will be more special, joyful and big when you feel thge taste of food with us on small, medium and big any kind of event.</p>
+                                                <p className="card-text">Celebration will be more special, joyful and big when you feel the taste of food with us on small, medium and big any kind of event.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -213,9 +213,9 @@ export default function Homepage({getReviewList, openBookingModal}){
                                     </div>
                                 </div>
                             </div> */}
-                            <div className="about-us-btn-section">
+                            {/* <div className="about-us-btn-section">
                                 <NavLink to="/about-us">Know more About us</NavLink> 
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>
@@ -234,10 +234,11 @@ export default function Homepage({getReviewList, openBookingModal}){
                                             </div>
                                             <div className="card-body">
                                                 <p className="card-text p-one"><i className="fa fa-star glow"></i>&nbsp;Starts From Rs 500 /- Pax</p>
-                                                <p className="card-text p-two"><i className="fa fa-star glow"></i>&nbsp;10-15 Food Options</p>
+                                                <p className="card-text p-two"><i className="fa fa-star glow"></i>&nbsp;Upto 20 Food Options</p>
                                                 <p className="card-text p-three"><i className="fa fa-star glow"></i>&nbsp;Veg/Non-Veg Flexibility</p>
-                                                <p className="card-text p-four"><i className="fa fa-star glow"></i>&nbsp;Minimum Pax required 15</p>
-                                                <p className="card-text p-five"><i className="fa fa-star glow"></i>&nbsp;Free Serving</p>
+                                                <p className="card-text p-four"><i className="fa fa-star glow"></i>&nbsp;Minimum Pax required 20</p>
+                                                <p className="card-text p-five"><i className="fa fa-star glow"></i>&nbsp;15% off on order 250 pax</p>
+                                                <p className="card-text p-six"><i className="fa fa-star glow"></i>&nbsp;Free Delivery within 5km</p>
                                             </div>
                                             <div className="card-footer">
                                                 <small className="text-muted" style={{fontSize:"12px"}}>Terms & Condition included*</small>
@@ -249,10 +250,11 @@ export default function Homepage({getReviewList, openBookingModal}){
                                             </div>
                                             <div className="card-body">
                                                 <p className="card-text p-one"><i className="fa fa-star glow"></i>&nbsp;Starts From Rs 350 /- Pax</p>
-                                                <p className="card-text p-two"><i className="fa fa-star glow"></i>&nbsp;10-12 Food Options</p>
+                                                <p className="card-text p-two"><i className="fa fa-star glow"></i>&nbsp;upto 15 Food Options</p>
                                                 <p className="card-text p-three"><i className="fa fa-star glow"></i>&nbsp;Veg/Non-Veg Flexibility</p>
                                                 <p className="card-text p-four"><i className="fa fa-star glow"></i>&nbsp;Minimum Pax required 15</p>
-                                                <p className="card-text p-five"><i className="fa fa-star glow"></i>&nbsp;Free Serving</p>
+                                                <p className="card-text p-five"><i className="fa fa-star glow"></i>&nbsp;5% off on order 100 pax</p>
+                                                <p className="card-text p-six"><i className="fa fa-star glow"></i>&nbsp;Free Delivery within 3km</p>
                                             </div>
                                             <div className="card-footer">
                                                 <small className="text-muted" style={{fontSize:"12px"}}>Terms & Condition included*</small>
@@ -264,10 +266,11 @@ export default function Homepage({getReviewList, openBookingModal}){
                                             </div>
                                             <div className="card-body">
                                                 <p className="card-text p-one"><i className="fa fa-star glow"></i>&nbsp;Starts From Rs 650 /- Pax</p>
-                                                <p className="card-text p-two"><i className="fa fa-star glow"></i>&nbsp;10-15 Food Options</p>
+                                                <p className="card-text p-two"><i className="fa fa-star glow"></i>&nbsp;upto 25 Food Options</p>
                                                 <p className="card-text p-three"><i className="fa fa-star glow"></i>&nbsp;Veg/Non-Veg Flexibility</p>
                                                 <p className="card-text p-four"><i className="fa fa-star glow"></i>&nbsp;Minimum Pax required 30</p>
-                                                <p className="card-text p-five"><i className="fa fa-star glow"></i>&nbsp;Free Serving</p>
+                                                <p className="card-text p-five"><i className="fa fa-star glow"></i>&nbsp;10% off on order 200 pax</p>
+                                                <p className="card-text p-six"><i className="fa fa-star glow"></i>&nbsp;Free Delivery within 7km</p>
                                             </div>
                                             <div className="card-footer">
                                                 <small className="text-muted" style={{fontSize:"12px"}}>Terms & Condition included*</small>

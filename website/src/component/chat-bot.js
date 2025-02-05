@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import userIcon from '../assets/images/icons8-user-default-96.png';
+import { HashLink } from 'react-router-hash-link';
 
 
 export default function CustomChatBot({showChatBox, closeChatBox, openBookingModal, msgInputChange, sendUserMsgInput, msgInput, chat, doTask, lastMsg}){
@@ -90,11 +91,11 @@ export default function CustomChatBot({showChatBox, closeChatBox, openBookingMod
                                                                                 (msg.links.length > 0)?    
                                                                                     msg.links.map((link,i)=>{
                                                                                         return(
-                                                                                            <Link to={link.href} type="button" className="btn btn-primary" key={i}>
+                                                                                            <HashLink to={link.href} type="button" className="btn btn-primary" key={i}>
                                                                                                 <span>
                                                                                                     {link.name}
                                                                                                 </span>
-                                                                                            </Link>
+                                                                                            </HashLink>
                                                                                         )
                                                                                     })  
                                                                                 :
@@ -146,11 +147,11 @@ export default function CustomChatBot({showChatBox, closeChatBox, openBookingMod
                                                                                     (msg.links.length > 0)?    
                                                                                         msg.links.map((link,i)=>{
                                                                                             return(
-                                                                                                <Link to={link.href} type="button" className="btn btn-primary" key={i}>
+                                                                                                <HashLink to={link.href} type="button" className="btn btn-primary" key={i}>
                                                                                                     <span>
                                                                                                         {link.name}
                                                                                                     </span>
-                                                                                                </Link>
+                                                                                                </HashLink>
                                                                                             )
                                                                                         })  
                                                                                     :
