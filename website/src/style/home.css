@@ -306,10 +306,9 @@
     border-radius: 15px;
     display: flex;
     justify-content: center;
-    margin-top: 40px;
+    margin-top: 30px;
 }
 .check-all-service-btn-section a, .go-to-gallery-btn-section a, .about-us-btn-section a, .go-to-reviews-btn-section a{
-    /* background-image: linear-gradient(90deg, #0b4b39, #76ae0e); */
     border-radius: 8px;
     color: #fff;
     display: flex;
@@ -322,10 +321,13 @@
     text-decoration: none;
     width: 220px;
     justify-content: center;
-    background-image: linear-gradient(90deg, #a6ad00, #40941f);
-    box-shadow: inset 0 -3px 10px #252525;
+    /* background-image: linear-gradient(90deg, #a6ad00, #40941f); */
+    /* background-image: linear-gradient(121.19deg, rgba(133, 239, 49, 0) 25.73%, hsla(0, 0%, 100%, .3) 45.27%, rgba(133, 239, 49, 0) 62.27%), #ff3131; */
+    /* box-shadow: inset 0 -3px 10px #252525; */
     font-family:'Proxima Soft Black';
     letter-spacing: .8px;
+    background-color: #ff3132;
+    border: 2px double black;
 }
 /* .check-all-service-btn-section a{
     border: 8px dashed black;
@@ -365,7 +367,7 @@
 }
 .why-choose-us-section h3{
     border-radius: 0px 0px 24px 24px;
-    padding: 15px 10px 20px;
+    padding: 20px 10px 15px;
     text-align: center;
     font-family: Caveat, cursive;
     font-style: normal;
@@ -375,6 +377,7 @@
     letter-spacing: -.01em;
     color: #f4a732;
     position: relative;
+    margin-bottom: 0px !important;
 }
 .choose-us-txt-banner{
     gap: 20px;
@@ -484,7 +487,7 @@
 }
 
 .our-packages-section h3{
-    padding: 15px 10px 20px;
+    padding: 15px 10px 0px;
     border-radius: 0px 0px 24px 24px;
     text-align: center;
     font-family: Caveat, cursive;
@@ -496,6 +499,7 @@
     color: #e39b00;
     position: relative;
     z-index: 1;
+    margin-bottom: 16px !important;
 }
 .our-packages-section .gradient-bg{
     background-image: url(https://img.perceptpixel.com/pykhlszs/riya_caterer/bg-img-twenty-one.webp);
@@ -506,7 +510,7 @@
 }
 .our-packages-section .section-wrap{
     background-color: rgba(0, 0, 0, 0.7);
-    padding: 36px 0px;
+    padding: 30px 0px;
 }
 
 .our-packages-section .card-group{
@@ -521,12 +525,14 @@
     font-family: "Proxima Soft Medium";
     /* box-shadow: 0px 0px 14px 0px rgb(50 244 182); */
     /* box-shadow: inset 0px 0px 8px 0px rgb(202 172 132); */
+    border: none !important
 }
 .our-packages-section .card-body{
     padding: 20px 10px 10px;
 }
 .our-packages-section .card-footer{
     padding: 0px 10px 15px !important;
+    border: none;
 }
 .our-packages-section .text-muted{
     color: rgba(232, 255, 195, 0.75) !important;
@@ -551,6 +557,9 @@
 }
 .our-packages-section .card-body .p-five{
     background-color: #ffa26e;
+}
+.our-packages-section .card-body .p-six{
+    background-color: #f38a4d;
 }
 .our-packages-section .card .card-header-section{
     padding: 10px;
@@ -643,12 +652,13 @@
     color: #e39b00;
     position: relative;
     z-index: 1;
+    margin-bottom: 0px !important;
 }
 /* .homepage-reviews-section .review-widget{
     box-shadow: 0 27px 20px -15px rgba(122,62,134,.31);
 } */
 .homepage-reviews-section .review-widget{
-    padding-top: 45px !important;
+    padding-top: 32px !important;
 }
 .review-widget-body .review-widget-carousel-arrow{
     font-size: 22px;
@@ -684,6 +694,7 @@
     letter-spacing: -.01em;
     color: #8eb400;
     position: relative;
+    margin-bottom: 0px !important;
 }
 
 .gallery-txt-heading{
@@ -694,7 +705,7 @@
         gap: 10px;
     }
     .our-packages-section .first-card{
-        transform: rotate(355deg);
+        transform: rotate(354deg);
         z-index: 1;
         margin-left: 5px;
     }
@@ -702,9 +713,10 @@
         z-index: 2;
         margin-bottom: 15px;
         margin-top: -15px;
+        padding-top: 2px;
     }
     .our-packages-section .third-card{
-        transform: rotate(365deg);
+        transform: rotate(366deg);
         z-index: 1;
         margin-right: 5px;
     }
@@ -714,19 +726,34 @@
     .our-packages-section .package-cards{
         margin-top: 20px;
     }
+
 }
 @media(min-width: 992px){
     .waiter-img-section .link-on-img{
         height: 540px;
     }
     .work-gallery-section{
-        margin-top: 22px !important;
+        margin-top: 5px !important;
     }
     .our-packages-section .first-card{
+        padding-top: 1px;
         margin-left: 30px;
     }
     .our-packages-section .third-card{
         margin-right: 30px;
+        padding-top: 1px;
+    }
+}
+
+@media(min-width:1200px){
+    .our-packages-section .first-card{
+        padding-top: 3.5px;
+    }
+    .our-packages-section .second-card{
+        padding-top: 0px;
+    }
+    .our-packages-section .third-card{
+        padding-top: 3.5px;
     }
 }
 
@@ -739,6 +766,15 @@
     }
     .about-us-section .second-p{
         font-size: 22px;
+    }
+    .our-packages-section .first-card{
+        padding-top: 6.5px;
+    }
+    .our-packages-section .second-card{
+        padding-top: 0px;
+    }
+    .our-packages-section .third-card{
+        padding-top: 6.5px;
     }
 }
 
@@ -802,9 +838,6 @@
      }
     .waiter-img-section .link-on-img .card{
         margin-bottom: 0px;
-    }
-    .homepage-customer-review, .homepage-gallery-slide-show{
-        padding-top: 15px;
     }
     .homepage-reviews-section, .work-gallery-section{
         margin-top: 12px !important;
@@ -989,9 +1022,6 @@
     .choose-us-txt-banner{
         margin-top: 8px;
     }
-    .homepage-customer-review, .homepage-gallery-slide-show{
-        padding-top: 8px;
-    }
     .homepage-reviews-section, .work-gallery-section{
         margin-top: 6px !important;
     }
@@ -1023,7 +1053,17 @@
     }
     .why-choose-us-section .choose-options{
         row-gap: 20px !important;
-        column-gap: 0px !important;
+        column-gap: 15px !important;
+    }
+    .why-choose-us-section .choose-options .ele{
+        min-width: 190px;
+    }
+    .why-choose-us-section .choose-options .ele .ele-img{
+        width: 115px;
+        height: 115px;
+    }
+    .why-choose-us-section .choose-options .ele p{
+        font-size: 15px;
     }
 }
 @media(max-width:440px){
@@ -1034,7 +1074,7 @@
 @media(max-width:423.98px){
     .img-underline-heading h3{
         font-size: 32px;
-        margin-bottom: 16px;
+        margin-bottom: 10px !important;
 
     }
     .img-underline-heading .img-underline{
@@ -1064,6 +1104,28 @@
         padding-left: 0px !important;
         padding-right: 25%;
     }
+    .why-choose-us-section .choose-options{
+        row-gap: 20px !important;
+        column-gap: 15px !important;
+    }
+    .why-choose-us-section .choose-options .ele{
+        min-width: 160px;
+    }
+    .why-choose-us-section .choose-options .ele .ele-img{
+        width: 110px;
+        height: 110px;
+    }
+    .why-choose-us-section .choose-options .ele p{
+        font-size: 14px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: nowrap;
+        flex-direction: row;
+    }
+    .why-choose-us-section .choose-options .ele p .txt{
+        width: 132px;
+        display: block;
+    }
 }
 @media(max-width:373.98px){
     .welcome-caterer{
@@ -1079,6 +1141,13 @@
     }
     .our-packages-section .card .card-header-section ::after{
         right: 44%;
+    }
+    .why-choose-us-section .choose-options{
+        row-gap: 20px !important;
+        column-gap: 15px !important;
+    }
+    .why-choose-us-section .choose-options .ele{
+        min-width: 150px;
     }
 }
 @media(max-width:349.98px){
@@ -1102,15 +1171,12 @@
         height: 550px !important;
     } */
     .img-underline-heading h3{
-        font-size: 30px;
+        font-size: 32px;
     }
     .img-underline-heading .img-underline{
         top: 26px;
         width: 256px;
         height: 18px;
-    }
-    .homepage-customer-review, .homepage-gallery-slide-show{
-        padding-top: 5px;
     }
     .homepage-reviews-section, .work-gallery-section{
         margin-top: 4px !important;
@@ -1118,5 +1184,11 @@
     .our-service-card .card-group .card img{
         min-height: 160px;
         max-height: 160px;
+    }
+    .why-choose-us-section .choose-options{
+        column-gap: 10px !important;
+    }
+    .why-choose-us-section .choose-options .ele{
+        min-width: 142px;
     }
 }
