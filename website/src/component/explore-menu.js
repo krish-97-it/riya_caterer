@@ -13,7 +13,7 @@ export default function FoodMenus(){
 
     return(
         <div className="container">
-            <p className="menu-intro-p" style={{fontFamily:"Proxima Soft Semibold"}}>We provide a wide range of food options to you. Explore more than 250+ food menu across different category.</p>
+            <p className="menu-intro-p" data-aos="fade-in" data-aos-offset="50" data-aos-duration="1000" style={{fontFamily:"Proxima Soft Semibold"}}>We provide a wide range of food options to you. Explore more than 250+ food menu across different category.</p>
             <div className="accordion accordion-flush explore-menu-accordion" id="exploreMenuAccordion">
                 <div className="accordion-item mb-2">
                     <h5 className="accordion-header">
@@ -34,7 +34,7 @@ export default function FoodMenus(){
                                                     
                                                     <div className="menu-item-section col-6 col-sm-6 col-md-4 col-lg-3" key={i}>
                                                         <div className="menu-body-wrap">
-                                                            <p>{item.label}</p>
+                                                            <p data-aos="zoom-in" data-aos-offset="50" data-aos-duration="1200">{item.label}</p>
                                                         </div>
                                                     </div>
                                                 </>
@@ -302,7 +302,7 @@ export default function FoodMenus(){
                             }
                             <div className="menu-item-section col-6 col-sm-6 col-md-4 col-lg-3">
                                 <div className="menu-body-wrap">
-                                    <p>And More...</p>
+                                    <p data-aos="zoom-in" data-aos-offset="50" data-aos-duration="1200">And More...</p>
                                 </div>
                             </div>
                         </div>

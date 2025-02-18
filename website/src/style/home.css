@@ -720,6 +720,24 @@
         z-index: 1;
         margin-right: 5px;
     }
+    [data-aos="rotate-left-custom"]{
+        backface-visibility: visible !important;
+        transition-property: transform, opacity !important;
+        opacity: 1 !important;
+        transform: rotate(6deg) !important;
+    }
+    [data-aos="rotate-right-custom"]{
+        backface-visibility: visible !important;
+        transition-property: transform, opacity !important;
+        opacity: 1 !important;
+        transform: rotate(-6deg) !important;
+    }
+    [data-aos="rotate-left-custom"].aos-animate{
+        transform: rotate(-6deg) !important;
+    }
+    [data-aos="rotate-right-custom"].aos-animate{
+        transform: rotate(6deg) !important;
+    }
     .our-packages-section .section-wrap{
         padding: 36px 0px 46px !important;
     }

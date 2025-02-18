@@ -8,6 +8,7 @@ import CustomMasonary from "../component/custom-masonary";
 // import ForkKnife from "../assets/images/cutlinary-icon.svg";
 import FaqSection from "../component/faq-accordion";
 import { Link } from "react-router-dom";
+import AOS from 'aos';
 
 export default function Service({openBookingModal, openGuidelines}){
     // Set loading state to true initially
@@ -49,11 +50,11 @@ export default function Service({openBookingModal, openGuidelines}){
                                         <div className="img-underline-heading">
                                             <h3>Type Of Services</h3>
                                         </div>
-                                        <p className="service-intro mb-0">
+                                        <p className="service-intro mb-0" data-aos="fade-in" data-aos-offset="50" data-aos-duration="1000">
                                             We are flexible to serve Food for any kind of indoor and outdoor event as per your Requirements. We provide two types of Services - one is Cooking & Serving on site at your event's location and another one is Cooking at our Kitchen and Delivery at your event location.
                                         </p>
                                         <div className="card-group service-type-card-group" style={{flexDirection:"column", display:"flex"}}>
-                                            <div className="card service-type-card card-one">
+                                            <div className="card service-type-card card-one" data-aos="zoom-in-left" data-aos-offset="50" data-aos-duration="1500">
                                                 <div className="card-body service-type-card-body">
                                                     <h5 className="card-title">Cooking & Serving</h5>
                                                     <div className="card-group">
@@ -79,7 +80,7 @@ export default function Service({openBookingModal, openGuidelines}){
                                                     </button> */}
                                                 </div>
                                             </div>
-                                            <div className="card service-type-card card-two">
+                                            <div className="card service-type-card card-two" data-aos="zoom-in-right" data-aos-offset="50" data-aos-duration="1500">
                                                 <div className="card-body service-type-card-body">
                                                     <h5 className="card-title">Cooking & Delivery</h5>
                                                     <div className="card-group">
@@ -115,7 +116,7 @@ export default function Service({openBookingModal, openGuidelines}){
                                                 <h3>Services On Events</h3>
                                                 {/* <img src={BlackUnderline} alt="underline" className="img-underline"/> */}
                                             </div>
-                                            <p className="service-intro mb-0">
+                                            <p className="service-intro mb-0" data-aos="fade-in" data-aos-offset="50" data-aos-duration="1000">
                                                 We serve Food on any kind of indoor and outdoor events as per your requirement and need. We are comfortable and flexible to serve food across any range of event such as small, mideum, large from 10 to 1000+ numbers of guest.
                                             </p>
                                             <CustomMasonary/>

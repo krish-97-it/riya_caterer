@@ -60,12 +60,12 @@ export default function MenuPackage({packageDetails, openGuidelines, openBooking
                                         <h3>Our Packages</h3>
                                         <div className="right-triangle"></div>
                                     </div>
-                                    <p className="mt-3 mb-0 our-package-intro" style={{color:"black"}}>We offers best in class packages from low to high budget. You can download a package and check details esily.</p>
+                                    <p className="mt-3 mb-0 our-package-intro" data-aos="fade-in" data-aos-offset="50" data-aos-duration="1000" style={{color:"black"}}>We offers best in class packages from low to high budget. You can download a package and check details esily.</p>
                                 </div>
                             </div>
                             <div className="package-details-section-wrap">
                                 <div className="container">
-                                    <div className="term-policy-section">
+                                    <div className="term-policy-section" data-aos="fade-up" data-aos-offset="50" data-aos-duration="1200">
                                         <div style={{border: "0px solid white", borderRadius: "0px 0px 10px 10px"}}></div>
                                         <div id="carouselExampleFade" className="carousel slide carousel-fade package-data-carousel">
                                             <div className="carousel-inner">
@@ -82,8 +82,8 @@ export default function MenuPackage({packageDetails, openGuidelines, openBooking
                                                                                 (item.key_points.map((points,i)=>{
                                                                                     return(
                                                                                         <li className="card" style={{color:"#ececec", backgroundColor:"#E98B43"}} key={i}>
-                                                                                            <div className="icon"><i className="fa-solid fa-circle-star"></i></div>
-                                                                                            <div className="card-content-section">
+                                                                                            <div className="icon" data-aos="fade-out" data-aos-offset="50" data-aos-duration="1000"><i className="fa-solid fa-circle-star"></i></div>
+                                                                                            <div className="card-content-section" data-aos="zoom-in" data-aos-offset="50" data-aos-duration="1200">
                                                                                                 <div className="title">{points.title}</div>
                                                                                                 <div className="content">{points.description}</div>
                                                                                             </div>

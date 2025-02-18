@@ -411,7 +411,7 @@ export default function CostCalculator(){
     }
 
     return(
-        <div className="container">
+        <div className="container" data-aos="zoom-in" data-aos-offset="50" data-aos-duration="1500">
             <div className="cost-estimate-form-wrap">
                 <form className="row cost-estimate-form">
                     <div className="col-md-6 col-sm-12 new-form-field mb-3">

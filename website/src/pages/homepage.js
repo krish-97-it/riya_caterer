@@ -10,6 +10,9 @@ import GalleryCarousel from "../component/gallery-carousel";
 // import YellowUnderline from "../assets/images/yellowUnderline.webp";
 // import BlackUnderline from "../assets/images/greyUnderline.webp";
 import Logo from '../assets/images/riya_caterer_logo.webp';
+import AOS from 'aos';
+// ..
+AOS.init();
 
 export default function Homepage({getReviewList, openBookingModal}){
     return(
@@ -57,8 +60,8 @@ export default function Homepage({getReviewList, openBookingModal}){
                     <div className="container">
                         <img className="homepage-brand-logo" src={Logo} alt="logo"/>
                         <h3>About Us</h3>
-                        <p className="first-p mb-1">One of the Fastest growing Caterer from Kolkata </p>
-                        <p className="second-p">We offer premium catering services with affordable cost range across different kind of indoor and outdoor events. Experience the Culinary excellence like never before with us.</p>
+                        <p className="first-p mb-1" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-offset="0" data-aos-duration="1000">One of the Fastest growing Caterer from Kolkata </p>
+                        <p className="second-p" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-offset="0" data-aos-duration="1500">We offer premium catering services with affordable cost range across different kind of indoor and outdoor events. Experience the Culinary excellence like never before with us.</p>
                     </div>
                 </div>
                 <div className="our-service-section-wrap">
@@ -71,7 +74,7 @@ export default function Homepage({getReviewList, openBookingModal}){
                                 </div>
                                 <div className="our-service-card">
                                     <div className="card-group">
-                                        <div className="card first-card">
+                                        <div className="card first-card" data-aos="zoom-in" data-aos-offset="50" data-aos-duration="1500">
                                             <div className="card-img-body">
                                                 <img src="https://img.perceptpixel.com/pykhlszs/riya_caterer/wedding-event.webp" className="card-img-top" alt="Wedding"/>
                                             </div>
@@ -80,7 +83,7 @@ export default function Homepage({getReviewList, openBookingModal}){
                                                 <p className="card-text">Rich the taste of food on your Wedding and Mairage Anniversary with us to make the day more special.</p>
                                             </div>
                                         </div>
-                                        <div className="card second-card">
+                                        <div className="card second-card" data-aos="zoom-in" data-aos-offset="25" data-aos-duration="1500">
                                             <div className="card-img-body">
                                                 <img src="https://img.perceptpixel.com/pykhlszs/riya_caterer/corporate-img.webp" className="card-img-top" alt="Corporate"/>
                                             </div>
@@ -89,7 +92,7 @@ export default function Homepage({getReviewList, openBookingModal}){
                                                 <p className="card-text">No more worries regarding food on important Meetings or seminar. We cook, deliver and serve on any kind of corporate event.</p>
                                             </div>
                                         </div>
-                                        <div className="card">
+                                        <div className="card" data-aos="zoom-in" data-aos-offset="50" data-aos-duration="1500">
                                             <div className="card-img-body">
                                                 <img src="https://img.perceptpixel.com/pykhlszs/riya_caterer/serving.webp" className="card-img-top" alt="Family"/>
                                             </div>
@@ -98,7 +101,7 @@ export default function Homepage({getReviewList, openBookingModal}){
                                                 <p className="card-text">Make your family functions more special with your near and dear ones without any worries regarding food.</p>
                                             </div>
                                         </div>
-                                        <div className="card last-card">
+                                        <div className="card last-card" data-aos="zoom-in" data-aos-offset="50" data-aos-duration="1500">
                                             <div className="card-img-body">
                                                 <img src="https://img.perceptpixel.com/pykhlszs/riya_caterer/get-together-img.webp" className="card-img-top" alt="Family"/>
                                             </div>
@@ -126,43 +129,43 @@ export default function Homepage({getReviewList, openBookingModal}){
                         <div className="container">
                             <div className="choose-options">
                                 <div className="ele ele-one">
-                                    <img className="rounded-circle ele-img" src="https://img.perceptpixel.com/pykhlszs/indian-cuisine.webp" alt="quality"/>
+                                    <img className="rounded-circle ele-img" data-aos="fade-out" data-aos-offset="50" data-aos-duration="400" data-aos-delay="0" src="https://img.perceptpixel.com/pykhlszs/indian-cuisine.webp" alt="quality"/>
                                     <p className="mb-0 mt-3"><span className="txt">Good Quality Food</span></p>
                                 </div>
                                 <div className="ele ele-two">
-                                    <img className="rounded-circle ele-img" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/management.webp" alt="manegement"/>
+                                    <img className="rounded-circle ele-img" data-aos="fade-out" data-aos-offset="0" data-aos-duration="400" data-aos-delay="50" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/management.webp" alt="manegement"/>
                                     <p className="mb-0 mt-3"><span className="txt">Proper Management</span></p>
                                 </div>
                                 <div className="ele ele-three">
-                                    <img className="rounded-circle ele-img" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/cost-cut.webp" alt="cost"/>
+                                    <img className="rounded-circle ele-img" data-aos="fade-out" data-aos-offset="0" data-aos-duration="400" data-aos-delay="100" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/cost-cut.webp" alt="cost"/>
                                     <p className="mb-0 mt-3"><span className="txt">Affordable Cost</span></p>
                                 </div>
                                 <div className="ele ele-four">
-                                    <img className="rounded-circle ele-img" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/caterer-waiter.webp" alt="staffs"/>
+                                    <img className="rounded-circle ele-img" data-aos="fade-out" data-aos-offset="0" data-aos-duration="400" data-aos-delay="150" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/caterer-waiter.webp" alt="staffs"/>
                                     <p className="mb-0 mt-3"><span className="txt">Professional chefs & Staffs</span></p>
                                 </div>
                                 <div className="ele ele-five">
-                                    <img className="rounded-circle ele-img" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/many-food.webp" alt="food"/>
+                                    <img className="rounded-circle ele-img" data-aos="fade-out" data-aos-offset="0" data-aos-duration="400" data-aos-delay="200" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/many-food.webp" alt="food"/>
                                     <p className="mb-0 mt-3"><span className="txt">300+ Food Menu</span></p>
                                 </div>
                                 <div className="ele ele-six">
-                                    <img className="rounded-circle ele-img" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/live-stalls.webp" alt="counters"/>
+                                    <img className="rounded-circle ele-img" data-aos="fade-out" data-aos-offset="0" data-aos-duration="400" data-aos-delay="250" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/live-stalls.webp" alt="counters"/>
                                     <p className="mb-0 mt-3"><span className="txt">Live Counters & Stalls</span></p>
                                 </div>
                                 <div className="ele ele-seven">
-                                    <img className="rounded-circle ele-img" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/homepage-banner-images__1_.webp" alt="buffet"/>
+                                    <img className="rounded-circle ele-img" data-aos="fade-out" data-aos-offset="0" data-aos-duration="400" data-aos-delay="300" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/homepage-banner-images__1_.webp" alt="buffet"/>
                                     <p className="mb-0 mt-3"><span className="txt">Buffet Style Option</span></p>
                                 </div>
                                 <div className="ele ele-eight">
-                                    <img className="rounded-circle ele-img" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/clean.webp" alt="awarness"/>
+                                    <img className="rounded-circle ele-img" data-aos="fade-out" data-aos-offset="0" data-aos-duration="400" data-aos-delay="350" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/clean.webp" alt="awarness"/>
                                     <p className="mb-0 mt-3"><span className="txt">Post Covid Awarness</span></p>
                                 </div>
                                 <div className="ele ele-nine">
-                                    <img className="rounded-circle ele-img" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/success.webp" alt="success"/>
+                                    <img className="rounded-circle ele-img" data-aos="fade-out" data-aos-offset="0" data-aos-duration="400" data-aos-delay="400" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/success.webp" alt="success"/>
                                     <p className="mb-0 mt-3"><span className="txt">100+ Successfull Events</span></p>
                                 </div>
                                 <div className="ele ele-ten">
-                                    <img className="rounded-circle ele-img" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/ratings.webp" alt="ratings"/>
+                                    <img className="rounded-circle ele-img" data-aos="fade-out" data-aos-duration="500" data-aos-delay="450" src="https://img.perceptpixel.com/pykhlszs/riya_caterer/ratings.webp" alt="ratings"/>
                                     <p className="mt-3 mb-0"><span className="txt">4.8+ Ratings on Google</span></p>
                                 </div>
                             </div>
@@ -228,7 +231,7 @@ export default function Homepage({getReviewList, openBookingModal}){
                             <div className="container">
                                 <div className="package-cards">
                                     <div className="card-group">
-                                        <div className="card first-card">
+                                        <div className="card first-card" data-aos="rotate-left-custom" data-aos-easing="ease-out-cubic" data-aos-offset="50" data-aos-duration="1500">
                                             <div className="card-header-section">
                                                 <p className="header-title"><i className="fa fa-shopping-cart" style={{fontSize:"18px"}}></i>&nbsp;Silver</p>
                                             </div>
@@ -244,7 +247,7 @@ export default function Homepage({getReviewList, openBookingModal}){
                                                 <small className="text-muted" style={{fontSize:"12px"}}>Terms & Condition included*</small>
                                             </div>
                                         </div>
-                                        <div className="card second-card">
+                                        <div className="card second-card" data-aos="zoom-in" data-aos-easing="ease-out-cubic" data-aos-offset="50" data-aos-duration="1500">
                                             <div className="card-header-section">
                                                 <p className="header-title"><i className="fa fa-shopping-cart" style={{fontSize:"18px"}}></i>&nbsp;Economy</p>
                                             </div>
@@ -260,7 +263,7 @@ export default function Homepage({getReviewList, openBookingModal}){
                                                 <small className="text-muted" style={{fontSize:"12px"}}>Terms & Condition included*</small>
                                             </div>
                                         </div>
-                                        <div className="card third-card">
+                                        <div className="card third-card" data-aos="rotate-right-custom" data-aos-easing="ease-out-cubic" data-aos-offset="50" data-aos-duration="1500">
                                             <div className="card-header-section">
                                                 <p className="header-title"><i className="fa fa-shopping-cart" style={{fontSize:"18px"}}></i>&nbsp;Gold</p>
                                             </div>

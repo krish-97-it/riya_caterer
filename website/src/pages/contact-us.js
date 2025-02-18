@@ -9,6 +9,9 @@ import phoneIcon from "../assets/images/social-media-icons/phoneIcon.svg";
 // import TouchIcon from "../assets/images/touch-icon.webp";
 import { ContactForm } from "../component/contact-form";
 import BlackUnderline from "../assets/images/greyUnderline.webp";
+import AOS from 'aos';
+// ..
+AOS.init();
  
 export default function Contact({packageDetails, openGuidelines, openBookingModal}){
     // Set loading state to true initially
@@ -58,7 +61,7 @@ export default function Contact({packageDetails, openGuidelines, openBookingModa
                                     <div className="container">
                                         <div className="row">
                                             <div className="col-lg-3 col-sm-6 contact-card-section">
-                                                <div className="card h-100 card-one">
+                                                <div data-aos="flip-right-fixed" data-aos-duration="1500" data-aos-offset="100" data-aos-easing="ease-in-quad" data-aos-mirror="false"  data-aos-once="true" className="card h-100 card-one">
                                                     <div className="card-img-section">
                                                         <img src={phoneIcon} className="card-img-top contact-icon-img" alt="..."/>
                                                     </div>
@@ -78,7 +81,7 @@ export default function Contact({packageDetails, openGuidelines, openBookingModa
                                                 </div>
                                             </div>
                                             <div className="col-lg-3 col-sm-6 contact-card-section">
-                                                <div className="card h-100 card-two">
+                                                <div data-aos="flip-right-fixed" data-aos-duration="1500" data-aos-offset="100" data-aos-easing="ease-in-quad" data-aos-mirror="false"  data-aos-once="true" className="card h-100 card-two">
                                                     <div className="card-img-section">
                                                         <img src={WpIcon} className="card-img-top contact-icon-img" alt="..."/>
                                                     </div>
@@ -98,7 +101,7 @@ export default function Contact({packageDetails, openGuidelines, openBookingModa
                                                 </div>
                                             </div>
                                             <div className="col-lg-3 col-sm-6 contact-card-section">
-                                                    <div className="card h-100 card-three">
+                                                    <div data-aos="flip-right-fixed" data-aos-duration="1500" data-aos-offset="100" data-aos-easing="ease-in-quad" data-aos-mirror="false"  data-aos-once="true" className="card h-100 card-three">
                                                         <div className="card-img-section">
                                                             <img src={FbIcon} className="card-img-top contact-icon-img" alt="..."/>
                                                         </div>
@@ -122,7 +125,7 @@ export default function Contact({packageDetails, openGuidelines, openBookingModa
                                                 </div>
                                             </div>
                                             <div className="col-lg-3 col-sm-6 contact-card-section">
-                                                    <div className="card h-100 card-four">
+                                                    <div data-aos="flip-right-fixed" data-aos-duration="1500" data-aos-offset="100" data-aos-easing="ease-in-quad" data-aos-mirror="false"  data-aos-once="true" className="card h-100 card-four">
                                                         <div className="card-img-section">
                                                             <img src={GmailIcon} className="card-img-top contact-icon-img" alt="..."/>
                                                         </div>
@@ -150,7 +153,7 @@ export default function Contact({packageDetails, openGuidelines, openBookingModa
                                     <h3>Send Us Your Query</h3>
                                     <img src={BlackUnderline} alt="underline" className="img-underline"/>
                                 </div>
-                                <div className="contact-form-wrap">
+                                <div className="contact-form-wrap" data-aos="zoom-in" data-aos-duration="1500">
                                     <div className="container">
                                         <div className="form-description">
                                             <p className="mb-0">Send us your message or query with your requirement and get a response back soon!</p>
@@ -167,7 +170,7 @@ export default function Contact({packageDetails, openGuidelines, openBookingModa
                                     <img src={BlackUnderline} alt="underline" className="img-underline"/>
                                 </div>
                                 <div className="container">
-                                    <div className="contact-us-map-section" >
+                                    <div className="contact-us-map-section" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="0">
                                         <iframe title="address-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.0965179342793!2d88.38465977627244!3d22.61287067946289!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f89d82587de72f%3A0xe0805472c836baff!2sRiya%20Caterers!5e0!3m2!1sen!2sin!4v1735387584841!5m2!1sen!2sin" width="600" height="450" style={{border:"0", borderRadius:"12px", width:"100%"}} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                                     </div>
                                 </div>

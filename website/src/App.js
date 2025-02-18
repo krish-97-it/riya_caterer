@@ -1,3 +1,4 @@
+import 'aos/dist/aos.css';
 import './style/header.css';
 import './style/footer.css';
 import './style/page-loading.css';
