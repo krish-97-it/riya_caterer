@@ -32,11 +32,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #000000;
+    background-color: #ffffff;
     padding: 10px;
     border-radius: 8px;
-    color: wheat;
+    color: #5a1717;
     font-size: 14px;
+    font-family: "Proxima Soft Bold";
 }
 .review-card-item{
     margin:0px 6px;
@@ -44,7 +45,7 @@
 .user-logo{
     /* background-image: linear-gradient(248deg, rgb(61, 72, 228), rgb(238, 73, 117)); */
     /* background-image: linear-gradient(248deg, rgb(255 175 54), rgb(241 80 80), rgb(255 175 54)); */
-    background-color: rgb(231 231 231);
+    background-color: rgb(255 164 117);
     height: 85px;
     width: 85px;
     /* padding: 2px; */
@@ -55,26 +56,29 @@
     padding: 3px;
 }
 .review-card-item .review-rating{
-    font-size: 20px;
+    font-size: 18px;
     display: flex;
     gap: 5px;
     justify-content: center;
+    padding-top: 5px;
+
 }
 .name-address-txt h5{
-    color: #829100;
-    font-size: 18px;
+    color: #000000;
+    font-size: 22px;
     margin-top: 8px;
+    font-family: Caveat, cursive;
 }
 .review-card-item .card-description{
     background: rgb(0, 0, 0);
-    /* border-radius: 8px; */
-    border-top: 2px dotted #d4d4d4;
+    border-radius: 12px;
+    /* border-top: 2px dotted #d4d4d4; */
     padding:4px 10px 10px 10px;
     min-height: 165px;
 }
 .review-card-item .review-summary{
     border-radius: 8px;
-    color: #eeffae;
+    color: white;
     font-size: 14px;
     font-weight: 500;
     /* padding: 0px 5px 10px; */
@@ -82,13 +86,14 @@
 }
 
 .review-card-item .review-summary a{
-    color: rgb(142 44 158);
+    color: rgb(255 101 99);
     text-decoration: none;
 }
 
 .review-card-item .card-body-style{
     padding: 0px;
     background-color: black;
+    border-radius: 12px;
 }
 .review-card-item{
     background-image: linear-gradient(90deg, #ff754c, #df57a9);

@@ -150,11 +150,11 @@ export default function Gallery({imageModal, openImageModal, closeImageModal, ge
                                                                         {
                                                                             (data.file_type === "video")?
                                                                             <div className={"gallery-img gallery-yt-video span-1-by-1 img-"+index} key={data._id}>
-                                                                                <iframe height="200px" width="200px" className="yt-video-iframe" src={data.file_src} title="YouTube video player" frameborder="0" style={{borderRadius:"6px"}} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen=""></iframe>
+                                                                                <iframe height="200px" width="200px" className="yt-video-iframe" src={data.file_src} title="YouTube video player" frameborder="0" style={{borderRadius:"6px", color:"black"}} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen="" data-aos="zoom-in" data-aos-offset="50" data-aos-duration="1500"></iframe>
                                                                             </div>
                                                                             :
                                                                             <div className={"gallery-img img-"+index} key={data._id}>
-                                                                                <img src={data.file_src} className="w-100 album-img" alt={data.alt_tag}/>
+                                                                                <img src={data.file_src} className="w-100 album-img" alt={data.alt_tag} data-aos="zoom-in" data-aos-offset="50" data-aos-duration="1500" style={{color:"black"}}/>
                                                                                 <button className="btn full-screen-btn" data-bs-target="#imgViewCarousel" data-bs-slide-to={index} onClick={openImageModal} value={index}><i className="fa fa-expand" style={{fontSize:"24px", color:"white"}}></i></button>
                                                                             </div>
                                                                         }

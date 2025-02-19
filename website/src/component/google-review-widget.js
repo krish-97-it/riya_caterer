@@ -92,8 +92,8 @@ export default function GoogleReviews({getReviewList}){
                 >
                     {
                         getReviewList.map((item,index) => {
-                            return (
-                                <div className="card review-card-item active h-100" key={"card-"+index}> 
+                            return(
+                                <div className="card review-card-item active h-100" data-aos="fade-up" data-aos-offset="50" data-aos-duration="1200" style={{fontFamily:"Proxima Soft Semibold"}}  key={"card-"+index}> 
                                     <div className="card-body card-body-style">
                                         <div className="card-title" style={{margin:"0px"}}>
                                             <div className="user-logo">
@@ -109,7 +109,7 @@ export default function GoogleReviews({getReviewList}){
                                                 {
                                                     [1, 2, 3, 4, 5].map((star,z) => {
                                                         return(
-                                                            <span className='rating-star-style' key={z} style={{ color: (item.rating) >= star ? 'rgb(244 190 0)' : 'white'}}>
+                                                            <span className='rating-star-style' key={z} style={{ color: (item.rating) >= star ? 'rgb(244, 190, 0)' : 'white'}}>
                                                                 {/* ★ */}
                                                                 <i className="fa fa-star"></i>
                                                             </span>

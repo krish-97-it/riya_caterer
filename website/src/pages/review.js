@@ -4,6 +4,7 @@ import GoogleReviews from "../component/google-review-widget";
 import GoToTop from "../component/go-to-top";
 import Loading from "../component/page-loading";
 import FaqSection from "../component/faq-accordion";
+import { HashLink } from 'react-router-hash-link';
 
 export default function Review({getReviewList}){    
     // Set loading state to true initially
@@ -52,6 +53,19 @@ export default function Review({getReviewList}){
                                     <div>
                                         <p className="intro-p">We care about your trust. Check What our customer says about us -</p>
                                         <GoogleReviews getReviewList={getReviewList}/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="menuplanner-banner-section" style={{backgroundColor:"#25181b"}}>
+                                <div className="container">
+                                    <div className="row">
+                                        <HashLink to="/menu-packages#costcalculator">
+                                            <picture>
+                                                <source media="(min-width:650px)" srcSet="https://img.perceptpixel.com/pykhlszs/riya_caterer/menu-planner-desktop.webp"/>
+                                                <source media="(max-width:649.98px)" srcSet="https://img.perceptpixel.com/pykhlszs/riya_caterer/mob-menu-panner.webp"/>
+                                                <img src="https://img.perceptpixel.com/pykhlszs/riya_caterer/mob-menu-panner.webp" className="w-100 banner-img" style={{width:"100%", height:"auto"}} alt="Menu Planner"/>
+                                            </picture>
+                                        </HashLink>
                                     </div>
                                 </div>
                             </div>
