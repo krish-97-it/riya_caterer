@@ -8,7 +8,7 @@ const FaqSection = ({openGuidelines,openBookingModal,showAllItem}) => {
                 <h3 className="faq-section-heading" style={{color:"black"}}>Frequently Ask Questions</h3>
             </div>
             <div className="accordion accordion-flush faq-accordion" id="FaqAccordionExample">
-                <div className="accordion-item mb-2">
+                <div className="accordion-item mb-2" data-aos="fade-up" data-aos-offset="50" data-aos-duration="500">
                     <h2 className="accordion-header">
                         <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                             How to book us?
@@ -32,7 +32,7 @@ const FaqSection = ({openGuidelines,openBookingModal,showAllItem}) => {
                         </div>
                     </div>
                 </div>
-                <div className="accordion-item mb-2">
+                <div className="accordion-item mb-2" data-aos="fade-up" data-aos-offset="50" data-aos-duration="500">
                     <h2 className="accordion-header">
                         <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                             How to track your Booking?
@@ -45,7 +45,7 @@ const FaqSection = ({openGuidelines,openBookingModal,showAllItem}) => {
                         </div>
                     </div>
                 </div>
-                <div className="accordion-item mb-2">
+                <div className="accordion-item mb-2" data-aos="fade-up" data-aos-offset="50" data-aos-duration="500">
                     <h2 className="accordion-header">
                     <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                         How do we work?
@@ -58,7 +58,7 @@ const FaqSection = ({openGuidelines,openBookingModal,showAllItem}) => {
                         </div>
                     </div>
                 </div>
-                <div className="accordion-item mb-2">
+                <div className="accordion-item mb-2" data-aos="fade-up" data-aos-offset="50" data-aos-duration="500">
                     <h2 className="accordion-header">
                     <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                         How to cancel booking?
@@ -85,7 +85,7 @@ const FaqSection = ({openGuidelines,openBookingModal,showAllItem}) => {
                         </div>
                     </div>
                 </div>
-                <div className="accordion-item mb-2">
+                <div className="accordion-item mb-2" data-aos="fade-up" data-aos-offset="50" data-aos-duration="500">
                     <h2 className="accordion-header">
                     <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                         Is there minimum limit of Plate Count?
@@ -100,7 +100,7 @@ const FaqSection = ({openGuidelines,openBookingModal,showAllItem}) => {
                 {
                     (showAllItem === 'true')?
                     <>
-                         <div className="accordion-item mb-2">
+                         <div className="accordion-item mb-2" data-aos="fade-up" data-aos-offset="50" data-aos-duration="500">
                             <h2 className="accordion-header">
                             <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
                                 What is the Advanced amount for booking?
@@ -112,7 +112,7 @@ const FaqSection = ({openGuidelines,openBookingModal,showAllItem}) => {
                                 </div>
                             </div>
                         </div>
-                        <div className="accordion-item mb-2">
+                        <div className="accordion-item mb-2" data-aos="fade-up" data-aos-offset="50" data-aos-duration="500">
                             <h2 className="accordion-header">
                             <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
                                 What is the Last date to change or update menu of my booking?
@@ -124,7 +124,7 @@ const FaqSection = ({openGuidelines,openBookingModal,showAllItem}) => {
                                 </div>
                             </div>
                         </div>
-                        <div className="accordion-item mb-2">
+                        <div className="accordion-item mb-2" data-aos="fade-up" data-aos-offset="50" data-aos-duration="500">
                             <h2 className="accordion-header">
                             <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
                                 Is advanced amount is refundable?
@@ -136,7 +136,7 @@ const FaqSection = ({openGuidelines,openBookingModal,showAllItem}) => {
                                 </div>
                             </div>
                         </div>
-                        <div className="accordion-item mb-2">
+                        <div className="accordion-item mb-2" data-aos="fade-up" data-aos-offset="50" data-aos-duration="500">
                             <h2 className="accordion-header">
                             <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
                                 What is the last date of cancelation?
@@ -148,7 +148,7 @@ const FaqSection = ({openGuidelines,openBookingModal,showAllItem}) => {
                                 </div>
                             </div>
                         </div>
-                        <div className="accordion-item mb-2">
+                        <div className="accordion-item mb-2" data-aos="fade-up" data-aos-offset="50" data-aos-duration="500">
                             <h2 className="accordion-header">
                             <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
                                 How to Change or update my booking?

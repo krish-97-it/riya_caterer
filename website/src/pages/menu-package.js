@@ -60,7 +60,7 @@ export default function MenuPackage({packageDetails, openGuidelines, openBooking
                                         <h3>Our Packages</h3>
                                         <div className="right-triangle"></div>
                                     </div>
-                                    <p className="mt-3 mb-0 our-package-intro" data-aos="fade-in" data-aos-offset="50" data-aos-duration="1000" style={{color:"black"}}>We offers best in class packages from low to high budget. You can download a package and check details esily.</p>
+                                    <p className="mt-3 mb-0 our-package-intro" data-aos="fade-out" data-aos-offset="50" data-aos-duration="1500" style={{color:"black"}}>We offers best in class packages from low to high budget. You can download a package and check details esily.</p>
                                 </div>
                             </div>
                             <div className="package-details-section-wrap">

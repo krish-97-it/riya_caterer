@@ -2,7 +2,7 @@ import React from "react";
 
 function GalleryCarousel(){
     return(
-        <div className="wrap-gallery">
+        <div className="wrap-gallery" data-aos="zoom-in" data-aos-offset="50" data-aos-duration="1200">
             <div className="image-album-cover">
                 <div id="galleryCarousel" className="gallery-img-Carousel carousel slide" data-bs-ride="carousel">
 

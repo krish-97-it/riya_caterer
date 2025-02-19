@@ -1,7 +1,7 @@
 const reviewModel = require('../db_models/review_model');
 
 exports.getReviews = async (req,res) =>{
-    await reviewModel.find({}).then(
+    await reviewModel.find({is_approve: true}).then(
         (review) => {
             if(review.length > 0){
                 res.status(200).json({success: true, message:"review data found successfully!", data:review});

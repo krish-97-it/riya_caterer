@@ -13,11 +13,11 @@ export default function FoodMenus(){
 
     return(
         <div className="container">
-            <p className="menu-intro-p" data-aos="fade-in" data-aos-offset="50" data-aos-duration="1000" style={{fontFamily:"Proxima Soft Semibold"}}>We provide a wide range of food options to you. Explore more than 250+ food menu across different category.</p>
+            <p className="menu-intro-p" data-aos="fade-up" data-aos-offset="50" data-aos-duration="500" style={{fontFamily:"Proxima Soft Semibold"}}>We provide a wide range of food options to you. Explore more than 250+ food menu across different category.</p>
             <div className="accordion accordion-flush explore-menu-accordion" id="exploreMenuAccordion">
                 <div className="accordion-item mb-2">
                     <h5 className="accordion-header">
-                        <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#menuCatOne" aria-expanded="true" aria-controls="menuCatOne" >
+                        <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#menuCatOne" aria-expanded="true" aria-controls="menuCatOne">
                             <span>Beverages & Drink</span>
                             <span className="view-btn">View</span>
                         </button>
@@ -57,9 +57,9 @@ export default function FoodMenus(){
                     </div>
                 </div>
 
-                <div className="accordion-item mb-2">
+                <div className="accordion-item mb-2" data-aos="fade-up" data-aos-offset="50" data-aos-duration="500">
                     <h5 className="accordion-header">
-                        <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#menuCatTwo" aria-expanded="false" aria-controls="menuCatTwo" >
+                        <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#menuCatTwo" aria-expanded="false" aria-controls="menuCatTwo">
                             <span>Salad & Raita</span>
                             <span className="view-btn">View</span>
                         </button>
@@ -99,7 +99,7 @@ export default function FoodMenus(){
                     </div>
                 </div>
 
-                <div className="accordion-item mb-2">
+                <div className="accordion-item mb-2" data-aos="fade-up" data-aos-offset="50" data-aos-duration="500">
                     <h5 className="accordion-header">
                         <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#menuCatThree" aria-expanded="false" aria-controls="menuCatThree" >
                             <span>Appetizer & Snacks</span>
@@ -141,7 +141,7 @@ export default function FoodMenus(){
                     </div>
                 </div>
 
-                <div className="accordion-item mb-2">
+                <div className="accordion-item mb-2" data-aos="fade-up" data-aos-offset="50" data-aos-duration="500">
                     <h5 className="accordion-header">
                         <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#menuCatFour" aria-expanded="false" aria-controls="menuCatFour" >
                             <span>Chinese & Continental</span>
@@ -183,7 +183,7 @@ export default function FoodMenus(){
                     </div>
                 </div>
 
-                <div className="accordion-item mb-2">
+                <div className="accordion-item mb-2" data-aos="fade-up" data-aos-offset="50" data-aos-duration="500">
                     <h5 className="accordion-header">
                         <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#menuCatFive" aria-expanded="false" aria-controls="menuCatFive" >
                             <span>Indian Breads & Rotis</span>
@@ -225,7 +225,7 @@ export default function FoodMenus(){
                     </div>
                 </div>
 
-                <div className="accordion-item mb-2">
+                <div className="accordion-item mb-2" data-aos="fade-up" data-aos-offset="50" data-aos-duration="500">
                     <h5 className="accordion-header">
                         <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#menuCatSix" aria-expanded="false" aria-controls="menuCatSix" >
                             <span>Indian Rice & Biryani</span>
@@ -267,7 +267,7 @@ export default function FoodMenus(){
                     </div>
                 </div>
 
-                <div className="accordion-item mb-2">
+                <div className="accordion-item mb-2" data-aos="fade-up" data-aos-offset="50" data-aos-duration="500">
                     <h5 className="accordion-header">
                         <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#menuCatSeven" aria-expanded="false" aria-controls="menuCatSeven" >
                             <span>Side Dish & Gravy</span>
@@ -309,7 +309,7 @@ export default function FoodMenus(){
                     </div>
                 </div>
 
-                <div className="accordion-item mb-2">
+                <div className="accordion-item mb-2" data-aos="fade-up" data-aos-offset="50" data-aos-duration="500">
                     <h5 className="accordion-header">
                         <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#menuCatEight" aria-expanded="false" aria-controls="menuCatEight" >
                             <span>Sweets & Dessert</span>

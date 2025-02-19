@@ -9,6 +9,7 @@ import CustomMasonary from "../component/custom-masonary";
 import FaqSection from "../component/faq-accordion";
 import { Link } from "react-router-dom";
 import AOS from 'aos';
+import { HashLink } from 'react-router-hash-link';
 
 export default function Service({openBookingModal, openGuidelines}){
     // Set loading state to true initially
@@ -123,6 +124,19 @@ export default function Service({openBookingModal, openGuidelines}){
                                     </div>
                                 </div>
                             </div>
+                            <div className="menuplanner-banner-section" style={{backgroundColor:"#25181b"}}>
+                                    <div className="container">
+                                        <div className="row">
+                                            <HashLink to="/menu-packages#costcalculator">
+                                                <picture>
+                                                    <source media="(min-width:650px)" srcSet="https://img.perceptpixel.com/pykhlszs/riya_caterer/menu-planner-desktop.webp"/>
+                                                    <source media="(max-width:649.98px)" srcSet="https://img.perceptpixel.com/pykhlszs/riya_caterer/mob-menu-panner.webp"/>
+                                                    <img src="https://img.perceptpixel.com/pykhlszs/riya_caterer/mob-menu-panner.webp" className="w-100 banner-img" style={{width:"100%", height:"auto"}} alt="Menu Planner"/>
+                                                </picture>
+                                            </HashLink>
+                                        </div>
+                                    </div>
+                                </div>
                             <div>
                                 <FaqSection openGuidelines={openGuidelines} openBookingModal={openBookingModal} showAllItem='false'/>
                             </div>
